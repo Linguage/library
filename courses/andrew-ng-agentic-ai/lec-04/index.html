@@ -1,0 +1,1716 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>「吴恩达Agentic AI模块4」工作流开发与优化</title><meta name="description" content="Agentic AI：构建自主式 AI 工作流 的课程阅读页。"><link rel="canonical" href="https://linguista.cn/library/courses/andrew-ng-agentic-ai/lec-04"><meta property="og:type" content="website"><meta property="og:site_name" content="Linguista Library"><meta property="og:title" content="「吴恩达Agentic AI模块4」工作流开发与优化"><meta property="og:description" content="Agentic AI：构建自主式 AI 工作流 的课程阅读页。"><meta property="og:url" content="https://linguista.cn/library/courses/andrew-ng-agentic-ai/lec-04"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="「吴恩达Agentic AI模块4」工作流开发与优化"><meta name="twitter:description" content="Agentic AI：构建自主式 AI 工作流 的课程阅读页。"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"><script>
+      const getTheme = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return 'default';
+      };
+      
+      const theme = getTheme();
+      if (theme && theme !== 'default') {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+    </script><!-- Inject Typography Settings --><script>
+      (function() {
+        try {
+          var fontFam = localStorage.getItem('reader-font-family');
+          var fontSz = localStorage.getItem('reader-font-size');
+          if (fontFam) document.documentElement.setAttribute('data-reader-font-family', fontFam);
+          if (fontSz) document.documentElement.setAttribute('data-reader-font-size', fontSz);
+        } catch(e) {}
+      })();
+    </script><link rel="stylesheet" href="/library/_astro/_slug_.CvbVAPM-.css">
+<link rel="stylesheet" href="/library/_astro/_slug_.CAezbZXG.css">
+<style>.sidebar-nav[data-astro-cid-mx5xs5wp]{display:flex;flex-direction:column;font-family:DM Sans,sans-serif;height:100%}.sidebar-fixed-header[data-astro-cid-mx5xs5wp]{flex-shrink:0;padding-top:16px;background:var(--surface-soft);border-bottom:1px solid var(--line-soft);margin-bottom:12px}.sidebar-scrolling-content[data-astro-cid-mx5xs5wp]{flex:1;overflow-y:auto;padding-bottom:24px}.sidebar-fixed-bottom[data-astro-cid-mx5xs5wp]{flex-shrink:0;margin-top:auto}.sidebar-home[data-astro-cid-mx5xs5wp]{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--text-strong);text-decoration:none;padding:4px 16px;margin-bottom:8px}.sidebar-home[data-astro-cid-mx5xs5wp]:hover{color:var(--sky)}.sidebar-divider[data-astro-cid-mx5xs5wp]{border:none;border-top:1px solid var(--line-soft);margin:12px 0}.sidebar-group[data-astro-cid-mx5xs5wp]{margin:4px 0}.sidebar-group-label[data-astro-cid-mx5xs5wp]{display:block;font-family:Space Mono,monospace;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-subtle);padding:4px 16px;margin-bottom:4px}.sidebar-search-wrap[data-astro-cid-mx5xs5wp]{padding:0 16px 8px}.sidebar-search[data-astro-cid-mx5xs5wp]{width:100%;padding:6px 8px;border:1px solid var(--line-strong);background:var(--surface-base);font-family:DM Sans,sans-serif;font-size:12px;color:var(--text-body);border-radius:0;outline:none}.sidebar-search[data-astro-cid-mx5xs5wp]:focus{border-color:var(--sky)}.sidebar-group--secondary[data-astro-cid-mx5xs5wp] .sidebar-group-label[data-astro-cid-mx5xs5wp]{font-size:9px;opacity:.6}.sidebar-group--secondary[data-astro-cid-mx5xs5wp] .sidebar-link[data-astro-cid-mx5xs5wp]{font-size:13px;color:var(--text-subtle);padding:7px 16px}.sidebar-link[data-astro-cid-mx5xs5wp]{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted);text-decoration:none;padding:8px 16px;border-radius:0;transition:background .15s ease,color .15s ease}.sidebar-link[data-astro-cid-mx5xs5wp]:hover{background:var(--surface-soft);color:var(--text-strong)}.sidebar-link--active[data-astro-cid-mx5xs5wp]{background:var(--surface-soft);color:var(--text-strong);border-left:2px solid var(--sky);padding-left:14px}.draft-badge[data-astro-cid-mx5xs5wp]{font-family:Space Mono,monospace;font-size:9px;padding:1px 5px;background:transparent;border:1px solid var(--line-strong);color:var(--text-subtle);border-radius:0;letter-spacing:.5px;margin-left:auto;flex-shrink:0}
+.reader-article[data-astro-cid-i3k527kx]{max-width:min(1120px,100%)}.reader-header[data-astro-cid-i3k527kx]{margin-bottom:24px}.reader-header[data-astro-cid-i3k527kx] h1[data-astro-cid-i3k527kx]{margin:0;font-family:"Instrument Serif",Georgia,serif;font-size:clamp(1.8rem,3.2vw,2.8rem);font-weight:700;line-height:1.1;letter-spacing:-.01em;color:var(--text-strong)}.reader-meta[data-astro-cid-i3k527kx]{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;font-size:.95rem;color:var(--text-subtle)}.module-toggle[data-astro-cid-i3k527kx]{display:inline-flex;gap:0;margin-top:22px;border:1px solid var(--interactive-border-strong);flex-wrap:wrap}.module-button[data-astro-cid-i3k527kx]{border:none;border-right:1px solid var(--interactive-border-strong);background:transparent;color:var(--text-body);padding:7px 16px;border-radius:0;cursor:pointer;font-family:DM Sans,sans-serif;font-size:13px;font-weight:500;transition:background .15s ease,color .15s ease}.module-button[data-astro-cid-i3k527kx]:last-child{border-right:none}.module-button--active[data-astro-cid-i3k527kx]{background:var(--text-strong);color:var(--surface-base)}.module-button[data-astro-cid-i3k527kx]:not(.module-button--active):hover{background:var(--interactive-hover);color:var(--text-strong)}.reader-content[data-astro-cid-i3k527kx]{margin-top:28px}.reader-content[data-astro-cid-i3k527kx][hidden]{display:none}.reader-content[data-astro-cid-i3k527kx]:not(.reader-content--active){display:none}.reader-content--active[data-astro-cid-i3k527kx]{display:block}.sidebar-reader-details[data-astro-cid-i3k527kx]{padding:0;margin-top:0;border-top:none}.sidebar-details-grid-wrapper[data-astro-cid-i3k527kx]{background:transparent}.sidebar-details-grid[data-astro-cid-i3k527kx],.details-group[data-astro-cid-i3k527kx]{display:flex;flex-direction:column;gap:16px}.details-item[data-astro-cid-i3k527kx]{display:flex;flex-direction:column;gap:6px;font-size:.85rem;line-height:1.6}.details-label[data-astro-cid-i3k527kx]{color:var(--text-body);font-size:.75rem;font-family:Space Mono,monospace;letter-spacing:1px;text-transform:uppercase;font-weight:600}.details-value[data-astro-cid-i3k527kx]{color:var(--text-strong);font-weight:500;word-break:break-word}.details-source-links[data-astro-cid-i3k527kx]{display:flex;flex-direction:column;gap:8px}.source-direct-link[data-astro-cid-i3k527kx]{display:inline-block;color:var(--text-strong);text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:4px;font-size:.85rem;font-weight:500;transition:color .15s,text-decoration-color .15s}.source-direct-link[data-astro-cid-i3k527kx]:hover{color:var(--sky);text-decoration-color:var(--sky)}
+</style></head> <body>  <header class="site-header" data-astro-cid-ivsbtrvw> <div class="header-inner" data-astro-cid-ivsbtrvw> <div class="header-left" data-astro-cid-ivsbtrvw> <button id="mobile-sidebar-toggle" class="mobile-menu-toggle" aria-label="Toggle Menu" data-astro-cid-ivsbtrvw> <svg width="1em" height="1em" class="header-icon" aria-hidden="true" data-astro-cid-ivsbtrvw="true" data-icon="lucide:menu">   <symbol id="ai:lucide:menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16M4 12h16M4 19h16"/></symbol><use href="#ai:lucide:menu"></use>  </svg> </button> <a href="/library/" class="logo" data-astro-cid-ivsbtrvw> <svg width="1em" height="1em" class="logo-icon" aria-hidden="true" data-astro-cid-ivsbtrvw="true" data-icon="lucide:book-open-text">   <symbol id="ai:lucide:book-open-text" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7v14m4-9h2m-2-4h2M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4a4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3a3 3 0 0 0-3-3zm3-6h2M6 8h2"/></symbol><use href="#ai:lucide:book-open-text"></use>  </svg> <span class="logo-text" data-astro-cid-ivsbtrvw>Linguista Library</span> </a> </div> <nav class="header-nav" data-astro-cid-ivsbtrvw> <a href="/library/#persons" class="header-link" data-astro-cid-ivsbtrvw>人物文集</a> <a href="/library/#courses" class="header-link" data-astro-cid-ivsbtrvw>课程资料</a> <button id="theme-toggle" class="header-link theme-toggle" aria-label="Toggle Theme" title="切换主题" data-astro-cid-ivsbtrvw> <svg width="1em" height="1em" class="header-icon theme-icon-default" data-astro-cid-ivsbtrvw="true" data-icon="lucide:monitor">   <symbol id="ai:lucide:monitor" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8m-4-4v4"/></g></symbol><use href="#ai:lucide:monitor"></use>  </svg> <svg width="1em" height="1em" class="header-icon theme-icon-light" style="display: none;" data-astro-cid-ivsbtrvw="true" data-icon="lucide:sun">   <symbol id="ai:lucide:sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></g></symbol><use href="#ai:lucide:sun"></use>  </svg> <svg width="1em" height="1em" class="header-icon theme-icon-dark" style="display: none;" data-astro-cid-ivsbtrvw="true" data-icon="lucide:moon">   <symbol id="ai:lucide:moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></symbol><use href="#ai:lucide:moon"></use>  </svg> </button> </nav> </div> </header>  <script type="module">const t=document.getElementById("theme-toggle");if(t){const r=e=>{t.querySelector(".theme-icon-default").setAttribute("style","display: none;"),t.querySelector(".theme-icon-light").setAttribute("style","display: none;"),t.querySelector(".theme-icon-dark").setAttribute("style","display: none;"),e==="light"?t.querySelector(".theme-icon-light").removeAttribute("style"):e==="dark"?t.querySelector(".theme-icon-dark").removeAttribute("style"):t.querySelector(".theme-icon-default").removeAttribute("style")},n=()=>typeof localStorage<"u"&&localStorage.getItem("theme")&&localStorage.getItem("theme")||"default",m=e=>{e==="default"?(document.documentElement.removeAttribute("data-theme"),localStorage.removeItem("theme")):(document.documentElement.setAttribute("data-theme",e),localStorage.setItem("theme",e)),r(e)};let l=n();r(l),t.addEventListener("click",()=>{const e=["default","light","dark"];let o=e.indexOf(l)+1;o>=e.length&&(o=0),l=e[o],m(l)})}</script> <div class="docs-progress" aria-hidden="true" data-astro-cid-mw7aashj> <div class="docs-progress-bar" data-reading-progress-bar data-astro-cid-mw7aashj></div> </div> <div class="docs-layout" data-astro-cid-mw7aashj> <div id="sidebar-overlay" class="mobile-overlay" data-astro-cid-mw7aashj></div> <div id="toc-overlay" class="mobile-overlay" data-astro-cid-mw7aashj></div> <aside class="docs-sidebar" id="docs-sidebar" data-astro-cid-mw7aashj> <nav class="sidebar-nav" aria-label="Collection navigation" data-astro-cid-mx5xs5wp> <div class="sidebar-fixed-header" data-astro-cid-mx5xs5wp> <a href="/library/courses/andrew-ng-agentic-ai" class="sidebar-home" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>Agentic AI：构建自主式 AI 工作流</span> </a> <hr class="sidebar-divider" data-astro-cid-mx5xs5wp> <div class="sidebar-search-wrap" data-astro-cid-mx5xs5wp> <input type="search" class="sidebar-search" placeholder="搜索…" data-search-input aria-label="搜索文档" data-astro-cid-mx5xs5wp> </div> </div> <div class="sidebar-scrolling-content" data-astro-cid-mx5xs5wp>  <div class="sidebar-group" data-astro-cid-mx5xs5wp> <span class="sidebar-group-label" data-astro-cid-mx5xs5wp>INTRO</span> <div data-search-list data-astro-cid-mx5xs5wp> <a href="/courses/andrew-ng-agentic-ai/agenticai?tab=insights" class="sidebar-link" data-search-title="吴恩达课程：Agentic AI" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>吴恩达课程：Agentic AI</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>General</span> </a> </div> </div> <hr class="sidebar-divider" data-astro-cid-mx5xs5wp>  <div class="sidebar-group" data-astro-cid-mx5xs5wp> <span class="sidebar-group-label" data-astro-cid-mx5xs5wp>LESSONS</span> <div data-search-list data-astro-cid-mx5xs5wp> <a href="/courses/andrew-ng-agentic-ai/lec-01?tab=insights" class="sidebar-link" data-search-title="「吴恩达Agentic AI 模块1」Agentic AI工作流" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>「吴恩达Agentic AI 模块1」Agentic AI工作流</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>6</span> </a><a href="/courses/andrew-ng-agentic-ai/lec-02?tab=insights" class="sidebar-link" data-search-title="「吴恩达Agentic AI模块2」反思设计模式" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>「吴恩达Agentic AI模块2」反思设计模式</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>5</span> </a><a href="/courses/andrew-ng-agentic-ai/lec-03?tab=insights" class="sidebar-link" data-search-title="「吴恩达Agentic AI模块3」工具使用与模型上下文协议（MCP）" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>「吴恩达Agentic AI模块3」工具使用与模型上下文协议（MCP）</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>5</span> </a><a href="/courses/andrew-ng-agentic-ai/lec-04?tab=insights" class="sidebar-link sidebar-link--active" aria-current="page" data-search-title="「吴恩达Agentic AI模块4」工作流开发与优化" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>「吴恩达Agentic AI模块4」工作流开发与优化</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>5</span> </a><a href="/courses/andrew-ng-agentic-ai/lec-05?tab=insights" class="sidebar-link" data-search-title="「吴恩达Agentic AI模块5」高度自主的智能体AI模式" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>「吴恩达Agentic AI模块5」高度自主的智能体AI模式</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>5</span> </a> </div> </div> <hr class="sidebar-divider" data-astro-cid-mx5xs5wp>  </div> <div class="sidebar-fixed-bottom" data-astro-cid-mx5xs5wp>  </div> </nav> <script type="module">document.querySelectorAll("[data-search-input]").forEach(n=>{const e=n,t=e.closest(".sidebar-nav");t&&e.addEventListener("input",()=>{const s=e.value.trim().toLowerCase();t.querySelectorAll("[data-search-list] [data-search-title]").forEach(a=>{const r=!s||(a.dataset.searchTitle??"").toLowerCase().includes(s);a.style.display=r?"":"none"})})});const o=document.querySelector(".sidebar-scrolling-content");if(o){const e=`linguista-sidebar-scroll-${window.location.pathname.split("/").slice(0,3).join("/")}`,t=sessionStorage.getItem(e);if(t)o.scrollTop=parseInt(t,10);else{const s=document.querySelector(".sidebar-link--active");s&&s.scrollIntoView({block:"center"})}window.addEventListener("beforeunload",()=>{sessionStorage.setItem(e,o.scrollTop.toString())})}</script>  </aside> <main class="docs-content" data-astro-cid-mw7aashj>   <article class="chapter-article reader-article" data-astro-cid-i3k527kx> <header class="reader-header" data-astro-cid-i3k527kx> <h1 data-astro-cid-i3k527kx>「吴恩达Agentic AI模块4」工作流开发与优化</h1> <div class="reader-meta" data-astro-cid-i3k527kx> <span data-astro-cid-i3k527kx>Agentic AI：构建自主式 AI 工作流</span> <span data-astro-cid-i3k527kx>2025-10-17</span> </div> <div class="module-toggle" data-module-switcher data-astro-cid-i3k527kx> <button type="button" class="module-button module-button--active" data-target-module="insights" data-astro-cid-i3k527kx> 课程概览 </button><button type="button" class="module-button" data-target-module="blog" data-astro-cid-i3k527kx> 专题博客 </button><button type="button" class="module-button" data-target-module="guides" data-astro-cid-i3k527kx> 学习指南 </button><button type="button" class="module-button" data-target-module="lecnotes-zh" data-astro-cid-i3k527kx> 视频实录 </button><button type="button" class="module-button" data-target-module="lecture" data-astro-cid-i3k527kx> 课程脚本 </button> </div> </header> <section class="reader-content chapter-prose reader-content--active" data-module-panel="insights" data-astro-cid-i3k527kx> <div class="chapter-prose">  <h1 id="吴恩达agentic-ai模块4简报工作流开发与优化">「吴恩达Agentic AI模块4简报」工作流开发与优化</h1>
+<h2 id="概要">概要</h2>
+<p>本简报深入剖析了构建和优化 Agentic AI 工作流的系统化、迭代化流程。核心理念是避免长时间的理论构思，而是通过快速构建一个“粗糙但可用”的初始系统来启动开发周期。该流程强调在“构建”和“分析”之间进行持续循环，通过严谨的评估与错误分析来指导开发方向，从而实现高效、有针对性的系统改进。</p>
+<h3 id="关键要点">关键要点</h3>
+<ol>
+<li><strong>迭代式开发循环：</strong> 成功的 Agentic AI 系统开发并非线性过程，而是一个在构建、评估、分析和改进之间不断循环的迭代过程。首先构建一个基本原型，然后通过分析其输出来发现问题，从而为下一步的构建工作指明方向。</li>
+<li><strong>评估（Evals）是核心驱动力：</strong> 建立评估体系是衡量进展和驱动改进的关键。评估应从简单的“端到端评估”开始，针对系统在特定方面的不足（如日期提取不准、文本长度超标）创建小规模的测试集（例如 10-20 个样本），以量化改进效果。</li>
+<li><strong>系统的错误分析：</strong> 为了确定应优先处理哪个系统组件，必须进行系统的错误分析。开发者应专注于系统出错的案例，审查每个步骤的“迹线”（traces），即中间输出，并使用电子表格等工具统计每个组件导致错误的频率。这能以数据驱动的方式揭示真正的瓶颈，避免凭直觉做出耗时且无效的决策。</li>
+<li><strong>组件级评估的重要性：</strong> 当错误分析指向特定组件时，建立“组件级评估”能极大提升优化效率。它能为该组件提供一个清晰、无干扰的性能信号，使得开发者可以快速迭代调整（如更换API、调整超参数），而无需每次都运行完整且昂贵的端到端评估。</li>
+<li><strong>优化策略的多样性：</strong> 针对不同组件的问题，需要采用不同的解决策略。对于非 LLM 组件，可以通过调整参数或更换工具来改进；对于基于 LLM 的组件，方法包括优化提示词、更换模型、分解任务，乃至在必要时进行模型微调。</li>
+<li><strong>成本与延迟的后期优化：</strong> 在系统输出质量达标之前，成本和延迟应是次要考虑因素。一旦系统性能稳定，可通过对工作流各环节进行基准测试，精确找出成本和时间开销最大的部分，然后有针对性地进行优化。</li>
+</ol>
+<p>总之，高效的 Agentic AI 工作流开发依赖于一套严谨的分析方法论，它能将开发者的精力引导至最能提升系统整体性能的地方。</p>
+<h2 id="1-核心开发理念从快速原型到迭代优化">1. 核心开发理念：从快速原型到迭代优化</h2>
+<p>构建 Agentic AI 系统的首要原则是快速行动。与其花费数周时间进行理论探讨和假设，不如尽快构建一个“粗糙但可用”（quick and dirty）的初始系统。这个原型不必完美，但它提供了一个可供观察和分析的实体。</p>
+<h3 id="关键步骤">关键步骤：</h3>
+<ol>
+<li>快速构建原型：以安全、负责任的方式（如避免数据泄露）快速搭建一个端到端的系统。</li>
+<li>手动审查输出：运行原型并审查一小批（如 10-20 个）样本的最终输出。</li>
+<li>识别错误模式：通过审查，识别系统常见的失败模式。例如，在发票处理工作流中，可能会发现系统经常混淆“发票开具日期”和“付款截止日期”。</li>
+<li>确定优化焦点：这种初步分析能够揭示系统的主要弱点，从而帮助开发者决定应将精力集中在哪个方面进行评估和改进。例如，如果日期混淆是主要问题，那么就应该优先建立一个衡量日期提取准确率的评估体系。</li>
+</ol>
+<blockquote>
+<p>“我发现，在开发一个 Agentic AI 系统时，很难预先知道它在哪里会运行良好，在哪里会表现不佳，因此也很难知道应该将精力集中在哪里。所以，一个非常普遍的建议是，先尝试构建一个哪怕是粗糙的系统，这样你就可以试用并观察它，看看哪些地方可能还没有达到你期望的效果，从而更有针对性地进行进一步开发。”
+Andrew Ng</p>
+</blockquote>
+<h2 id="2-评估evals衡量和驱动系统改进">2. 评估（Evals）：衡量和驱动系统改进</h2>
+<p>一旦确定了系统的关键弱点，下一步就是建立评估（Evals）体系来量化问题并跟踪改进进度。评估是推动系统性能提升的基石。</p>
+<h3 id="端到端评估的构建">端到端评估的构建</h3>
+<p>端到端评估衡量的是从用户输入到最终输出的整个系统的性能。构建方法取决于具体应用场景和发现的错误模式。</p>
+<ul>
+<li><strong>案例 1：发票处理（提取截止日期）</strong>
+<ul>
+<li>问题：系统经常混淆日期。</li>
+<li>评估构建：
+<ol>
+<li>创建测试集：选取 10-20 张发票，手动记录下每张发票正确的“付款截止日期”，形成“真实标签”（ground truth）。</li>
+<li>标准化输出：在提示词中要求 LLM 始终以标准格式（如 YYYY-MM-DD）输出日期。</li>
+<li>编写评估代码：使用代码（如正则表达式）从 LLM 的输出中提取日期，并将其与真实标签进行比对。</li>
+<li>计算准确率：通过计算匹配正确的百分比来衡量系统性能，并以此为指标来迭代优化提示词或系统其他部分。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>案例 2：营销文案助手（控制文本长度）</strong>
+<ul>
+<li>问题：生成的文案经常超过 10 个词的长度限制。</li>
+<li>评估构建：
+<ol>
+<li>创建测试集：准备 10-20 个需要生成文案的产品图片和查询。</li>
+<li>编写评估代码：运行系统，然后编写代码计算每个输出文案的单词数量。</li>
+<li>衡量合规率：将单词数与 10 个词的目标进行比较，统计符合要求的比例。这个案例的特点是没有逐例的真实标签，所有样本共享同一个目标（长度小于等于10）。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>案例 3：研究助手（确保内容完整性）</strong>
+<ul>
+<li>问题：生成的文章有时会遗漏该领域专家认为至关重要的关键信息点。</li>
+<li>评估构建：
+<ol>
+<li>创建测试集：设计多个研究主题（如“黑洞科学的最新突破”），并为每个主题手动编写 3-5 个“黄金标准讨论点”（gold standard discussion points）。</li>
+<li>使用 LLM-as-a-judge：由于关键点的表述方式多种多样，简单的代码匹配难以胜任。因此，可以利用另一个 LLM 作为“裁判”，让它判断系统生成的文章覆盖了多少个黄金标准讨论点。</li>
+<li>量化得分：提示词可以要求 LLM 裁判返回一个 JSON 对象，其中包含一个 0-5 的分数和解释，从而为每个样本生成一个量化评估结果。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="评估方法的分类框架">评估方法的分类框架</h3>
+<p>评估方法可以根据两个维度进行分类，形成一个 2x2 的框架，这有助于系统性地思考如何为特定应用设计评估。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>客观评估（代码）</th><th>主观评估（LLM-as-a-judge）</th></tr></thead><tbody><tr><td>有逐例真实标签</td><td>发票日期提取：每个发票有唯一的正确截止日期，可通过代码精确匹配。</td></tr><tr><td>研究助手内容完整性</td><td>每篇文章有不同的黄金标准讨论点，需要 LLM 的理解能力来判断是否覆盖。</td></tr><tr><td>无逐例真实标签</td><td>营销文案长度检查：所有文案共享同一个长度标准（如10个词），可通过代码计算。</td></tr><tr><td>图表生成质量评估</td><td>所有图表都遵循同一套标准（如“坐标轴标签是否清晰”），需要 LLM 根据这套标准进行评估。</td></tr></tbody></table>
+<h3 id="评估设计的实用技巧">评估设计的实用技巧</h3>
+<ul>
+<li><strong>从粗糙的评估开始：</strong> 不要因为追求完美的评估体系而陷入停滞。一个包含 10-20 个样本的简单评估就足以启动迭代过程。</li>
+<li><strong>持续迭代评估体系：</strong> 随着开发的深入，评估体系也需要不断完善。如果评估指标的变化与你对系统性能的直观判断不符，这通常意味着需要改进评估本身，例如增加样本量或改变评估方法。</li>
+<li><strong>以人类专家为基准：</strong> 寻找系统性能不如人类专家的领域，这往往是改进工作的灵感来源。</li>
+</ul>
+<h2 id="3-错误分析精确定位问题的根源">3. 错误分析：精确定位问题的根源</h2>
+<p>当端到端评估显示系统性能不佳时，下一步是找出导致问题的具体组件。Agentic 工作流通常包含多个步骤，错误分析的目的是系统性地定位瓶颈，避免凭直觉进行低效的尝试。</p>
+<h3 id="核心方法">核心方法：</h3>
+<ol>
+<li><strong>关注失败案例：</strong> 将系统表现良好的案例放在一边，集中分析那些最终输出不令人满意的案例。</li>
+<li><strong>审查“迹线”（Traces）：</strong> 深入研究工作流中每一步的中间输出（也称为“span”）。例如，在研究助手中，需要审查生成的搜索词、搜索引擎返回的 URL 列表、被选中下载的文章列表等。</li>
+<li><strong>建立归因电子表格：</strong> 创建一个电子表格来系统地记录错误。对于每个失败案例，逐一检查每个组件的输出，判断其表现是否“不合格”（subpar），即是否远差于人类专家在该环节的表现。</li>
+<li><strong>统计错误频率：</strong> 完成分析后，统计每个组件被标记为“出错”的频率。这可以明确指出哪个组件是最大的问题来源。</li>
+</ol>
+<ul>
+<li><strong>案例：研究助手</strong>
+<ul>
+<li>问题：文章遗漏关键点。</li>
+<li>可能原因：搜索词生成不佳、网页搜索引擎质量差、选择下载文章的环节出错、或最终总结时忽略了信息。</li>
+<li>分析结果：通过电子表格统计发现，生成搜索词的错误率为 5%，而网页搜索结果的错误率高达 45%。这表明问题主要出在网页搜索引擎本身，而非生成搜索词的 LLM。因此，团队应优先考虑更换或调整搜索引擎，而不是优化提示词。</li>
+</ul>
+</li>
+<li><strong>案例：客户邮件响应</strong>
+<ul>
+<li>问题：最终生成的邮件草稿不令人满意。</li>
+<li>可能原因：LLM 生成的数据库查询语句错误、数据库本身数据损坏、或 LLM 撰写邮件的环节出错。</li>
+<li>分析结果：统计显示，75% 的问题源于 LLM 生成的数据库查询不正确。这为团队指明了最优先的改进方向。</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-组件级评估实现高效的局部优化">4. 组件级评估：实现高效的局部优化</h2>
+<p>在通过错误分析确定了需要改进的关键组件后，建立一个专门针对该组件的评估体系（Component-level Eval）可以显著提高开发效率。</p>
+<p>为什么需要组件级评估？</p>
+<ul>
+<li><strong>信号更清晰：</strong> 端到端评估会受到工作流中其他组件随机性的干扰，这可能掩盖你对目标组件所做的微小改进。组件级评估则能提供一个关于该组件性能的、无噪声的直接信号。</li>
+<li><strong>成本更低、速度更快：</strong> 每次调整都运行完整的端到端工作流可能既耗时又昂贵。只评估单个组件则快得多。</li>
+<li><strong>便于团队协作：</strong> 如果不同团队负责不同组件，组件级评估为每个团队提供了明确的、可独立优化的指标。</li>
+</ul>
+<h3 id="构建方法以网页搜索组件为例">构建方法（以网页搜索组件为例）</h3>
+<ol>
+<li><strong>定义“黄金标准”：</strong> 为一系列查询请求，由专家手动整理出一份“黄金标准网页资源”列表。</li>
+<li><strong>创建评估指标：</strong> 使用信息检索领域的标准指标（如 F1 分数）来衡量搜索组件返回的结果与黄金标准列表的重合度。</li>
+<li><strong>快速迭代：</strong> 利用这个评估体系，开发者可以快速尝试不同的搜索引擎、调整返回结果的数量、限定日期范围等超参数，并立即看到这些改动对搜索质量的影响。</li>
+</ol>
+<h2 id="5-解决已识别问题的策略">5. 解决已识别问题的策略</h2>
+<p>一旦定位了问题组件并建立了评估方法，就可以着手进行改进。</p>
+<h3 id="改进非-llm-组件">改进非 LLM 组件</h3>
+<ul>
+<li><strong>调整参数/超参数：</strong> 许多非 LLM 工具都有可调参数，如 RAG 系统中的相似度阈值或分块大小，网页搜索中的返回结果数量等。</li>
+<li><strong>替换组件：</strong> 直接尝试使用不同的工具或服务提供商，例如更换不同的搜索引擎或 RAG 库。</li>
+</ul>
+<h3 id="改进基于-llm-的组件">改进基于 LLM 的组件</h3>
+<ul>
+<li><strong>优化提示词（Prompting）：</strong>
+<ul>
+<li>增加明确指令：使指令更加清晰、具体。</li>
+<li>使用少样本提示（Few-shot Prompting）：在提示词中提供一或多个“输入-期望输出”的示例，引导 LLM 更好地理解任务。</li>
+</ul>
+</li>
+<li><strong>尝试不同的 LLM：</strong> 不同模型的能力各异。通常，更大、更前沿的模型在遵循复杂指令方面表现更佳。</li>
+<li><strong>分解任务：</strong> 如果一个步骤的指令过于复杂，LLM 可能难以完全遵循。可以将其分解为多个更简单的子步骤，由多个 LLM 调用串联完成。</li>
+<li><strong>微调（Fine-tuning）模型：</strong> 这是一个更复杂且成本更高的选项，通常作为最后的手段。当其他方法都无法将性能提升至所需水平时（例如从 95% 提升到 98%），可以考虑使用自有数据对模型进行微调。</li>
+</ul>
+<h3 id="培养对-llm-的直觉">培养对 LLM 的直觉</h3>
+<p>要高效地选择和使用 LLM，培养关于不同模型能力的直觉至关重要。</p>
+<ul>
+<li><strong>经常试用新模型：</strong> 无论是闭源还是开源模型，都应积极试用，了解其长短。</li>
+<li><strong>阅读他人的提示词：</strong> 通过阅读开源项目、网上分享或与同行交流，学习优秀的提示词编写实践。</li>
+<li><strong>在工作流中进行实验：</strong> 利用评估体系，在自己的应用中系统性地测试不同模型，以了解它们在性能、速度和成本上的权衡。</li>
+</ul>
+<h2 id="6-成本与延迟优化">6. 成本与延迟优化</h2>
+<p>通常，成本和延迟的优化应在系统输出质量得到保证之后进行。</p>
+<h3 id="优化方法论">优化方法论</h3>
+<ol>
+<li><strong>基准测试（Benchmarking）：</strong> 对工作流中的每一步进行计时和成本计算，以精确识别瓶颈。</li>
+</ol>
+<ul>
+<li><strong>延迟：</strong> 记录每个组件（如 LLM 调用、API 请求）的平均执行时间。</li>
+<li><strong>成本：</strong> 根据 API 定价（如每 token 费用、每次调用费用）计算每个步骤的平均成本。</li>
+</ul>
+<ol start="2">
+<li><strong>针对性优化：</strong> 根据基准测试结果，将优化精力集中在开销最大的组件上。</li>
+</ol>
+<ul>
+<li><strong>降低延迟：</strong> 可以尝试并行化操作（如同时抓取多个网页），或为耗时长的 LLM 步骤换用更小、更快的模型或响应更快的 API 提供商。</li>
+<li><strong>降低成本：</strong> 在不显著影响质量的前提下，为成本最高的步骤换用更便宜的 LLM 或 API。</li>
+</ul>
+<h2 id="7-完整的开发流程总结">7. 完整的开发流程总结</h2>
+<p>Agentic AI 系统的开发是一个非线性的、在“构建”和“分析”之间不断切换的循环过程。随着系统的成熟，分析的深度和严谨性也在不断提升。</p>
+<h3 id="开发阶段的演进">开发阶段的演进：</h3>
+<ol>
+<li><strong>初期：</strong> 快速构建端到端系统 -> 手动审查输出和迹线，形成直观感受。</li>
+<li><strong>发展期：</strong> 建立小规模的端到端评估（10-20 个样本） -> 使用量化指标指导系统级和组件级的调整。</li>
+<li><strong>成熟期：</strong> 进行系统的错误分析 -> 精确定位问题组件，制定更有针对性的开发计划。</li>
+<li><strong>深度优化期：</strong> 为关键组件构建组件级评估 -> 实现对特定组件的高效、快速迭代。</li>
+</ol>
+<p>一个常见的误区是花费过多时间在“构建”上，而忽视了“分析”。实际上，高质量的分析（如错误分析、评估体系建设）是确保构建工作高效且方向正确的关键。虽然市面上有许多用于监控和日志记录的工具，但由于 Agentic 工作流的高度定制化特性，开发者往往需要构建符合自身应用特定问题的定制化评估方案。</p>  </div> </section><section class="reader-content chapter-prose" data-module-panel="blog" hidden data-astro-cid-i3k527kx> <div class="chapter-prose">  <blockquote>
+<p>吴恩达分享的一套强大且反直觉的开发“操作系统”。这套理念的核心是：用严谨的分析来驱动迭代，而非凭直觉盲目构建。采纳这套方法论，是精英AI团队的战略优势，能帮你避免在无法提升性能的功能上浪费数月时间，从而大幅提升开发流程的效率与成功率。</p>
+</blockquote>
+<!--more-->
+<h1 id="吴恩达agentic-ai-模块45个反直觉的开发原则">「吴恩达Agentic AI 模块4」5个反直觉的开发原则</h1>
+<h2 id="引言">引言</h2>
+<p>构建高效的AI智能体（Agentic AI）工作流是一项复杂的挑战。许多开发团队投入数周甚至数月，却发现自己陷入了低效的“埋头构建、缺少分析”的循环，最终成果寥寥。这种困境的根源，往往不是技术能力不足，而是一种低效的开发原则。</p>
+<p>本文旨在揭示由吴恩达（Andrew Ng）分享的一套强大且反直觉的开发“操作系统”。这套理念的核心是：用严谨的分析来驱动迭代，而非凭直觉盲目构建。采纳这套方法论，是精英AI团队的战略优势，能帮你避免在无法提升性能的功能上浪费数月时间，从而大幅提升开发流程的效率与成功率。</p>
+<h2 id="五个反直觉的开发原则">五个反直觉的开发原则</h2>
+<p>以下五个核心开发原则挑战了我们惯常的开发直觉，但它们环环相扣，共同构成了一个高效构建AI智能体的迭代循环。</p>
+<h3 id="1-先快速搭建再求完美">1. 先快速搭建，再求完美</h3>
+<p>我们通常倾向于在动手前进行详尽的规划，但这在AI智能体开发中可能适得其反。吴恩达的建议是，与其花费数周去构思一个完美的系统，不如先快速构建一个“粗糙但可用”的原型。需要强调的是，“快速粗糙”不等于“不负责任”。这个初始原型必须以安全、合理的方式构建，从一开始就确保数据隐私和安全。</p>
+<p>这个初始系统的目的不是为了完美无瑕，而是为了快速暴露工作流中的薄弱环节。它的核心价值在于产生失败案例——这些失败案例正是你进行分析的宝贵原材料，这自然引出了我们的下一条原则。</p>
+<blockquote>
+<p>“I find that it’s sometimes less useful to sit around for too many weeks theorizing and hypothesizing how to build it. It’s often better to just build a quick system…”</p>
+</blockquote>
+<blockquote>
+<p>“我发现，有时坐在那里，花太多时间理论化和假设性地思考如何构建系统，比直接构建一个快速原型更有用。通常，直接构建一个快速原型会更好。“</p>
+</blockquote>
+<h3 id="2-从足够好的评估开始">2. 从“足够好”的评估开始</h3>
+<p>许多团队在“评估”（evals）环节感到不知所措，认为必须建立庞大而全面的测试集，这种想法常导致项目停滞。吴恩达的建议是，让第一步原型中出现的失败来指导你构建评估。</p>
+<p>这个过程应该是：首先，运行你的初始原型，观察其输出，发现它在哪些方面表现不佳。例如，在一个处理发票的系统中，你运行了20张发票后，发现系统经常将“开票日期”误认为“付款截止日期”。然后，针对这一个具体问题，创建一个小型的评估集（比如10到20个案例），专门追踪系统在区分日期上的准确率。这种迭代式的评估方法能有效避免“分析瘫痪”，让你立即开始衡量和驱动改进。</p>
+<blockquote>
+<p>“I see quite a lot of teams that are almost paralyzed because they think building evals is this massive multi-week effort, and so they take longer than would be ideal to get started.”</p>
+</blockquote>
+<blockquote>
+<p>“我看到很多团队因为认为构建评估是一项巨大的多周努力，而几乎瘫痪。因此，他们比理想的要慢得多才能开始。“</p>
+</blockquote>
+<h3 id="3-让错误分析而非直觉指引你">3. 让错误分析而非直觉指引你</h3>
+<p>拥有一个小型评估集来追踪关键失败后，下一步是系统性地找出失败的根本原因。一个团队开发效率的高低，很大程度上取决于他们是否拥有严谨的错误分析流程。依赖直觉决定修复方向，往往是低效的根源。</p>
+<p>吴恩达用一个“研究型智能体”（research agent）的例子生动地说明了这一点。假设智能体生成的报告“遗漏了关键要点”，问题出在哪？是“生成搜索词”环节太差，是“网络搜索结果”质量不高，还是“筛选信源”的步骤出了问题？数据驱动的方法是，使用电子表格等简单工具，对一批失败案例进行追踪，统计每个中间组件的出错频率。例如，你可能会发现“搜索词生成”只有5%的情况下不理想，但“搜索结果”在45%的情况下都质量堪忧。这个数据明确告诉你，当前最值得投入精力的环节是改进网络搜索，而不是其他。</p>
+<blockquote>
+<p>” I found that one of the biggest predictors for how efficient and how good a team is, is whether or not they’re able to drive a disciplined error analysis process to tell you where to focus your efforts.”</p>
+</blockquote>
+<blockquote>
+<p>“我发现，一个团队的效率和质量很大程度上取决于他们是否能够通过系统性错误分析来指导你的努力方向。“</p>
+</blockquote>
+<h3 id="4-想写好提示词去读别人的">4. 想写好提示词？去读别人的</h3>
+<p>提升提示词工程（Prompt Engineering）能力不仅仅是学习理论。吴恩达分享了一个出人意料但极其有效的实践技巧：花时间去阅读和分析其他优秀开发者编写的提示词。</p>
+<p>他本人就有这样的习惯——主动阅读知名开源软件包中的提示词，并与同行交流，从中学习最佳实践和巧妙构思。通过大量观摩高质量的范例，你可以更快地培养出编写高效提示词的直觉和能力。这远比自己闭门造车要有效得多，能让你站在巨人的肩膀上进行创新。</p>
+<h3 id="5-先追求质量成本和延迟是甜蜜的烦恼">5. 先追求质量，成本和延迟是“甜蜜的烦恼”</h3>
+<p>在开发初期，团队很容易陷入对成本（cost）和延迟（latency）的过度担忧中。然而，吴恩达的战略建议是：首要任务是确保智能体系统能产生高质量的输出。成本与延迟的优化，是之后才需要解决的问题。</p>
+<p>核心逻辑在于，让系统有效工作是整个项目中最困难、最核心的部分。只有当你的系统足够优秀，吸引了大量用户时，高昂的运营成本和响应延迟才会真正成为一个需要解决的问题。换句话说，这是一个因成功而产生的“甜蜜的烦恼”。因此，你应该在系统质量得到保证之后，再将精力转向这些优化工作。</p>
+<blockquote>
+<p>“…we were fortunate enough to have so many users use it that the cost actually became a problem… But that’s a good problem to have, so I tend to worry about cost, usually less.”</p>
+</blockquote>
+<blockquote>
+<p>“我们很幸运地有这么多用户使用它，以至于运营成本实际上成为一个问题…但这是一个好的问题，所以我通常不担心成本，通常很少担心。“</p>
+</blockquote>
+<h2 id="结论">结论</h2>
+<p>贯穿上述所有技巧的核心思想是：构建卓越的AI系统需要一个严谨、迭代且数据驱动的分析过程，而这个过程往往与我们的第一直觉相悖。经验不足的团队花费大量时间去“构建”，而精英团队则将更多时间投入到“分析”中，以确保每一次构建都精准有效。从快速原型到迭代评估，再到严格的错误分析，这个分析驱动的循环是区分高效与低效团队的根本所在。</p>
+<p>现在，不妨停下来思考一下：审视你当前的AI项目，哪一条反直觉的建议最能帮你突破瓶颈？</p>  </div> </section><section class="reader-content chapter-prose" data-module-panel="guides" hidden data-astro-cid-i3k527kx> <div class="chapter-prose">  <h1 id="吴恩达agentic-ai-模块4agentic-ai-工作流开发与优化学习指南">「吴恩达Agentic AI 模块4」Agentic AI 工作流开发与优化学习指南</h1>
+<p>本指南旨在帮助您复习和巩固“Agentic AI 工作流的开发与优化”课程第四模块的核心概念。内容包括简答题测验、答案解析、开放式论述题以及关键术语词汇表，全部基于提供的源材料编写。</p>
+<h2 id="测验">测验</h2>
+<h3 id="简答题">简答题</h3>
+<p>请用2-3句话回答以下每个问题，以检验您对核心概念的理解。</p>
+<ol>
+<li>为什么在开发 Agentic AI 系统时，建议首先构建一个“快速而粗糙”的原型？</li>
+<li>课程中提到的评估（eval）流程是怎样的？请以发票处理工作流为例进行说明。</li>
+<li>什么是“LLM作为评判者”（LLM-as-a-judge）？在什么情况下使用它比编写代码进行评估更合适？</li>
+<li>请解释评估的两个维度轴，并为每个象限提供一个源材料中提到的例子。</li>
+<li>什么是错误分析（Error Analysis）？它在优化 Agentic AI 工作流中扮演什么关键角色？</li>
+<li>在进行错误分析时，“追踪”（Trace）和“跨度”（Span）分别指什么？</li>
+<li>与端到端评估相比，组件级评估（Component-level Evals）有哪些优势？</li>
+<li>当一个基于LLM的组件性能不佳时，可以采取哪些方法来解决问题？</li>
+<li>开发者应如何培养对不同大型语言模型（LLM）能力和适用场景的直觉？</li>
+<li>在优化 Agentic 工作流的成本和延迟时，首要步骤是什么？这如何帮助确定优化的重点？</li>
+</ol>
+<h3 id="答案解析">答案解析</h3>
+<ol>
+<li><strong>为什么在开发 Agentic AI 系统时，建议首先构建一个“快速而粗糙”的原型？</strong> 构建一个快速原型有助于开发者快速了解系统在实际应用中的表现，识别出其有效和无效的方面。通过观察初始原型的输出，可以更有针对性地集中精力解决实际存在的问题，而不是花费数周时间进行理论化和假设，从而大大提高开发效率。</li>
+<li><strong>课程中提到的评估（eval）流程是怎样的？请以发票处理工作流为例进行说明。</strong> 评估流程首先是构建系统并观察输出，以发现问题，例如发票的“到期日”被错误提取。接着，创建一个小规模的评估集（如10-20张发票），并为每个样本手动标注正确答案（即“基准真相”）。最后，编写代码或提示来衡量系统输出与基准真相的一致性，从而量化改进效果。</li>
+<li><strong>什么是“LLM作为评判者”（LLM-as-a-judge）？在什么情况下使用它比编写代码进行评估更合适？</strong> “LLM作为评判者”是利用一个LLM来评估另一个AI系统输出质量的方法，通常用于更主观的评估。当评估标准难以通过简单的代码（如正则表达式）来客观衡量时，它尤其有用。例如，在评估研究报告是否充分涵盖了“金标准讨论要点”时，由于表达方式多样，使用LLM来判断会比模式匹配更有效。</li>
+<li><strong>请解释评估的两个维度轴，并为每个象限提供一个源材料中提到的例子。</strong> 评估的两个维度轴分别是评估方法（客观代码评估 vs. 主观LLM评判）和是否有“逐例基准真相”。</li>
+</ol>
+<ul>
+<li>代码评估 &#x26; 有逐例基准真相: 检查发票到期日提取是否正确，因为每张发票有不同的正确日期。</li>
+<li>代码评估 &#x26; 无逐例基准真相: 检查营销文案长度是否符合10个词的限制，因为所有例子的目标都相同。</li>
+<li>LLM评判 &#x26; 有逐例基准真相: 统计研究论文中提及“金标准讨论要点”的数量，因为每个主题的要点都不同。</li>
+<li>LLM评判 &#x26; 无逐例基准真相: 根据通用评分标准（如坐标轴标签是否清晰）来给图表打分。</li>
+</ul>
+<ol start="5">
+<li><strong>什么是错误分析（Error Analysis）？它在优化 Agentic AI 工作流中扮演什么关键角色？</strong> 错误分析是一个系统性的过程，通过检查系统出错的案例，找出导致最终输出不满意的根本原因在于工作流中的哪个组件。它的关键作用是帮助开发团队将精力集中在最能有效提升系统整体性能的薄弱环节上，避免在收效甚微的组件上浪费时间和资源。</li>
+<li><strong>在进行错误分析时，“追踪”（Trace）和“跨度”（Span）分别指什么？</strong> “追踪”（Trace）指的是一次 Agent 运行过程中所有中间步骤输出的集合，它完整记录了从输入到最终输出的全过程。而“跨度”（Span）特指单个步骤的输出。通过检查追踪记录，开发者可以了解每个组件的具体表现。</li>
+<li><strong>与端到端评估相比，组件级评估（Component-level Evals）有哪些优势？</strong> 组件级评估能为特定组件的性能提供更清晰、更直接的信号，避免了整个端到端系统中其他组件随机性带来的噪声干扰。这使得开发者可以更高效地对某个特定组件（如网络搜索功能）进行调优和迭代，同时也便于分工协作，让不同团队专注于优化各自负责的模块。</li>
+<li><strong>当一个基于LLM的组件性能不佳时，可以采取哪些方法来解决问题？</strong> 可以采取多种方法改进。首先是改进提示（Prompts），如增加更明确的指令或使用少样本提示（few-shot prompting）。其次是尝试不同的LLM模型，选择更适合当前任务的模型。此外，还可以将复杂的任务分解为多个更简单的步骤，或者在穷尽其他方法后，考虑对模型进行微调（fine-tuning）以获得更高性能。</li>
+<li><strong>开发者应如何培养对不同大型语言模型（LLM）能力和适用场景的直觉？</strong> 开发者可以通过多种方式培养直觉。首先是经常试用不同的模型，包括闭源和开源模型，了解它们的特性。其次是大量阅读他人编写的优秀提示，甚至深入开源软件包研究其提示设计。最后，在自己的工作流中尝试替换和评估不同的模型，结合追踪记录和评估指标，积累关于模型性能、成本和速度权衡的实践经验。</li>
+<li><strong>在优化 Agentic 工作流的成本和延迟时，首要步骤是什么？这如何帮助确定优化的重点？</strong> 首要步骤是对工作流的每个步骤进行基准测试（benchmarking），即测量每个组件的执行时间（延迟）和花费（成本）。通过这种量化分析，可以清晰地识别出哪些步骤是主要的耗时或成本来源。这使得优化工作可以集中在影响最大的组件上，避免在对整体性能影响不大的地方浪费精力。</li>
+</ol>
+<h3 id="开放式论述题">开放式论述题</h3>
+<p>请思考并详细阐述以下问题，这些问题没有标准答案，旨在激发更深入的思考。</p>
+<ol>
+<li>详细描述 Agentic AI 工作流的完整开发生命周期，从最初的“快速而粗糙”的原型构建，到利用错误分析进行迭代，再到最终的成本与延迟优化。</li>
+<li>比较并对比端到端评估和组件级评估。在项目的不同阶段，您会如何权衡使用这两种评估方法？</li>
+<li>以研究助手（Research Agent）为例，深入探讨错误分析过程。如果分析发现“网络搜索结果质量差”是主要瓶颈，您会如何设计一个组件级评估方案来指导对此组件的改进？</li>
+<li>讨论“构建”与“分析”在 Agentic AI 系统开发中的相互关系。为什么说只注重“构建”而忽略系统性“分析”的团队效率会较低？</li>
+<li>在改进一个表现不佳的LLM组件时，何时应优先选择改进提示工程，何时应考虑替换模型，又在何种极端情况下才应诉诸成本高昂的微调（Fine-tuning）？请阐述您的决策逻辑。</li>
+</ol>
+<h2 id="关键术语词汇表">关键术语词汇表</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>术语 (英文)</th><th>术语 (中文)</th><th>定义</th></tr></thead><tbody><tr><td>Agentic AI Workflow</td><td>Agentic AI 工作流</td><td>一种由多个步骤组成的自动化系统，通常结合了大型语言模型（LLM）和外部工具来完成复杂任务。</td></tr><tr><td>Evaluation (eval)</td><td>评估 (eval)</td><td>一个用于衡量 Agentic 系统性能的流程，通过建立测试集和评估标准来量化系统输出的质量。</td></tr><tr><td>Error Analysis</td><td>错误分析</td><td>一种系统性地检查系统错误案例以确定性能瓶颈位于哪个组件的过程，从而指导后续的优化工作。</td></tr><tr><td>Trace</td><td>追踪</td><td>在一次 Agent 运行中，所有中间步骤输出的完整集合。</td></tr><tr><td>Span</td><td>跨度</td><td>Agent 工作流中单个步骤的输出。</td></tr><tr><td>End-to-end Eval</td><td>端到端评估</td><td>对整个工作流从最初输入到最终输出的整体性能进行的评估。</td></tr><tr><td>Component-level Eval</td><td>组件级评估</td><td>针对工作流中某个特定组件（如网络搜索或数据提取）的性能进行的独立评估。</td></tr><tr><td>Per-example Ground Truth</td><td>逐例基准真相</td><td>为评估集中的每个单独样本手动标注的正确答案或理想输出。</td></tr><tr><td>LLM-as-a-judge</td><td>LLM作为评判者</td><td>使用一个大型语言模型来对另一个AI系统的输出进行主观性或复杂性较高的评估。</td></tr><tr><td>Few-shot Prompting</td><td>少样本提示</td><td>在提示中提供一个或多个具体的输入输出示例，以指导LLM更好地完成任务。</td></tr><tr><td>Fine-tuning</td><td>微调</td><td>在特定数据集上进一步训练一个预训练模型，使其更适应特定任务，通常比提示工程更复杂和昂贵。</td></tr><tr><td>Hyperparameters</td><td>超参数</td><td>在组件中可以调整的参数，用于控制其行为，例如RAG系统中的块大小（chunk size）或相似度阈值。</td></tr><tr><td>Latency</td><td>延迟</td><td>系统完成一个任务或一个步骤所需的时间。</td></tr><tr><td>PII (Personally Identifiable Information)</td><td>个人可识别信息</td><td>能够用于识别特定个人的敏感信息，如姓名、社会安全号码、地址等。</td></tr><tr><td>RAG (Retrieval-Augmented Generation)</td><td>检索增强生成</td><td>一种系统，通过从外部知识库中检索相关信息来增强大型语言模型的生成能力。</td></tr></tbody></table>  </div> </section><section class="reader-content chapter-prose" data-module-panel="lecnotes-zh" hidden data-astro-cid-i3k527kx> <div class="chapter-prose">  <h1 id="模块4构建-agentic-ai-的实用技巧andrew-ngagentic-ai">模块4：构建 Agentic AI 的实用技巧「Andrew Ng：Agentic AI」</h1>
+<h2 id="41-评估evals">4.1 评估（Evals）</h2>
+<p>在本模块中，我想与你分享一些构建 Agentic AI 工作流的实用技巧。我希望这些技巧能让你在构建这类系统时，比普通开发者效率高得多。</p>
+<p>我发现，在开发一个 Agentic AI 系统时，很难预先知道它在哪里能行得通，又在哪里效果不佳，因此也很难知道应该将精力集中在哪里。所以一个非常普遍的建议是，先尝试构建一个哪怕是粗糙的系统，这样你就可以试用它，观察它，看看在哪些地方它可能还没有达到你期望的效果，从而能够更有针对性地进行进一步的开发。相比之下，我发现花好几周时间坐着理论化和假设如何构建它，有时效果反而不佳。通常更好的做法是，以一种安全、合理、不泄露数据的方式，负责任地快速构建一些东西，这样你就可以观察它，然后利用这个初始原型来确定优先级并尝试进一步的开发。</p>
+<p>让我们从一个例子开始，看看在你构建了一个原型之后可能会发生什么。</p>
+<h4 id="示例一发票处理">示例一：发票处理</h4>
+<p>我想用我们之前见过的发票处理工作流作为第一个例子，其任务是提取四个必需的字段，然后将它们保存到数据库记录中。在构建了这样一个系统之后，你可能会做的一件事是，找几张发票，也许是10或20张，然后过一遍，看看它们的输出，看看哪些处理得好，是否有任何错误。</p>
+<p>假设你检查了20张发票，你发现第一张发票没问题，输出看起来是正确的。对于第二张发票，它可能混淆了发票日期（即发票开具的日期）和发票的到期日。在这个任务中，我们想要提取的是到期日，这样我们才能按时付款。于是，我可能会在一个文档或电子表格中记下，对于第二张发票，日期搞混了。也许第三、第四张发票都没问题，依此类推。但当我过完这些例子后，我发现有很多例子都混淆了日期。</p>
+<p>正是基于对这样一些例子的检查，在这种情况下，你可能会得出结论：一个常见的错误模式是，它在处理日期方面有困难。那样的话，你可能会考虑的一件事，当然是找出如何改进你的系统，让它能更好地提取到期日，但同时，也许也可以编写一个评估（eval）来衡量它提取到期日的准确性。相比之下，如果你发现它错误地提取了开票方地址——谁知道呢，也许你的开票方有不寻常的名字，所以它可能在处理开票方上遇到困难，特别是如果你有国际开票方，他们的名字甚至可能不全是英文字母——那么你可能会转而专注于为开票方地址构建一个评估。</p>
+<p>所以，为什么构建一个粗糙的系统并查看其输出如此有帮助，原因之一是，它甚至能帮助你决定，你最想投入精力去评估的是什么。</p>
+<p>现在，如果你已经决定要修改你的系统，以提高它提取发票到期日的准确性，那么为了跟踪进展，创建一个评估来衡量日期提取的准确性可能是个好主意。实现这一点可能有多种方法，但我来分享一下我可能会怎么做。</p>
+<p>为了创建一个测试集或评估集，我可能会找10到20张发票，并手动写下它们的到期日。所以，也许一张发票的到期日是2025年8月20日，我把它写成标准的“年-月-日”格式。然后，为了便于稍后在代码中进行评估，我可能会在给 LLM 的提示中告诉它，总是将到期日格式化为这种“年-月-日”的格式。这样，我就可以编写代码来提取 LLM 输出的那个日期，也就是到期日，因为那是我们关心的唯一日期。这是一个正则表达式，用于模式匹配，你知道的，四位数的年份，两位数的月份，两位数的日期，然后把它提取出来。接着我就可以直接编写代码来测试提取出的日期是否等于实际日期，也就是我写下的标准答案。</p>
+<p>所以，有了一个包含大约20张发票的评估集，我就可以进行构建和修改，看看随着我调整提示或系统的其他部分，它正确提取日期的百分比是否在希望中上升。</p>
+<p>总结一下我们到目前为止看到的内容：我们构建一个系统，然后查看输出以发现它可能表现不佳的地方，比如到期日错误。然后，为了推动对这个重要输出的改进，我们建立一个小型的评估，比如说只有20个例子，来帮助我们跟踪进展。这让我可以回头去调整提示，尝试不同的算法等等，看看我是否能提升“到期日准确性”这个指标。这就是改进一个 Agentic AI 工作流通常的感觉：查看输出，看哪里错了，如果你知道怎么修复，就直接修复它。但如果你需要一个更长的改进过程，那就建立一个评估，并用它来推动进一步的开发。</p>
+<p>另外需要考虑的一件事是，如果工作了一段时间后，你认为最初的那20个例子不够好，也许它们没有覆盖你想要的所有情况，或者20个例子实在太少，那么你可以随时向评估集中添加更多的例子，以确保它能更好地反映你个人对于系统性能是否足够满意的判断。</p>
+<h4 id="示例二营销文案助手">示例二：营销文案助手</h4>
+<p>这只是一个例子。对于第二个例子，让我们来看构建一个用于为 Instagram 撰写标题的营销文案助手。为了保持简洁，假设我们的营销团队告诉我们，他们希望标题最多不超过10个单词。所以我们会有一张产品图片，比如说一副我们想推广的太阳镜，然后有一个用户查询，比如“请写一个标题来销售这副太阳镜”，接着让一个 LLM 或大型多模态模型来分析图片和查询，并生成对太阳镜的描述。</p>
+<p>一个营销文案助手可能会出错的方式有很多种，但假设你看了输出后发现，生成的文案或文本大体上听起来还行，但有时就是太长了。对于太阳镜的输入，它生成了17个词；对于咖啡机，没问题；对于时尚夹克，没问题；对于蓝衬衫，14个词；对于搅拌机，11个词。所以看起来在这个例子中，LLM 在遵守长度准则方面有困难。</p>
+<p>再次强调，一个营销文案助手可能会出错的地方有很多。但如果你发现它在输出的长度上挣扎，那么你可能会构建一个评估来跟踪这个问题，以便你能做出改进，并确保它在遵守长度准则方面做得越来越好。</p>
+<p>所以，为了创建一个评估来衡量文本长度，你可能会创建一个测试任务集，比如推广一副太阳镜、一台咖啡机等等，也许创建10到20个例子。然后，你会让你的系统处理每一个任务，并编写代码来测量输出的单词数。这是测量一段文本单词数的 Python 代码。最后，你会将生成文本的长度与10个单词的目标限制进行比较。所以，如果单词数小于等于10，那么正确数就加一。</p>
+<p>这个例子与之前的发票处理例子的一个区别是，这里没有每个样本的标准答案。目标就是10，对每个例子都一样。相比之下，对于发票处理的例子，我们必须为每个样本生成一个自定义的目标标签，即发票的正确到期日，然后我们用这个每个样本的标准答案来测试输出。</p>
+<p>我知道我用了一个非常简单的工作流来生成这些标题，但这类评估也可以应用于更复杂的生成工作流。</p>
+<h4 id="示例三研究代理">示例三：研究代理</h4>
+<p>让我谈谈最后一个例子，我们将重温我们一直在研究的研究代理。如果你查看研究代理在不同输入提示下的输出，假设当你要求它写一篇关于黑洞科学最新突破的文章时，你发现它遗漏了一些备受瞩目且新闻报道很多的研究成果。这是一个不理想的结果。或者当你要求它研究在西雅图租房与买房的对比时，它似乎做得很好。或者关于用机器人收割水果，嗯，它没有提到一家领先的设备公司。</p>
+<p>基于这个评估，看起来它有时会遗漏一些人类专家作者会捕捉到的非常重要的观点。于是，我会创建一个评估来衡量它捕捉到最重要观点的频率。</p>
+<p>例如，你可能会想出一些关于黑洞、机器人收割等主题的示例提示。对于每一个主题，都想出，比如说，三到五个“黄金标准”的讨论要点。请注意，这里我们确实有每个样本的标注，因为“黄金标准”的谈话要点，也就是最重要的谈话要点，对于每个例子都是不同的。</p>
+<p>有了这些标准答案的标注，你接下来可能会使用一个“LLM作为评判者”（LLM-as-a-judge）来计算提到了多少个“黄金标准”的谈话要点。一个示例提示可能是：“请确定所提供的文章中出现了五个‘黄金标准’谈话要点中的多少个。” 你会提供提示、文章文本、黄金标准要点等等，然后让它返回一个 JSON 对象，其中包含一个从0到5的分数，以及一个解释。这让你能为你评估集中的每个提示得到一个分数。</p>
+<p>在这个例子中，我使用 LLM 作为评判者来计算提到了多少个谈话要点，因为谈论这些要点的方式多种多样，所以使用正则表达式或简单的模式匹配代码可能效果不佳。这就是为什么你可能会使用 LLM 作为评判者，并将其视为一个稍微主观一些的评估，用来判断比如说，事件视界是否被充分提及。</p>
+<p>这是你如何构建评估的第三个例子。</p>
+<h4 id="评估的两个维度">评估的两个维度</h4>
+<p>为了思考如何为你的应用构建评估，你构建的评估通常必须反映你在应用中看到或担心的任何可能出错的地方。事实证明，广义上讲，评估有两个维度。</p>
+<ul>
+<li><strong>评估方法</strong>：在上面的轴上，是你评估输出的方式。在某些情况下，你通过编写代码进行客观评估；有时你使用 LLM 作为评判者进行更主观的评估。</li>
+<li><strong>标准答案</strong>：在另一个轴上，是看你是否有每个样本的标准答案。
+<ul>
+<li>对于检查发票日期提取，我们编写代码来评估是否得到了实际日期，这有每个样本的标准答案，因为每张发票的实际日期都不同。</li>
+<li>但在我们检查营销文案长度的例子中，每个例子的长度限制都是10，所以那个问题没有每个样本的标准答案。</li>
+<li>相比之下，对于计算“黄金标准”谈话要点，则有每个样本的标准答案，因为每篇文章都有不同的重要谈话要点。但我们使用 LLM 作为评判者来阅读文章，看那些主题是否被充分提及，因为提及这些谈话要点的方式太多了。</li>
+<li>最后一个象限是“LLM作为评判者”且“没有每个样本的标准答案”。我们在用评分标准给图表打分时看到了这一点。这是当我们看咖啡机销售数据可视化时，如果你要求它根据一个评分标准（比如是否有清晰的坐标轴标签等）来创建图表，那么每个图表都使用相同的评分标准，那将是使用 LLM 作为评判者但没有每个样本的标准答案。</li>
+</ul>
+</li>
+</ul>
+<p>我发现这个二乘二的网格，可能是思考你可能为你的应用构建的不同类型评估的一种有用方式。顺便说一下，这些有时也被称为端到端评估，因为一端是输入端，即用户查询提示，另一端是最终输出。所以所有这些都是对整个端到端系统性能的评估。</p>
+<h4 id="总结与技巧">总结与技巧</h4>
+<p>在结束这个视频之前，我想分享一些设计端到端评估的最后几点技巧。</p>
+<ul>
+<li><strong>快速开始</strong>：首先，快速粗糙的评估对于起步来说是可以的。我感觉我看到相当多的团队几乎陷入瘫痪，因为他们认为构建评估是一项需要数周的大工程，所以他们花了比理想中更长的时间才开始。但我认为，就像你迭代一个 agentic 工作流并随着时间的推移让它变得更好一样，你也应该计划着迭代你的评估。所以，如果你先用10、15、20个例子作为你评估的初稿，写一些代码或者尝试提示一个 LLM 作为评判者，总之先做点什么，得到一些可以补充人眼观察输出的指标，然后结合这两者来驱动你的决策。</li>
+<li><strong>迭代改进评估</strong>：随着评估随着时间的推移变得越来越复杂，你就可以把越来越多的信任转移到基于指标的评估上，而不是每次调整某个地方的提示时都需要通读数百个输出。在你经历这个过程时，你很可能也会找到不断改进你评估的方法。所以，如果你一开始有20个例子，你可能会遇到你的评估无法捕捉到你关于哪个系统更好的判断的情况。也许你更新了系统，你看了看觉得这个肯定好多了，但你的评估却未能显示新系统取得了更高的分数。如果是这样，这通常是一个机会，去收集一个更大的评估集，或者改变你评估输出的方式，让它更好地与你关于哪个系统实际上工作得更好的判断相对应。所以你的评估会随着时间的推移而变得更好。</li>
+<li><strong>从评估中获取灵感</strong>：最后，关于利用评估来获得下一步工作灵感方面，许多 agentic 工作流被用来自动化，比如说，人类可以完成的任务。所以我发现对于这类应用，我会寻找那些性能比人类专家差的地方，这通常会给我灵感，让我知道该把精力集中在哪里，或者我应该让我的 agentic 工作流在哪些类型的例子上做得比现在更好。</li>
+</ul>
+<p>我希望在你构建了那个粗糙的系统之后，你能思考一下，在什么时候开始加入一些评估来跟踪系统潜在的有问题的方面是有意义的，并且这会帮助你推动系统的改进。除了帮助你推动改进之外，事实证明，有一种评估方法可以帮助你精确地定位，在你整个 agentic 系统中，哪些组件最值得你关注。因为 agentic 系统通常有很多部分，那么花时间去改进哪个部分会最有成效呢？事实证明，能够做好这一点是推动 agentic 工作流高效开发的一项非常重要的技能。在下一个视频中，我想深入探讨这个主题。那么，让我们进入下一个视频。</p>
+<h2 id="42-错误分析与确定下一步的优先级">4.2 错误分析与确定下一步的优先级</h2>
+<p>假设你已经构建了一个 agentic 工作流，但它的效果还没有达到你的期望——顺便说一句，这在我身上经常发生，我常常会构建一个粗糙的系统，而它的表现不如我所愿。问题是，你应该把精力集中在哪里来让它变得更好？事实证明，agentic 工作流有许多不同的组件，而改进某些组件可能比改进另一些组件要有成果得多。所以，你选择将精力集中在哪里的能力，对你改进系统的速度有着巨大的影响。</p>
+<p>我发现，预测一个团队效率和能力高低的最大因素之一，就是他们是否能够推动一个规范的错误分析流程，来告诉你应该将精力集中在哪里。所以，这是一项重要的技能。让我们来看一看如何进行错误分析。</p>
+<p>在研究代理的例子中，我们在上一个视频中进行了一次错误分析，我们看到它在撰写某些主题的文章时，常常遗漏了人类专家会提到的关键点。所以，现在你发现了这个问题——有时会遗漏关键点——你怎么知道该做什么呢？</p>
+<p>事实证明，在这个工作流的众多不同步骤中，几乎任何一步都可能导致“遗漏关键点”这个问题。例如，也许是第一个 LLM 生成的搜索词不够好，所以它搜索了错误的东西，没有发现正确的文章。或者，也许你用的网络搜索引擎本身就不太好。市面上有多个网络搜索引擎，实际上我自己在我的基础应用中倾向于使用的就有好几个，有些比其他的要好。或者，也许网络搜索没问题，但是当我们把网络搜索结果的列表给 LLM 时，它可能在选择最好的几个来下载方面做得不好。网页获取在这个案例中问题可能较少，假设你能准确地获取网页内容。但在把网页内容扔给 LLM 后，也许 LLM 忽略了我们获取的文档中的一些要点。</p>
+<p>事实证明，有些团队有时看到这种情况，会凭直觉选择其中一个组件来改进，有时这能奏效，但有时这会导致数月的工作却在系统整体性能上收效甚微。所以，与其凭直觉来决定在这么多组件中改进哪一个，我认为进行错误分析以更好地理解工作流中的每一步，要好得多。</p>
+<p>特别是，我经常会检查“轨迹”（traces），也就是每一步之后的中间输出，以便了解哪个组件的性能不佳——比如说，比人类专家在类似情况下会做的要差得多——因为这指出了哪里可能有安全改进的空间。</p>
+<p>让我们来看一个例子。如果我们要求研究代理写一篇关于黑洞科学最新新闻的文章，也许它输出的搜索词是这样的：“黑洞理论 爱因斯坦”、“事件视界望远镜 射电”等等。然后我会让一个人类专家看看这些，判断这些对于撰写关于黑洞科学最新发现的文章来说，是不是合理的网络搜索词。也许在这种情况下，专家说，这些网络搜索看起来还行，和我作为人类会做的差不多。</p>
+<p>然后，我查看网络搜索的输出，看看返回的 URL。网络搜索会返回许多不同的网页，也许返回的一个网页是来自“天文小天才新闻”的《一名小学生声称解开了一个30年之久的黑洞之谜》。这看起来不像是一篇最严谨的、经过同行评审的文章。也许检查完网络搜索返回的所有文章后，你得出结论，它返回了太多的博客或大众媒体类型的文章，而没有足够多的科学文章来撰写你所期望质量的研究报告。</p>
+<p>最好也检查一下其他步骤的输出。也许 LLM 尽其所能找到了最好的五个来源，结果你得到的是“天文小天才新闻”、“太空机器人2000”、“太空趣闻”等等。正是通过查看这些中间输出，你才能对每一步输出的质量有一个概念。</p>
+<p>介绍一些术语，所有中间步骤的整体输出集合通常被称为这次代理运行的“轨迹”（trace）。你在其他资料中可能还会看到一个术语，单一步骤的输出有时被称为“跨度”（span）。这个术语来自计算机可观测性文献，人们试图弄清楚计算机在做什么。在本课程中，我用“轨迹”这个词比较多，用“跨度”这个词会少一些，但你可能在网上看到这两个术语。</p>
+<p>所以，通过阅读轨迹，你开始对哪里可能是最有问题的组件有了一个非正式的感觉。为了更系统地做到这一点，将你的注意力集中在系统表现不佳的案例上是很有用的。也许它写的一些文章很好，输出完全令人满意，那么我会把那些放在一边，试着找出一些例子，在这些例子中，由于某种原因，你的研究代理的最终输出不尽如人意，然后只关注那些例子。这就是我们称之为错误分析的原因之一，因为我们想关注系统出错的案例，我们想通过分析来找出哪些组件对研究代理输出的错误负有最大责任。</p>
+<p>为了让这个过程更严谨，而不是仅仅通过阅读来获得一个非正式的感觉，你实际上可以建立一个电子表格，来更明确地统计错误出在哪里。我所说的“错误”，指的是当一个步骤输出的东西，其表现显著差于一个人类专家在给定类似输入时可能会给出的结果。我经常自己用电子表格来做这件事。</p>
+<p>所以，我可能会建立一个这样的电子表格。对于第一个查询，我会看“黑洞科学的最新发展”。我看到搜索结果中有太多的博客文章、大众媒体文章，没有足够的科学论文。然后基于此，确实，最好的五个来源也不怎么样。但在这里我不会说选择最好的五个来源这一步做得不好，因为如果输入给 LLM 用于选择最好五个来源的都是不严谨的文章，那么我不能责怪这一步没有选出更好的文章，因为它已经尽力了，或者说，在给定同样的选择范围下，它做得和任何人类可能做的差不多好。</p>
+<p>然后你可能会为不同的提示重复这个过程。“在西雅图租房与买房”，也许它错过了一个知名的博客。“用机器人收割水果”，也许在这种情况下，我们看了看然后说：“哦，搜索词太笼统了”，然后搜索结果也不好，等等。然后基于此，我会在我的电子表格中统计我观察到不同组件出错的频率。</p>
+<p>所以在这个例子中，我对搜索词不满意的比例是5%，但我对搜索结果不满意的比例是45%。如果我真的看到这个结果，我可能会仔细检查一下搜索词，确保搜索词真的没问题，并且搜索词选择不佳不是导致搜索结果差的原因。但如果我真的认为搜索词没问题，但搜索结果不行，那么我就会仔细看看我正在使用的网络搜索引擎，以及是否有任何参数可以调整，让它返回更相关或更高质量的结果。正是这类分析告诉我，在这个例子中，我真的应该把注意力集中在修复搜索结果上，而不是这个 agentic 工作流的其他组件上。</p>
+<p>在结束这个视频之前，我发现养成查看轨迹的习惯是很有用的。在你构建了一个 agentic 工作流之后，去看看中间的输出，感受一下它在每一步实际上在做什么，这样你就能更好地理解不同步骤的表现是好是坏。而一个更系统的错误分析，也许用电子表格来做，可以让你收集统计数据或计算出哪个组件最常表现不佳。所以，通过查看哪些组件表现不佳，以及我有哪些能有效改进不同组件的想法，这会让你能够优先处理哪个组件。也许一个组件有问题，但我没有任何改进它的想法，那这可能意味着不要把它放在那么高的优先级。但如果有一个组件产生了很多错误，并且我有如何改进它的想法，那么这将是优先处理该组件的一个很好的理由。</p>
+<p>我只想强调，错误分析对于你决定将精力集中在哪里，是一个非常有帮助的输出。因为在任何复杂的系统中，你可以做的事情太多了。很容易就选择一件事去做，然后花上几周甚至几个月，结果后来发现那并没有给你的整个系统带来性能上的提升。所以，利用错误分析来决定将精力集中在哪里，对于提高你的效率来说，被证明是极其有用的。</p>
+<p>在这个视频中，我们用研究代理的例子讲解了错误分析，但我认为错误分析是如此重要的一个主题，我想和你再看一些其他的例子。那么，让我们进入下一个视频，在那里我们将看到更多的错误分析例子。</p>
+<h2 id="43-更多错误分析示例">4.3 更多错误分析示例</h2>
+<p>我发现，对于许多开发者来说，只有通过看多个例子，你才能练习并磨练出如何进行错误分析的直觉。所以，让我们再看两个例子，我们将看看发票处理和回应客户邮件。</p>
+<h4 id="示例一发票处理-1">示例一：发票处理</h4>
+<p>这是我们用于发票处理的工作流，我们有一个清晰的流程，让一个 agentic 工作流遵循，即识别四个必需的字段，然后将它们记录在数据库中。在本模块的第一个视频的例子中，我们说过系统经常在发票的到期日上犯错。所以我们可以进行错误分析，试图找出这可能是由哪个组件造成的。</p>
+<p>例如，是 PDF 到文本的转换出了错，还是 LLM 从 PDF 到文本组件的输出中提取了错误的日期？</p>
+<p>为了进行错误分析，我会尝试找一些提取日期不正确的例子。和上一个视频一样，关注那些性能不佳的例子是很有用的，这样可以试图找出那些例子出了什么问题。所以，忽略那些日期正确的例子，试着找10到100张日期错误的发票。然后我会仔细检查，试图弄清楚问题的原因是 PDF 到文本转换把日期搞错了，还是 LLM 在给定 PDF 到文本输出的情况下，提取了错误的日期。</p>
+<p>所以，你可能会建立一个像这样的小电子表格，过一遍20张发票，然后统计一下，PDF 到文本转换错误地提取了日期或文本，以至于即使是人类也无法判断到期日是什么的情况有多频繁，相对于 PDF 到文本看起来足够好，但 LLM 在被要求提取日期时，不知何故提取了错误的日期，比如可能把发票日期识别成了发票的到期日。</p>
+<p>在这个例子中，看起来 LLM 的数据提取导致了更多的错误。这告诉我，也许我应该把精力集中在 LLM 数据提取组件上，而不是 PDF 到文本转换上。这一点很重要，因为如果没有这个错误分析，我可以想象一些团队会花上几周甚至几个月的时间来调整 PDF 到文本转换，结果在那个时间之后才发现，这对最终系统的性能并没有产生多大影响。哦，顺便说一下，底部的这些百分比加起来可以不等于100%，因为这些错误不是相互排斥的。</p>
+<h4 id="示例二回应客户邮件">示例二：回应客户邮件</h4>
+<p>最后一个例子，让我们回到用于回应客户邮件的 agentic 工作流。在这个工作流中，LLM 在收到像这样询问订单的客户邮件后，会提取订单详情，从数据库中获取信息，然后起草一份供人工审查的回复。</p>
+<p>同样，我会找一些例子，在这些例子中，由于某种原因，最终的输出不尽人人意，然后试图找出哪里出了问题。一些可能出错的地方包括：</p>
+<ul>
+<li>也许 LLM 写了一个不正确的数据库查询，所以当查询发送到数据库时，它没有成功地提取出客户信息。</li>
+<li>也许数据库的数据本身是损坏的，所以即使 LLM 写了一个完全合适的数据库查询（也许是用 SQL 或其他查询语言），数据库也没有正确的信息。</li>
+<li>也许在给定关于客户订单的正确信息后，LLM 写的邮件不知何故不太对劲。</li>
+</ul>
+<p>所以，我会再次查看几封最终输出不理想的邮件，并试图找出哪里出了问题。也许在第一封邮件中，我们发现 LLM 在查询中请求了错误的表，也就是在创建数据库查询的方式上请求了错误的数据。在第二封邮件中，也许我发现数据库实际上有一个错误，并且在给定那个输入的情况下，LLM 不知何故也写了一封不太理想的邮件，等等。</p>
+<p>在这个例子中，在过了一遍许多邮件之后，也许我发现最常见的错误是 LLM 编写数据库查询（比如说 SQL 查询）以获取相关信息的方式。而数据库大部分是正确的，尽管那里有一点数据错误。并且 LLM 写邮件的方式也有一些错误，也许它在30%的情况下写得不太对。</p>
+<p>这告诉我，最值得我花力气改进的，可能是 LLM 编写查询的方式。第二重要的大概是改进我如何编写最终邮件的提示。像这样的分析可以告诉你，75% 的错误——也许系统在很多事情上都做对了，但在所有它做得不太对的事情中，75% 的问题都来自数据库查询。这是极其有用的信息，可以告诉你应该把精力集中在哪里。</p>
+<p>当我在开发 Agentic AI 工作流时，我经常会使用这种类型的错误分析来告诉我下一步应该把注意力集中在什么上。当你做出了那个决定后，事实证明，为了补充我们在本模块前面谈到的端到端评估，通常评估的不仅仅是整个端到端系统，还有单个组件，这样做是很有用的。因为这可以让你更有效地改进那个，比如说，错误分析让你决定把注意力集中在其上的组件。</p>
+<p>所以，让我们进入下一个视频，学习关于组件级评估。</p>
+<h2 id="44-组件级评估">4.4 组件级评估</h2>
+<p>让我们来看一看如何构建和使用组件级评估。</p>
+<p>在我们研究代理的例子中，我们说过研究代理有时会遗漏关键点。但如果问题出在网络搜索上，如果我们每次更换网络搜索引擎，都需要重新运行整个工作流，那虽然能给我们一个很好的性能指标，但那种评估的成本很高。此外，这是一个相当复杂的工作流，所以即使网络搜索让事情好了一点点，也许其他组件的随机性引入的噪音，会使得更难看出网络搜索质量的微小改进。</p>
+<p>所以，作为只使用端到端评估的替代方案，我会考虑构建一个专门用来衡量网络搜索组件质量的评估。例如，要衡量网络搜索结果的质量，你可能会创建一个“黄金标准”网络资源列表。对于少数几个查询，让一个专家说：“这些是最权威的来源，如果有人在网上搜索，他们真的应该找到这些网页，或者这些网页中的任何一个都是好的。” 然后你可以编写代码来捕捉网络搜索输出中有多少与“黄金标准”网络资源相对应。信息检索领域的标准指标，F1 分数——如果你不知道那是什么意思，别担心细节——但有一些标准指标可以让你衡量，在网络搜索返回的一系列网页中，有多少与专家确定的“黄金标准”网络资源重叠。</p>
+<p>有了这个，你现在就有了评估网络搜索组件质量的方法。所以，当你改变你如何进行网络搜索的参数或超参数时，比如当你换入换出不同的网络搜索引擎——也许试试 Google、Bing、DuckDuckGo、Tavily 和 You.com 等等——或者当你改变结果数量，或者当你改变你要求搜索引擎搜索的日期范围时，这可以让你非常迅速地判断网络搜索组件的质量是否在提升，并且能做出更具增量性的改进。</p>
+<p>当然，在你宣布工作完成之前，最好还是运行一次端到端评估，以确保在调整了你的网络搜索系统一段时间后，你确实在提升整个系统的性能。但在一次次调整这些超参数的过程中，通过只评估一个组件，而不是每次都需要重新运行端到端评估，你可以做得更有效率得多。</p>
+<p>所以，组件级评估可以为特定的错误提供更清晰的信号。它实际上能让你知道你是否在改进网络搜索组件或你正在处理的任何组件，并避免整个端到端系统的复杂性所带来的噪音。如果你在一个项目中，有不同的团队专注于不同的组件，那么让一个团队只拥有自己非常明确的优化指标，而无需担心所有其他组件，也可能更有效率。这让团队能够更快地处理一个更小、更有针对性的问题。</p>
+<p>所以，当你决定要改进一个组件时，可以考虑一下是否值得建立一个组件级别的评估，以及这是否能让你在提升该组件性能方面走得更快。现在，你可能在想的一件事是，如果你决定要改进一个组件，你到底该如何让那个组件工作得更好呢？让我们在下一个视频中看一些这方面的例子。</p>
+<h2 id="45-如何解决你发现的问题">4.5 如何解决你发现的问题</h2>
+<p>一个 agentic 工作流可能包含许多不同类型的组件，因此你用于改进不同组件的工具也会大相径庭。但我想与你分享一些我看到的通用模式。</p>
+<h4 id="改进非-llm-组件">改进非 LLM 组件</h4>
+<p>你 agentic 工作流中的一些组件将是非基于 LLM 的，所以它可能是像网络搜索引擎或文本检索组件（如果那是你 RAG 或检索增强生成系统的一部分），或者是用于代码执行的东西，或者也许是一个单独训练的机器学习模型，比如用于语音识别或在图片中检测人等等。有时这些非基于 LLM 的组件会有你可以调整的参数或超参数。</p>
+<ul>
+<li><strong>网络搜索</strong>：你可以调整像结果数量或你要求搜索引擎考虑的日期范围这样的东西。</li>
+<li><strong>RAG 文本检索</strong>：你可能会改变决定哪些文本片段被认为是相似的相似度阈值，或者块大小（chunk size）。RAG 系统通常会将文本切成更小的块进行匹配，所以这些都是你可以使用的主要超参数。</li>
+<li><strong>人体检测</strong>：你可能会改变检测阈值，即它的敏感度以及它有多大可能宣布发现了人，这将在误报和漏报之间进行权衡。</li>
+</ul>
+<p>如果你没有跟上我刚才讨论的所有超参数的细节，别担心。细节不是那么重要，但通常组件都会有你可以调整的参数。当然，你也可以尝试替换组件。我在我的 agentic 工作流中经常这样做，我会换入不同的 RAG 搜索引擎或换入不同的 RAG 提供商等等，只是为了看看是否有其他提供商可能效果更好。由于非基于 LLM 的组件的多样性，我认为如何改进它的技术会更加多样化，并且取决于该组件具体在做什么。</p>
+<h4 id="改进-llm-组件">改进 LLM 组件</h4>
+<p>对于一个基于 LLM 的组件，这里有一些你可能会考虑的选项。</p>
+<ul>
+<li><strong>改进你的提示</strong>：一个方法是尝试改进你的提示。也许可以尝试添加更明确的指令。或者，如果你知道什么是少样本提示（few-shot prompting），那指的是添加一个或多个具体的例子，即一个输入示例和一个期望的输出。所以，少样本提示（你也可以从一些深度学习的短期课程中学到）是一种技术，可以给你的 LLM 一些例子，希望能帮助它写出性能更好的输出。</li>
+<li><strong>尝试不同的 LLM</strong>：你也可以尝试一个不同的 LLM。使用 AI Suite 或其他工具，尝试多个 LLM 可能相当容易，然后你可以用评估来为你的应用挑选最好的模型。</li>
+<li><strong>分解任务</strong>：有时，如果一个步骤对于一个 LLM 来说太复杂，你可以考虑是否要将任务分解成更小的步骤。或者也许把它分解成一个生成步骤和一个反思步骤。但更普遍的是，如果你在一个步骤内有非常复杂的指令，也许单个 LLM 很难遵循所有这些指令。你可以把任务分解成更小的步骤，这样可能更容易让，比如说，连续两三次的调用准确地执行。</li>
+<li><strong>微调模型</strong>：最后，当其他方法效果不够好时，可以考虑微调一个模型。这通常比其他选项要复杂得多，所以在开发者实现的时间成本上也可能昂贵得多。但如果你有一些数据可以用来微调一个 LLM，那可能会给你带来比单独使用提示好得多的性能。所以我倾向于在真正用尽了其他选项之前，不去微调模型，因为微调通常相当复杂。但对于一些应用，在尝试了所有其他方法后，如果我仍然停留在，比如说，90% 或 95% 的性能，而我真的需要挤出最后那几个百分点的改进，那么有时微调我自己的定制模型是一个很好的技术。我倾向于只在更成熟的应用上这样做，因为它成本很高。</li>
+</ul>
+<h4 id="磨练你对-llm-的直觉">磨练你对 LLM 的直觉</h4>
+<p>事实证明，当你在尝试选择一个 LLM 来使用时，如果你对不同大型语言模型的智能程度或能力有很好的直觉，这对你作为开发者来说是非常有帮助的。一种方法就是尝试很多模型，看看哪个效果最好。但我发现，随着我与不同模型的合作，我开始磨练出关于哪些模型对哪些类型的任务效果最好的直觉。当你磨练出那些直觉时，你在为模型编写好的提示以及为你的任务选择好的模型方面也会更有效率。所以我想与你分享一些关于如何磨练你对哪些模型将对你的应用效果良好的直觉的想法。</p>
+<p>让我们用一个例子来说明这一点，即使用 LLM 来遵循指令以删除或编辑个人可识别信息（PII），也就是移除私密的敏感信息。例如，如果你正在使用一个 LLM 来总结客户电话，那么一个总结可能是：“在2023年7月14日，杰西卡·阿尔瓦雷斯，社会安全号码为 XXX，地址在 YYY，提交了一个业务支持工单，等等。” 这段文本含有很多敏感的、个人可识别的信息。现在，假设我们想从这类总结中移除所有的 PII，因为我们想用这些数据进行下游的统计分析，了解客户来电的原因。为了保护客户信息，我们想在进行下游统计分析之前，剥离掉那些 PII。</p>
+<p>所以你可能会用一些指令来提示一个 LLM，比如：“请识别下面文本中所有 PII 的情况，然后返回编辑后的文本，用‘[已编辑]’等代替。” 事实证明，规模更大的前沿模型在遵循指令方面往往要好得多，而较小的模型在回答简单的、事实性的问题上往往相当不错，但在遵循指令方面就不那么擅长了。</p>
+<p>如果你在一个较小的模型上运行这个提示，比如 OpenWay Llama 3.1 8B 参数模型，那么它可能会生成一个像这样的输出。它说：“识别出的 PII 是社会安全号码和地址”，然后它如下编辑：“……”。它实际上犯了几个错误。它没有正确地遵循指令，它先显示了列表，然后编辑了文本，然后又返回了另一个它不应该返回的列表。在这个 PII 列表中，它漏掉了名字。然后我想它也没有完全编辑掉地址的一部分。所以细节不重要，但它没有完美地遵循这些指令，而且可能漏掉了一点 PII。</p>
+<p>相比之下，如果你使用一个更智能的模型，一个更擅长遵循指令的模型，你可能会得到一个更好的结果，像这样，它实际上正确地列出了所有的 PII，并正确地编辑了所有的 PII。</p>
+<p>所以我发现，随着不同的 LLM 提供商专注于不同的任务，不同的模型确实在不同的任务上表现更好。有些更擅长编码，有些更擅长遵循指令，有些更擅长某些特定领域的事实。如果你能磨练出对哪些模型或多或少更智能，以及它们或多或少能遵循哪种类型的指令的直觉，那么你就能在选择使用哪个模型上做出更好的决定。</p>
+<p>所以分享几个如何做到这一点的技巧：</p>
+<ul>
+<li><strong>经常试用不同的模型</strong>：我鼓励你经常试用不同的模型。每当有新模型发布时，我常常会去试用它，在上面尝试不同的查询，包括闭源的专有模型和开源的模型。我发现有时拥有一个私人的评估集也可能很有帮助，就是你向很多不同模型都问的一系列问题，这可能帮助你校准它们在不同类型任务上的表现。</li>
+<li><strong>阅读他人的提示</strong>：我经常做的另一件事，我希望对你有用，就是我花很多时间阅读别人写的提示。有时人们会在网上公布他们的提示，我常常会去读它们，以了解提示的最佳实践是什么样的。或者我常常会和我朋友们聊天，他们在各种公司，包括一些前沿模型公司，我会和他们分享我的提示，看看他们是怎么提示的。有时我也会去找一些我非常尊敬的人写的开源包，下载那个开源包，然后深入挖掘那个开源包，找到作者们写的提示，为了阅读它，为了磨练我关于如何写好提示的直觉。这是我鼓励你考虑的一个技巧，就是通过阅读大量别人写的提示，这将帮助你自己写得更好。我当然经常这样做，我也鼓励你这样做。这将磨练你关于模型擅长遵循哪种类型的指令，以及何时对不同模型说某些话的直觉。</li>
+<li><strong>在你的工作流中测试</strong>：除了试用模型和阅读别人的提示，如果你在你的 agentic 工作流中尝试很多不同的模型，那也能让你磨练直觉。所以你会看到哪些模型对哪些类型的任务效果最好，无论是通过查看轨迹来获得一个非正式的感觉，还是通过查看组件级或端到端的评估，都可以帮助你评估不同模型在你工作流的不同部分表现如何。然后你开始磨练出不仅是关于性能，也可能是关于使用不同模型的成本和速度权衡的直觉。我倾向于用 AI Suite 来开发我的 agentic 工作流的原因之一，就是因为它使得快速换出和尝试不同模型变得容易。这让我在尝试和评估哪个模型对我的工作流效果最好方面更有效率。</li>
+</ul>
+<p>我们已经谈了很多关于如何提升不同组件的性能，以期提升你端到端系统的整体性能。除了提升输出的质量，你在你的工作流中可能还想做的另一件事，是优化延迟和成本。我发现，对于很多团队来说，当你开始开发时，通常第一件要担心的事就是输出的质量是否足够高。但当系统工作良好并投入生产后，让它运行得更快以及成本更低，通常也很有价值。所以在下一个视频中，让我们来看一些关于为 agentic 工作流提升成本和延迟的想法。</p>
+<h2 id="46-延迟与成本优化">4.6 延迟与成本优化</h2>
+<p>在构建 agentic 工作流时，我常常会建议团队先专注于获得高质量的输出，而只在稍后才去优化成本和延迟。这并不是说成本和延迟不重要，而是我认为让性能或输出质量达到高水平通常是最难的部分，只有当它真的能工作时，才或许该关注其他事情。</p>
+<p>有几次发生在我身上的事是，我的团队构建了一个 agentic 工作流，我们把它交付给用户，然后我们很幸运地有那么多用户使用它，以至于成本真的成了一个问题，然后我们不得不手忙脚乱地把成本降下来。但这是一个好问题，所以我倾向于不那么担心成本。不是说我完全忽略它，只是它在我担心的事情清单上排名较低，直到我们有了那么多用户，以至于我们真的需要降低每个用户的成本。然后是延迟，我倾向于会担心一点，但同样，不如确保输出质量高那么担心。但当你真的到了那个阶段，拥有优化延迟和成本的工具将会很有用。让我们来看一些关于如何做到这一点的想法。</p>
+<h4 id="优化延迟">优化延迟</h4>
+<p>如果你想优化一个 agentic 工作流的延迟，我常常会做的一件事是，对工作流进行基准测试或计时。所以在这个研究代理中，它需要多个步骤，如果我为每个步骤计时，也许 LLM 需要7秒来生成搜索词，网络搜索需要5秒，这个需要3秒，这个需要11秒，然后写最终的文章平均需要18秒。正是通过看这个整体的时间线，我才能知道哪些组件有最大的提速空间。</p>
+<p>在这个例子中，你可能可以尝试多种方法。如果你还没有利用某些步骤的并行性，比如网页获取，也许值得考虑并行执行其中一些操作。或者，如果你发现某些 LLM 步骤耗时太长，比如第一个步骤需要7秒，最后一个 LLM 步骤需要18秒，我也可能会考虑尝试一个更小的、也许智能程度稍低的模型，看看它是否仍然能足够好地工作，或者我是否能找到一个更快的 LLM 提供商。网上有很多不同 LLM 接口的 API，有些公司有专门的硬件，让他们能够更快地提供某些 LLM 服务，所以有时值得尝试不同的 LLM 提供商，看看哪些能最快地返回 token。但至少，做这种类型的计时分析可以让你知道该把降低延迟的重点放在哪些组件上。</p>
+<h4 id="优化成本">优化成本</h4>
+<p>在优化成本方面，一个类似的计算，即你计算每一步的成本，也能让你进行基准测试并决定该关注哪些步骤。许多 LLM 提供商根据输入和输出的长度按 token 收费。许多 API 提供商按 API 调用次数收费，而计算步骤的成本可能根据你如何支付服务器容量以及服务成本而有所不同。</p>
+<p>所以对于这样一个流程，你可能会在这个例子中确定，这个 LLM 步骤的 token 平均花费0.04美分，每次网络搜索 API 可能花费1.6美分，token 花费这么多，API 调用花费这么多，PDF 到文本转换花费这么多，最终文章生成的 token 花费这么多。这也许会再次让你知道，是否有更便宜的组件或更便宜的 LLM 可以使用，看看哪里是优化成本的最大机会。</p>
+<p>我发现这些基准测试练习可以非常清晰地揭示问题，有时它们会明确地告诉我，某些组件根本不值得担心，因为它们对成本或延迟的贡献不大。所以我发现，当成本或延迟成为问题时，通过简单地测量每一步的成本和/或延迟，通常能给你一个基础，让你决定该重点优化哪些组件。</p>
+<p>我们即将结束本模块。我知道我们讲了很多，但感谢你坚持到现在。让我们进入本模块的最后一个视频来做个总结。</p>
+<h2 id="47-开发流程总结">4.7 开发流程总结</h2>
+<p>我们已经讲了很多关于推动一个规范、高效的流程来构建 Agentic AI 系统的技巧。我想通过分享一下经历这个过程的感觉来做个总结。</p>
+<p>当我在构建这些工作流时，我觉得我常常花时间在两大活动上：</p>
+<ol>
+<li><strong>构建</strong>：即编写软件，尝试编写代码来改进我的系统。</li>
+<li><strong>分析</strong>：这有时感觉不像是在取得进展，但我认为它同样重要，即进行分析以帮助我决定下一步该把构建的精力集中在哪里。</li>
+</ol>
+<p>我常常在构建和分析（包括像错误分析这样的事情）之间来回切换。例如，当构建一个新的 agentic 工作流时，我常常会从快速构建一个端到端系统开始，也许甚至是一个粗糙的实现。这让我可以接着开始检查端到端系统的最终输出，或者通读轨迹，来感受一下它在哪里做得好，在哪里做得差。</p>
+<p>仅仅通过看轨迹，有时这会给我一个直观的感觉，让我知道可能想改进哪些单个组件。所以，我可能会去调整一些单个组件，或者继续调整整个端到端系统。随着我的系统开始变得更成熟一些，那么除了手动检查几个输出和通读轨迹之外，我可能会开始构建评估，并拥有一个小的数据集，也许只有10-20个例子，来计算指标，至少是关于端到端性能的指标。这会进一步帮助我对如何改进端到端系统或如何改进单个组件有一个更精细的看法。</p>
+<p>随着它进一步成熟，我的分析可能会变得更加规范，我会开始做错误分析，检查各个组件，并尝试统计单个组件导致不佳输出的频率。这种更严谨的分析会让我能够更专注地决定下一步要处理哪些组件，或者激发改进整个端到端系统的想法。然后最终，当它变得更加成熟，为了推动在组件层面更有效的改进时，那时我也可能会构建组件级的评估。</p>
+<p>所以，构建一个 agentic 系统的工作流常常是来回往复的，它不是一个线性的过程。我们有时会调整端到端系统，然后做一些错误分析，然后改进一下某个组件，接着调整组件级的评估。我倾向于在这两种技术之间来回切换。</p>
+<p>我看到经验较少的团队常常做的是，花大量的时间去构建，而在用错误分析、构建评估等方面进行分析的时间可能远少于理想情况。这并不理想，因为正是这种分析能帮助你真正地把构建的时间花在刀刃上。</p>
+<p>还有一个技巧。实际上有很多工具可以帮助监控轨迹、记录运行时间、计算成本等等。那些工具可能很有用。我有时会用其中的一些，而且 DeepLearning.ai 的不少短期课程合作伙伴都提供那些工具，它们确实很好用。我发现，对于我最终处理的 agentic 工作流来说，大多数 agentic 工作流都非常定制化。所以我最终会自己构建非常定制化的评估，因为我想捕捉到我的系统中那些不正确工作的地方。所以，即使我确实使用了一些那些工具，我最终也还是会构建很多非常适合我特定应用以及我所看到的其中问题的定制化评估。</p>
+<p>感谢你坚持到现在，看完了五分之四的模块。如果你能实现本模块中哪怕是一小部分的想法，我想你在实现 agentic 工作流的成熟度方面，就已经远远领先于绝大多数的开发者了。希望你觉得这些材料有用，我期待在最后一个模块见到你。我们将讨论一些用于构建高度自主代理的更高级的设计模式。我们在本课程的最后一个模块见。</p>  </div> </section><section class="reader-content chapter-prose" data-module-panel="lecture" hidden data-astro-cid-i3k527kx> <div class="chapter-prose">  <h1 id="module-4-practical-tips-for-building-agentic-ai">Module 4: Practical Tips for Building Agentic AI</h1>
+<h2 id="41-evaluationsevals">4.1 Evaluations(evals)</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>0:05</span></span>
+<span class="line"><span>In this module, I'd like to share with you practical tips for building agentic AI workflows.</span></span>
+<span class="line"><span>0:04</span></span>
+<span class="line"><span>I hope that these tips will enable you to be much more effective than the typical developer</span></span>
+<span class="line"><span>0:10</span></span>
+<span class="line"><span>at building these types of systems. I find that when developing an agentic AI system,</span></span>
+<span class="line"><span>0:16</span></span>
+<span class="line"><span>it's difficult to know in advance where it will work and where it won't work so well,</span></span>
+<span class="line"><span>0:21</span></span>
+<span class="line"><span>and thus where you should focus your effort. So very common advice is to try to build even a</span></span>
+<span class="line"><span>0:27</span></span>
+<span class="line"><span>quick and dirty system to start, so you can then try it out and look at it to see where it may not</span></span>
+<span class="line"><span>0:34</span></span>
+<span class="line"><span>yet be working as well as you wish, to then have much more focused efforts to develop it even</span></span>
+<span class="line"><span>0:40</span></span>
+<span class="line"><span>further. In contrast, I find that it's sometimes less useful to sit around for too many weeks</span></span>
+<span class="line"><span>0:46</span></span>
+<span class="line"><span>theorizing and hypothesizing how to build it. It's often better to just build a quick system in a</span></span>
+<span class="line"><span>0:53</span></span>
+<span class="line"><span>safe, reasonable way that doesn't leak data, kind of do it in a responsible way, but just build</span></span>
+<span class="line"><span>0:58</span></span>
+<span class="line"><span>something quickly so you can look at it and then use that initial prototype to prioritize and try</span></span>
+<span class="line"><span>1:03</span></span>
+<span class="line"><span>further development. Let's start with an example of what might happen after you've built a prototype.</span></span>
+<span class="line"><span>1:10</span></span>
+<span class="line"><span>I want to use as our first example the invoice processing workflow that you've seen previously,</span></span>
+<span class="line"><span>1:16</span></span>
+<span class="line"><span>with the task to extract four required fields and then to save it to a database record. After having</span></span>
+<span class="line"><span>1:22</span></span>
+<span class="line"><span>built such a system, one thing you might do is find a handful of invoices, maybe 10 or 20 invoices,</span></span>
+<span class="line"><span>1:28</span></span>
+<span class="line"><span>and go through them and just take a look at their output and see what went well and if there were</span></span>
+<span class="line"><span>1:33</span></span>
+<span class="line"><span>any mistakes. So let's say you look through 20 invoices, you find that invoice 1 is fine, the</span></span>
+<span class="line"><span>1:38</span></span>
+<span class="line"><span>output looks correct. For invoice 2, maybe it confused the date of the invoice, that is when</span></span>
+<span class="line"><span>1:43</span></span>
+<span class="line"><span>was the invoice issued, with the due date of the invoice, and in this task we want to extract the</span></span>
+<span class="line"><span>1:48</span></span>
+<span class="line"><span>due date so we can issue payments on time. So then I might note down in a document or in a</span></span>
+<span class="line"><span>1:53</span></span>
+<span class="line"><span>spreadsheet that for invoice 2, the dates were mixed up. Maybe invoice 3 was fine, invoice 4 was</span></span>
+<span class="line"><span>1:58</span></span>
+<span class="line"><span>fine, and so on. But as I go through this example, I find that there are quite a lot of examples where I had</span></span>
+<span class="line"><span>2:03</span></span>
+<span class="line"><span>mixed up the dates. So it is based on going through a number of examples like this, that in this case</span></span>
+<span class="line"><span>2:10</span></span>
+<span class="line"><span>you might conclude that one common error mode is that it is struggling with the dates. In that case,</span></span>
+<span class="line"><span>2:17</span></span>
+<span class="line"><span>one thing you might consider would be to of course figure out how to improve your system to make it</span></span>
+<span class="line"><span>2:23</span></span>
+<span class="line"><span>extract due dates better, but also maybe write an eval to measure the accuracy with which it is</span></span>
+<span class="line"><span>2:29</span></span>
+<span class="line"><span>extracting due dates. In comparison, if you had found that it was extracting the biller address</span></span>
+<span class="line"><span>2:35</span></span>
+<span class="line"><span>incorrectly, who knows, maybe you have billers with unusual sounding names and so maybe it</span></span>
+<span class="line"><span>2:40</span></span>
+<span class="line"><span>struggles with billers, or especially if you have international billers whose names may not even all</span></span>
+<span class="line"><span>2:45</span></span>
+<span class="line"><span>be English letters, then you might instead focus on building an eval for the biller address. So one</span></span>
+<span class="line"><span>2:51</span></span>
+<span class="line"><span>of the reasons why building a quick and dirty system and looking at the output is so helpful</span></span>
+<span class="line"><span>2:56</span></span>
+<span class="line"><span>is it even helps you decide what do you want to put the most effort into evaluating. Now if you've</span></span>
+<span class="line"><span>3:03</span></span>
+<span class="line"><span>decided that you want to modify your system to improve the accuracy with which it is extracting</span></span>
+<span class="line"><span>3:09</span></span>
+<span class="line"><span>the due date of the invoice, then to track progress it might be a good idea to create an</span></span>
+<span class="line"><span>3:14</span></span>
+<span class="line"><span>evaluation or an eval to measure the accuracy of date extraction. There are probably multiple ways</span></span>
+<span class="line"><span>3:20</span></span>
+<span class="line"><span>one might go about this, but let me share with you how I might go about this. To create a test set or</span></span>
+<span class="line"><span>3:25</span></span>
+<span class="line"><span>an evaluation set, I might find 10 to 20 invoices and manually write down what is the due date. So</span></span>
+<span class="line"><span>3:33</span></span>
+<span class="line"><span>maybe one invoice has a due date of August 20th, 2025, and I write it down as a standard year, month,</span></span>
+<span class="line"><span>3:39</span></span>
+<span class="line"><span>date format. And then to make it easy to evaluate in code later, I would probably write the prompt</span></span>
+<span class="line"><span>3:46</span></span>
+<span class="line"><span>to the LLM to tell it to always format the due date in this year, month, date format. And with that,</span></span>
+<span class="line"><span>3:51</span></span>
+<span class="line"><span>I can then write code to extract out the one date that the LLM has output, which is the due date,</span></span>
+<span class="line"><span>3:56</span></span>
+<span class="line"><span>because that's the one day we care about. So this is a regular expression, pattern matching, you know,</span></span>
+<span class="line"><span>4:01</span></span>
+<span class="line"><span>four numbers of the year, two for the month, two for the date, and extract that out. And then I can</span></span>
+<span class="line"><span>4:06</span></span>
+<span class="line"><span>just write code to test if the extract date is equal to the actual date, that is the ground</span></span>
+<span class="line"><span>4:11</span></span>
+<span class="line"><span>truth annotation I had written down. So with an eval set of, say, 20 or so invoices, I build and</span></span>
+<span class="line"><span>4:18</span></span>
+<span class="line"><span>make changes to see if the percentage of time that it gets the extracted date correct is hopefully</span></span>
+<span class="line"><span>4:24</span></span>
+<span class="line"><span>going up as I tweak my prompts or tweak other parts of my system. So just to summarize what</span></span>
+<span class="line"><span>4:29</span></span>
+<span class="line"><span>we've seen so far, we build a system, then look at outputs to discover where it may be behaving in</span></span>
+<span class="line"><span>4:35</span></span>
+<span class="line"><span>an unsatisfactory way, such as due dates are wrong. Then to drive improvements to this important</span></span>
+<span class="line"><span>4:40</span></span>
+<span class="line"><span>output, put in place a small eval with, say, just 20 examples to help us track progress.</span></span>
+<span class="line"><span>4:46</span></span>
+<span class="line"><span>And this lets me go back to two prompts, try different algorithms, and so on to see if I can</span></span>
+<span class="line"><span>4:50</span></span>
+<span class="line"><span>move up this metric of due date accuracy. So this is what improving an Agentic AI workflow will often</span></span>
+<span class="line"><span>4:57</span></span>
+<span class="line"><span>feel like. Look at the output, see what's wrong, then if you know how to fix it, just fix it. But</span></span>
+<span class="line"><span>5:01</span></span>
+<span class="line"><span>if you need a longer process of improving it, then put in place an eval and use that to drive</span></span>
+<span class="line"><span>5:05</span></span>
+<span class="line"><span>further development. One other thing to consider is if after working for a while, if you think</span></span>
+<span class="line"><span>5:10</span></span>
+<span class="line"><span>those 20 examples you had initially aren't good enough, maybe they don't cover all the cases you</span></span>
+<span class="line"><span>5:15</span></span>
+<span class="line"><span>want, or maybe 20 examples is just too few, then you can always add to the eval set over time to</span></span>
+<span class="line"><span>5:19</span></span>
+<span class="line"><span>make sure it better reflects your personal judgments on whether or not the system's performance is</span></span>
+<span class="line"><span>5:25</span></span>
+<span class="line"><span>sufficiently satisfactory. This is just one example. For the second example, let's look at</span></span>
+<span class="line"><span>5:30</span></span>
+<span class="line"><span>building a marketing copy assistant for writing captions for Instagram, where to keep things</span></span>
+<span class="line"><span>5:35</span></span>
+<span class="line"><span>succinct, let's say our marketing team tells us that they want captions that are at most 10 words</span></span>
+<span class="line"><span>5:40</span></span>
+<span class="line"><span>long. So we would have an image of a product, say a pair of sunglasses that we want to market,</span></span>
+<span class="line"><span>5:45</span></span>
+<span class="line"><span>and then have a user query, like please write a caption to sell these sunglasses, and then have a</span></span>
+<span class="line"><span>5:52</span></span>
+<span class="line"><span>LLM, or large multimodal model, analyze the image and the query and generate a description of the</span></span>
+<span class="line"><span>5:58</span></span>
+<span class="line"><span>sunglasses. And there are lots of different ways that a marketing copy assistance may go wrong,</span></span>
+<span class="line"><span>6:03</span></span>
+<span class="line"><span>but let's say that you look at the output and you find that the copy or the text generated mostly</span></span>
+<span class="line"><span>6:08</span></span>
+<span class="line"><span>sounds okay, but maybe it's just sometimes too long. So for the sunglasses input, generate 17</span></span>
+<span class="line"><span>6:13</span></span>
+<span class="line"><span>words, if you have a coffee machine, it's okay, stylish is okay, blue shirt, 14 words, blender,</span></span>
+<span class="line"><span>6:18</span></span>
+<span class="line"><span>11 words. So it looks like in this example, the LLM is having a hard time adhering to the length</span></span>
+<span class="line"><span>6:24</span></span>
+<span class="line"><span>guideline. So again, there are lots of things that could have gone wrong with a marketing copy</span></span>
+<span class="line"><span>6:28</span></span>
+<span class="line"><span>assistant. But if you find that it's struggling with the length of the output, they might build</span></span>
+<span class="line"><span>6:33</span></span>
+<span class="line"><span>an eval to track this so that you can make improvements and make sure it's getting better</span></span>
+<span class="line"><span>6:39</span></span>
+<span class="line"><span>at adhering to the length guideline. So to create an eval, to measure the text length, what you</span></span>
+<span class="line"><span>6:44</span></span>
+<span class="line"><span>might do is create a set of test stars, so mark a pair of sunglasses, a coffee machine, and so on,</span></span>
+<span class="line"><span>6:49</span></span>
+<span class="line"><span>and maybe create 10 to 20 examples. Then you would run each of them through your system and write</span></span>
+<span class="line"><span>6:56</span></span>
+<span class="line"><span>code to measure the word count of the output. So this is Python code to measure the word count of a</span></span>
+<span class="line"><span>7:02</span></span>
+<span class="line"><span>piece of text. Then lastly, you would compare the length of the generated text to the 10 word target</span></span>
+<span class="line"><span>7:10</span></span>
+<span class="line"><span>limit. So if word count is equal to 10, now I'm correct, plus equals one. One difference between</span></span>
+<span class="line"><span>7:15</span></span>
+<span class="line"><span>this and the previous invoice processing example is that there is no per example ground truth.</span></span>
+<span class="line"><span>7:22</span></span>
+<span class="line"><span>The target is just 10, same for every single example. Whereas in contrast, for the invoice</span></span>
+<span class="line"><span>7:26</span></span>
+<span class="line"><span>processing example, we had to generate a custom target label that is the correct due date of the</span></span>
+<span class="line"><span>7:32</span></span>
+<span class="line"><span>invoice, and we're testing the outputs against that per example ground truth. I know I used a</span></span>
+<span class="line"><span>7:38</span></span>
+<span class="line"><span>very simple workflow for generating these captions, but these types of evals can be applied to much</span></span>
+<span class="line"><span>7:43</span></span>
+<span class="line"><span>more complex generation workflows as well. Let me touch on one final example in which we'll revisit</span></span>
+<span class="line"><span>7:49</span></span>
+<span class="line"><span>the research agents we've been looking at. If you look at the output of the research agents on</span></span>
+<span class="line"><span>7:55</span></span>
+<span class="line"><span>different input prompts, let's say that when you ask it to write an article on recent breakthroughs</span></span>
+<span class="line"><span>8:01</span></span>
+<span class="line"><span>in black hole science, you find that it missed some high profile result and a loss of news coverage.</span></span>
+<span class="line"><span>8:07</span></span>
+<span class="line"><span>So this is an unsatisfactory result. Or if you asked it to research renting versus buying a</span></span>
+<span class="line"><span>8:11</span></span>
+<span class="line"><span>home in Seattle, well, it seems to do a good job. Or robotics for harvesting fruits. Well,</span></span>
+<span class="line"><span>8:16</span></span>
+<span class="line"><span>it didn't mention a leading equipment company. So based on this evaluation, it looks like</span></span>
+<span class="line"><span>8:22</span></span>
+<span class="line"><span>sometimes it misses a really important point that a human expert writer would have captured. So then</span></span>
+<span class="line"><span>8:29</span></span>
+<span class="line"><span>I would create an eval to measure how often it captures the most important points. For example,</span></span>
+<span class="line"><span>8:34</span></span>
+<span class="line"><span>you might come up with a number of example prompts on black holes, robotic harvesting,</span></span>
+<span class="line"><span>8:40</span></span>
+<span class="line"><span>and so on. And for each one, come up with, let's say, three to five gold standard discussion points</span></span>
+<span class="line"><span>8:45</span></span>
+<span class="line"><span>for each of these topics. Notice that here we do have a per example annotation because the</span></span>
+<span class="line"><span>8:51</span></span>
+<span class="line"><span>gold standard talking points, that is the most important talking points, they are different for</span></span>
+<span class="line"><span>8:56</span></span>
+<span class="line"><span>each of these examples. With these ground truth annotations, you might then use an LLMs judge to</span></span>
+<span class="line"><span>9:01</span></span>
+<span class="line"><span>count how many of the gold standard talking points were mentioned. And so an example prompt might be</span></span>
+<span class="line"><span>9:07</span></span>
+<span class="line"><span>to say, determine how many of the five gold standard talking points are present in the</span></span>
+<span class="line"><span>9:12</span></span>
+<span class="line"><span>provided essay. You have the optional prompts, the essay text, gold standard points, and so on,</span></span>
+<span class="line"><span>9:16</span></span>
+<span class="line"><span>and have it return a JSON object with two Gs that scores how many of the points, zero to five,</span></span>
+<span class="line"><span>9:21</span></span>
+<span class="line"><span>to the score, as well as an explanation. And this allows you to get a score for each prompt in your</span></span>
+<span class="line"><span>9:28</span></span>
+<span class="line"><span>evaluation set. In this example, I'm using LLM-as-a-judge to count how many of the talking points</span></span>
+<span class="line"><span>9:35</span></span>
+<span class="line"><span>were mentioned because there's so many different ways to talk about these talking points, and so a</span></span>
+<span class="line"><span>9:40</span></span>
+<span class="line"><span>regular expression or a code for simple pattern matching might not work that well, which is why</span></span>
+<span class="line"><span>9:46</span></span>
+<span class="line"><span>you might use an LLM-as-a-judge and treat this as a slightly more subjective evaluation for whether</span></span>
+<span class="line"><span>9:52</span></span>
+<span class="line"><span>or not, say, event horizons were adequately mentioned. So this is your third example of how</span></span>
+<span class="line"><span>9:57</span></span>
+<span class="line"><span>you might build evals. In order to think about how to build evals for your application, the evals</span></span>
+<span class="line"><span>10:04</span></span>
+<span class="line"><span>you build will often have to reflect whatever you see or you're worried about going wrong in your</span></span>
+<span class="line"><span>10:10</span></span>
+<span class="line"><span>application. And it turns out that broadly, there are two axes of evaluation. On the top axis is the</span></span>
+<span class="line"><span>10:18</span></span>
+<span class="line"><span>way you evaluate the output. In some cases, you evaluate it by writing code with objective evals,</span></span>
+<span class="line"><span>10:26</span></span>
+<span class="line"><span>and sometimes you use an LLM-as-a-judge for more subjective evals. On the other axis is whether</span></span>
+<span class="line"><span>10:34</span></span>
+<span class="line"><span>you have a per-example ground truth or not. So for checking invoice date extraction, we were writing</span></span>
+<span class="line"><span>10:43</span></span>
+<span class="line"><span>code to evaluate if we got the actual date, and that had a per-example ground truth because each</span></span>
+<span class="line"><span>10:49</span></span>
+<span class="line"><span>invoice has a different actual date. But in the example where we checked marketing copy length,</span></span>
+<span class="line"><span>10:55</span></span>
+<span class="line"><span>every example had a length limit of 10, and so there was no per-example ground truth for that</span></span>
+<span class="line"><span>11:02</span></span>
+<span class="line"><span>problem. In contrast, for counting gold standard talking points, there was a per-example ground</span></span>
+<span class="line"><span>11:07</span></span>
+<span class="line"><span>truth because each article had different important talking points. But we used an LLM-as-a-judge to</span></span>
+<span class="line"><span>11:13</span></span>
+<span class="line"><span>read the essay to see if those topics were adequately mentioned because there's so many</span></span>
+<span class="line"><span>11:17</span></span>
+<span class="line"><span>different ways to mention the talking points. And the last of the four quadrants would be LLM-as-a-judge</span></span>
+<span class="line"><span>11:23</span></span>
+<span class="line"><span>with no per-example ground truth. And one place where we saw that was if you are grading</span></span>
+<span class="line"><span>11:30</span></span>
+<span class="line"><span>charts with a rubric. This is when we're looking at visualizing the coffee machine sales, and if</span></span>
+<span class="line"><span>11:35</span></span>
+<span class="line"><span>you ask it to create a chart according to a rubric, such as whether it's clear access labels and so on,</span></span>
+<span class="line"><span>11:40</span></span>
+<span class="line"><span>there is the same rubric for every chart, and that would be using an LLM-as-a-judge but without a</span></span>
+<span class="line"><span>11:46</span></span>
+<span class="line"><span>per-example ground truth. So I find this two-by-two grid as maybe a useful way to think about the</span></span>
+<span class="line"><span>11:51</span></span>
+<span class="line"><span>different types of evals you might construct for your application. And by the way, these are</span></span>
+<span class="line"><span>11:56</span></span>
+<span class="line"><span>sometimes also called end-to-end evals because one end is the input end, which is the user query</span></span>
+<span class="line"><span>12:01</span></span>
+<span class="line"><span>prompt, and the other end is the final output. And so all of these are evals for the entire end-to-end</span></span>
+<span class="line"><span>12:08</span></span>
+<span class="line"><span>system's performance. So just to wrap up this video, I'd like to share a few final tips for</span></span>
+<span class="line"><span>12:13</span></span>
+<span class="line"><span>designing end-to-end evals. First, quick and dirty evals is fine to get started. I feel like I see</span></span>
+<span class="line"><span>12:20</span></span>
+<span class="line"><span>quite a lot of teams that are almost paralyzed because they think building evals is this</span></span>
+<span class="line"><span>12:25</span></span>
+<span class="line"><span>massive multi-week effort, and so they take longer than would be ideal to get started. But I think</span></span>
+<span class="line"><span>12:32</span></span>
+<span class="line"><span>just as you iterate on an agentic workflow and make it better over time, you should plan to</span></span>
+<span class="line"><span>12:37</span></span>
+<span class="line"><span>iterate on your evals as well. So if you put in place 10, 15, 20 examples as your first cut at</span></span>
+<span class="line"><span>12:44</span></span>
+<span class="line"><span>evals and write some code or try prompting an LLM-as-a-judge, just do something to start to get some</span></span>
+<span class="line"><span>12:49</span></span>
+<span class="line"><span>metrics that can complement the human eye at looking at the output, and then there's a blend</span></span>
+<span class="line"><span>12:54</span></span>
+<span class="line"><span>of the two that can drive your decision making. And as the evals become more sophisticated over</span></span>
+<span class="line"><span>12:58</span></span>
+<span class="line"><span>time, you can then shift more and more of your trust to the metric-based evals rather than</span></span>
+<span class="line"><span>13:03</span></span>
+<span class="line"><span>needing to read over hundreds of outputs every time you tweak a prompt somewhere. And as you</span></span>
+<span class="line"><span>13:08</span></span>
+<span class="line"><span>go through this process, you'll likely find ways to keep on improving your evals as well. So if you</span></span>
+<span class="line"><span>13:15</span></span>
+<span class="line"><span>had 20 examples to start, you may then run into places where your evals fail to capture your</span></span>
+<span class="line"><span>13:22</span></span>
+<span class="line"><span>judgment about what system is better. So maybe you update the system and you look at it and you feel</span></span>
+<span class="line"><span>13:28</span></span>
+<span class="line"><span>like this has got to work much better, but your eval fails to show the new system achieving a</span></span>
+<span class="line"><span>13:34</span></span>
+<span class="line"><span>higher score. If that's the case, that's often an opportunity to go maybe collect a larger eval set</span></span>
+<span class="line"><span>13:40</span></span>
+<span class="line"><span>or change the way you evaluate the output to make it correspond better to your judgment as to what</span></span>
+<span class="line"><span>13:45</span></span>
+<span class="line"><span>system is actually working better. And so your evals will get better over time. And lastly,</span></span>
+<span class="line"><span>13:50</span></span>
+<span class="line"><span>in terms of using evals to gain inspiration as to what to work on next, a lot of agentic workflows</span></span>
+<span class="line"><span>13:56</span></span>
+<span class="line"><span>are being used to automate tasks that, say, humans can do. And so I find for such applications,</span></span>
+<span class="line"><span>14:02</span></span>
+<span class="line"><span>I'll look for places where the performance is worse than that of an expert human, and that</span></span>
+<span class="line"><span>14:06</span></span>
+<span class="line"><span>often gives me inspiration for where to focus my efforts or what are the types of examples that I</span></span>
+<span class="line"><span>14:11</span></span>
+<span class="line"><span>maybe get my agentic workflow to work better than it is currently. So I hope that after you've built</span></span>
+<span class="line"><span>14:18</span></span>
+<span class="line"><span>that quick and dirty system, you think about when it would make sense to start putting in some evals</span></span>
+<span class="line"><span>14:23</span></span>
+<span class="line"><span>to track the potentially problematic aspects of the system, and that that will then help you</span></span>
+<span class="line"><span>14:28</span></span>
+<span class="line"><span>drive improvements in the system. In addition to helping you drive improvements, it turns out that</span></span>
+<span class="line"><span>14:34</span></span>
+<span class="line"><span>there's a method of evals that helps you hone in of your entire agentic system. What are the</span></span>
+<span class="line"><span>14:40</span></span>
+<span class="line"><span>components most worth focusing your attention on? Because agentic systems often have many pieces.</span></span>
+<span class="line"><span>14:47</span></span>
+<span class="line"><span>So which piece is going to be most productive for you to spend time working to improve? It turns</span></span>
+<span class="line"><span>14:53</span></span>
+<span class="line"><span>out being able to do this well is a really important skill for driving efficient development</span></span>
+<span class="line"><span>14:58</span></span>
+<span class="line"><span>of agentic workflows. In the next video, I'd like to deep dive into this topic. So let's go on to</span></span>
+<span class="line"><span>15:03</span></span>
+<span class="line"><span>the next video.</span></span></code></pre>
+<h2 id="42-error-analysis-and-prioritizing-next-steps">4.2 Error analysis and prioritizing next steps</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>0:07</span></span>
+<span class="line"><span>Let's say you've built an agentic workflow and if it's not yet working as well as you wish,</span></span>
+<span class="line"><span>0:04</span></span>
+<span class="line"><span>and this happens to me all the time by the way, I'll often build a quick and dirty system and</span></span>
+<span class="line"><span>0:09</span></span>
+<span class="line"><span>it doesn't do as well as I wish it would, the question is where do you focus your efforts</span></span>
+<span class="line"><span>0:14</span></span>
+<span class="line"><span>to make it better? Turns out agentic workflows have many different components and working on</span></span>
+<span class="line"><span>0:19</span></span>
+<span class="line"><span>some of the components could be much more fruitful than working on some other components. So your</span></span>
+<span class="line"><span>0:25</span></span>
+<span class="line"><span>skill at choosing where to focus your efforts makes a huge difference in the speed with which</span></span>
+<span class="line"><span>0:30</span></span>
+<span class="line"><span>you can make improvements to your system. And I found that one of the biggest predictors for how</span></span>
+<span class="line"><span>0:35</span></span>
+<span class="line"><span>efficient and how good a team is, is whether or not they're able to drive a disciplined error</span></span>
+<span class="line"><span>0:41</span></span>
+<span class="line"><span>analysis process to tell you where to focus your efforts. So this is an important skill. Let's take</span></span>
+<span class="line"><span>0:47</span></span>
+<span class="line"><span>a look at how to carry out error analysis. In the research agent example, we had carried out an error</span></span>
+<span class="line"><span>0:54</span></span>
+<span class="line"><span>analysis in the previous video and we saw that it was often missing key points and a human expert</span></span>
+<span class="line"><span>1:00</span></span>
+<span class="line"><span>would have made in writing essays on certain topics. So now you've spotted this problem that</span></span>
+<span class="line"><span>1:06</span></span>
+<span class="line"><span>is sometimes missing key points, how do you know what to work on? It turns out that of the many</span></span>
+<span class="line"><span>1:12</span></span>
+<span class="line"><span>different steps in this workflow, almost any of them could have contributed to this problem of</span></span>
+<span class="line"><span>1:17</span></span>
+<span class="line"><span>missing key points. For example, maybe the first LLM was generating search terms that weren't great, so</span></span>
+<span class="line"><span>1:23</span></span>
+<span class="line"><span>it was just searching for the wrong things and did not discover the right articles. Or maybe use a</span></span>
+<span class="line"><span>1:28</span></span>
+<span class="line"><span>web search engine that just wasn't very good. There are multiple web search engines out there, in fact</span></span>
+<span class="line"><span>1:33</span></span>
+<span class="line"><span>actually quite a few that I tend to use for my own base applications and some are better than others.</span></span>
+<span class="line"><span>1:39</span></span>
+<span class="line"><span>Or maybe web search was just fine but when we gave the list of web search results in LLM, maybe it</span></span>
+<span class="line"><span>1:44</span></span>
+<span class="line"><span>didn't do a good job choosing the best handful to download. Maybe web fetch has fewer problems in</span></span>
+<span class="line"><span>1:51</span></span>
+<span class="line"><span>this case, assuming you can fetch web pages accurately. But after dumping the web pages in LLM,</span></span>
+<span class="line"><span>1:56</span></span>
+<span class="line"><span>maybe the LLM is ignoring some of the points in the documents we had fetched. So it turns out that</span></span>
+<span class="line"><span>2:02</span></span>
+<span class="line"><span>there are teams that sometimes look at this and go by gut to pick one of these components to work on</span></span>
+<span class="line"><span>2:09</span></span>
+<span class="line"><span>and sometimes that works and sometimes that leads to many months of work with very little progress</span></span>
+<span class="line"><span>2:13</span></span>
+<span class="line"><span>in the overall performance of the system. So rather than going by gut to decide which of these</span></span>
+<span class="line"><span>2:20</span></span>
+<span class="line"><span>many components to work on, I think it's much better to carry out an error analysis to better</span></span>
+<span class="line"><span>2:26</span></span>
+<span class="line"><span>understand each step in the workflow. And in particular, I'll often examine the traces and that</span></span>
+<span class="line"><span>2:32</span></span>
+<span class="line"><span>means the intermediate output after each step in order to understand which component's performance</span></span>
+<span class="line"><span>2:38</span></span>
+<span class="line"><span>is subpar, meaning say much worse than what a human expert would do, because that points to where</span></span>
+<span class="line"><span>2:45</span></span>
+<span class="line"><span>there may be room for security improvement. Let's look at an example. If we ask the research agent</span></span>
+<span class="line"><span>2:50</span></span>
+<span class="line"><span>to write an essay about recent news in black hole science, maybe the output search terms like these,</span></span>
+<span class="line"><span>2:56</span></span>
+<span class="line"><span>search for black hole theories Einstein, Event Horizon Telescope Radio, and so on. And I would</span></span>
+<span class="line"><span>3:01</span></span>
+<span class="line"><span>then have a human expert look at these and see are these reasonable web search terms for writing</span></span>
+<span class="line"><span>3:07</span></span>
+<span class="line"><span>about recent discoveries in black hole science. And maybe in this case an expert says these web</span></span>
+<span class="line"><span>3:13</span></span>
+<span class="line"><span>searches look okay, they're pretty similar to what I would do as a human. Then I look at the outputs of</span></span>
+<span class="line"><span>3:20</span></span>
+<span class="line"><span>the web search and look at the URLs returned. So web search would return many different web pages</span></span>
+<span class="line"><span>3:27</span></span>
+<span class="line"><span>and maybe one web page returns is that an elementary school student claims to track a</span></span>
+<span class="line"><span>3:32</span></span>
+<span class="line"><span>30-year-old black hole mystery from Astro Kid News. And this doesn't look like the most rigorous</span></span>
+<span class="line"><span>3:38</span></span>
+<span class="line"><span>peer-reviewed article. And maybe examining all of the articles that web search returns causes you to</span></span>
+<span class="line"><span>3:44</span></span>
+<span class="line"><span>conclude that it's returning too many blog or popular press types of articles and not enough</span></span>
+<span class="line"><span>3:50</span></span>
+<span class="line"><span>scientific articles to write a research report of the quality that you are looking for. It'd be good</span></span>
+<span class="line"><span>3:56</span></span>
+<span class="line"><span>to just look through the outputs of the other steps as well. Maybe the LLM finds the best five</span></span>
+<span class="line"><span>4:00</span></span>
+<span class="line"><span>sources you can, you end up with Astro Kid News, SpaceBot 2000, Space Fun News and so on. And it is</span></span>
+<span class="line"><span>4:06</span></span>
+<span class="line"><span>by looking at these intermediate outputs that you can then try to get a sense of the quality of the</span></span>
+<span class="line"><span>4:12</span></span>
+<span class="line"><span>output of each of these steps. To introduce some terminology, the overall set of outputs of all of</span></span>
+<span class="line"><span>4:18</span></span>
+<span class="line"><span>the intermediate steps is often called the trace of a run of this agent. And then some terminology</span></span>
+<span class="line"><span>4:24</span></span>
+<span class="line"><span>you see in other sources as well is the output of a single step is sometimes called a span.</span></span>
+<span class="line"><span>4:30</span></span>
+<span class="line"><span>This is terminology from the computer observability literature where people try to</span></span>
+<span class="line"><span>4:35</span></span>
+<span class="line"><span>figure out what computers are doing. And in this course, I use the word trace quite a bit. I'll use</span></span>
+<span class="line"><span>4:41</span></span>
+<span class="line"><span>the word span a little bit less, but you may see both of these terms on the internet. So by reading</span></span>
+<span class="line"><span>4:46</span></span>
+<span class="line"><span>the traces, you start to get an informal sense of where might be the most problematic components.</span></span>
+<span class="line"><span>4:52</span></span>
+<span class="line"><span>In order to do this in a more systematic way, it turns out to be useful to focus your attention</span></span>
+<span class="line"><span>4:57</span></span>
+<span class="line"><span>on the cases that the system is doing poorly on. Maybe you write some essays just fine and the</span></span>
+<span class="line"><span>5:02</span></span>
+<span class="line"><span>output is completely satisfactory. So I would put those aside and try to come up with a set of</span></span>
+<span class="line"><span>5:06</span></span>
+<span class="line"><span>examples where for whatever reason, the final output of your research agent is not quite</span></span>
+<span class="line"><span>5:11</span></span>
+<span class="line"><span>satisfactory and just focus on those examples. So this is one of the reasons we call error analysis</span></span>
+<span class="line"><span>5:17</span></span>
+<span class="line"><span>because we want to focus on the cases where the system made an error and we want to go through</span></span>
+<span class="line"><span>5:22</span></span>
+<span class="line"><span>to figure out which components were most responsible for the error in the research agent</span></span>
+<span class="line"><span>5:28</span></span>
+<span class="line"><span>output. In order to make this more rigorous, rather than reading and getting an informal sense,</span></span>
+<span class="line"><span>5:33</span></span>
+<span class="line"><span>you might actually build up a spreadsheet to more explicitly count up where the errors are. And by</span></span>
+<span class="line"><span>5:40</span></span>
+<span class="line"><span>error, I mean when a step outputs something that performs significantly worse than maybe what a</span></span>
+<span class="line"><span>5:47</span></span>
+<span class="line"><span>human expert would have given a similar input as that component. So I'll often do this myself in a</span></span>
+<span class="line"><span>5:52</span></span>
+<span class="line"><span>spreadsheet. So I might build a spreadsheet like this. And so for the first query, I'll look at</span></span>
+<span class="line"><span>5:57</span></span>
+<span class="line"><span>recent developments in black hole science. And I see that the search results has too many blog</span></span>
+<span class="line"><span>6:01</span></span>
+<span class="line"><span>posts, popular press articles, not enough scientific papers. And then based on this,</span></span>
+<span class="line"><span>6:07</span></span>
+<span class="line"><span>it is true that the five best sources aren't great. But here I won't say that the five best sources</span></span>
+<span class="line"><span>6:12</span></span>
+<span class="line"><span>did a bad job because if the inputs to LLM for selecting the five best sources were all</span></span>
+<span class="line"><span>6:18</span></span>
+<span class="line"><span>non-rigorous articles, then I can't blame this picking the five best sources for not picking</span></span>
+<span class="line"><span>6:23</span></span>
+<span class="line"><span>better articles because it did the best it could have or as what did nearly as well as any human</span></span>
+<span class="line"><span>6:28</span></span>
+<span class="line"><span>might have given the same selection to choose from. And then you might go through this for</span></span>
+<span class="line"><span>6:32</span></span>
+<span class="line"><span>different prompts. Renting versus buying in Seattle. Maybe it missed a well-known blog.</span></span>
+<span class="line"><span>6:37</span></span>
+<span class="line"><span>Robotics for harvesting fruit. Maybe in this case, we look at it and say,</span></span>
+<span class="line"><span>6:41</span></span>
+<span class="line"><span>oh, the search terms are too generic and the search results also weren't good and so on.</span></span>
+<span class="line"><span>6:45</span></span>
+<span class="line"><span>And then based on this, I would count up in my spreadsheet how often I observe errors in the</span></span>
+<span class="line"><span>6:52</span></span>
+<span class="line"><span>different components. So in this example, I'm dissatisfied with the search terms 5% of the time,</span></span>
+<span class="line"><span>6:57</span></span>
+<span class="line"><span>but I'm dissatisfied with the search results 45% of the time. And if I actually see this,</span></span>
+<span class="line"><span>7:01</span></span>
+<span class="line"><span>I might just take a careful look at the search terms to make sure that the search terms really</span></span>
+<span class="line"><span>7:05</span></span>
+<span class="line"><span>were okay and that poor choice of search terms were not what led to poor search results. But</span></span>
+<span class="line"><span>7:10</span></span>
+<span class="line"><span>if I really think the search terms are fine, but the search results are not, then I would take a</span></span>
+<span class="line"><span>7:14</span></span>
+<span class="line"><span>careful look at the web search engine I'm using and if there are any parameters I can tune to make</span></span>
+<span class="line"><span>7:18</span></span>
+<span class="line"><span>it bring back more relevant or higher quality results. There's this type of analysis that</span></span>
+<span class="line"><span>7:23</span></span>
+<span class="line"><span>tells me in this example that maybe I really should focus my attention on fixing the search</span></span>
+<span class="line"><span>7:28</span></span>
+<span class="line"><span>results and not on the other components of this agentic workflow. So to wrap up this video,</span></span>
+<span class="line"><span>7:34</span></span>
+<span class="line"><span>I find that it's useful to develop a habit of looking at traces. After you build an agentic</span></span>
+<span class="line"><span>7:40</span></span>
+<span class="line"><span>workflow, go ahead and look at the intermediate outputs to get a feel for what it is actually</span></span>
+<span class="line"><span>7:44</span></span>
+<span class="line"><span>doing at every step so that you can better understand if different steps are performing</span></span>
+<span class="line"><span>7:48</span></span>
+<span class="line"><span>better or worse. And a more systematic error analysis, maybe done with a spreadsheet,</span></span>
+<span class="line"><span>7:54</span></span>
+<span class="line"><span>can let you gather statistics or count up which component performs poorly most frequently. And</span></span>
+<span class="line"><span>7:59</span></span>
+<span class="line"><span>so by looking at what components are doing poorly, as well as where I have ideas for</span></span>
+<span class="line"><span>8:05</span></span>
+<span class="line"><span>efficiently improving different components, then that will let you prioritize what component to</span></span>
+<span class="line"><span>8:10</span></span>
+<span class="line"><span>work on. So maybe a component is problematic, but I don't have any ideas for improving it,</span></span>
+<span class="line"><span>8:15</span></span>
+<span class="line"><span>so that would suggest maybe not prioritizing that as high. But if there is a component that is</span></span>
+<span class="line"><span>8:20</span></span>
+<span class="line"><span>generating a lot of errors, and if I have ideas how to improve that, then that would be a good</span></span>
+<span class="line"><span>8:25</span></span>
+<span class="line"><span>reason to prioritize working on that component. And I just want to emphasize that error analysis</span></span>
+<span class="line"><span>8:31</span></span>
+<span class="line"><span>is a very helpful output for you to decide where to focus your efforts, because in any complex</span></span>
+<span class="line"><span>8:37</span></span>
+<span class="line"><span>system, there are just so many things you could work on. It's too easy to pick something to work</span></span>
+<span class="line"><span>8:42</span></span>
+<span class="line"><span>on and work on it for weeks or even months, only to discover later that that did not result in</span></span>
+<span class="line"><span>8:47</span></span>
+<span class="line"><span>improved performance in your overall system. And so using error analysis to decide where to focus</span></span>
+<span class="line"><span>8:52</span></span>
+<span class="line"><span>your effort turns out to be incredibly useful for improving your efficiency. In this video,</span></span>
+<span class="line"><span>8:58</span></span>
+<span class="line"><span>we went over error analysis with the research agent example, but I think error analysis is</span></span>
+<span class="line"><span>9:04</span></span>
+<span class="line"><span>such an important topic, I want to go over some additional examples with you.</span></span>
+<span class="line"><span>9:08</span></span>
+<span class="line"><span>So let's go on to the next video, where we'll look at more examples of error analysis.</span></span></code></pre>
+<h2 id="43-more-error-analysis-examples">4.3 More error analysis examples</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>0:05</span></span>
+<span class="line"><span>I found that for many developers, it's only by seeing multiple examples that you can then</span></span>
+<span class="line"><span>0:05</span></span>
+<span class="line"><span>get practice and hone your intuitions about how to carry out error analysis.</span></span>
+<span class="line"><span>0:09</span></span>
+<span class="line"><span>So let's take a look at two more examples, and we'll look at invoice processing</span></span>
+<span class="line"><span>0:14</span></span>
+<span class="line"><span>and responding to customer emails.</span></span>
+<span class="line"><span>0:16</span></span>
+<span class="line"><span>Here's the workflow that we had for invoice processing, where we had a clear process to</span></span>
+<span class="line"><span>0:21</span></span>
+<span class="line"><span>follow an agentic workflow of identifying the four required fields and then recording</span></span>
+<span class="line"><span>0:27</span></span>
+<span class="line"><span>them in a database.</span></span>
+<span class="line"><span>0:28</span></span>
+<span class="line"><span>In the example from the first video of this module, we said that the system was often</span></span>
+<span class="line"><span>0:32</span></span>
+<span class="line"><span>making a mistake in the due date of the invoice.</span></span>
+<span class="line"><span>0:36</span></span>
+<span class="line"><span>So we can carry out error analysis to try to figure out which of the components it may</span></span>
+<span class="line"><span>0:40</span></span>
+<span class="line"><span>have been due to.</span></span>
+<span class="line"><span>0:41</span></span>
+<span class="line"><span>So for example, did the PDF to text make a mistake, or did the LLM extract the wrong date</span></span>
+<span class="line"><span>0:47</span></span>
+<span class="line"><span>out of whatever was output from the PDF to text component?</span></span>
+<span class="line"><span>0:51</span></span>
+<span class="line"><span>To carry out an error analysis, I would try to find a number of examples where the data</span></span>
+<span class="line"><span>0:56</span></span>
+<span class="line"><span>extracted is incorrect.</span></span>
+<span class="line"><span>0:58</span></span>
+<span class="line"><span>So same as the last video, it's useful to focus on the examples where the performance</span></span>
+<span class="line"><span>1:02</span></span>
+<span class="line"><span>is subpar to try to figure out what went wrong with those examples.</span></span>
+<span class="line"><span>1:05</span></span>
+<span class="line"><span>So ignore the examples that got the date right, but try to find somewhere between 10 and 100</span></span>
+<span class="line"><span>1:10</span></span>
+<span class="line"><span>invoices where it got the date wrong.</span></span>
+<span class="line"><span>1:12</span></span>
+<span class="line"><span>And then I would look through to try to figure out was the cause of the problem that PDF</span></span>
+<span class="line"><span>1:18</span></span>
+<span class="line"><span>to text got the date wrong, or was it that the LLM, given the PDF to text output, pulled</span></span>
+<span class="line"><span>1:24</span></span>
+<span class="line"><span>out the wrong date.</span></span>
+<span class="line"><span>1:25</span></span>
+<span class="line"><span>And so you might build up a little spreadsheet like this and go through 20 invoices and just</span></span>
+<span class="line"><span>1:30</span></span>
+<span class="line"><span>count up how often did PDF to text extract the dates or the text incorrectly so that</span></span>
+<span class="line"><span>1:35</span></span>
+<span class="line"><span>even a human couldn't tell what is the due date versus the PDF to text look good enough,</span></span>
+<span class="line"><span>1:40</span></span>
+<span class="line"><span>but the LLM, when asked to pull the dates, somehow pulled out the wrong date, like maybe</span></span>
+<span class="line"><span>1:44</span></span>
+<span class="line"><span>identifying the invoice date rather than the due date of the invoice.</span></span>
+<span class="line"><span>1:48</span></span>
+<span class="line"><span>So in this example, it looks like the LLM data extraction was responsible for a lot</span></span>
+<span class="line"><span>1:52</span></span>
+<span class="line"><span>more errors.</span></span>
+<span class="line"><span>1:53</span></span>
+<span class="line"><span>So this tells me that maybe I should focus my efforts on the LLM data extraction component</span></span>
+<span class="line"><span>1:57</span></span>
+<span class="line"><span>rather than on PDF to text.</span></span>
+<span class="line"><span>1:59</span></span>
+<span class="line"><span>And this is important because if not for this error analysis, I can imagine some teams spending</span></span>
+<span class="line"><span>2:05</span></span>
+<span class="line"><span>weeks or months trying to tune the PDF to text only to discover after that time that</span></span>
+<span class="line"><span>2:10</span></span>
+<span class="line"><span>it did not make much of an impact to the final system's performance.</span></span>
+<span class="line"><span>2:14</span></span>
+<span class="line"><span>Oh, and by the way, these percentages here at the bottom can add up not to 100% because</span></span>
+<span class="line"><span>2:20</span></span>
+<span class="line"><span>these errors are not mutually exclusive.</span></span>
+<span class="line"><span>2:22</span></span>
+<span class="line"><span>To look at one last example, let's go back to the agentic workflow for responding to</span></span>
+<span class="line"><span>2:27</span></span>
+<span class="line"><span>customer emails, where the LLM, given a customer email like this, asking for an order, would</span></span>
+<span class="line"><span>2:34</span></span>
+<span class="line"><span>pull up the order details, fetch the information from the database, then draft a response for</span></span>
+<span class="line"><span>2:39</span></span>
+<span class="line"><span>a human to review.</span></span>
+<span class="line"><span>2:40</span></span>
+<span class="line"><span>So again, I would find a number of examples where, for whatever reason, the final output</span></span>
+<span class="line"><span>2:46</span></span>
+<span class="line"><span>is unsatisfactory and then try to figure out what had gone wrong.</span></span>
+<span class="line"><span>2:50</span></span>
+<span class="line"><span>And so some things that could go wrong.</span></span>
+<span class="line"><span>2:52</span></span>
+<span class="line"><span>Maybe the LLM had written an incorrect database query.</span></span>
+<span class="line"><span>2:56</span></span>
+<span class="line"><span>So when the query was sent to the database, it just did not successfully pull up the customer</span></span>
+<span class="line"><span>3:01</span></span>
+<span class="line"><span>info.</span></span>
+<span class="line"><span>3:02</span></span>
+<span class="line"><span>Or maybe the database has corrupted data.</span></span>
+<span class="line"><span>3:05</span></span>
+<span class="line"><span>So even though the LLM wrote a completely appropriate database query, maybe in SQL or some other</span></span>
+<span class="line"><span>3:10</span></span>
+<span class="line"><span>query language, the database did not have the correct information.</span></span>
+<span class="line"><span>3:13</span></span>
+<span class="line"><span>Or maybe given the correct information about the customer order, the LLM wrote an email</span></span>
+<span class="line"><span>3:17</span></span>
+<span class="line"><span>that was somehow not quite right.</span></span>
+<span class="line"><span>3:20</span></span>
+<span class="line"><span>So again, I would look through a handful of emails where the final output was unsatisfactory</span></span>
+<span class="line"><span>3:25</span></span>
+<span class="line"><span>and try to figure out what had gone wrong.</span></span>
+<span class="line"><span>3:26</span></span>
+<span class="line"><span>So maybe in email one, we find that the LLM had asked for the wrong table in the query,</span></span>
+<span class="line"><span>3:31</span></span>
+<span class="line"><span>just asked for the wrong data in the way it created the database.</span></span>
+<span class="line"><span>3:34</span></span>
+<span class="line"><span>In email two, maybe I find that the database actually has an error.</span></span>
+<span class="line"><span>3:38</span></span>
+<span class="line"><span>And maybe given that input, the LLM somehow wrote a subalternate email as well, and so</span></span>
+<span class="line"><span>3:44</span></span>
+<span class="line"><span>on.</span></span>
+<span class="line"><span>3:44</span></span>
+<span class="line"><span>And in this example, after going through many emails, maybe I find that the most common</span></span>
+<span class="line"><span>3:50</span></span>
+<span class="line"><span>error is in the way the LLM is writing a database query, say a SQL query, in order to fetch</span></span>
+<span class="line"><span>3:57</span></span>
+<span class="line"><span>the relevant information.</span></span>
+<span class="line"><span>3:58</span></span>
+<span class="line"><span>Whereas the database is mostly correct, although there's a little bit of data errors there.</span></span>
+<span class="line"><span>4:02</span></span>
+<span class="line"><span>And the way the LLM writes the email also has some errors.</span></span>
+<span class="line"><span>4:05</span></span>
+<span class="line"><span>Maybe it doesn't quite where they write 30% of the time.</span></span>
+<span class="line"><span>4:08</span></span>
+<span class="line"><span>And this tells me that it'd be most worthwhile maybe for me to improve the way the LLM is</span></span>
+<span class="line"><span>4:13</span></span>
+<span class="line"><span>writing queries.</span></span>
+<span class="line"><span>4:14</span></span>
+<span class="line"><span>Second most important would be maybe improve the prompting for how I write the final email.</span></span>
+<span class="line"><span>4:20</span></span>
+<span class="line"><span>That an analysis like this can tell you that 75% of the errors, maybe the system gets lots</span></span>
+<span class="line"><span>4:25</span></span>
+<span class="line"><span>of things right, but of all the things it gets not quite right, 75% of the problems</span></span>
+<span class="line"><span>4:29</span></span>
+<span class="line"><span>is from the database query.</span></span>
+<span class="line"><span>4:31</span></span>
+<span class="line"><span>This is incredibly helpful information to tell you where to focus your efforts.</span></span>
+<span class="line"><span>4:36</span></span>
+<span class="line"><span>When I'm developing Agentic AI workflows, I'll often use this type of error analysis</span></span>
+<span class="line"><span>4:40</span></span>
+<span class="line"><span>to tell me where to focus my attention in terms of what to work on next.</span></span>
+<span class="line"><span>4:45</span></span>
+<span class="line"><span>When you've made that determination, it turns out that to complement the end-to-end</span></span>
+<span class="line"><span>4:49</span></span>
+<span class="line"><span>evals that we spoke about earlier in this module, it's often useful to evaluate not</span></span>
+<span class="line"><span>4:54</span></span>
+<span class="line"><span>just the entire end-to-end system, but also individual components, because that can make</span></span>
+<span class="line"><span>4:59</span></span>
+<span class="line"><span>you more efficient in how you improve the one component that, say, error analysis has</span></span>
+<span class="line"><span>5:05</span></span>
+<span class="line"><span>caused you to decide to focus your attention on.</span></span>
+<span class="line"><span>5:08</span></span>
+<span class="line"><span>So let's go on to the next video to learn about component-level evals.</span></span></code></pre>
+<h2 id="44-component-level-evaluations">4.4 Component-level evaluations</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>0:04</span></span>
+<span class="line"><span>Let's take a look at how to build and use component-level evals.</span></span>
+<span class="line"><span>0:04</span></span>
+<span class="line"><span>In our example of a research agent, we said that the research agent was sometimes missing</span></span>
+<span class="line"><span>0:09</span></span>
+<span class="line"><span>key points. But if the problem was web search, if every time we change the web search engine,</span></span>
+<span class="line"><span>0:15</span></span>
+<span class="line"><span>we need to rerun the entire workflow, that can give us a good metric for performance,</span></span>
+<span class="line"><span>0:20</span></span>
+<span class="line"><span>but that type of eval is expensive. Moreover, this is a pretty complicated workflow,</span></span>
+<span class="line"><span>0:26</span></span>
+<span class="line"><span>so even if web search made things a little bit better, maybe noise introduced by the randomness</span></span>
+<span class="line"><span>0:31</span></span>
+<span class="line"><span>of other components would make it harder to see little improvements to the web search quality.</span></span>
+<span class="line"><span>0:38</span></span>
+<span class="line"><span>So as an alternative to only using end-to-end evals, what I would do is consider building an</span></span>
+<span class="line"><span>0:43</span></span>
+<span class="line"><span>eval just to measure the quality of the web search component. For example, to measure the</span></span>
+<span class="line"><span>0:48</span></span>
+<span class="line"><span>quality of the web search results, you might create a list of gold standard web resources.</span></span>
+<span class="line"><span>0:53</span></span>
+<span class="line"><span>So for a handful of queries, have an expert say, these are the most authoritative sources that if</span></span>
+<span class="line"><span>0:58</span></span>
+<span class="line"><span>someone was searching the internet, they really should find these web pages or any of these web</span></span>
+<span class="line"><span>1:03</span></span>
+<span class="line"><span>pages would be good. And then you can write code to capture how many of the web search outputs</span></span>
+<span class="line"><span>1:09</span></span>
+<span class="line"><span>correspond to the gold standard web resources. The standard metrics from information retrieval,</span></span>
+<span class="line"><span>1:15</span></span>
+<span class="line"><span>the F1 score, don't worry about the details if you don't know what that means, but there are</span></span>
+<span class="line"><span>1:18</span></span>
+<span class="line"><span>standard metrics that allow you to measure of a list of web pages returned by web search,</span></span>
+<span class="line"><span>1:23</span></span>
+<span class="line"><span>how much does that overlap with what an expert determined are the gold standard web resources.</span></span>
+<span class="line"><span>1:29</span></span>
+<span class="line"><span>With this, you're now armed with a way to evaluate just the quality of the web search component.</span></span>
+<span class="line"><span>1:34</span></span>
+<span class="line"><span>And so as you vary the parameters or hyperparameters of how you care about web search,</span></span>
+<span class="line"><span>1:40</span></span>
+<span class="line"><span>such as if you swap in and out different web search engines, so maybe try Google and Bing</span></span>
+<span class="line"><span>1:45</span></span>
+<span class="line"><span>and Dr. Go and Tivoli and U.com and others, or as you vary the number of results or as you vary</span></span>
+<span class="line"><span>1:50</span></span>
+<span class="line"><span>the date range that you ask the web search engines to search over, this can very quickly let you</span></span>
+<span class="line"><span>1:54</span></span>
+<span class="line"><span>judge if the quality of the web search component is going up and does make more incremental</span></span>
+<span class="line"><span>2:01</span></span>
+<span class="line"><span>improvements. And then of course, before you call the job done, it would be good to run an</span></span>
+<span class="line"><span>2:05</span></span>
+<span class="line"><span>end-to-end eval to make sure that after tuning your web search system for a while that you are</span></span>
+<span class="line"><span>2:10</span></span>
+<span class="line"><span>improving the overall system performance. But during that process of tuning these hyperparameters</span></span>
+<span class="line"><span>2:16</span></span>
+<span class="line"><span>one at a time, you could do so much more efficiently by evaluating just one component</span></span>
+<span class="line"><span>2:20</span></span>
+<span class="line"><span>rather than needing to rerun end-to-end evals every single time. So component level evals can</span></span>
+<span class="line"><span>2:27</span></span>
+<span class="line"><span>provide a clearer signal for specific errors. It actually lets you know if you're improving</span></span>
+<span class="line"><span>2:32</span></span>
+<span class="line"><span>the web search component or whatever component you're working on and avoid the noise in the</span></span>
+<span class="line"><span>2:37</span></span>
+<span class="line"><span>complexity of the overall end-to-end system. And if you're working on a project where you have</span></span>
+<span class="line"><span>2:43</span></span>
+<span class="line"><span>different teams focused on different components, it can also be more efficient for one team to just</span></span>
+<span class="line"><span>2:48</span></span>
+<span class="line"><span>have his own very clear metric to optimize without needing to worry about all of the other components.</span></span>
+<span class="line"><span>2:53</span></span>
+<span class="line"><span>And so this lets the team work on a smaller, more targeted problem faster. So when you've decided to</span></span>
+<span class="line"><span>3:00</span></span>
+<span class="line"><span>work on improving a component, consider if it's worth putting in place a component-wise eval and</span></span>
+<span class="line"><span>3:05</span></span>
+<span class="line"><span>if that will let you go faster on improving the performance of that component. Now the one thing</span></span>
+<span class="line"><span>3:11</span></span>
+<span class="line"><span>you may be wondering is, if you decided to improve a component, how do you actually go about making</span></span>
+<span class="line"><span>3:16</span></span>
+<span class="line"><span>that one component work better? Let's take a look at some examples of that in the next video.</span></span></code></pre>
+<h2 id="45-how-to-address-problems-you-identify">4.5 How to address problems you identify</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>0:06</span></span>
+<span class="line"><span>An agentic workflow may comprise many different types of components, and so your tools for</span></span>
+<span class="line"><span>0:05</span></span>
+<span class="line"><span>improving different components will be pretty different. But I'd like to share with you some</span></span>
+<span class="line"><span>0:09</span></span>
+<span class="line"><span>general patterns I've seen. Some components in your agentic workflow will be non-LLM-based,</span></span>
+<span class="line"><span>0:15</span></span>
+<span class="line"><span>so it may be something like a web search engine or a text retrieval component,</span></span>
+<span class="line"><span>0:20</span></span>
+<span class="line"><span>if that's part of your RAG or Retrieval Augmented Generating System, something for code execution,</span></span>
+<span class="line"><span>0:24</span></span>
+<span class="line"><span>or maybe with a separately trained machine learning model, maybe for speech recognition</span></span>
+<span class="line"><span>0:28</span></span>
+<span class="line"><span>or detecting people in pictures, and so on. So sometimes these non-LLM-based components will</span></span>
+<span class="line"><span>0:34</span></span>
+<span class="line"><span>have parameters or hyperparameters that you can tune. So for web search, you can tune things like</span></span>
+<span class="line"><span>0:39</span></span>
+<span class="line"><span>the number of results or maybe the date range that you ask the web search engine to consider.</span></span>
+<span class="line"><span>0:44</span></span>
+<span class="line"><span>For a RAG text retrieval component, you might change the similarity threshold that determines</span></span>
+<span class="line"><span>0:49</span></span>
+<span class="line"><span>what pieces of text it considers similar, or the chunk size. Often RAG systems will take text and</span></span>
+<span class="line"><span>0:55</span></span>
+<span class="line"><span>chop it up into smaller chunks for matching, so the main hyperparameters you could use. Or for</span></span>
+<span class="line"><span>1:00</span></span>
+<span class="line"><span>people detection, you might change the detection threshold, so how sensitive it is and how likely</span></span>
+<span class="line"><span>1:05</span></span>
+<span class="line"><span>it is to declare this found a person, and this will trade off the false positives and false</span></span>
+<span class="line"><span>1:08</span></span>
+<span class="line"><span>negatives. If they follow all the details of the hyperparameters I just discussed, don't worry</span></span>
+<span class="line"><span>1:12</span></span>
+<span class="line"><span>about it. The details aren't that important, but often the components were parameters that</span></span>
+<span class="line"><span>1:16</span></span>
+<span class="line"><span>you can tune. And then of course, you can also try to replace the component. I do this a lot</span></span>
+<span class="line"><span>1:21</span></span>
+<span class="line"><span>in my agentic workflows, where I'll swap in different RAG search engines or swap in different</span></span>
+<span class="line"><span>1:26</span></span>
+<span class="line"><span>RAG providers and so on, just to see if some other provider might work better. Because of the</span></span>
+<span class="line"><span>1:32</span></span>
+<span class="line"><span>diversity of non-LLM-based components, I think the techniques for how to improve it will be</span></span>
+<span class="line"><span>1:37</span></span>
+<span class="line"><span>more diverse and dependent on exactly what that component is doing. For an LLM-based component,</span></span>
+<span class="line"><span>1:43</span></span>
+<span class="line"><span>here are some options you might consider. One would be to try to improve your prompts. So maybe</span></span>
+<span class="line"><span>1:49</span></span>
+<span class="line"><span>try to add more explicit instructions. Or if you know what few-shot prompting is, that refers to</span></span>
+<span class="line"><span>1:55</span></span>
+<span class="line"><span>adding one or more concrete examples of an example of an input and a desired output. And so few-shot</span></span>
+<span class="line"><span>2:01</span></span>
+<span class="line"><span>prompting, which you can learn about from some deep learning short courses as well, is a technique</span></span>
+<span class="line"><span>2:06</span></span>
+<span class="line"><span>that can give your LLM some examples to hopefully help it get better performing outputs written. Or</span></span>
+<span class="line"><span>2:12</span></span>
+<span class="line"><span>you can also try a different LLM. So with AI Suite or other tools, it could be pretty easy to try</span></span>
+<span class="line"><span>2:19</span></span>
+<span class="line"><span>multiple LLMs and then you can use evals to pick the best model for your application. Sometimes,</span></span>
+<span class="line"><span>2:25</span></span>
+<span class="line"><span>if a single step is too complex for one LLM to do, you can consider if you want to decompose</span></span>
+<span class="line"><span>2:30</span></span>
+<span class="line"><span>the task into smaller steps. Or maybe decompose it into a generation step and then a reflection</span></span>
+<span class="line"><span>2:35</span></span>
+<span class="line"><span>step. But more generally, if you have instructions that are very complex all within one step, maybe a</span></span>
+<span class="line"><span>2:40</span></span>
+<span class="line"><span>single LLM has a hard time following all those instructions. And you can break the task down</span></span>
+<span class="line"><span>2:45</span></span>
+<span class="line"><span>to smaller steps that may be easier for, say, two or three calls in a row to carry out accurately.</span></span>
+<span class="line"><span>2:51</span></span>
+<span class="line"><span>And lastly, something to try when the other methods aren't working well enough is to consider</span></span>
+<span class="line"><span>2:56</span></span>
+<span class="line"><span>fine-tuning a model. This tends to be quite a bit more complex than the other options, so it can be</span></span>
+<span class="line"><span>3:02</span></span>
+<span class="line"><span>quite a bit more expensive as well in terms of developer time to implement. But if you have some</span></span>
+<span class="line"><span>3:06</span></span>
+<span class="line"><span>data that you can use to fine-tune an LLM on, that could give you much better performance than</span></span>
+<span class="line"><span>3:14</span></span>
+<span class="line"><span>prompting alone. So I tend not to fine-tune a model until I've really exhausted the other</span></span>
+<span class="line"><span>3:19</span></span>
+<span class="line"><span>options, because fine-tuning tends to be quite complex. But for applications where after trying</span></span>
+<span class="line"><span>3:25</span></span>
+<span class="line"><span>everything else, if I'm still at, say, 90% performance or 95% performance, and I really</span></span>
+<span class="line"><span>3:30</span></span>
+<span class="line"><span>need to eke out those last few percentage points of improvement, then sometimes fine-tuning my own</span></span>
+<span class="line"><span>3:35</span></span>
+<span class="line"><span>custom model is a great technique to use. I tend to do this only on the more mature applications</span></span>
+<span class="line"><span>3:41</span></span>
+<span class="line"><span>because of how costly it is. It turns out that when you're trying to choose an LLM to use,</span></span>
+<span class="line"><span>3:47</span></span>
+<span class="line"><span>one thing that's very hopeful for you as a developer is if you have good intuitions about</span></span>
+<span class="line"><span>3:52</span></span>
+<span class="line"><span>how intelligent or how capable different large language models are. One thing you can do is just</span></span>
+<span class="line"><span>3:56</span></span>
+<span class="line"><span>try a lot of models and see what works best. But I find that as I work with different models,</span></span>
+<span class="line"><span>4:00</span></span>
+<span class="line"><span>I start to hone intuitions about which models work best for what types of tasks. And when you hone</span></span>
+<span class="line"><span>4:06</span></span>
+<span class="line"><span>those intuitions, you can be more efficient as well in writing good prompts for the model as</span></span>
+<span class="line"><span>4:10</span></span>
+<span class="line"><span>well as choosing good models for your tasks. So I'd like to share with you some thoughts on how to</span></span>
+<span class="line"><span>4:16</span></span>
+<span class="line"><span>hone your intuition on what models will work well for your application. Let's illustrate this with</span></span>
+<span class="line"><span>4:22</span></span>
+<span class="line"><span>an example of using an LLM to follow instructions to remove or to redact PII or personally</span></span>
+<span class="line"><span>4:29</span></span>
+<span class="line"><span>identifiable information. So you're now to remove private sensitive information. For example,</span></span>
+<span class="line"><span>4:34</span></span>
+<span class="line"><span>if you are using an LLM to summarize customer calls, then maybe one summary is on July 14th,</span></span>
+<span class="line"><span>4:41</span></span>
+<span class="line"><span>2023, Jessica Alvarez with a social security number, a certain address, a business support</span></span>
+<span class="line"><span>4:46</span></span>
+<span class="line"><span>ticket, and so on. So this piece of text has a lot of sensitive, personally identifiable</span></span>
+<span class="line"><span>4:52</span></span>
+<span class="line"><span>information. Now, let's say we want to remove all PII from such summaries because we want to use the</span></span>
+<span class="line"><span>4:58</span></span>
+<span class="line"><span>data for downstream statistical analysis of what customers are calling about. And to protect customer</span></span>
+<span class="line"><span>5:03</span></span>
+<span class="line"><span>information, we want to strip out that PII before we do that downstream statistical analysis. So you</span></span>
+<span class="line"><span>5:08</span></span>
+<span class="line"><span>might prompt an LLM with instructions to identify all cases of PII in the text below and then return</span></span>
+<span class="line"><span>5:15</span></span>
+<span class="line"><span>the redacted text with redacted colon and so on. It turns out that the larger frontier models tend</span></span>
+<span class="line"><span>5:23</span></span>
+<span class="line"><span>to be much better at following instructions, whereas the smaller models tend to be pretty</span></span>
+<span class="line"><span>5:29</span></span>
+<span class="line"><span>good at answering simple factual questions, but are just not as good at following instructions.</span></span>
+<span class="line"><span>5:34</span></span>
+<span class="line"><span>If you run this prompt on the smaller model, the OpenWay Llama 3.1 model with 8 billion parameters,</span></span>
+<span class="line"><span>5:40</span></span>
+<span class="line"><span>then it may generate an output like this. It says the identified PII is social security number and</span></span>
+<span class="line"><span>5:45</span></span>
+<span class="line"><span>address, and then it redacts it as follows and so on. And it actually makes a few errors. It didn't</span></span>
+<span class="line"><span>5:50</span></span>
+<span class="line"><span>follow the instructions properly. It showed the list, then redacted the text, then returned another</span></span>
+<span class="line"><span>5:56</span></span>
+<span class="line"><span>list, which it wasn't supposed to. And in this list of PII, it missed the name. And then I think</span></span>
+<span class="line"><span>6:02</span></span>
+<span class="line"><span>it also didn't redact partly the address. So details aren't important, but it didn't follow these instructions</span></span>
+<span class="line"><span>6:07</span></span>
+<span class="line"><span>perfectly, and maybe it missed a little bit of PII. In contrast, if you use a more intelligent model,</span></span>
+<span class="line"><span>6:12</span></span>
+<span class="line"><span>one that's better at following instructions, you may get a better result like this, where it's</span></span>
+<span class="line"><span>6:17</span></span>
+<span class="line"><span>actually correctly listed all the PII and correctly redacted all of the PII. And so I find that as</span></span>
+<span class="line"><span>6:24</span></span>
+<span class="line"><span>different LLM providers specialize on different tasks, different models really are better for</span></span>
+<span class="line"><span>6:30</span></span>
+<span class="line"><span>different tasks. Some are better at coding, some are better at following instructions, some are better</span></span>
+<span class="line"><span>6:34</span></span>
+<span class="line"><span>at certain niche types of facts. And if you can hold your intuition for what models are more or</span></span>
+<span class="line"><span>6:40</span></span>
+<span class="line"><span>less intelligent, and what type of instructions they're more or less able to follow, then you'll</span></span>
+<span class="line"><span>6:44</span></span>
+<span class="line"><span>be able to make better decisions as to what models to use. So to share a couple tips on how to do this,</span></span>
+<span class="line"><span>6:50</span></span>
+<span class="line"><span>I encourage you to play with different models often. So whenever I do a new model release,</span></span>
+<span class="line"><span>6:55</span></span>
+<span class="line"><span>I'll often go try it out and try out different queries on it, both closed-weight proprietary</span></span>
+<span class="line"><span>7:00</span></span>
+<span class="line"><span>models as well as open-weight models. And I find that sometimes having a personal set of evals might</span></span>
+<span class="line"><span>7:06</span></span>
+<span class="line"><span>also be helpful, where there's a set of things you ask a lot of different models that might help you</span></span>
+<span class="line"><span>7:10</span></span>
+<span class="line"><span>calibrate how well they do on different types of tasks. One other thing that I do a lot that I hope</span></span>
+<span class="line"><span>7:16</span></span>
+<span class="line"><span>will be useful to you is I spend a lot of time reading other people's prompts. So sometimes</span></span>
+<span class="line"><span>7:22</span></span>
+<span class="line"><span>people will publish their prompts on the internet, and I'll often go and read them to understand</span></span>
+<span class="line"><span>7:27</span></span>
+<span class="line"><span>what best practices in prompting look like. Or I'll often chat to my friends at various companies,</span></span>
+<span class="line"><span>7:32</span></span>
+<span class="line"><span>including some of the frontier model companies, and share my prompts with them, take a look at</span></span>
+<span class="line"><span>7:36</span></span>
+<span class="line"><span>how they prompt. And sometimes I'll also go to open-source packages written by people I really</span></span>
+<span class="line"><span>7:42</span></span>
+<span class="line"><span>respect and download the open-source package and dig through that open-source package to find the</span></span>
+<span class="line"><span>7:48</span></span>
+<span class="line"><span>prompts the authors have written in order to read it, in order to hold my intuition about how to</span></span>
+<span class="line"><span>7:53</span></span>
+<span class="line"><span>write good prompts. This is one technique that I encourage you to consider, is by reading lots of</span></span>
+<span class="line"><span>7:58</span></span>
+<span class="line"><span>other people's prompts that will help you get better at writing prompts yourself. And I certainly</span></span>
+<span class="line"><span>8:04</span></span>
+<span class="line"><span>do this a lot, and I encourage you to do so too. And this will hone your intuition about what types</span></span>
+<span class="line"><span>8:09</span></span>
+<span class="line"><span>of instructions models are good at following, and when to say certain things to different models.</span></span>
+<span class="line"><span>8:14</span></span>
+<span class="line"><span>In addition to playing with models and reading other people's prompts, if you try out lots of</span></span>
+<span class="line"><span>8:19</span></span>
+<span class="line"><span>different models in your agentic workflows, that also lets you hone your intuition. So you see</span></span>
+<span class="line"><span>8:24</span></span>
+<span class="line"><span>which models work best for which types of tasks, and either looking at traces to get an informal</span></span>
+<span class="line"><span>8:30</span></span>
+<span class="line"><span>sense, or looking at either component-wise or end-to-end evals can help you assess how well</span></span>
+<span class="line"><span>8:36</span></span>
+<span class="line"><span>different models are working for different parts of your workflow. And then you start to hone</span></span>
+<span class="line"><span>8:40</span></span>
+<span class="line"><span>intuitions about not just performance, but maybe also price and speed trade-offs for the use of</span></span>
+<span class="line"><span>8:46</span></span>
+<span class="line"><span>different models. And one of the reasons I tend to develop my agentic workflows with AI Suite is</span></span>
+<span class="line"><span>8:51</span></span>
+<span class="line"><span>because it then makes it easy to quickly swap out and try out different models. And this makes me</span></span>
+<span class="line"><span>8:56</span></span>
+<span class="line"><span>more efficient in terms of trying out and assessing which models work best for my workflow. So we've</span></span>
+<span class="line"><span>9:02</span></span>
+<span class="line"><span>talked a lot about how to improve the performance of different components to hopefully improve the</span></span>
+<span class="line"><span>9:08</span></span>
+<span class="line"><span>overall performance of your end-to-end system. In addition to improving the quality of the output,</span></span>
+<span class="line"><span>9:15</span></span>
+<span class="line"><span>one other thing you might want to do in your workflows is to optimize the latency as well as</span></span>
+<span class="line"><span>9:21</span></span>
+<span class="line"><span>cost. I find that for a lot of teams, when you start developing, usually the number one thing</span></span>
+<span class="line"><span>9:25</span></span>
+<span class="line"><span>to worry about is just are the outputs sufficiently high quality. But then when the system is working</span></span>
+<span class="line"><span>9:31</span></span>
+<span class="line"><span>well and you put in the production, then there's often value to make it run faster as well as run</span></span>
+<span class="line"><span>9:37</span></span>
+<span class="line"><span>at lower cost as well. So in the next video, let's take a look at some ideas for improving</span></span>
+<span class="line"><span>9:42</span></span>
+<span class="line"><span>cost and latency for agentic workflows.</span></span></code></pre>
+<h2 id="46-latency-cost-optimization">4.6 Latency, cost optimization</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>0:06</span></span>
+<span class="line"><span>When building agentic workflows, I'll often advise teams to focus on getting high-quality outputs</span></span>
+<span class="line"><span>0:05</span></span>
+<span class="line"><span>and to optimize cost and latency only later. It's not that cost and latency don't matter,</span></span>
+<span class="line"><span>0:11</span></span>
+<span class="line"><span>but I think getting the performance or the output quality to be high is usually the hardest part,</span></span>
+<span class="line"><span>0:18</span></span>
+<span class="line"><span>and then only when it's really working, then maybe focus on the other things.</span></span>
+<span class="line"><span>0:22</span></span>
+<span class="line"><span>One thing that's happened to me a few times was my team built an agentic workflow,</span></span>
+<span class="line"><span>0:26</span></span>
+<span class="line"><span>and we shipped it to users, and then we were fortunate enough to have so many users use it</span></span>
+<span class="line"><span>0:31</span></span>
+<span class="line"><span>that the cost actually became a problem, and then we had to, you know, stramble to bring the cost</span></span>
+<span class="line"><span>0:36</span></span>
+<span class="line"><span>back down. But that's a good problem to have, so I tend to worry about cost, usually less.</span></span>
+<span class="line"><span>0:42</span></span>
+<span class="line"><span>Not that I ignore it completely, but it's just lower down my list of things to worry about,</span></span>
+<span class="line"><span>0:47</span></span>
+<span class="line"><span>and so we have so many users that we really need to bring the cost down per user.</span></span>
+<span class="line"><span>0:51</span></span>
+<span class="line"><span>And then latency, I tend to worry a bit about it, but again, not as much as just making sure</span></span>
+<span class="line"><span>0:57</span></span>
+<span class="line"><span>the output quality is high. But when you do get there, it will be useful to have tools to optimize</span></span>
+<span class="line"><span>1:03</span></span>
+<span class="line"><span>latency and cost. Let's take a look at some ideas on how to do that.</span></span>
+<span class="line"><span>1:06</span></span>
+<span class="line"><span>If you want to optimize the latency of an agentic workflow, one thing I will often do is then</span></span>
+<span class="line"><span>1:13</span></span>
+<span class="line"><span>benchmark or time the workflow. So in this research agent, it takes a number of steps,</span></span>
+<span class="line"><span>1:20</span></span>
+<span class="line"><span>and if I were to time each of the steps, maybe LLM takes 7 seconds to generate the search terms.</span></span>
+<span class="line"><span>1:26</span></span>
+<span class="line"><span>Web search takes 5 seconds, this takes 3 seconds, this takes 11 seconds,</span></span>
+<span class="line"><span>1:30</span></span>
+<span class="line"><span>and then writing the final essay takes 18 seconds on average. And it is then by looking at this</span></span>
+<span class="line"><span>1:35</span></span>
+<span class="line"><span>overall timeline that I can get a sense of which components have the most room for making faster.</span></span>
+<span class="line"><span>1:43</span></span>
+<span class="line"><span>In this example, there may be multiple things you could try. If you haven't already taken</span></span>
+<span class="line"><span>1:47</span></span>
+<span class="line"><span>advantage of parallelism for some steps, like maybe web fetch, maybe it's worth considering</span></span>
+<span class="line"><span>1:53</span></span>
+<span class="line"><span>doing some of these operations in parallel. Or if you find that some of the LLMs sets are</span></span>
+<span class="line"><span>1:59</span></span>
+<span class="line"><span>taking too long, so if this first step takes 7 seconds, this last LLMs set takes 18 seconds,</span></span>
+<span class="line"><span>2:04</span></span>
+<span class="line"><span>I might also consider trying a smaller, maybe slightly less intelligent model to see if it</span></span>
+<span class="line"><span>2:09</span></span>
+<span class="line"><span>still works well enough for that, or if I can find a faster LLM provider. There are lots of APIs online</span></span>
+<span class="line"><span>2:14</span></span>
+<span class="line"><span>for different LLMs interfaces, and some companies have specialized hardware to allow them to serve</span></span>
+<span class="line"><span>2:20</span></span>
+<span class="line"><span>certain LLMs much faster, so sometimes it's worth trying different LLMs providers to see which ones</span></span>
+<span class="line"><span>2:26</span></span>
+<span class="line"><span>can return tokens the fastest. But at least doing this type of timing analysis can give you a sense</span></span>
+<span class="line"><span>2:32</span></span>
+<span class="line"><span>of which components to focus on in terms of reducing latency. In terms of optimizing costs,</span></span>
+<span class="line"><span>2:39</span></span>
+<span class="line"><span>a similar calculation where you calculate the cost of each step would also let you benchmark</span></span>
+<span class="line"><span>2:43</span></span>
+<span class="line"><span>and decide which steps to focus on. Many LLMs providers charge per token based on the input</span></span>
+<span class="line"><span>2:49</span></span>
+<span class="line"><span>and output length. Many API providers charge per API call, and the computational steps may have</span></span>
+<span class="line"><span>2:55</span></span>
+<span class="line"><span>different costs based on how you pay for server capacity and how much the service costs. And so</span></span>
+<span class="line"><span>3:00</span></span>
+<span class="line"><span>for a process like this, you might decide in this example that the tokens for this LLMs step on</span></span>
+<span class="line"><span>3:06</span></span>
+<span class="line"><span>average cost 0.04 cents, each web search API maybe costs 1.6 cents, tokens cost this much,</span></span>
+<span class="line"><span>3:14</span></span>
+<span class="line"><span>API call costs this much, PDF to text costs this much, tokens for the final SA generation cost this</span></span>
+<span class="line"><span>3:19</span></span>
+<span class="line"><span>much, and this would maybe again give you a sense of are there cheaper components you could use or</span></span>
+<span class="line"><span>3:23</span></span>
+<span class="line"><span>cheaper LLMs you could use to see where the biggest opportunity is for optimizing costs. And I found</span></span>
+<span class="line"><span>3:29</span></span>
+<span class="line"><span>that these benchmarking exercises can be very clarifying, and sometimes they'll clearly tell</span></span>
+<span class="line"><span>3:34</span></span>
+<span class="line"><span>me that certain components are just not worth worrying about because they're not that material</span></span>
+<span class="line"><span>3:38</span></span>
+<span class="line"><span>or contributor to either cost or to latency. So I find that when either cost or latency becomes</span></span>
+<span class="line"><span>3:45</span></span>
+<span class="line"><span>an issue, by simply measuring the cost and or latency of each step, that often gives you a</span></span>
+<span class="line"><span>3:51</span></span>
+<span class="line"><span>basis with which to decide which components to focus on optimizing. So we're nearly at the end</span></span>
+<span class="line"><span>3:58</span></span>
+<span class="line"><span>of this module. I know we've covered a lot, but thank you for sticking with me. Let's go on to</span></span>
+<span class="line"><span>4:02</span></span>
+<span class="line"><span>the final video of this module to wrap up.</span></span></code></pre>
+<h2 id="47-development-process-summary">4.7 Development process summary</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>0:06</span></span>
+<span class="line"><span>We've gone through a lot of tips for driving a disciplined, efficient process for building</span></span>
+<span class="line"><span>0:05</span></span>
+<span class="line"><span>Agentic AI systems. I'd like to wrap up by sharing with you what it feels like to be going through</span></span>
+<span class="line"><span>0:11</span></span>
+<span class="line"><span>this process. When I'm building these workflows, I feel like there are two major activities I'm</span></span>
+<span class="line"><span>0:16</span></span>
+<span class="line"><span>often spending time on. One is building, so writing software, trying to write code to improve</span></span>
+<span class="line"><span>0:21</span></span>
+<span class="line"><span>my system. And the second, which sometimes doesn't feel like progress, but I think is equally</span></span>
+<span class="line"><span>0:27</span></span>
+<span class="line"><span>important, is analysis to help me decide where to focus my build efforts next. And I often go</span></span>
+<span class="line"><span>0:32</span></span>
+<span class="line"><span>back and forth between building and analyzing, including things like error analysis. So for</span></span>
+<span class="line"><span>0:38</span></span>
+<span class="line"><span>example, when building a new agentic workflow, I'll often start by quickly building an end-to-end</span></span>
+<span class="line"><span>0:43</span></span>
+<span class="line"><span>system, maybe even a quick and dirty implementation. And this lets me then start to examine the final</span></span>
+<span class="line"><span>0:49</span></span>
+<span class="line"><span>outputs of the end-to-end system, or also read through traces to get a sense of where it's doing</span></span>
+<span class="line"><span>0:54</span></span>
+<span class="line"><span>well, where it's doing poorly. Based on even just looking at traces, sometimes this will give me a</span></span>
+<span class="line"><span>0:59</span></span>
+<span class="line"><span>gut sense of which individual components I might want to improve. And so I might go tune some</span></span>
+<span class="line"><span>1:05</span></span>
+<span class="line"><span>individual components or keep tuning the overall end-to-end system. As my system starts to mature</span></span>
+<span class="line"><span>1:11</span></span>
+<span class="line"><span>a little bit more, then beyond just manually examining a few outputs and reading through</span></span>
+<span class="line"><span>1:15</span></span>
+<span class="line"><span>traces, I might start to build evals and have a small data set, maybe just 10-20 examples,</span></span>
+<span class="line"><span>1:21</span></span>
+<span class="line"><span>to compute metrics, at least on end-to-end performance. And this then further helps me</span></span>
+<span class="line"><span>1:27</span></span>
+<span class="line"><span>have a more refined perspective on how to improve the end-to-end system or how to improve individual</span></span>
+<span class="line"><span>1:32</span></span>
+<span class="line"><span>components. As it matures even further, my analysis then becomes maybe even more disciplined, where I</span></span>
+<span class="line"><span>1:38</span></span>
+<span class="line"><span>start to do error analysis and look through the components and try to count up how frequently</span></span>
+<span class="line"><span>1:42</span></span>
+<span class="line"><span>individual components led to subpar outputs. And this more rigorous analysis then lets me be even</span></span>
+<span class="line"><span>1:49</span></span>
+<span class="line"><span>more focused in deciding what components to work on next or inspire ideas for improving the overall</span></span>
+<span class="line"><span>1:54</span></span>
+<span class="line"><span>end-to-end system. And then eventually, when it's even more mature to drive more efficient improvements</span></span>
+<span class="line"><span>2:00</span></span>
+<span class="line"><span>at the component level, that's when I might also build component-level evals. And so the workflow</span></span>
+<span class="line"><span>2:06</span></span>
+<span class="line"><span>of building an agentic system often goes back and forth. It's not a linear process. We sometimes</span></span>
+<span class="line"><span>2:11</span></span>
+<span class="line"><span>tune the end-to-end system, then do some error analysis, then improve a component for a bit,</span></span>
+<span class="line"><span>2:15</span></span>
+<span class="line"><span>then tune the component-level evals. And I tend to bounce back and forth between these two types</span></span>
+<span class="line"><span>2:20</span></span>
+<span class="line"><span>of techniques. And what I see less experienced teams often do is spend a lot of time building</span></span>
+<span class="line"><span>2:27</span></span>
+<span class="line"><span>and probably much less time analyzing with error analysis, building evals, and so on. That would be</span></span>
+<span class="line"><span>2:32</span></span>
+<span class="line"><span>ideal because this is analysis that helps you really focus where to spend your time building.</span></span>
+<span class="line"><span>2:38</span></span>
+<span class="line"><span>And just one more tip. There are actually quite a few tools out there to help with monitoring traces,</span></span>
+<span class="line"><span>2:44</span></span>
+<span class="line"><span>logging runtime, computing costs, and so on. And those tools can be helpful. I sometimes use a few</span></span>
+<span class="line"><span>2:49</span></span>
+<span class="line"><span>of them, and quite a few of DeepLearning.ai short course partners offer those tools, and they do</span></span>
+<span class="line"><span>2:54</span></span>
+<span class="line"><span>work well. I find that for agentic workflows I end up working on, most agentic workflows are pretty</span></span>
+<span class="line"><span>3:00</span></span>
+<span class="line"><span>custom. And so I end up building pretty custom evals myself because I want to capture the things</span></span>
+<span class="line"><span>3:07</span></span>
+<span class="line"><span>that work incorrectly with my system. So even though I do use some of those tools, I also end</span></span>
+<span class="line"><span>3:12</span></span>
+<span class="line"><span>up building a lot of custom evals that are well fit to my specific application and the issues I</span></span>
+<span class="line"><span>3:18</span></span>
+<span class="line"><span>see with it. So thanks for sticking with me this far to the end of the fourth of five modules.</span></span>
+<span class="line"><span>3:25</span></span>
+<span class="line"><span>If you're able to implement even a fraction of the ideas from this module, I think you'll be</span></span>
+<span class="line"><span>3:32</span></span>
+<span class="line"><span>well ahead of the vast majority of developers in terms of your sophistication at implementing</span></span>
+<span class="line"><span>3:38</span></span>
+<span class="line"><span>agentic workflows. Hope you found these materials useful, and I look forward to seeing you in the</span></span>
+<span class="line"><span>3:43</span></span>
+<span class="line"><span>final module. We'll talk about some more advanced design patterns for building</span></span>
+<span class="line"><span>3:48</span></span>
+<span class="line"><span>highly autonomous agents. I'll see you in the last module of this course.```</span></span></code></pre>  </div> </section> <nav class="chapter-nav" aria-label="Document navigation" data-astro-cid-vjjnhoij> <a href="/library/courses/andrew-ng-agentic-ai/lec-03?tab=insights" class="chapter-nav-link chapter-nav-prev" data-astro-cid-vjjnhoij> <span class="nav-direction" data-astro-cid-vjjnhoij>← Previous</span> <span class="nav-title" data-astro-cid-vjjnhoij> <span class="nav-label" data-astro-cid-vjjnhoij>Agentic AI：构建自主式 AI 工作流</span> 「吴恩达Agentic AI模块3」工具使用与模型上下文协议（MCP） </span> </a> <a href="/library/courses/andrew-ng-agentic-ai/lec-05?tab=insights" class="chapter-nav-link chapter-nav-next" data-astro-cid-vjjnhoij> <span class="nav-direction" data-astro-cid-vjjnhoij>Next →</span> <span class="nav-title" data-astro-cid-vjjnhoij> <span class="nav-label" data-astro-cid-vjjnhoij>Agentic AI：构建自主式 AI 工作流</span> 「吴恩达Agentic AI模块5」高度自主的智能体AI模式 </span> </a> </nav>  </article> <script type="module">const d=document.querySelectorAll("[data-module-switcher]");d.forEach(s=>{const o=s.querySelectorAll("[data-target-module]"),l=document.querySelectorAll("[data-module-panel]");o.forEach(t=>{t.addEventListener("click",()=>{const a=t.getAttribute("data-target-module");o.forEach(e=>e.classList.toggle("module-button--active",e===t)),l.forEach(e=>{const c=e.getAttribute("data-module-panel")===a;e.classList.toggle("reader-content--active",c),c?e.removeAttribute("hidden"):e.setAttribute("hidden","")});const r=new URL(window.location.href);a?r.searchParams.set("tab",a):r.searchParams.delete("tab"),window.history.replaceState({},"",r)})})});</script>  </main> <div class="mobile-bottom-bar" data-astro-cid-mw7aashj> <button id="mobile-toc-btn" class="mobile-bottom-btn" aria-label="Show Table of Contents" style data-astro-cid-mw7aashj> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-mw7aashj> <line x1="8" y1="6" x2="21" y2="6" data-astro-cid-mw7aashj></line><line x1="8" y1="12" x2="21" y2="12" data-astro-cid-mw7aashj></line><line x1="8" y1="18" x2="21" y2="18" data-astro-cid-mw7aashj></line><line x1="3" y1="6" x2="3.01" y2="6" data-astro-cid-mw7aashj></line><line x1="3" y1="12" x2="3.01" y2="12" data-astro-cid-mw7aashj></line><line x1="3" y1="18" x2="3.01" y2="18" data-astro-cid-mw7aashj></line> </svg> <span data-astro-cid-mw7aashj>目录</span> </button> <div class="mobile-bottom-divider" data-astro-cid-mw7aashj></div> <button id="mobile-info-btn" class="mobile-bottom-btn" aria-label="Show Basic Info" data-astro-cid-mw7aashj> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-mw7aashj> <circle cx="12" cy="12" r="10" data-astro-cid-mw7aashj></circle><line x1="12" y1="16" x2="12" y2="12" data-astro-cid-mw7aashj></line><line x1="12" y1="8" x2="12.01" y2="8" data-astro-cid-mw7aashj></line> </svg> <span data-astro-cid-mw7aashj>信息</span> </button> <div class="mobile-bottom-divider" data-astro-cid-mw7aashj></div> <button id="mobile-settings-btn" class="mobile-bottom-btn" aria-label="Typography Settings" data-astro-cid-mw7aashj> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-mw7aashj> <rect x="3" y="11" width="18" height="11" rx="2" ry="2" data-astro-cid-mw7aashj></rect><path d="M7 11V7a5 5 0 0 1 10 0v4" data-astro-cid-mw7aashj></path> </svg> <span data-astro-cid-mw7aashj>排版</span> </button> </div> <aside class="docs-toc" id="docs-toc" data-astro-cid-mw7aashj> <div class="docs-panel docs-toc-flex" data-panel="toc" data-astro-cid-mw7aashj> <nav class="toc" aria-label="Table of contents" data-astro-cid-cott7la3> <div class="toc-header" data-astro-cid-cott7la3> <div data-astro-cid-cott7la3> <p class="toc-label" data-astro-cid-cott7la3>On This Page</p> <p class="toc-readtime" data-astro-cid-cott7la3>2 min read</p> </div> <span class="toc-progress" data-reading-progress-label data-astro-cid-cott7la3>0%</span> </div> <div class="toc-locale-labels" data-astro-cid-cott7la3> <span class="toc-locale-pill toc-locale-pill--active" data-toc-pill="insights" data-astro-cid-cott7la3> 课程概览 </span><span class="toc-locale-pill" data-toc-pill="blog" data-astro-cid-cott7la3> 专题博客 </span><span class="toc-locale-pill" data-toc-pill="guides" data-astro-cid-cott7la3> 学习指南 </span><span class="toc-locale-pill" data-toc-pill="lecnotes-zh" data-astro-cid-cott7la3> 视频实录 </span><span class="toc-locale-pill" data-toc-pill="lecture" data-astro-cid-cott7la3> 课程脚本 </span> </div> <ul class="toc-list toc-list--active" data-toc-panel="insights" data-astro-cid-cott7la3> <li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#概要" class="toc-link" data-heading="概要" data-locale="insights" data-astro-cid-cott7la3> 概要 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#关键要点" class="toc-link" data-heading="关键要点" data-locale="insights" data-astro-cid-cott7la3> 关键要点 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#1-核心开发理念从快速原型到迭代优化" class="toc-link" data-heading="1-核心开发理念从快速原型到迭代优化" data-locale="insights" data-astro-cid-cott7la3> 1. 核心开发理念：从快速原型到迭代优化 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#关键步骤" class="toc-link" data-heading="关键步骤" data-locale="insights" data-astro-cid-cott7la3> 关键步骤： </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#2-评估evals衡量和驱动系统改进" class="toc-link" data-heading="2-评估evals衡量和驱动系统改进" data-locale="insights" data-astro-cid-cott7la3> 2. 评估（Evals）：衡量和驱动系统改进 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#端到端评估的构建" class="toc-link" data-heading="端到端评估的构建" data-locale="insights" data-astro-cid-cott7la3> 端到端评估的构建 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#评估方法的分类框架" class="toc-link" data-heading="评估方法的分类框架" data-locale="insights" data-astro-cid-cott7la3> 评估方法的分类框架 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#评估设计的实用技巧" class="toc-link" data-heading="评估设计的实用技巧" data-locale="insights" data-astro-cid-cott7la3> 评估设计的实用技巧 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#3-错误分析精确定位问题的根源" class="toc-link" data-heading="3-错误分析精确定位问题的根源" data-locale="insights" data-astro-cid-cott7la3> 3. 错误分析：精确定位问题的根源 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#核心方法" class="toc-link" data-heading="核心方法" data-locale="insights" data-astro-cid-cott7la3> 核心方法： </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#4-组件级评估实现高效的局部优化" class="toc-link" data-heading="4-组件级评估实现高效的局部优化" data-locale="insights" data-astro-cid-cott7la3> 4. 组件级评估：实现高效的局部优化 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#构建方法以网页搜索组件为例" class="toc-link" data-heading="构建方法以网页搜索组件为例" data-locale="insights" data-astro-cid-cott7la3> 构建方法（以网页搜索组件为例） </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#5-解决已识别问题的策略" class="toc-link" data-heading="5-解决已识别问题的策略" data-locale="insights" data-astro-cid-cott7la3> 5. 解决已识别问题的策略 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#改进非-llm-组件" class="toc-link" data-heading="改进非-llm-组件" data-locale="insights" data-astro-cid-cott7la3> 改进非 LLM 组件 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#改进基于-llm-的组件" class="toc-link" data-heading="改进基于-llm-的组件" data-locale="insights" data-astro-cid-cott7la3> 改进基于 LLM 的组件 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#培养对-llm-的直觉" class="toc-link" data-heading="培养对-llm-的直觉" data-locale="insights" data-astro-cid-cott7la3> 培养对 LLM 的直觉 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#6-成本与延迟优化" class="toc-link" data-heading="6-成本与延迟优化" data-locale="insights" data-astro-cid-cott7la3> 6. 成本与延迟优化 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#优化方法论" class="toc-link" data-heading="优化方法论" data-locale="insights" data-astro-cid-cott7la3> 优化方法论 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#7-完整的开发流程总结" class="toc-link" data-heading="7-完整的开发流程总结" data-locale="insights" data-astro-cid-cott7la3> 7. 完整的开发流程总结 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#开发阶段的演进" class="toc-link" data-heading="开发阶段的演进" data-locale="insights" data-astro-cid-cott7la3> 开发阶段的演进： </a> </li> </ul><ul class="toc-list" data-toc-panel="blog" hidden data-astro-cid-cott7la3> <li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#引言" class="toc-link" data-heading="引言" data-locale="blog" data-astro-cid-cott7la3> 引言 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#五个反直觉的开发原则" class="toc-link" data-heading="五个反直觉的开发原则" data-locale="blog" data-astro-cid-cott7la3> 五个反直觉的开发原则 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#1-先快速搭建再求完美" class="toc-link" data-heading="1-先快速搭建再求完美" data-locale="blog" data-astro-cid-cott7la3> 1. 先快速搭建，再求完美 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#2-从足够好的评估开始" class="toc-link" data-heading="2-从足够好的评估开始" data-locale="blog" data-astro-cid-cott7la3> 2. 从“足够好”的评估开始 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#3-让错误分析而非直觉指引你" class="toc-link" data-heading="3-让错误分析而非直觉指引你" data-locale="blog" data-astro-cid-cott7la3> 3. 让错误分析而非直觉指引你 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#4-想写好提示词去读别人的" class="toc-link" data-heading="4-想写好提示词去读别人的" data-locale="blog" data-astro-cid-cott7la3> 4. 想写好提示词？去读别人的 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#5-先追求质量成本和延迟是甜蜜的烦恼" class="toc-link" data-heading="5-先追求质量成本和延迟是甜蜜的烦恼" data-locale="blog" data-astro-cid-cott7la3> 5. 先追求质量，成本和延迟是“甜蜜的烦恼” </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#结论" class="toc-link" data-heading="结论" data-locale="blog" data-astro-cid-cott7la3> 结论 </a> </li> </ul><ul class="toc-list" data-toc-panel="guides" hidden data-astro-cid-cott7la3> <li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#测验" class="toc-link" data-heading="测验" data-locale="guides" data-astro-cid-cott7la3> 测验 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#简答题" class="toc-link" data-heading="简答题" data-locale="guides" data-astro-cid-cott7la3> 简答题 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#答案解析" class="toc-link" data-heading="答案解析" data-locale="guides" data-astro-cid-cott7la3> 答案解析 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#开放式论述题" class="toc-link" data-heading="开放式论述题" data-locale="guides" data-astro-cid-cott7la3> 开放式论述题 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#关键术语词汇表" class="toc-link" data-heading="关键术语词汇表" data-locale="guides" data-astro-cid-cott7la3> 关键术语词汇表 </a> </li> </ul><ul class="toc-list" data-toc-panel="lecnotes-zh" hidden data-astro-cid-cott7la3> <li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#41-评估evals" class="toc-link" data-heading="41-评估evals" data-locale="lecnotes-zh" data-astro-cid-cott7la3> 4.1 评估（Evals） </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#42-错误分析与确定下一步的优先级" class="toc-link" data-heading="42-错误分析与确定下一步的优先级" data-locale="lecnotes-zh" data-astro-cid-cott7la3> 4.2 错误分析与确定下一步的优先级 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#43-更多错误分析示例" class="toc-link" data-heading="43-更多错误分析示例" data-locale="lecnotes-zh" data-astro-cid-cott7la3> 4.3 更多错误分析示例 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#44-组件级评估" class="toc-link" data-heading="44-组件级评估" data-locale="lecnotes-zh" data-astro-cid-cott7la3> 4.4 组件级评估 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#45-如何解决你发现的问题" class="toc-link" data-heading="45-如何解决你发现的问题" data-locale="lecnotes-zh" data-astro-cid-cott7la3> 4.5 如何解决你发现的问题 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#46-延迟与成本优化" class="toc-link" data-heading="46-延迟与成本优化" data-locale="lecnotes-zh" data-astro-cid-cott7la3> 4.6 延迟与成本优化 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#47-开发流程总结" class="toc-link" data-heading="47-开发流程总结" data-locale="lecnotes-zh" data-astro-cid-cott7la3> 4.7 开发流程总结 </a> </li> </ul><ul class="toc-list" data-toc-panel="lecture" hidden data-astro-cid-cott7la3> <li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#41-evaluationsevals" class="toc-link" data-heading="41-evaluationsevals" data-locale="lecture" data-astro-cid-cott7la3> 4.1 Evaluations(evals) </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#42-error-analysis-and-prioritizing-next-steps" class="toc-link" data-heading="42-error-analysis-and-prioritizing-next-steps" data-locale="lecture" data-astro-cid-cott7la3> 4.2 Error analysis and prioritizing next steps </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#43-more-error-analysis-examples" class="toc-link" data-heading="43-more-error-analysis-examples" data-locale="lecture" data-astro-cid-cott7la3> 4.3 More error analysis examples </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#44-component-level-evaluations" class="toc-link" data-heading="44-component-level-evaluations" data-locale="lecture" data-astro-cid-cott7la3> 4.4 Component-level evaluations </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#45-how-to-address-problems-you-identify" class="toc-link" data-heading="45-how-to-address-problems-you-identify" data-locale="lecture" data-astro-cid-cott7la3> 4.5 How to address problems you identify </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#46-latency-cost-optimization" class="toc-link" data-heading="46-latency-cost-optimization" data-locale="lecture" data-astro-cid-cott7la3> 4.6 Latency, cost optimization </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#47-development-process-summary" class="toc-link" data-heading="47-development-process-summary" data-locale="lecture" data-astro-cid-cott7la3> 4.7 Development process summary </a> </li> </ul> </nav> <script type="module">const s=document.querySelector("[data-reading-progress-label]"),v=document.querySelectorAll("[data-toc-panel]"),p=document.querySelectorAll("[data-toc-pill]"),d=()=>document.querySelector(".language-button--active[data-target-locale]")?.getAttribute("data-target-locale")??document.querySelector("[data-toc-panel].toc-list--active")?.getAttribute("data-toc-panel")??document.querySelector("[data-toc-panel]")?.getAttribute("data-toc-panel")??"zh";let l;const u=e=>{v.forEach(t=>{const c=t.getAttribute("data-toc-panel")===e;t.classList.toggle("toc-list--active",c),c?t.removeAttribute("hidden"):t.setAttribute("hidden","")}),p.forEach(t=>{t.classList.toggle("toc-locale-pill--active",t.getAttribute("data-toc-pill")===e)})},g=()=>{l?.disconnect();const e=d(),t=document.querySelector(`[data-locale-panel="${e}"]`),c=t?t.querySelectorAll("h2[id], h3[id]"):document.querySelectorAll(".chapter-article h2[id], .chapter-article h3[id]"),a=document.querySelectorAll(`.toc-link[data-locale="${e}"]`);if(!c.length||!a.length)return;l=new IntersectionObserver(o=>{o.forEach(i=>{i.isIntersecting&&(a.forEach(h=>h.classList.remove("toc-link--active")),document.querySelector(`.toc-link[data-heading="${i.target.id}"]`)?.classList.add("toc-link--active"))})},{rootMargin:"0px 0px -80% 0px",threshold:0});const r=l;r&&c.forEach(o=>r.observe(o))},n=()=>{const e=document.querySelector(".chapter-article");if(!e||!s)return;const t=e.getBoundingClientRect(),c=window.innerHeight,a=Math.max(e.scrollHeight-c,1),r=Math.min(Math.max(-t.top,0),a),o=Math.round(r/a*100);s.textContent=`${o}%`};u(d());g();n();window.addEventListener("scroll",n,{passive:!0});window.addEventListener("resize",n);document.querySelectorAll("[data-language-switcher] [data-target-locale]").forEach(e=>{e.addEventListener("click",()=>{const t=e.getAttribute("data-target-locale");t&&(u(t),g())})});</script>  </div> <details class="docs-panel docs-details" data-panel="info" data-mobile-hidden data-astro-cid-mw7aashj> <summary class="panel-summary" data-astro-cid-mw7aashj> <span class="summary-title" data-astro-cid-mw7aashj>信息 INFO</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="summary-chevron" data-astro-cid-mw7aashj><polyline points="6 9 12 15 18 9" data-astro-cid-mw7aashj></polyline></svg> </summary> <div class="panel-content docs-toc-bottom" data-astro-cid-mw7aashj> <div class="sidebar-reader-details" data-astro-cid-i3k527kx> <div class="sidebar-details-grid-wrapper" data-astro-cid-i3k527kx> <div class="sidebar-details-grid" data-astro-cid-i3k527kx> <div class="details-group" data-astro-cid-i3k527kx> <div class="details-item" data-astro-cid-i3k527kx> <span class="details-label" data-astro-cid-i3k527kx>章节</span> <span class="details-value" data-astro-cid-i3k527kx>「吴恩达Agentic AI模块4」工作流开发与优化</span> </div> <div class="details-item" data-astro-cid-i3k527kx> <span class="details-label" data-astro-cid-i3k527kx>日期</span> <span class="details-value" data-astro-cid-i3k527kx>2025-10-17</span> </div> </div> <div class="details-group details-sources" data-astro-cid-i3k527kx> <div class="details-item" data-astro-cid-i3k527kx> <span class="details-label" data-astro-cid-i3k527kx>关键链接</span> <div class="details-source-links" data-astro-cid-i3k527kx> <a class="source-direct-link" href="https://learn.deeplearning.ai/courses/agentic-ai/" target="_blank" rel="noopener" data-astro-cid-i3k527kx>课程链接</a> <a class="source-direct-link" href="https://notebooklm.google.com/notebook/479456b0-c4a5-4d08-83c0-2b80e3911dd4" target="_blank" rel="noopener" data-astro-cid-i3k527kx>笔记链接</a> </div> </div> </div> </div> </div> </div> </div> </details> <details class="docs-panel docs-details" data-panel="settings" data-mobile-hidden data-astro-cid-mw7aashj> <summary class="panel-summary" data-astro-cid-mw7aashj> <span class="summary-title" data-astro-cid-mw7aashj>排版 TYPE</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="summary-chevron" data-astro-cid-mw7aashj><polyline points="6 9 12 15 18 9" data-astro-cid-mw7aashj></polyline></svg> </summary> <div class="panel-content" data-astro-cid-mw7aashj> <div class="typography-settings" data-astro-cid-e26rjylm> <div class="setting-group" data-astro-cid-e26rjylm> <label class="setting-label" data-astro-cid-e26rjylm>字体 Font</label> <div class="setting-buttons" data-setting-group="font-family" data-astro-cid-e26rjylm> <button class="setting-btn" data-value="sans" data-astro-cid-e26rjylm>无衬线</button> <button class="setting-btn" data-value="serif" data-astro-cid-e26rjylm>衬线</button> </div> </div> <div class="setting-group" data-astro-cid-e26rjylm> <label class="setting-label" data-astro-cid-e26rjylm>字号 Size</label> <div class="setting-buttons" data-setting-group="font-size" data-astro-cid-e26rjylm> <button class="setting-btn" data-value="sm" data-astro-cid-e26rjylm>小</button> <button class="setting-btn" data-value="md" data-astro-cid-e26rjylm>中</button> <button class="setting-btn" data-value="lg" data-astro-cid-e26rjylm>大</button> </div> </div> </div>  <script type="module">const r=()=>{let t=localStorage.getItem("reader-font-family")||"sans",e=localStorage.getItem("reader-font-size")||"md";["sans","serif"].includes(t)||(t="sans",localStorage.setItem("reader-font-family",t)),["sm","md","lg"].includes(e)||(e="md",localStorage.setItem("reader-font-size",e)),document.documentElement.setAttribute("data-reader-font-family",t),document.documentElement.setAttribute("data-reader-font-size",e),document.querySelectorAll(".setting-buttons").forEach(a=>{const s=a.getAttribute("data-setting-group")==="font-family"?t:e;a.querySelectorAll(".setting-btn").forEach(o=>{o.getAttribute("data-value")===s?o.classList.add("active"):o.classList.remove("active")})})};document.querySelectorAll(".setting-buttons").forEach(t=>{const e=t.getAttribute("data-setting-group");t.querySelectorAll(".setting-btn").forEach(a=>{a.addEventListener("click",()=>{const l=a.getAttribute("data-value");e==="font-family"?localStorage.setItem("reader-font-family",l):localStorage.setItem("reader-font-size",l),r()})})});r();</script> </div> </details> </aside> </div> <footer class="docs-footer" data-astro-cid-wizvoa5a> <div class="footer-left" data-astro-cid-wizvoa5a> <span class="footer-copy" data-astro-cid-wizvoa5a>© 2026 Linguista Library</span> </div> <div class="footer-right" data-astro-cid-wizvoa5a> <a href="https://github.com/h4harsimran/vibe-coders-handbook" target="_blank" rel="noopener" data-astro-cid-wizvoa5a>Handbook Source</a> </div> </footer>  <script type="module">const b=document.querySelector("[data-reading-progress-bar]"),c=document.querySelector(".chapter-article"),u=document.getElementById("mobile-sidebar-toggle"),v=document.getElementById("mobile-toc-btn"),w=document.getElementById("mobile-info-btn"),d=document.getElementById("sidebar-overlay"),l=document.getElementById("toc-overlay"),i=document.getElementById("docs-sidebar"),e=document.getElementById("docs-toc"),r=()=>{i?.classList.contains("show")?(i?.classList.remove("show"),d?.classList.remove("show"),document.body.style.overflow=""):(i?.classList.add("show"),d?.classList.add("show"),document.body.style.overflow="hidden")},o=s=>{if(!e)return;const a=e.classList.contains("show"),n=e.getAttribute("data-active-panel")===s;a&&n?(e.classList.remove("show"),l?.classList.remove("show"),document.body.style.overflow=""):(e.setAttribute("data-active-panel",s),e.querySelectorAll(".docs-panel").forEach(t=>{t.getAttribute("data-panel")===s?(t.removeAttribute("data-mobile-hidden"),t.tagName==="DETAILS"&&t.setAttribute("open",""),t.tagName==="DETAILS"&&t.setAttribute("open","")):t.setAttribute("data-mobile-hidden","")}),e.classList.add("show"),l?.classList.add("show"),document.body.style.overflow="hidden")};u?.addEventListener("click",r);d?.addEventListener("click",r);v?.addEventListener("click",()=>o("toc"));const h=document.getElementById("mobile-settings-btn");h?.addEventListener("click",()=>o("settings"));w?.addEventListener("click",()=>o("info"));l?.addEventListener("click",()=>o(e?.getAttribute("data-active-panel")||"toc"));window.addEventListener("resize",()=>{window.innerWidth>=1024&&i?.classList.contains("show")&&r(),window.innerWidth>=1280&&e?.classList.contains("show")&&o(e.getAttribute("data-active-panel")||"toc")});const m=()=>{if(!b||!c)return;const s=c.getBoundingClientRect(),a=window.innerHeight,n=Math.max(c.scrollHeight-a,1),g=Math.min(Math.max(-s.top,0),n),t=Math.max(0,Math.min(1,g/n));b.style.transform=`scaleX(${t})`};m();window.addEventListener("scroll",m,{passive:!0});window.addEventListener("resize",m);</script>  <script type="module">const a=new IntersectionObserver(t=>{t.forEach(r=>{if(r.isIntersecting){const e=r.target,s=Number(e instanceof HTMLElement?e.dataset.revealDelay:void 0)||0;s>0?setTimeout(()=>{requestAnimationFrame(()=>e.classList.add("in-view"))},s):requestAnimationFrame(()=>e.classList.add("in-view")),a.unobserve(e)}})},{threshold:.12,rootMargin:"0px 0px -40px 0px"});document.querySelectorAll(".reveal").forEach(t=>a.observe(t));</script> </body> </html>  
