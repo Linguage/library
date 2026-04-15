@@ -1,0 +1,294 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/library/img/person-entry-face.svg" type="image/svg+xml" sizes="any"><link rel="shortcut icon" href="/library/img/person-entry-face.svg" type="image/svg+xml"><title>规格驱动开发 (SDD)：用编程智能体构建更好的软件</title><meta name="description" content="系统讲解规格驱动开发（Spec-Driven Development）方法论——通过编写结构化的 Markdown 规格说明来指导编程智能体进行代码编写，涵盖项目章程制定、功能循环开发、重新规划、传统项目适配以及智能体技能自动化，帮助开发者在享受 AI 极速编码的同时牢牢把控软件设计与方向。"><link rel="canonical" href="https://linguista.cn/library/courses/deeplearningai-spec-driven-dev"><meta property="og:type" content="website"><meta property="og:site_name" content="Linguista Library"><meta property="og:title" content="规格驱动开发 (SDD)：用编程智能体构建更好的软件"><meta property="og:description" content="系统讲解规格驱动开发（Spec-Driven Development）方法论——通过编写结构化的 Markdown 规格说明来指导编程智能体进行代码编写，涵盖项目章程制定、功能循环开发、重新规划、传统项目适配以及智能体技能自动化，帮助开发者在享受 AI 极速编码的同时牢牢把控软件设计与方向。"><meta property="og:url" content="https://linguista.cn/library/courses/deeplearningai-spec-driven-dev"><meta property="og:image" content="https://linguista.cn/library/img/person-entry-face.svg"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://linguista.cn/library/img/person-entry-face.svg"><meta name="twitter:title" content="规格驱动开发 (SDD)：用编程智能体构建更好的软件"><meta name="twitter:description" content="系统讲解规格驱动开发（Spec-Driven Development）方法论——通过编写结构化的 Markdown 规格说明来指导编程智能体进行代码编写，涵盖项目章程制定、功能循环开发、重新规划、传统项目适配以及智能体技能自动化，帮助开发者在享受 AI 极速编码的同时牢牢把控软件设计与方向。"><script async src="https://www.googletagmanager.com/gtag/js?id=G-99PGBGJH4S"></script><script>(function(){const gaMeasurementId = "G-99PGBGJH4S";
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', gaMeasurementId);
+        })();</script><script>
+      const getTheme = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return 'default';
+      };
+      
+      const theme = getTheme();
+      if (theme && theme !== 'default') {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+    </script><!-- Inject Typography Settings --><script>
+      (function() {
+        try {
+          var fontFam = localStorage.getItem('reader-font-family');
+          var fontSz = localStorage.getItem('reader-font-size');
+          if (fontFam) document.documentElement.setAttribute('data-reader-font-family', fontFam);
+          if (fontSz) document.documentElement.setAttribute('data-reader-font-size', fontSz);
+        } catch(e) {}
+      })();
+    </script><link rel="stylesheet" href="/library/_astro/_slug_.BkFLTD4j.css">
+<link rel="stylesheet" href="/library/_astro/_slug_.DUJHuQaB.css">
+<style>.sidebar-nav[data-astro-cid-mx5xs5wp]{display:flex;flex-direction:column;font-family:DM Sans,sans-serif;height:100%}.sidebar-fixed-header[data-astro-cid-mx5xs5wp]{flex-shrink:0;padding-top:16px;background:var(--surface-soft);border-bottom:1px solid var(--line-soft);margin-bottom:12px}.sidebar-scrolling-content[data-astro-cid-mx5xs5wp]{flex:1;overflow-y:auto;padding-bottom:24px}.sidebar-fixed-bottom[data-astro-cid-mx5xs5wp]{flex-shrink:0;margin-top:auto}.sidebar-home[data-astro-cid-mx5xs5wp]{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--text-strong);text-decoration:none;padding:4px 16px;margin-bottom:8px}.sidebar-home[data-astro-cid-mx5xs5wp]:hover{color:var(--sky)}.sidebar-divider[data-astro-cid-mx5xs5wp]{border:none;border-top:1px solid var(--line-soft);margin:12px 0}.sidebar-group[data-astro-cid-mx5xs5wp]{margin:4px 0}.sidebar-group-label[data-astro-cid-mx5xs5wp]{display:block;font-family:Space Mono,monospace;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-subtle);padding:4px 16px;margin-bottom:4px}.sidebar-search-wrap[data-astro-cid-mx5xs5wp]{padding:0 16px 8px}.sidebar-search[data-astro-cid-mx5xs5wp]{width:100%;padding:6px 8px;border:1px solid var(--line-strong);background:var(--surface-base);font-family:DM Sans,sans-serif;font-size:12px;color:var(--text-body);border-radius:0;outline:none}.sidebar-search[data-astro-cid-mx5xs5wp]:focus{border-color:var(--sky)}.sidebar-group--secondary[data-astro-cid-mx5xs5wp] .sidebar-group-label[data-astro-cid-mx5xs5wp]{font-size:9px;opacity:.6}.sidebar-group--secondary[data-astro-cid-mx5xs5wp] .sidebar-link[data-astro-cid-mx5xs5wp]{font-size:13px;color:var(--text-subtle);padding:7px 16px}.sidebar-link[data-astro-cid-mx5xs5wp]{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted);text-decoration:none;padding:8px 16px;border-radius:0;transition:background .15s ease,color .15s ease}.sidebar-link[data-astro-cid-mx5xs5wp]:hover{background:var(--surface-soft);color:var(--text-strong)}.sidebar-link--active[data-astro-cid-mx5xs5wp]{background:var(--surface-soft);color:var(--text-strong);border-left:2px solid var(--sky);padding-left:14px}.draft-badge[data-astro-cid-mx5xs5wp]{font-family:Space Mono,monospace;font-size:9px;padding:1px 5px;background:transparent;border:1px solid var(--line-strong);color:var(--text-subtle);border-radius:0;letter-spacing:.5px;margin-left:auto;flex-shrink:0}
+.course-layout[data-astro-cid-attrdwtj]{display:grid;grid-template-columns:280px 1fr;min-height:calc(100vh - 56px);margin-top:56px}.course-sidebar[data-astro-cid-attrdwtj]{border-right:1px solid var(--border);position:sticky;top:56px;height:calc(100vh - 56px);background:var(--surface-soft)}.course-main[data-astro-cid-attrdwtj]{max-width:880px;padding:60px 64px}.course-article[data-astro-cid-attrdwtj]{max-width:760px}.course-header[data-astro-cid-attrdwtj]{margin-bottom:32px}.course-tags[data-astro-cid-attrdwtj]{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}.course-tag[data-astro-cid-attrdwtj]{font-family:Space Mono,monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-subtle);border:1px solid var(--line-strong);padding:3px 8px}.course-title[data-astro-cid-attrdwtj]{font-family:"Instrument Serif",Georgia,serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:700;color:var(--text-strong);margin:0 0 16px;line-height:1.1;letter-spacing:-.01em}.course-desc[data-astro-cid-attrdwtj]{font-size:15px;color:var(--text-muted);line-height:1.7;margin:0 0 16px;max-width:64ch}.course-meta[data-astro-cid-attrdwtj]{display:flex;flex-wrap:wrap;gap:8px 16px;font-family:Space Mono,monospace;font-size:11px;color:var(--text-subtle);letter-spacing:.3px}.course-divider[data-astro-cid-attrdwtj]{border:none;border-top:1px solid var(--line-strong);margin:32px 0}.course-body[data-astro-cid-attrdwtj]{margin-bottom:48px}.course-body[data-astro-cid-attrdwtj] h1:first-child{display:none}.course-actions[data-astro-cid-attrdwtj]{display:flex;align-items:center;gap:20px}.course-count[data-astro-cid-attrdwtj]{font-family:Space Mono,monospace;font-size:11px;color:var(--text-subtle);letter-spacing:1px}@media(max-width:860px){.course-layout[data-astro-cid-attrdwtj]{grid-template-columns:1fr}.course-sidebar[data-astro-cid-attrdwtj]{position:static;height:auto;border-right:none;border-bottom:1px solid var(--border);order:2}.course-main[data-astro-cid-attrdwtj]{padding:40px 24px;order:1}}
+</style></head> <body>  <header class="site-header" data-astro-cid-ivsbtrvw> <div class="header-inner" data-astro-cid-ivsbtrvw> <div class="header-left" data-astro-cid-ivsbtrvw>  <a href="/library/" class="logo" data-astro-cid-ivsbtrvw> <img src="/library/img/person-entry-face.svg" alt="" width="24" height="32" class="logo-mark" decoding="async" data-astro-cid-ivsbtrvw> <span class="logo-text" data-astro-cid-ivsbtrvw><span class="logo-full" data-astro-cid-ivsbtrvw>Linguista Library</span><span class="logo-short" data-astro-cid-ivsbtrvw>Linguista</span></span> </a> </div> <nav class="header-nav" data-astro-cid-ivsbtrvw> <a href="/library/#persons" class="header-link" data-astro-cid-ivsbtrvw><span class="nav-full" data-astro-cid-ivsbtrvw>人物文集</span><span class="nav-short" data-astro-cid-ivsbtrvw>人物</span></a> <a href="/library/#courses" class="header-link" data-astro-cid-ivsbtrvw><span class="nav-full" data-astro-cid-ivsbtrvw>课程资料</span><span class="nav-short" data-astro-cid-ivsbtrvw>课程</span></a> <button id="theme-toggle" class="header-link theme-toggle" aria-label="Toggle Theme" title="切换主题" data-astro-cid-ivsbtrvw> <svg width="1em" height="1em" class="header-icon theme-icon-default" data-astro-cid-ivsbtrvw="true" data-icon="lucide:monitor">   <symbol id="ai:lucide:monitor" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8m-4-4v4"/></g></symbol><use href="#ai:lucide:monitor"></use>  </svg> <svg width="1em" height="1em" class="header-icon theme-icon-light" style="display: none;" data-astro-cid-ivsbtrvw="true" data-icon="lucide:sun">   <symbol id="ai:lucide:sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></g></symbol><use href="#ai:lucide:sun"></use>  </svg> <svg width="1em" height="1em" class="header-icon theme-icon-dark" style="display: none;" data-astro-cid-ivsbtrvw="true" data-icon="lucide:moon">   <symbol id="ai:lucide:moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></symbol><use href="#ai:lucide:moon"></use>  </svg> </button> </nav> </div> </header>  <script type="module">const t=document.getElementById("theme-toggle");if(t){const r=e=>{t.querySelector(".theme-icon-default").setAttribute("style","display: none;"),t.querySelector(".theme-icon-light").setAttribute("style","display: none;"),t.querySelector(".theme-icon-dark").setAttribute("style","display: none;"),e==="light"?t.querySelector(".theme-icon-light").removeAttribute("style"):e==="dark"?t.querySelector(".theme-icon-dark").removeAttribute("style"):t.querySelector(".theme-icon-default").removeAttribute("style")},n=()=>typeof localStorage<"u"&&localStorage.getItem("theme")&&localStorage.getItem("theme")||"default",m=e=>{e==="default"?(document.documentElement.removeAttribute("data-theme"),localStorage.removeItem("theme")):(document.documentElement.setAttribute("data-theme",e),localStorage.setItem("theme",e)),r(e)};let l=n();r(l),t.addEventListener("click",()=>{const e=["default","light","dark"];let o=e.indexOf(l)+1;o>=e.length&&(o=0),l=e[o],m(l)})}</script> <div class="course-layout" data-astro-cid-attrdwtj> <aside class="course-sidebar" data-astro-cid-attrdwtj> <nav class="sidebar-nav" aria-label="Collection navigation" data-astro-cid-mx5xs5wp> <div class="sidebar-fixed-header" data-astro-cid-mx5xs5wp> <a href="/library/courses/deeplearningai-spec-driven-dev" class="sidebar-home" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>规格驱动开发 (SDD)：用编程智能体构建更好的软件</span> </a> <hr class="sidebar-divider" data-astro-cid-mx5xs5wp> <div class="sidebar-search-wrap" data-astro-cid-mx5xs5wp> <input type="search" class="sidebar-search" placeholder="搜索…" data-search-input aria-label="搜索文档" data-astro-cid-mx5xs5wp> </div> </div> <div class="sidebar-scrolling-content" data-astro-cid-mx5xs5wp>  <div class="sidebar-group" data-astro-cid-mx5xs5wp> <span class="sidebar-group-label" data-astro-cid-mx5xs5wp>LESSONS</span> <div data-search-list data-astro-cid-mx5xs5wp> <a href="/library/courses/deeplearningai-spec-driven-dev/0-spec-driven-development-with-coding-agents" class="sidebar-link" data-search-title="基于编程智能体的规格驱动开发" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>基于编程智能体的规格驱动开发</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2</span> </a><a href="/library/courses/deeplearningai-spec-driven-dev/1-introduction" class="sidebar-link" data-search-title="简介" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>简介</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2</span> </a><a href="/library/courses/deeplearningai-spec-driven-dev/2-why-spec-driven-development" class="sidebar-link" data-search-title="为什么选择规格驱动开发？" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>为什么选择规格驱动开发？</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2</span> </a><a href="/library/courses/deeplearningai-spec-driven-dev/3-workflow-overview" class="sidebar-link" data-search-title="工作流概述" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>工作流概述</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2</span> </a><a href="/library/courses/deeplearningai-spec-driven-dev/4-setup" class="sidebar-link" data-search-title="安装与设置" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>安装与设置</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2</span> </a><a href="/library/courses/deeplearningai-spec-driven-dev/5-creating-the-constitution" class="sidebar-link" data-search-title="创建项目章程" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>创建项目章程</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2</span> </a><a href="/library/courses/deeplearningai-spec-driven-dev/6-feature-specification" class="sidebar-link" data-search-title="功能规格说明" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>功能规格说明</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2</span> </a><a href="/library/courses/deeplearningai-spec-driven-dev/7-feature-implementation" class="sidebar-link" data-search-title="功能实现" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>功能实现</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2</span> </a><a href="/library/courses/deeplearningai-spec-driven-dev/8-feature-validation" class="sidebar-link" data-search-title="功能验证" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>功能验证</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2</span> </a><a href="/library/courses/deeplearningai-spec-driven-dev/9-project-replanning" class="sidebar-link" data-search-title="项目重新规划" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>项目重新规划</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2</span> </a><a href="/library/courses/deeplearningai-spec-driven-dev/10-the-second-feature-phase" class="sidebar-link" data-search-title="第二个功能阶段" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>第二个功能阶段</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2</span> </a><a href="/library/courses/deeplearningai-spec-driven-dev/11-the-mvp" class="sidebar-link" data-search-title="最小可行性产品" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>最小可行性产品</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2</span> </a><a href="/library/courses/deeplearningai-spec-driven-dev/12-legacy-support" class="sidebar-link" data-search-title="传统代码支持" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>传统代码支持</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2</span> </a><a href="/library/courses/deeplearningai-spec-driven-dev/13-build-your-own-workflow" class="sidebar-link" data-search-title="构建您自己的工作流" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>构建您自己的工作流</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2</span> </a><a href="/library/courses/deeplearningai-spec-driven-dev/14-agent-replaceability" class="sidebar-link" data-search-title="智能体的可替换性" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>智能体的可替换性</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2</span> </a><a href="/library/courses/deeplearningai-spec-driven-dev/15-conclusion" class="sidebar-link" data-search-title="总结" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>总结</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2</span> </a> </div> </div> <hr class="sidebar-divider" data-astro-cid-mx5xs5wp>  </div> <div class="sidebar-fixed-bottom" data-astro-cid-mx5xs5wp>  </div> </nav> <script type="module">document.querySelectorAll("[data-search-input]").forEach(n=>{const e=n,t=e.closest(".sidebar-nav");t&&e.addEventListener("input",()=>{const s=e.value.trim().toLowerCase();t.querySelectorAll("[data-search-list] [data-search-title]").forEach(a=>{const r=!s||(a.dataset.searchTitle??"").toLowerCase().includes(s);a.style.display=r?"":"none"})})});const o=document.querySelector(".sidebar-scrolling-content");if(o){const e=`linguista-sidebar-scroll-${window.location.pathname.split("/").slice(0,3).join("/")}`,t=sessionStorage.getItem(e);if(t)o.scrollTop=parseInt(t,10);else{const s=document.querySelector(".sidebar-link--active");s&&s.scrollIntoView({block:"center"})}window.addEventListener("beforeunload",()=>{sessionStorage.setItem(e,o.scrollTop.toString())})}</script>  </aside> <main class="course-main" data-astro-cid-attrdwtj> <article class="course-article" data-astro-cid-attrdwtj> <header class="course-header" data-astro-cid-attrdwtj> <div class="course-tags" data-astro-cid-attrdwtj> <span class="course-tag" data-astro-cid-attrdwtj>translated</span><span class="course-tag" data-astro-cid-attrdwtj>AI</span><span class="course-tag" data-astro-cid-attrdwtj>SDD</span><span class="course-tag" data-astro-cid-attrdwtj>Spec-Driven-Development</span><span class="course-tag" data-astro-cid-attrdwtj>coding-agents</span><span class="course-tag" data-astro-cid-attrdwtj>course</span> </div> <h1 class="course-title" data-astro-cid-attrdwtj>规格驱动开发 (SDD)：用编程智能体构建更好的软件</h1> <p class="course-desc" data-astro-cid-attrdwtj>系统讲解规格驱动开发（Spec-Driven Development）方法论——通过编写结构化的 Markdown 规格说明来指导编程智能体进行代码编写，涵盖项目章程制定、功能循环开发、重新规划、传统项目适配以及智能体技能自动化，帮助开发者在享受 AI 极速编码的同时牢牢把控软件设计与方向。</p> <div class="course-meta" data-astro-cid-attrdwtj> <span data-astro-cid-attrdwtj>讲师：Paul Everitt</span>   <span data-astro-cid-attrdwtj>2026-04-16</span> </div> </header> <hr class="course-divider" data-astro-cid-attrdwtj> <div class="course-body chapter-prose" data-astro-cid-attrdwtj> <div class="chapter-prose">  <h1 id="规格驱动开发-sdd用编程智能体构建更好的软件">规格驱动开发 (SDD)：用编程智能体构建更好的软件</h1>
+<p><img src="https://www.deeplearning.ai/_next/image/?url=https%3A%2F%2Fhome-wordpress.deeplearning.ai%2Fwp-content%2Fuploads%2F2026%2F04%2FYouTube-Thumbnails-2026-04-10T125929.137.png&#x26;w=3840&#x26;q=75" alt=""></p>
+<h2 id="关于本课程">关于本课程</h2>
+<p>随着大语言模型（LLM）的发展，AI 编程辅助工具正变得越来越普及。然而，许多开发者目前采用的是一种被称为”凭感觉编程（Vibe Coding）“的工作方式——即通过简单的提示词让 AI 随意生成代码。这种方式虽然初期见效快，但随着项目复杂度的增加，极易产生代码脱节、上下文丢失以及技术债务堆积等严重问题。</p>
+<p>本课程由 DeepLearning.AI 与 JetBrains 联合推出，主讲人 Paul Everitt 提出了一次重要的范式转变：<strong>规格驱动开发（Spec-Driven Development, 简称 SDD）</strong>。SDD 将软件工程的严谨性重新引入 AI 编程时代。它的核心理念是将”做什么（What）“和”为什么做（Why）“与”怎么做（How）“分离开来——人类作为”架构师”，负责编写清晰且结构化的 Markdown 规格说明（Specs）；而编程智能体（Coding Agent）则作为”极高产能的结对程序员”，负责阅读这些规格并实现具体代码。</p>
+<p>通过这套方法，开发者能够有效消除多轮 AI 对话带来的上下文衰减，降低理解巨量生成代码带来的认知负荷，并显著提高 AI 产出代码的意图还原度。无论是从零开始的新项目，还是积攒了大量历史代码的传统旧项目，SDD 都能帮助开发者在享受 AI 极速编码的同时，牢牢把控软件的设计与走向。</p>
+<h2 id="适合谁参加">适合谁参加？</h2>
+<p>任何希望超越凭感觉编程、以更具意图性的方式使用 AI 编程助手构建软件的人。建议具备基本的编程语言知识和 LLM 编程工具的使用经验。</p>
+<ul>
+<li><strong>短课程</strong></li>
+<li><strong>难度：</strong> 中级</li>
+<li><strong>讲师：</strong> Paul Everitt（JetBrains 开发者布道师）</li>
+<li><strong>平台：</strong> DeepLearning.AI × JetBrains</li>
+</ul>
+<h2 id="讲师介绍">讲师介绍</h2>
+<p><strong>Paul Everitt</strong></p>
+<p><img src="https://www.deeplearning.ai/_next/image/?url=https%3A%2F%2Fhome-wordpress.deeplearning.ai%2Fwp-content%2Fuploads%2F2026%2F04%2FInstructors-profile-picture-98.png&#x26;w=256&#x26;q=75" alt="Paul Everitt"></p>
+<p><a href="https://www.jetbrains.com/">JetBrains</a> 开发者布道师 (Developer Advocate)</p>
+<ul>
+<li><a href="https://www.linkedin.com/in/paeveritt">LinkedIn 领英主页</a></li>
+<li><a href="https://x.com/paulweveritt">X / Twitter 主页</a></li>
+</ul>
+<h2 id="你将学习">你将学习</h2>
+<ul>
+<li>理解规格驱动开发（SDD）为何比凭感觉编程（Vibe Coding）能产生更好的结果，以及顶级开发者如何使用它来掌控复杂项目。</li>
+<li>编写项目章程（Constitution）和功能规格说明（Feature Specs），在智能体会话间保留上下文、提高意图还原度并减少认知债务。</li>
+<li>应用可重复的”计划-实现-验证”工作流，适用于全新项目和传统遗留代码库，并通过自定义智能体技能实现自动化。</li>
+</ul>
+<h2 id="课程大纲">课程大纲</h2>
+<p>16 节课程 · 0 个代码示例</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">视频标号</th><th align="left">英文脚本</th><th align="left">中文脚本</th><th align="center">内容类型</th><th align="center">时长</th></tr></thead><tbody><tr><td align="center"><strong>0</strong></td><td align="left"><a href="./0-spec-driven-development-with-coding-agents.en.md">Spec-Driven Development with Coding Agents</a></td><td align="left"><a href="./0-spec-driven-development-with-coding-agents.zh.md">基于编程智能体的规格驱动开发</a></td><td align="center">文档 (Doc)</td><td align="center">-</td></tr><tr><td align="center"><strong>1</strong></td><td align="left"><a href="./1-introduction.en.md">Introduction</a></td><td align="left"><a href="./1-introduction.zh.md">简介</a></td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/8bhg0p/introduction">视频 (Video)</a></td><td align="center">4 mins</td></tr><tr><td align="center"><strong>2</strong></td><td align="left"><a href="./2-why-spec-driven-development.en.md">Why spec-driven development?</a></td><td align="left"><a href="./2-why-spec-driven-development.zh.md">为什么选择规格驱动开发？</a></td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/9i8xmt/why-spec%E2%88%92driven-development%3F">视频 (Video)</a></td><td align="center">4 mins</td></tr><tr><td align="center"><strong>3</strong></td><td align="left"><a href="./3-workflow-overview.en.md">Workflow overview</a></td><td align="left"><a href="./3-workflow-overview.zh.md">工作流概述</a></td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/vtd82x/workflow-overview">视频 (Video)</a></td><td align="center">3 mins</td></tr><tr><td align="center">-</td><td align="left">-</td><td align="left">-</td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/bvlyk483/set-up-your-environment">阅读 (Reading)</a></td><td align="center">5 mins</td></tr><tr><td align="center"><strong>4</strong></td><td align="left"><a href="./4-setup.en.md">Setup</a></td><td align="left"><a href="./4-setup.zh.md">安装与设置</a></td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/sh75q3/setup">视频 (Video)</a></td><td align="center">1 min</td></tr><tr><td align="center"><strong>5</strong></td><td align="left"><a href="./5-creating-the-constitution.en.md">Creating the constitution</a></td><td align="left"><a href="./5-creating-the-constitution.zh.md">创建项目章程</a></td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/0kj4sq/creating-the-constitution">视频 (Video)</a></td><td align="center">10 mins</td></tr><tr><td align="center"><strong>6</strong></td><td align="left"><a href="./6-feature-specification.en.md">Feature specification</a></td><td align="left"><a href="./6-feature-specification.zh.md">功能规格说明</a></td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/15v9p3/feature-specification">视频 (Video)</a></td><td align="center">3 mins</td></tr><tr><td align="center"><strong>7</strong></td><td align="left"><a href="./7-feature-implementation.en.md">Feature implementation</a></td><td align="left"><a href="./7-feature-implementation.zh.md">功能实现</a></td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/eg5lav/feature-implementation">视频 (Video)</a></td><td align="center">1 min</td></tr><tr><td align="center"><strong>8</strong></td><td align="left"><a href="./8-feature-validation.en.md">Feature validation</a></td><td align="left"><a href="./8-feature-validation.zh.md">功能验证</a></td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/0kj4sj/feature-validation">视频 (Video)</a></td><td align="center">4 mins</td></tr><tr><td align="center"><strong>9</strong></td><td align="left"><a href="./9-project-replanning.en.md">Project replanning</a></td><td align="left"><a href="./9-project-replanning.zh.md">项目重新规划</a></td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/zqwpt5/project-replanning">视频 (Video)</a></td><td align="center">6 mins</td></tr><tr><td align="center"><strong>10</strong></td><td align="left"><a href="./10-the-second-feature-phase.en.md">The second feature phase</a></td><td align="left"><a href="./10-the-second-feature-phase.zh.md">第二个功能阶段</a></td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/bvlyk2/the-second-feature-phase">视频 (Video)</a></td><td align="center">6 mins</td></tr><tr><td align="center"><strong>11</strong></td><td align="left"><a href="./11-the-mvp.en.md">The MVP</a></td><td align="left"><a href="./11-the-mvp.zh.md">最小可行性产品</a></td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/gy3d4m/the-mvp">视频 (Video)</a></td><td align="center">3 mins</td></tr><tr><td align="center"><strong>12</strong></td><td align="left"><a href="./12-legacy-support.en.md">Legacy support</a></td><td align="left"><a href="./12-legacy-support.zh.md">传统代码支持</a></td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/k2c6hq/legacy-support">视频 (Video)</a></td><td align="center">4 mins</td></tr><tr><td align="center"><strong>13</strong></td><td align="left"><a href="./13-build-your-own-workflow.en.md">Build your own workflow</a></td><td align="left"><a href="./13-build-your-own-workflow.zh.md">构建您自己的工作流</a></td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/2fn0li/build-your-own-workflow">视频 (Video)</a></td><td align="center">6 mins</td></tr><tr><td align="center"><strong>14</strong></td><td align="left"><a href="./14-agent-replaceability.en.md">Agent replaceability</a></td><td align="left"><a href="./14-agent-replaceability.zh.md">智能体的可替换性</a></td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/uzfov5/agent-replaceability">视频 (Video)</a></td><td align="center">3 mins</td></tr><tr><td align="center"><strong>15</strong></td><td align="left"><a href="./15-conclusion.en.md">Conclusion</a></td><td align="left"><a href="./15-conclusion.zh.md">总结</a></td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/wr42e5/conclusion">视频 (Video)</a></td><td align="center">1 min</td></tr><tr><td align="center">-</td><td align="left">-</td><td align="left">-</td><td align="center"><a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents/lesson/i1b7od/quiz">测验 (Graded Quiz)</a></td><td align="center">10 mins</td></tr></tbody></table>
+<h2 id="技术细节概要">技术细节概要</h2>
+<p>课程不仅停留在理论层面，还提供了一套严密且可重复落地的工作流。以下是该工作流的技术细节拆解：</p>
+<h3 id="阶段一建立项目基石-the-constitution">阶段一：建立项目基石 (The Constitution)</h3>
+<p>在编写任何代码之前，首先要通过与智能体的对话，在项目根目录下生成**“项目章程（Constitution）”**。它相当于智能体的全局最高指导原则，通常包含三个核心文件：</p>
+<ul>
+<li><strong>任务愿景 (Mission):</strong> 明确项目的目标、受众、边界以及业务逻辑。</li>
+<li><strong>技术栈 (Tech Stack):</strong> 锁定使用的框架版本、数据库结构（Schema）、系统架构以及具体的代码约束。</li>
+<li><strong>路线图 (Roadmap):</strong> 将整个项目拆分为可管理、按顺序执行的小功能阶段（Phases）。</li>
+</ul>
+<h3 id="阶段二功能开发循环-the-feature-loop">阶段二：功能开发循环 (The Feature Loop)</h3>
+<p>项目章程确立后，对于路线图上的每一个具体功能，都将严格执行以下循环（通常在独立的 Git 分支中进行）：</p>
+<ol>
+<li><strong>计划 (Plan):</strong> 清理智能体的上下文（防干扰），输入项目章程，让智能体起草该特定功能的规格说明，包括：实现计划、技术需求以及验证标准。人类审查这些规格文件并提交（Commit）。</li>
+<li><strong>实现 (Implement):</strong> 智能体根据上一环节生成的具体规格说明编写代码。这确保了 AI 是在有明确蓝图指导下工作，而不是盲目发散。</li>
+<li><strong>验证 (Validate):</strong> 引入**“回路中的人类（Human-in-the-loop）”**机制。人类开发者运行代码或测试用例进行审查。如发现偏差，不应直接手动改代码，而是要求智能体修改规格文件和代码，以保持文档与代码严格同步。</li>
+</ol>
+<h3 id="阶段三重新规划与降噪-replanning--ai-fatigue-management">阶段三：重新规划与降噪 (Replanning &#x26; AI Fatigue Management)</h3>
+<p>在两个功能开发阶段的间隙，必须进行<strong>重新规划（Replanning）</strong>。由于 AI 生成代码极快，开发者极易产生“AI 疲劳”和“认知债务”。重新规划阶段要求开发者退后一步：</p>
+<ul>
+<li>合并上一个分支。</li>
+<li>根据业务最新变化修改全局“项目章程”。</li>
+<li>彻底清理智能体的上下文记忆，确保下一个功能开发拥有纯净的工作环境。</li>
+</ul>
+<h3 id="阶段四自动化与生态融合-automation--standards">阶段四：自动化与生态融合 (Automation &#x26; Standards)</h3>
+<ul>
+<li><strong>自动化技能 (Agent Skills):</strong> 将重复的 Prompt（如“执行代码检查”、“更新 Changelog”）封装为智能体技能。智能体可以自动调用这些 CLI 工具或脚本，实现 SDD 工作流的自动化。</li>
+<li><strong>拥抱标准 (MCP &#x26; ACP):</strong> 利用 <strong>MCP（模型上下文协议）</strong> 为智能体接入最新的官方文档或私有知识库；利用 <strong>ACP（智能体客户端协议）</strong> 实现工作流与特定 IDE 或底层 LLM 模型解绑，确保开发规范的长期生命力。</li>
+</ul>
+<h2 id="核心术语表">核心术语表</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">原词</th><th align="left">翻译</th><th align="left">解释</th></tr></thead><tbody><tr><td align="left"><strong>Spec-Driven Development (SDD)</strong></td><td align="left">规格驱动开发</td><td align="left">一种软件开发范式，强调通过编写详细且结构化的规格说明来指导编程智能体进行代码编写。</td></tr><tr><td align="left"><strong>Vibe Coding</strong></td><td align="left">凭感觉编程</td><td align="left">一种反面模式。指人类仅向 AI 输入模糊提示词并祈祷其生成所需代码，易导致代码难以维护。</td></tr><tr><td align="left"><strong>Coding Agent</strong></td><td align="left">编程智能体</td><td align="left">具有自主规划、推理能力，并且能直接访问代码库、执行终端命令的高级 AI 编程助手。</td></tr><tr><td align="left"><strong>Constitution</strong></td><td align="left">项目章程</td><td align="left">存在于项目根目录的核心规格文档集合（包含任务、技术栈、路线图），为智能体提供全局性规则。</td></tr><tr><td align="left"><strong>Intent Fidelity</strong></td><td align="left">意图还原度</td><td align="left">智能体最终生成的代码在多大程度上准确反映了人类开发者最初的设计意图和业务目标。</td></tr><tr><td align="left"><strong>Context Decay</strong></td><td align="left">上下文衰减</td><td align="left">在长时间或多轮的 AI 交互中，智能体逐渐”遗忘”早期关键约束或产生幻觉的现象。</td></tr><tr><td align="left"><strong>Cognitive Debt</strong></td><td align="left">认知债务</td><td align="left">由于 AI 生成代码速度极快，人类开发者为了理解这些非自己手写的代码逻辑而积累的脑力负担。</td></tr><tr><td align="left"><strong>Human-in-the-loop</strong></td><td align="left">回路中的人类</td><td align="left">一种协作机制，强调 AI 负责大批量生成和执行，而人类必须留在决策回路中审查和验证。</td></tr><tr><td align="left"><strong>MCP (Model Context Protocol)</strong></td><td align="left">模型上下文协议</td><td align="left">一种开放标准，允许智能体安全地连接并检索外部数据源。</td></tr><tr><td align="left"><strong>ACP (Agent Client Protocol)</strong></td><td align="left">智能体客户端协议</td><td align="left">一种标准化协议，使各类底层编程智能体能够与不同的客户端无缝连接和集成。</td></tr></tbody></table>
+<hr>
+<p><em>此文章由 AI 翻译整理</em></p>  </div> </div> <div class="course-actions" data-astro-cid-attrdwtj> <span class="course-count" data-astro-cid-attrdwtj>16 个章节</span> <a href="/library/courses/deeplearningai-spec-driven-dev/0-spec-driven-development-with-coding-agents" class="btn-primary" data-astro-cid-attrdwtj>开始学习</a> </div> </article> </main> </div>  <script type="module">const a=new IntersectionObserver(t=>{t.forEach(r=>{if(r.isIntersecting){const e=r.target,s=Number(e instanceof HTMLElement?e.dataset.revealDelay:void 0)||0;s>0?setTimeout(()=>{requestAnimationFrame(()=>e.classList.add("in-view"))},s):requestAnimationFrame(()=>e.classList.add("in-view")),a.unobserve(e)}})},{threshold:.12,rootMargin:"0px 0px -40px 0px"});document.querySelectorAll(".reveal").forEach(t=>a.observe(t));</script> </body> </html> 

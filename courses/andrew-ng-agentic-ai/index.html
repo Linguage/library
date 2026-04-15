@@ -1,1 +1,133 @@
-<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=/library/courses/andrew-ng-agentic-ai/lec-01"><link rel="canonical" href="/library/courses/andrew-ng-agentic-ai/lec-01"><link rel="icon" href="/library/img/person-entry-face.svg" type="image/svg+xml" sizes="any"><link rel="shortcut icon" href="/library/img/person-entry-face.svg" type="image/svg+xml"><title>Redirecting…</title></head> <body style="display:none"> <a href="/library/courses/andrew-ng-agentic-ai/lec-01">Redirect</a> </body></html>
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/library/img/person-entry-face.svg" type="image/svg+xml" sizes="any"><link rel="shortcut icon" href="/library/img/person-entry-face.svg" type="image/svg+xml"><title>Agentic AI：构建自主式 AI 工作流</title><meta name="description" content="平台：DeepLearning.AI；作者：Andrew Ng。讲解四大代理式设计模式（反思、工具调用、规划、多代理），结合 Python 实战拆解多步工作流构建与评估，涵盖外部数据接入、错误分析、测试框架与生产部署，帮助你设计可靠的自主 AI 系统。"><link rel="canonical" href="https://linguista.cn/library/courses/andrew-ng-agentic-ai"><meta property="og:type" content="website"><meta property="og:site_name" content="Linguista Library"><meta property="og:title" content="Agentic AI：构建自主式 AI 工作流"><meta property="og:description" content="平台：DeepLearning.AI；作者：Andrew Ng。讲解四大代理式设计模式（反思、工具调用、规划、多代理），结合 Python 实战拆解多步工作流构建与评估，涵盖外部数据接入、错误分析、测试框架与生产部署，帮助你设计可靠的自主 AI 系统。"><meta property="og:url" content="https://linguista.cn/library/courses/andrew-ng-agentic-ai"><meta property="og:image" content="https://linguista.cn/library/img/person-entry-face.svg"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://linguista.cn/library/img/person-entry-face.svg"><meta name="twitter:title" content="Agentic AI：构建自主式 AI 工作流"><meta name="twitter:description" content="平台：DeepLearning.AI；作者：Andrew Ng。讲解四大代理式设计模式（反思、工具调用、规划、多代理），结合 Python 实战拆解多步工作流构建与评估，涵盖外部数据接入、错误分析、测试框架与生产部署，帮助你设计可靠的自主 AI 系统。"><script async src="https://www.googletagmanager.com/gtag/js?id=G-99PGBGJH4S"></script><script>(function(){const gaMeasurementId = "G-99PGBGJH4S";
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', gaMeasurementId);
+        })();</script><script>
+      const getTheme = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return 'default';
+      };
+      
+      const theme = getTheme();
+      if (theme && theme !== 'default') {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+    </script><!-- Inject Typography Settings --><script>
+      (function() {
+        try {
+          var fontFam = localStorage.getItem('reader-font-family');
+          var fontSz = localStorage.getItem('reader-font-size');
+          if (fontFam) document.documentElement.setAttribute('data-reader-font-family', fontFam);
+          if (fontSz) document.documentElement.setAttribute('data-reader-font-size', fontSz);
+        } catch(e) {}
+      })();
+    </script><link rel="stylesheet" href="/library/_astro/_slug_.BkFLTD4j.css">
+<link rel="stylesheet" href="/library/_astro/_slug_.DUJHuQaB.css">
+<style>.sidebar-nav[data-astro-cid-mx5xs5wp]{display:flex;flex-direction:column;font-family:DM Sans,sans-serif;height:100%}.sidebar-fixed-header[data-astro-cid-mx5xs5wp]{flex-shrink:0;padding-top:16px;background:var(--surface-soft);border-bottom:1px solid var(--line-soft);margin-bottom:12px}.sidebar-scrolling-content[data-astro-cid-mx5xs5wp]{flex:1;overflow-y:auto;padding-bottom:24px}.sidebar-fixed-bottom[data-astro-cid-mx5xs5wp]{flex-shrink:0;margin-top:auto}.sidebar-home[data-astro-cid-mx5xs5wp]{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--text-strong);text-decoration:none;padding:4px 16px;margin-bottom:8px}.sidebar-home[data-astro-cid-mx5xs5wp]:hover{color:var(--sky)}.sidebar-divider[data-astro-cid-mx5xs5wp]{border:none;border-top:1px solid var(--line-soft);margin:12px 0}.sidebar-group[data-astro-cid-mx5xs5wp]{margin:4px 0}.sidebar-group-label[data-astro-cid-mx5xs5wp]{display:block;font-family:Space Mono,monospace;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-subtle);padding:4px 16px;margin-bottom:4px}.sidebar-search-wrap[data-astro-cid-mx5xs5wp]{padding:0 16px 8px}.sidebar-search[data-astro-cid-mx5xs5wp]{width:100%;padding:6px 8px;border:1px solid var(--line-strong);background:var(--surface-base);font-family:DM Sans,sans-serif;font-size:12px;color:var(--text-body);border-radius:0;outline:none}.sidebar-search[data-astro-cid-mx5xs5wp]:focus{border-color:var(--sky)}.sidebar-group--secondary[data-astro-cid-mx5xs5wp] .sidebar-group-label[data-astro-cid-mx5xs5wp]{font-size:9px;opacity:.6}.sidebar-group--secondary[data-astro-cid-mx5xs5wp] .sidebar-link[data-astro-cid-mx5xs5wp]{font-size:13px;color:var(--text-subtle);padding:7px 16px}.sidebar-link[data-astro-cid-mx5xs5wp]{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted);text-decoration:none;padding:8px 16px;border-radius:0;transition:background .15s ease,color .15s ease}.sidebar-link[data-astro-cid-mx5xs5wp]:hover{background:var(--surface-soft);color:var(--text-strong)}.sidebar-link--active[data-astro-cid-mx5xs5wp]{background:var(--surface-soft);color:var(--text-strong);border-left:2px solid var(--sky);padding-left:14px}.draft-badge[data-astro-cid-mx5xs5wp]{font-family:Space Mono,monospace;font-size:9px;padding:1px 5px;background:transparent;border:1px solid var(--line-strong);color:var(--text-subtle);border-radius:0;letter-spacing:.5px;margin-left:auto;flex-shrink:0}
+.course-layout[data-astro-cid-attrdwtj]{display:grid;grid-template-columns:280px 1fr;min-height:calc(100vh - 56px);margin-top:56px}.course-sidebar[data-astro-cid-attrdwtj]{border-right:1px solid var(--border);position:sticky;top:56px;height:calc(100vh - 56px);background:var(--surface-soft)}.course-main[data-astro-cid-attrdwtj]{max-width:880px;padding:60px 64px}.course-article[data-astro-cid-attrdwtj]{max-width:760px}.course-header[data-astro-cid-attrdwtj]{margin-bottom:32px}.course-tags[data-astro-cid-attrdwtj]{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}.course-tag[data-astro-cid-attrdwtj]{font-family:Space Mono,monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-subtle);border:1px solid var(--line-strong);padding:3px 8px}.course-title[data-astro-cid-attrdwtj]{font-family:"Instrument Serif",Georgia,serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:700;color:var(--text-strong);margin:0 0 16px;line-height:1.1;letter-spacing:-.01em}.course-desc[data-astro-cid-attrdwtj]{font-size:15px;color:var(--text-muted);line-height:1.7;margin:0 0 16px;max-width:64ch}.course-meta[data-astro-cid-attrdwtj]{display:flex;flex-wrap:wrap;gap:8px 16px;font-family:Space Mono,monospace;font-size:11px;color:var(--text-subtle);letter-spacing:.3px}.course-divider[data-astro-cid-attrdwtj]{border:none;border-top:1px solid var(--line-strong);margin:32px 0}.course-body[data-astro-cid-attrdwtj]{margin-bottom:48px}.course-body[data-astro-cid-attrdwtj] h1:first-child{display:none}.course-actions[data-astro-cid-attrdwtj]{display:flex;align-items:center;gap:20px}.course-count[data-astro-cid-attrdwtj]{font-family:Space Mono,monospace;font-size:11px;color:var(--text-subtle);letter-spacing:1px}@media(max-width:860px){.course-layout[data-astro-cid-attrdwtj]{grid-template-columns:1fr}.course-sidebar[data-astro-cid-attrdwtj]{position:static;height:auto;border-right:none;border-bottom:1px solid var(--border);order:2}.course-main[data-astro-cid-attrdwtj]{padding:40px 24px;order:1}}
+</style></head> <body>  <header class="site-header" data-astro-cid-ivsbtrvw> <div class="header-inner" data-astro-cid-ivsbtrvw> <div class="header-left" data-astro-cid-ivsbtrvw>  <a href="/library/" class="logo" data-astro-cid-ivsbtrvw> <img src="/library/img/person-entry-face.svg" alt="" width="24" height="32" class="logo-mark" decoding="async" data-astro-cid-ivsbtrvw> <span class="logo-text" data-astro-cid-ivsbtrvw><span class="logo-full" data-astro-cid-ivsbtrvw>Linguista Library</span><span class="logo-short" data-astro-cid-ivsbtrvw>Linguista</span></span> </a> </div> <nav class="header-nav" data-astro-cid-ivsbtrvw> <a href="/library/#persons" class="header-link" data-astro-cid-ivsbtrvw><span class="nav-full" data-astro-cid-ivsbtrvw>人物文集</span><span class="nav-short" data-astro-cid-ivsbtrvw>人物</span></a> <a href="/library/#courses" class="header-link" data-astro-cid-ivsbtrvw><span class="nav-full" data-astro-cid-ivsbtrvw>课程资料</span><span class="nav-short" data-astro-cid-ivsbtrvw>课程</span></a> <button id="theme-toggle" class="header-link theme-toggle" aria-label="Toggle Theme" title="切换主题" data-astro-cid-ivsbtrvw> <svg width="1em" height="1em" class="header-icon theme-icon-default" data-astro-cid-ivsbtrvw="true" data-icon="lucide:monitor">   <symbol id="ai:lucide:monitor" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8m-4-4v4"/></g></symbol><use href="#ai:lucide:monitor"></use>  </svg> <svg width="1em" height="1em" class="header-icon theme-icon-light" style="display: none;" data-astro-cid-ivsbtrvw="true" data-icon="lucide:sun">   <symbol id="ai:lucide:sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></g></symbol><use href="#ai:lucide:sun"></use>  </svg> <svg width="1em" height="1em" class="header-icon theme-icon-dark" style="display: none;" data-astro-cid-ivsbtrvw="true" data-icon="lucide:moon">   <symbol id="ai:lucide:moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></symbol><use href="#ai:lucide:moon"></use>  </svg> </button> </nav> </div> </header>  <script type="module">const t=document.getElementById("theme-toggle");if(t){const r=e=>{t.querySelector(".theme-icon-default").setAttribute("style","display: none;"),t.querySelector(".theme-icon-light").setAttribute("style","display: none;"),t.querySelector(".theme-icon-dark").setAttribute("style","display: none;"),e==="light"?t.querySelector(".theme-icon-light").removeAttribute("style"):e==="dark"?t.querySelector(".theme-icon-dark").removeAttribute("style"):t.querySelector(".theme-icon-default").removeAttribute("style")},n=()=>typeof localStorage<"u"&&localStorage.getItem("theme")&&localStorage.getItem("theme")||"default",m=e=>{e==="default"?(document.documentElement.removeAttribute("data-theme"),localStorage.removeItem("theme")):(document.documentElement.setAttribute("data-theme",e),localStorage.setItem("theme",e)),r(e)};let l=n();r(l),t.addEventListener("click",()=>{const e=["default","light","dark"];let o=e.indexOf(l)+1;o>=e.length&&(o=0),l=e[o],m(l)})}</script> <div class="course-layout" data-astro-cid-attrdwtj> <aside class="course-sidebar" data-astro-cid-attrdwtj> <nav class="sidebar-nav" aria-label="Collection navigation" data-astro-cid-mx5xs5wp> <div class="sidebar-fixed-header" data-astro-cid-mx5xs5wp> <a href="/library/courses/andrew-ng-agentic-ai" class="sidebar-home" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>Agentic AI：构建自主式 AI 工作流</span> </a> <hr class="sidebar-divider" data-astro-cid-mx5xs5wp> <div class="sidebar-search-wrap" data-astro-cid-mx5xs5wp> <input type="search" class="sidebar-search" placeholder="搜索…" data-search-input aria-label="搜索文档" data-astro-cid-mx5xs5wp> </div> </div> <div class="sidebar-scrolling-content" data-astro-cid-mx5xs5wp>  <div class="sidebar-group" data-astro-cid-mx5xs5wp> <span class="sidebar-group-label" data-astro-cid-mx5xs5wp>LESSONS</span> <div data-search-list data-astro-cid-mx5xs5wp> <a href="/library/courses/andrew-ng-agentic-ai/lec-01" class="sidebar-link" data-search-title="「吴恩达Agentic AI 模块1」Agentic AI工作流" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>「吴恩达Agentic AI 模块1」Agentic AI工作流</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>6</span> </a><a href="/library/courses/andrew-ng-agentic-ai/lec-02" class="sidebar-link" data-search-title="「吴恩达Agentic AI模块2」反思设计模式" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>「吴恩达Agentic AI模块2」反思设计模式</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>5</span> </a><a href="/library/courses/andrew-ng-agentic-ai/lec-03" class="sidebar-link" data-search-title="「吴恩达Agentic AI模块3」工具使用与模型上下文协议（MCP）" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>「吴恩达Agentic AI模块3」工具使用与模型上下文协议（MCP）</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>5</span> </a><a href="/library/courses/andrew-ng-agentic-ai/lec-04" class="sidebar-link" data-search-title="「吴恩达Agentic AI模块4」工作流开发与优化" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>「吴恩达Agentic AI模块4」工作流开发与优化</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>5</span> </a><a href="/library/courses/andrew-ng-agentic-ai/lec-05" class="sidebar-link" data-search-title="「吴恩达Agentic AI模块5」高度自主的智能体AI模式" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>「吴恩达Agentic AI模块5」高度自主的智能体AI模式</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>5</span> </a><a href="/library/courses/andrew-ng-agentic-ai/agenticai" class="sidebar-link" data-search-title="吴恩达课程：Agentic AI" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>吴恩达课程：Agentic AI</span>  </a> </div> </div> <hr class="sidebar-divider" data-astro-cid-mx5xs5wp>  </div> <div class="sidebar-fixed-bottom" data-astro-cid-mx5xs5wp>  </div> </nav> <script type="module">document.querySelectorAll("[data-search-input]").forEach(n=>{const e=n,t=e.closest(".sidebar-nav");t&&e.addEventListener("input",()=>{const s=e.value.trim().toLowerCase();t.querySelectorAll("[data-search-list] [data-search-title]").forEach(a=>{const r=!s||(a.dataset.searchTitle??"").toLowerCase().includes(s);a.style.display=r?"":"none"})})});const o=document.querySelector(".sidebar-scrolling-content");if(o){const e=`linguista-sidebar-scroll-${window.location.pathname.split("/").slice(0,3).join("/")}`,t=sessionStorage.getItem(e);if(t)o.scrollTop=parseInt(t,10);else{const s=document.querySelector(".sidebar-link--active");s&&s.scrollIntoView({block:"center"})}window.addEventListener("beforeunload",()=>{sessionStorage.setItem(e,o.scrollTop.toString())})}</script>  </aside> <main class="course-main" data-astro-cid-attrdwtj> <article class="course-article" data-astro-cid-attrdwtj> <header class="course-header" data-astro-cid-attrdwtj>  <h1 class="course-title" data-astro-cid-attrdwtj>Agentic AI：构建自主式 AI 工作流</h1> <p class="course-desc" data-astro-cid-attrdwtj>平台：DeepLearning.AI；作者：Andrew Ng。讲解四大代理式设计模式（反思、工具调用、规划、多代理），结合 Python 实战拆解多步工作流构建与评估，涵盖外部数据接入、错误分析、测试框架与生产部署，帮助你设计可靠的自主 AI 系统。</p> <div class="course-meta" data-astro-cid-attrdwtj>    <span data-astro-cid-attrdwtj>2025-10-17</span> </div> </header> <hr class="course-divider" data-astro-cid-attrdwtj> <div class="course-body chapter-prose" data-astro-cid-attrdwtj> <div class="chapter-prose">  <h1 id="agentic-ai-课程介绍">Agentic AI 课程介绍</h1>
+<h2 id="课程概览">课程概览</h2>
+<ul>
+<li><strong>课程</strong>：Agentic AI</li>
+<li><strong>级别</strong>：中级</li>
+<li><strong>时长</strong>：5 小时 54 分钟</li>
+<li><strong>讲师</strong>：Andrew Ng</li>
+<li><strong>出品方</strong>：DeepLearning.AI</li>
+</ul>
+<h2 id="你将学到什么">你将学到什么</h2>
+<ul>
+<li><strong>构建代理式设计模式</strong>：反思、工具使用、规划和多代理工作流</li>
+<li><strong>将 AI 与外部工具集成</strong>：数据库、API、网络搜索和代码执行</li>
+<li><strong>评估和优化 AI 系统</strong>：性能指标、错误分析和生产环境部署</li>
+</ul>
+<h2 id="为什么选择这门课程">为什么选择这门课程？</h2>
+<p>代理式 AI（Agentic AI）代表了一种构建软件的新方式，它利用大语言模型（LLM）来完成复杂任务中的部分或全部步骤。与生成单一响应不同，代理式工作流使 AI 能够规划多步骤流程、迭代执行，并通过反思和工具使用来改进输出。本课程将教你从零开始构建这些复杂的 AI 系统。</p>
+<p>你将掌握驱动代理式 AI 系统的四种设计模式：</p>
+<ul>
+<li><strong>反思（Reflection）</strong>：AI 批评自己的工作并迭代以提高质量——就像代码审查，但是自动化的。</li>
+<li><strong>工具使用（Tool Use）</strong>：将 AI 连接到数据库、API 和外部服务，使其能够真正执行操作，而不仅仅是生成文本。</li>
+<li><strong>规划（Planning）</strong>：将复杂任务分解为可执行的步骤，AI 可以遵循这些步骤，并在情况不如预期时进行调整。</li>
+<li><strong>多代理（Multi-Agent）</strong>：协调多个专门的 AI 系统来处理复杂工作流的不同部分。</li>
+</ul>
+<p>本课程强调使用 Python 进行实际实现，在探索框架之前从第一性原理构建每种模式，为你定制特定需求的 AI 工作流提供灵活性。你将学习将业务流程解构为代理式工作流，识别类似人类的迭代和工具交互可以自动化复杂任务的环节。关键评估技能贯穿始终——你将构建强大的测试框架、进行系统错误分析，并优化系统以用于生产环境部署。</p>
+<p>完成课程后，你将获得一份证书，认可你在构建代理式工作流方面的技能。</p>
+<h2 id="讲师">讲师</h2>
+<h3 id="andrew-ng">Andrew Ng</h3>
+<ul>
+<li>DeepLearning.AI 创始人</li>
+<li>Coursera 联合创始人</li>
+</ul>
+<h2 id="适合人群">适合人群</h2>
+<ul>
+<li>希望应用 AI 技术构建能够处理多步骤工作流的自主系统的软件开发者</li>
+<li>具备中级 Python 编程技能，能够跟随实现进度的专业人士</li>
+<li>对大语言模型和 API 有基本了解，希望深化实践技能的专业人士</li>
+</ul>
+<h2 id="课程大纲">课程大纲</h2>
+<p>{{&#x3C; linkcard url=“<a href="https://learn.deeplearning.ai/courses/agentic-ai/">https://learn.deeplearning.ai/courses/agentic-ai/</a>” >}}</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>模块标题</th><th>课程概览</th><th>专题博客</th><th>学习指南</th><th>课程视频实录</th><th>课程视频脚本</th><th>NotebookLM</th></tr></thead><tbody><tr><td>模块一：Agentic AI简介</td><td><a href="./insights/lec-01.md">课程概览</a></td><td><a href="./blog/lec-01.md">专题博客</a></td><td><a href="./guides/lec-01.md">学习指南</a></td><td><a href="./lecnotes-zh/lec-01.md">课程实录</a></td><td><a href="./lecture/lec-01.md">视频脚本</a></td><td><a href="https://notebooklm.google.com/notebook/7c889fbd-c356-4e24-8871-9704a4188f5c">NotebookLM</a></td></tr><tr><td>模块二：反思设计模式</td><td><a href="./insights/lec-02.md">课程概览</a></td><td><a href="./blog/lec-02.md">专题博客</a></td><td><a href="./guides/lec-02.md">学习指南</a></td><td><a href="./lecnotes-zh/lec-02.md">课程实录</a></td><td><a href="./lecture/lec-02.md">视频脚本</a></td><td><a href="https://notebooklm.google.com/notebook/3c2ef484-a8c3-443f-bb90-11b8ae8904d9">NotebookLM</a></td></tr><tr><td>模块三：工具使用</td><td><a href="./insights/lec-03.md">课程概览</a></td><td><a href="./blog/lec-03.md">专题博客</a></td><td><a href="./guides/lec-03.md">学习指南</a></td><td><a href="./lecnotes-zh/lec-03.md">课程实录</a></td><td><a href="./lecture/lec-03.md">视频脚本</a></td><td><a href="https://notebooklm.google.com/notebook/5f94ecc3-499e-4be2-8c8f-eadc42dda1ad">NotebookLM</a></td></tr><tr><td>模块四：构建 Agentic AI 的实用技巧</td><td><a href="./insights/lec-04.md">课程概览</a></td><td><a href="./blog/lec-04.md">专题博客</a></td><td><a href="./guides/lec-04.md">学习指南</a></td><td><a href="./lecnotes-zh/lec-04.md">课程实录</a></td><td><a href="./lecture/lec-04.md">视频脚本</a></td><td><a href="https://notebooklm.google.com/notebook/479456b0-c4a5-4d08-83c0-2b80e3911dd4">NotebookLM</a></td></tr><tr><td>模块五：高度自主代理的设计模式</td><td><a href="./insights/lec-05.md">课程概览</a></td><td><a href="./blog/lec-05.md">专题博客</a></td><td><a href="./guides/lec-05.md">学习指南</a></td><td><a href="./lecnotes-zh/lec-05.md">课程实录</a></td><td><a href="./lecture/lec-05.md">视频脚本</a></td><td><a href="https://notebooklm.google.com/notebook/db2bdef5-1d8d-4a5a-b215-bdc56a369800">NotebookLM</a></td></tr></tbody></table>  </div> </div> <div class="course-actions" data-astro-cid-attrdwtj> <span class="course-count" data-astro-cid-attrdwtj>6 个章节</span> <a href="/library/courses/andrew-ng-agentic-ai/lec-01" class="btn-primary" data-astro-cid-attrdwtj>开始学习</a> </div> </article> </main> </div>  <script type="module">const a=new IntersectionObserver(t=>{t.forEach(r=>{if(r.isIntersecting){const e=r.target,s=Number(e instanceof HTMLElement?e.dataset.revealDelay:void 0)||0;s>0?setTimeout(()=>{requestAnimationFrame(()=>e.classList.add("in-view"))},s):requestAnimationFrame(()=>e.classList.add("in-view")),a.unobserve(e)}})},{threshold:.12,rootMargin:"0px 0px -40px 0px"});document.querySelectorAll(".reveal").forEach(t=>a.observe(t));</script> </body> </html> 

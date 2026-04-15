@@ -1,1 +1,149 @@
-<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=/library/courses/agent-skills-with-anthropic/01. agent-skills-course-introduction"><link rel="canonical" href="/library/courses/agent-skills-with-anthropic/01. agent-skills-course-introduction"><link rel="icon" href="/library/img/person-entry-face.svg" type="image/svg+xml" sizes="any"><link rel="shortcut icon" href="/library/img/person-entry-face.svg" type="image/svg+xml"><title>Redirecting…</title></head> <body style="display:none"> <a href="/library/courses/agent-skills-with-anthropic/01. agent-skills-course-introduction">Redirect</a> </body></html>
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/library/img/person-entry-face.svg" type="image/svg+xml" sizes="any"><link rel="shortcut icon" href="/library/img/person-entry-face.svg" type="image/svg+xml"><title>Agent Skills with Anthropic：可复用技能与 MCP/子代理实践</title><meta name="description" content="平台：DeepLearning.AI；作者：Elie Schoppik。讲解Skills开放标准，示范如何用 SKILL.md、MCP、子代理和 Claude/API/Code/Agent SDK 组合，构建可复用的代码生成、数据分析、研究与办公工作流，并遵循渐进式披露与最佳实践保证可靠性。"><link rel="canonical" href="https://linguista.cn/library/courses/agent-skills-with-anthropic"><meta property="og:type" content="website"><meta property="og:site_name" content="Linguista Library"><meta property="og:title" content="Agent Skills with Anthropic：可复用技能与 MCP/子代理实践"><meta property="og:description" content="平台：DeepLearning.AI；作者：Elie Schoppik。讲解Skills开放标准，示范如何用 SKILL.md、MCP、子代理和 Claude/API/Code/Agent SDK 组合，构建可复用的代码生成、数据分析、研究与办公工作流，并遵循渐进式披露与最佳实践保证可靠性。"><meta property="og:url" content="https://linguista.cn/library/courses/agent-skills-with-anthropic"><meta property="og:image" content="https://linguista.cn/library/img/person-entry-face.svg"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://linguista.cn/library/img/person-entry-face.svg"><meta name="twitter:title" content="Agent Skills with Anthropic：可复用技能与 MCP/子代理实践"><meta name="twitter:description" content="平台：DeepLearning.AI；作者：Elie Schoppik。讲解Skills开放标准，示范如何用 SKILL.md、MCP、子代理和 Claude/API/Code/Agent SDK 组合，构建可复用的代码生成、数据分析、研究与办公工作流，并遵循渐进式披露与最佳实践保证可靠性。"><script async src="https://www.googletagmanager.com/gtag/js?id=G-99PGBGJH4S"></script><script>(function(){const gaMeasurementId = "G-99PGBGJH4S";
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', gaMeasurementId);
+        })();</script><script>
+      const getTheme = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return 'default';
+      };
+      
+      const theme = getTheme();
+      if (theme && theme !== 'default') {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+    </script><!-- Inject Typography Settings --><script>
+      (function() {
+        try {
+          var fontFam = localStorage.getItem('reader-font-family');
+          var fontSz = localStorage.getItem('reader-font-size');
+          if (fontFam) document.documentElement.setAttribute('data-reader-font-family', fontFam);
+          if (fontSz) document.documentElement.setAttribute('data-reader-font-size', fontSz);
+        } catch(e) {}
+      })();
+    </script><link rel="stylesheet" href="/library/_astro/_slug_.BkFLTD4j.css">
+<link rel="stylesheet" href="/library/_astro/_slug_.DUJHuQaB.css">
+<style>.sidebar-nav[data-astro-cid-mx5xs5wp]{display:flex;flex-direction:column;font-family:DM Sans,sans-serif;height:100%}.sidebar-fixed-header[data-astro-cid-mx5xs5wp]{flex-shrink:0;padding-top:16px;background:var(--surface-soft);border-bottom:1px solid var(--line-soft);margin-bottom:12px}.sidebar-scrolling-content[data-astro-cid-mx5xs5wp]{flex:1;overflow-y:auto;padding-bottom:24px}.sidebar-fixed-bottom[data-astro-cid-mx5xs5wp]{flex-shrink:0;margin-top:auto}.sidebar-home[data-astro-cid-mx5xs5wp]{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--text-strong);text-decoration:none;padding:4px 16px;margin-bottom:8px}.sidebar-home[data-astro-cid-mx5xs5wp]:hover{color:var(--sky)}.sidebar-divider[data-astro-cid-mx5xs5wp]{border:none;border-top:1px solid var(--line-soft);margin:12px 0}.sidebar-group[data-astro-cid-mx5xs5wp]{margin:4px 0}.sidebar-group-label[data-astro-cid-mx5xs5wp]{display:block;font-family:Space Mono,monospace;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-subtle);padding:4px 16px;margin-bottom:4px}.sidebar-search-wrap[data-astro-cid-mx5xs5wp]{padding:0 16px 8px}.sidebar-search[data-astro-cid-mx5xs5wp]{width:100%;padding:6px 8px;border:1px solid var(--line-strong);background:var(--surface-base);font-family:DM Sans,sans-serif;font-size:12px;color:var(--text-body);border-radius:0;outline:none}.sidebar-search[data-astro-cid-mx5xs5wp]:focus{border-color:var(--sky)}.sidebar-group--secondary[data-astro-cid-mx5xs5wp] .sidebar-group-label[data-astro-cid-mx5xs5wp]{font-size:9px;opacity:.6}.sidebar-group--secondary[data-astro-cid-mx5xs5wp] .sidebar-link[data-astro-cid-mx5xs5wp]{font-size:13px;color:var(--text-subtle);padding:7px 16px}.sidebar-link[data-astro-cid-mx5xs5wp]{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted);text-decoration:none;padding:8px 16px;border-radius:0;transition:background .15s ease,color .15s ease}.sidebar-link[data-astro-cid-mx5xs5wp]:hover{background:var(--surface-soft);color:var(--text-strong)}.sidebar-link--active[data-astro-cid-mx5xs5wp]{background:var(--surface-soft);color:var(--text-strong);border-left:2px solid var(--sky);padding-left:14px}.draft-badge[data-astro-cid-mx5xs5wp]{font-family:Space Mono,monospace;font-size:9px;padding:1px 5px;background:transparent;border:1px solid var(--line-strong);color:var(--text-subtle);border-radius:0;letter-spacing:.5px;margin-left:auto;flex-shrink:0}
+.course-layout[data-astro-cid-attrdwtj]{display:grid;grid-template-columns:280px 1fr;min-height:calc(100vh - 56px);margin-top:56px}.course-sidebar[data-astro-cid-attrdwtj]{border-right:1px solid var(--border);position:sticky;top:56px;height:calc(100vh - 56px);background:var(--surface-soft)}.course-main[data-astro-cid-attrdwtj]{max-width:880px;padding:60px 64px}.course-article[data-astro-cid-attrdwtj]{max-width:760px}.course-header[data-astro-cid-attrdwtj]{margin-bottom:32px}.course-tags[data-astro-cid-attrdwtj]{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}.course-tag[data-astro-cid-attrdwtj]{font-family:Space Mono,monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-subtle);border:1px solid var(--line-strong);padding:3px 8px}.course-title[data-astro-cid-attrdwtj]{font-family:"Instrument Serif",Georgia,serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:700;color:var(--text-strong);margin:0 0 16px;line-height:1.1;letter-spacing:-.01em}.course-desc[data-astro-cid-attrdwtj]{font-size:15px;color:var(--text-muted);line-height:1.7;margin:0 0 16px;max-width:64ch}.course-meta[data-astro-cid-attrdwtj]{display:flex;flex-wrap:wrap;gap:8px 16px;font-family:Space Mono,monospace;font-size:11px;color:var(--text-subtle);letter-spacing:.3px}.course-divider[data-astro-cid-attrdwtj]{border:none;border-top:1px solid var(--line-strong);margin:32px 0}.course-body[data-astro-cid-attrdwtj]{margin-bottom:48px}.course-body[data-astro-cid-attrdwtj] h1:first-child{display:none}.course-actions[data-astro-cid-attrdwtj]{display:flex;align-items:center;gap:20px}.course-count[data-astro-cid-attrdwtj]{font-family:Space Mono,monospace;font-size:11px;color:var(--text-subtle);letter-spacing:1px}@media(max-width:860px){.course-layout[data-astro-cid-attrdwtj]{grid-template-columns:1fr}.course-sidebar[data-astro-cid-attrdwtj]{position:static;height:auto;border-right:none;border-bottom:1px solid var(--border);order:2}.course-main[data-astro-cid-attrdwtj]{padding:40px 24px;order:1}}
+</style></head> <body>  <header class="site-header" data-astro-cid-ivsbtrvw> <div class="header-inner" data-astro-cid-ivsbtrvw> <div class="header-left" data-astro-cid-ivsbtrvw>  <a href="/library/" class="logo" data-astro-cid-ivsbtrvw> <img src="/library/img/person-entry-face.svg" alt="" width="24" height="32" class="logo-mark" decoding="async" data-astro-cid-ivsbtrvw> <span class="logo-text" data-astro-cid-ivsbtrvw><span class="logo-full" data-astro-cid-ivsbtrvw>Linguista Library</span><span class="logo-short" data-astro-cid-ivsbtrvw>Linguista</span></span> </a> </div> <nav class="header-nav" data-astro-cid-ivsbtrvw> <a href="/library/#persons" class="header-link" data-astro-cid-ivsbtrvw><span class="nav-full" data-astro-cid-ivsbtrvw>人物文集</span><span class="nav-short" data-astro-cid-ivsbtrvw>人物</span></a> <a href="/library/#courses" class="header-link" data-astro-cid-ivsbtrvw><span class="nav-full" data-astro-cid-ivsbtrvw>课程资料</span><span class="nav-short" data-astro-cid-ivsbtrvw>课程</span></a> <button id="theme-toggle" class="header-link theme-toggle" aria-label="Toggle Theme" title="切换主题" data-astro-cid-ivsbtrvw> <svg width="1em" height="1em" class="header-icon theme-icon-default" data-astro-cid-ivsbtrvw="true" data-icon="lucide:monitor">   <symbol id="ai:lucide:monitor" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8m-4-4v4"/></g></symbol><use href="#ai:lucide:monitor"></use>  </svg> <svg width="1em" height="1em" class="header-icon theme-icon-light" style="display: none;" data-astro-cid-ivsbtrvw="true" data-icon="lucide:sun">   <symbol id="ai:lucide:sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></g></symbol><use href="#ai:lucide:sun"></use>  </svg> <svg width="1em" height="1em" class="header-icon theme-icon-dark" style="display: none;" data-astro-cid-ivsbtrvw="true" data-icon="lucide:moon">   <symbol id="ai:lucide:moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></symbol><use href="#ai:lucide:moon"></use>  </svg> </button> </nav> </div> </header>  <script type="module">const t=document.getElementById("theme-toggle");if(t){const r=e=>{t.querySelector(".theme-icon-default").setAttribute("style","display: none;"),t.querySelector(".theme-icon-light").setAttribute("style","display: none;"),t.querySelector(".theme-icon-dark").setAttribute("style","display: none;"),e==="light"?t.querySelector(".theme-icon-light").removeAttribute("style"):e==="dark"?t.querySelector(".theme-icon-dark").removeAttribute("style"):t.querySelector(".theme-icon-default").removeAttribute("style")},n=()=>typeof localStorage<"u"&&localStorage.getItem("theme")&&localStorage.getItem("theme")||"default",m=e=>{e==="default"?(document.documentElement.removeAttribute("data-theme"),localStorage.removeItem("theme")):(document.documentElement.setAttribute("data-theme",e),localStorage.setItem("theme",e)),r(e)};let l=n();r(l),t.addEventListener("click",()=>{const e=["default","light","dark"];let o=e.indexOf(l)+1;o>=e.length&&(o=0),l=e[o],m(l)})}</script> <div class="course-layout" data-astro-cid-attrdwtj> <aside class="course-sidebar" data-astro-cid-attrdwtj> <nav class="sidebar-nav" aria-label="Collection navigation" data-astro-cid-mx5xs5wp> <div class="sidebar-fixed-header" data-astro-cid-mx5xs5wp> <a href="/library/courses/agent-skills-with-anthropic" class="sidebar-home" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>Agent Skills with Anthropic：可复用技能与 MCP/子代理实践</span> </a> <hr class="sidebar-divider" data-astro-cid-mx5xs5wp> <div class="sidebar-search-wrap" data-astro-cid-mx5xs5wp> <input type="search" class="sidebar-search" placeholder="搜索…" data-search-input aria-label="搜索文档" data-astro-cid-mx5xs5wp> </div> </div> <div class="sidebar-scrolling-content" data-astro-cid-mx5xs5wp>  <div class="sidebar-group" data-astro-cid-mx5xs5wp> <span class="sidebar-group-label" data-astro-cid-mx5xs5wp>LESSONS</span> <div data-search-list data-astro-cid-mx5xs5wp> <a href="/library/courses/agent-skills-with-anthropic/01. agent-skills-course-introduction" class="sidebar-link" data-search-title="Agent Skills 课程介绍" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>Agent Skills 课程介绍</span>  </a><a href="/library/courses/agent-skills-with-anthropic/02. why-use-skills-part-i" class="sidebar-link" data-search-title="为何使用技能？（第一部分）" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>为何使用技能？（第一部分）</span>  </a><a href="/library/courses/agent-skills-with-anthropic/03. why-use-skills-part-ii" class="sidebar-link" data-search-title="为何使用技能？（第二部分）" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>为何使用技能？（第二部分）</span>  </a><a href="/library/courses/agent-skills-with-anthropic/04. skills-vs-tools-mcp-and-subagents" class="sidebar-link" data-search-title="技能与工具、MCP 和子智能体" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>技能与工具、MCP 和子智能体</span>  </a><a href="/library/courses/agent-skills-with-anthropic/05. exploring-pre-built-skills" class="sidebar-link" data-search-title="探索预构建技能" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>探索预构建技能</span>  </a><a href="/library/courses/agent-skills-with-anthropic/06. creating-custom-skills" class="sidebar-link" data-search-title="创建自定义技能" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>创建自定义技能</span>  </a><a href="/library/courses/agent-skills-with-anthropic/07. skills-with-claude-api" class="sidebar-link" data-search-title="Claude API 技能使用" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>Claude API 技能使用</span>  </a><a href="/library/courses/agent-skills-with-anthropic/08. skills-with-claude-code" class="sidebar-link" data-search-title="Claude Code 中的技能使用" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>Claude Code 中的技能使用</span>  </a><a href="/library/courses/agent-skills-with-anthropic/09. skills-with-the-agent-sdk" class="sidebar-link" data-search-title="使用 Agent SDK 的技能" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>使用 Agent SDK 的技能</span>  </a><a href="/library/courses/agent-skills-with-anthropic/10. conclusion" class="sidebar-link" data-search-title="结语" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>结语</span>  </a> </div> </div> <hr class="sidebar-divider" data-astro-cid-mx5xs5wp>  </div> <div class="sidebar-fixed-bottom" data-astro-cid-mx5xs5wp>  </div> </nav> <script type="module">document.querySelectorAll("[data-search-input]").forEach(n=>{const e=n,t=e.closest(".sidebar-nav");t&&e.addEventListener("input",()=>{const s=e.value.trim().toLowerCase();t.querySelectorAll("[data-search-list] [data-search-title]").forEach(a=>{const r=!s||(a.dataset.searchTitle??"").toLowerCase().includes(s);a.style.display=r?"":"none"})})});const o=document.querySelector(".sidebar-scrolling-content");if(o){const e=`linguista-sidebar-scroll-${window.location.pathname.split("/").slice(0,3).join("/")}`,t=sessionStorage.getItem(e);if(t)o.scrollTop=parseInt(t,10);else{const s=document.querySelector(".sidebar-link--active");s&&s.scrollIntoView({block:"center"})}window.addEventListener("beforeunload",()=>{sessionStorage.setItem(e,o.scrollTop.toString())})}</script>  </aside> <main class="course-main" data-astro-cid-attrdwtj> <article class="course-article" data-astro-cid-attrdwtj> <header class="course-header" data-astro-cid-attrdwtj> <div class="course-tags" data-astro-cid-attrdwtj> <span class="course-tag" data-astro-cid-attrdwtj>translated</span><span class="course-tag" data-astro-cid-attrdwtj>AI</span><span class="course-tag" data-astro-cid-attrdwtj>Anthropic</span><span class="course-tag" data-astro-cid-attrdwtj>Claude</span><span class="course-tag" data-astro-cid-attrdwtj>course</span> </div> <h1 class="course-title" data-astro-cid-attrdwtj>Agent Skills with Anthropic：可复用技能与 MCP/子代理实践</h1> <p class="course-desc" data-astro-cid-attrdwtj>平台：DeepLearning.AI；作者：Elie Schoppik。讲解Skills开放标准，示范如何用 SKILL.md、MCP、子代理和 Claude/API/Code/Agent SDK 组合，构建可复用的代码生成、数据分析、研究与办公工作流，并遵循渐进式披露与最佳实践保证可靠性。</p> <div class="course-meta" data-astro-cid-attrdwtj> <span data-astro-cid-attrdwtj>讲师：Elie Schoppik</span>   <span data-astro-cid-attrdwtj>2026-01-28</span> </div> </header> <hr class="course-divider" data-astro-cid-attrdwtj> <div class="course-body chapter-prose" data-astro-cid-attrdwtj> <div class="chapter-prose">  <h1 id="anthropic-agent-skills-课程">Anthropic Agent Skills 课程</h1>
+<h2 id="你将学到什么">你将学到什么</h2>
+<ul>
+<li>
+<p>使用开放标准格式和最佳实践创建可复用的技能（Skills），并将它们组合起来创建复杂的工作流程。</p>
+</li>
+<li>
+<p>为代码生成和审查工作流程、数据分析和研究构建自定义技能，让你的代理按需加载这些技能。</p>
+</li>
+<li>
+<p>将技能与 MCP（Model Context Protocol）和子代理（Subagents）结合，创建具有专业知识和访问外部数据源能力的强大代理系统。</p>
+</li>
+</ul>
+<h2 id="关于本课程">关于本课程</h2>
+<p>加入这门全新的 Agent Skills 短课程，由 Anthropic 合作打造，Elie Schoppik 授课。</p>
+<p>技能是包含指令的文件夹，通过专业知识扩展代理的能力。无需反复解释相同的工作流程，你可以将其打包为技能，让你的代理自动知道该做什么。由于技能遵循开放标准格式，你可以构建一次，然后部署到任何支持技能的代理上。</p>
+<p>在本课程中，你将学习技能的工作原理、探索创建技能的最佳实践，并为不同的用例构建技能。你将看到技能在 Claude.ai、Claude Code、Claude API 和 Claude Agent SDK 中的实际应用，并学习如何将它们与 MCP 和子代理结合来完成复杂的工作流程。</p>
+<p><strong>详细来说，你将：</strong></p>
+<ul>
+<li>
+<p>理解技能如何在需要时将通用代理转变为专业代理。</p>
+</li>
+<li>
+<p>学习技能文件夹的结构、SKILL.md 文件的格式，以及技能如何使用渐进式披露（Progressive Disclosure）来高效管理上下文。</p>
+</li>
+<li>
+<p>理解 Agent Skills 与工具、MCP 和子代理的区别与联系。</p>
+</li>
+<li>
+<p>探索 Anthropic 预构建的 Excel、PowerPoint 和技能创建技能，并使用它们与 Claude.ai 构建营销活动分析工作流程。</p>
+</li>
+<li>
+<p>按照最佳实践创建自定义技能：构建从讲义生成练习题和分析时间序列数据特征的技能。</p>
+</li>
+<li>
+<p>通过集成代码执行工具和文件 API，在 Claude API 中使用自定义和预构建技能，为 Claude 配置文件系统访问权限和执行 Python 脚本的 bash 环境。</p>
+</li>
+<li>
+<p>使用技能在 Claude Code 中构建代码生成、审查和测试工作流程，并设置配备技能的子代理来处理具有独立上下文的专业任务。</p>
+</li>
+<li>
+<p>使用 Claude Agent SDK 创建一个研究代理，该代理利用技能根据开源工具的文档、GitHub 仓库和网络搜索生成学习指南。</p>
+</li>
+</ul>
+<p>无论你是在自动化代码审查、标准化数据分析工作流程，还是构建研究代理，本课程都将让你通过实践体验创建技能，使通用代理更加可靠和强大。</p>
+<h2 id="谁应该参加">谁应该参加？</h2>
+<p>任何希望通过可复用的工作流程和专业知识来扩展代理能力的 AI 构建者。</p>
+<h2 id="课程大纲">课程大纲</h2>
+<p>10 节课・0 个代码示例</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>章节（文档）</th><th>视频</th><th>时长</th></tr></thead><tbody><tr><td><a href="/courses/agent-skills-with-anthropic/01.-agent-skills-course-introduction/">介绍</a></td><td><a href="https://learn.deeplearning.ai/courses/agent-skills-with-anthropic/lesson/ldn5c3/introduction">视频</a></td><td>2:47</td></tr><tr><td><a href="/courses/agent-skills-with-anthropic/02.-why-use-skills-part-i/">为什么使用技能 - 第一部分</a></td><td><a href="https://learn.deeplearning.ai/courses/agent-skills-with-anthropic/lesson/bv2ekh/why-use-skills---part-i">视频</a></td><td>11:17</td></tr><tr><td><a href="/courses/agent-skills-with-anthropic/03.-why-use-skills-part-ii/">为什么使用技能 - 第二部分</a></td><td><a href="https://learn.deeplearning.ai/courses/agent-skills-with-anthropic/lesson/eg4sac/why-use-skills---part-ii">视频</a></td><td>8:33</td></tr><tr><td><a href="/courses/agent-skills-with-anthropic/04.-skills-vs-tools-mcp-and-subagents/">技能 vs 工具、MCP 和子代理</a></td><td><a href="https://learn.deeplearning.ai/courses/agent-skills-with-anthropic/lesson/9iovmn/skills-vs-tools%2C-mcp%2C-and-subagents">视频</a></td><td>7:35</td></tr><tr><td><a href="/courses/agent-skills-with-anthropic/05.-exploring-pre-built-skills/">探索预构建技能</a></td><td><a href="https://learn.deeplearning.ai/courses/agent-skills-with-anthropic/lesson/cniu9q/exploring-pre-built-skills">视频</a></td><td>18:34</td></tr><tr><td><a href="/courses/agent-skills-with-anthropic/06.-creating-custom-skills/">创建自定义技能</a></td><td><a href="https://learn.deeplearning.ai/courses/agent-skills-with-anthropic/lesson/txwyf5/creating-custom-skills">视频</a></td><td>16:15</td></tr><tr><td><a href="/courses/agent-skills-with-anthropic/07.-skills-with-claude-api/">Claude API 中的技能</a></td><td><a href="https://learn.deeplearning.ai/courses/agent-skills-with-anthropic/lesson/3sq9za/skills-with-the-claude-api">视频</a></td><td>17:26</td></tr><tr><td><a href="/courses/agent-skills-with-anthropic/08.-skills-with-claude-code/">Claude Code 中的技能</a></td><td><a href="https://learn.deeplearning.ai/courses/agent-skills-with-anthropic/lesson/cniu9b/skills-with-claude-code">视频</a></td><td>24:53</td></tr><tr><td><a href="/courses/agent-skills-with-anthropic/09.-skills-with-the-agent-sdk/">Claude Agent SDK 中的技能</a></td><td><a href="https://learn.deeplearning.ai/courses/agent-skills-with-anthropic/lesson/rmykgh/skills-with-the-claude-agent-sdk">视频</a></td><td>20:20</td></tr><tr><td><a href="/courses/agent-skills-with-anthropic/10.-conclusion/">总结</a></td><td><a href="https://learn.deeplearning.ai/courses/agent-skills-with-anthropic/lesson/dea3n4/conclusion">视频</a></td><td>0:41</td></tr></tbody></table>
+<h2 id="讲师">讲师</h2>
+<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+ Anthropic 技术教育主管 
+</div>
+<hr>
+<p><em>此文章由 AI 翻译</em></p>  </div> </div> <div class="course-actions" data-astro-cid-attrdwtj> <span class="course-count" data-astro-cid-attrdwtj>10 个章节</span> <a href="/library/courses/agent-skills-with-anthropic/01. agent-skills-course-introduction" class="btn-primary" data-astro-cid-attrdwtj>开始学习</a> </div> </article> </main> </div>  <script type="module">const a=new IntersectionObserver(t=>{t.forEach(r=>{if(r.isIntersecting){const e=r.target,s=Number(e instanceof HTMLElement?e.dataset.revealDelay:void 0)||0;s>0?setTimeout(()=>{requestAnimationFrame(()=>e.classList.add("in-view"))},s):requestAnimationFrame(()=>e.classList.add("in-view")),a.unobserve(e)}})},{threshold:.12,rootMargin:"0px 0px -40px 0px"});document.querySelectorAll(".reveal").forEach(t=>a.observe(t));</script> </body> </html> 
