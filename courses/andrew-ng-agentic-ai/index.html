@@ -133,7 +133,26 @@
 
 <table><thead><tr><th>模块标题</th><th>课程概览</th><th>专题博客</th><th>学习指南</th><th>课程视频实录</th><th>课程视频脚本</th><th>NotebookLM</th></tr></thead><tbody><tr><td>模块一：Agentic AI简介</td><td><a href="./insights/lec-01.md">课程概览</a></td><td><a href="./blog/lec-01.md">专题博客</a></td><td><a href="./guides/lec-01.md">学习指南</a></td><td><a href="./lecnotes-zh/lec-01.md">课程实录</a></td><td><a href="./lecture/lec-01.md">视频脚本</a></td><td><a href="https://notebooklm.google.com/notebook/7c889fbd-c356-4e24-8871-9704a4188f5c">NotebookLM</a></td></tr><tr><td>模块二：反思设计模式</td><td><a href="./insights/lec-02.md">课程概览</a></td><td><a href="./blog/lec-02.md">专题博客</a></td><td><a href="./guides/lec-02.md">学习指南</a></td><td><a href="./lecnotes-zh/lec-02.md">课程实录</a></td><td><a href="./lecture/lec-02.md">视频脚本</a></td><td><a href="https://notebooklm.google.com/notebook/3c2ef484-a8c3-443f-bb90-11b8ae8904d9">NotebookLM</a></td></tr><tr><td>模块三：工具使用</td><td><a href="./insights/lec-03.md">课程概览</a></td><td><a href="./blog/lec-03.md">专题博客</a></td><td><a href="./guides/lec-03.md">学习指南</a></td><td><a href="./lecnotes-zh/lec-03.md">课程实录</a></td><td><a href="./lecture/lec-03.md">视频脚本</a></td><td><a href="https://notebooklm.google.com/notebook/5f94ecc3-499e-4be2-8c8f-eadc42dda1ad">NotebookLM</a></td></tr><tr><td>模块四：构建 Agentic AI 的实用技巧</td><td><a href="./insights/lec-04.md">课程概览</a></td><td><a href="./blog/lec-04.md">专题博客</a></td><td><a href="./guides/lec-04.md">学习指南</a></td><td><a href="./lecnotes-zh/lec-04.md">课程实录</a></td><td><a href="./lecture/lec-04.md">视频脚本</a></td><td><a href="https://notebooklm.google.com/notebook/479456b0-c4a5-4d08-83c0-2b80e3911dd4">NotebookLM</a></td></tr><tr><td>模块五：高度自主代理的设计模式</td><td><a href="./insights/lec-05.md">课程概览</a></td><td><a href="./blog/lec-05.md">专题博客</a></td><td><a href="./guides/lec-05.md">学习指南</a></td><td><a href="./lecnotes-zh/lec-05.md">课程实录</a></td><td><a href="./lecture/lec-05.md">视频脚本</a></td><td><a href="https://notebooklm.google.com/notebook/db2bdef5-1d8d-4a5a-b215-bdc56a369800">NotebookLM</a></td></tr></tbody></table>  </div> <script type="module">document.querySelectorAll(".chapter-prose > table").forEach(e=>{const r=document.createElement("div");r.className="table-wrapper",e.parentNode.insertBefore(r,e),r.appendChild(e)});</script> </div> <div class="course-actions" data-astro-cid-attrdwtj> <span class="course-count" data-astro-cid-attrdwtj>6 个章节</span> <a href="/library/courses/andrew-ng-agentic-ai/lec-01" class="btn-primary" data-astro-cid-attrdwtj>开始学习</a> </div> </article> <script>(function(){const basePath = "/library/courses/andrew-ng-agentic-ai";
 const aliasMap = {"lec-01":"lec-01","lec-01--lecture":"lec-01","lec-01--lecnotes-zh":"lec-01","lec-01--blog":"lec-01","lec-01--insights":"lec-01","lec-01--guides":"lec-01","lec-02":"lec-02","lec-02--lecture":"lec-02","lec-02--lecnotes-zh":"lec-02","lec-02--blog":"lec-02","lec-02--guides":"lec-02","lec-02--insights":"lec-02","lec-03":"lec-03","lec-03--lecture":"lec-03","lec-03--lecnotes-zh":"lec-03","lec-03--guides":"lec-03","lec-03--blog":"lec-03","lec-03--insights":"lec-03","lec-04":"lec-04","lec-04--lecture":"lec-04","lec-04--lecnotes-zh":"lec-04","lec-04--blog":"lec-04","lec-04--guides":"lec-04","lec-04--insights":"lec-04","lec-05":"lec-05","lec-05--lecture":"lec-05","lec-05--lecnotes-zh":"lec-05","lec-05--blog":"lec-05","lec-05--guides":"lec-05","lec-05--insights":"lec-05","agenticai":"agenticai","AgenticAI":"agenticai"};
+const currentKey = undefined;
+const currentLocale = undefined;
+const currentDirectory = "";
 const selector = ".reader-content, .chapter-prose";
+
+  const normalizeRelativePath = (pathPart, directory = '') => {
+    const raw = decodeURIComponent(pathPart).replace(/\\/g, '/');
+    const segments = directory.split('/').filter(Boolean);
+
+    for (const part of raw.split('/')) {
+      if (!part || part === '.') continue;
+      if (part === '..') {
+        segments.pop();
+        continue;
+      }
+      segments.push(part);
+    }
+
+    return segments.join('/');
+  };
 
   const rewriteMarkdownHref = (rawHref) => {
     if (!rawHref) return null;
@@ -144,20 +163,33 @@ const selector = ".reader-content, .chapter-prose";
     if (!matched) return null;
 
     const [, pathPart, queryPart = '', hashPart = ''] = matched;
-    if (!pathPart.endsWith('.md')) return null;
+    if (/\.[a-z\d]+$/i.test(pathPart) && !pathPart.endsWith('.md')) return null;
 
-    const fileName = decodeURIComponent(pathPart.split('/').pop() ?? '');
-    if (!fileName) return null;
+    const normalizedPath = normalizeRelativePath(pathPart, currentDirectory);
+    if (!normalizedPath) return null;
 
-    const alias = fileName.replace(/\.md$/, '');
-    const localeSuffixMatch = alias.match(/\.(zh|en)$/);
+    const alias = normalizedPath.replace(/\.md$/, '');
+    const baseAlias = alias.split('/').pop() ?? alias;
+    const localeSuffixMatch = alias.match(/\.(zh|fr|en)$/);
     const suffixLocale = localeSuffixMatch?.[1];
-    const normalizedAlias = alias.replace(/\.(zh|en)$/, '');
-    const key = aliasMap[alias] || aliasMap[normalizedAlias] || normalizedAlias;
+    const normalizedAlias = alias.replace(/\.(zh|fr|en)$/, '');
+    const normalizedBaseAlias = baseAlias.replace(/\.(zh|fr|en)$/, '');
+    const fallbackKey = normalizedAlias.startsWith('notes/') ? `notes-${normalizedBaseAlias}` : normalizedBaseAlias;
+    const key = aliasMap[alias]
+      || aliasMap[baseAlias]
+      || aliasMap[normalizedAlias]
+      || aliasMap[normalizedBaseAlias]
+      || fallbackKey;
     const params = new URLSearchParams(queryPart ? queryPart.slice(1) : '');
 
-    if (!params.has('lang') && (suffixLocale === 'zh' || suffixLocale === 'en')) {
+    if (!params.has('lang') && (suffixLocale === 'zh' || suffixLocale === 'fr' || suffixLocale === 'en')) {
       params.set('lang', suffixLocale);
+    }
+
+    const targetLocale = params.get('lang') ?? currentLocale;
+    const onlyLangParam = Array.from(params.keys()).every((name) => name === 'lang');
+    if (currentKey && key === currentKey && (!targetLocale || targetLocale === currentLocale) && onlyLangParam) {
+      return hashPart || null;
     }
 
     const query = params.toString();

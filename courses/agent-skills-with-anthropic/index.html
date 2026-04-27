@@ -149,7 +149,26 @@
 <hr>
 <p><em>此文章由 AI 翻译</em></p>  </div> <script type="module">document.querySelectorAll(".chapter-prose > table").forEach(e=>{const r=document.createElement("div");r.className="table-wrapper",e.parentNode.insertBefore(r,e),r.appendChild(e)});</script> </div> <div class="course-actions" data-astro-cid-attrdwtj> <span class="course-count" data-astro-cid-attrdwtj>10 个章节</span> <a href="/library/courses/agent-skills-with-anthropic/01. agent-skills-course-introduction" class="btn-primary" data-astro-cid-attrdwtj>开始学习</a> </div> </article> <script>(function(){const basePath = "/library/courses/agent-skills-with-anthropic";
 const aliasMap = {"01. agent-skills-course-introduction":"01. agent-skills-course-introduction","02. why-use-skills-part-i":"02. why-use-skills-part-i","03. why-use-skills-part-ii":"03. why-use-skills-part-ii","04. skills-vs-tools-mcp-and-subagents":"04. skills-vs-tools-mcp-and-subagents","05. exploring-pre-built-skills":"05. exploring-pre-built-skills","06. creating-custom-skills":"06. creating-custom-skills","07. skills-with-claude-api":"07. skills-with-claude-api","08. skills-with-claude-code":"08. skills-with-claude-code","09. skills-with-the-agent-sdk":"09. skills-with-the-agent-sdk","10. conclusion":"10. conclusion"};
+const currentKey = undefined;
+const currentLocale = undefined;
+const currentDirectory = "";
 const selector = ".reader-content, .chapter-prose";
+
+  const normalizeRelativePath = (pathPart, directory = '') => {
+    const raw = decodeURIComponent(pathPart).replace(/\\/g, '/');
+    const segments = directory.split('/').filter(Boolean);
+
+    for (const part of raw.split('/')) {
+      if (!part || part === '.') continue;
+      if (part === '..') {
+        segments.pop();
+        continue;
+      }
+      segments.push(part);
+    }
+
+    return segments.join('/');
+  };
 
   const rewriteMarkdownHref = (rawHref) => {
     if (!rawHref) return null;
@@ -160,20 +179,33 @@ const selector = ".reader-content, .chapter-prose";
     if (!matched) return null;
 
     const [, pathPart, queryPart = '', hashPart = ''] = matched;
-    if (!pathPart.endsWith('.md')) return null;
+    if (/\.[a-z\d]+$/i.test(pathPart) && !pathPart.endsWith('.md')) return null;
 
-    const fileName = decodeURIComponent(pathPart.split('/').pop() ?? '');
-    if (!fileName) return null;
+    const normalizedPath = normalizeRelativePath(pathPart, currentDirectory);
+    if (!normalizedPath) return null;
 
-    const alias = fileName.replace(/\.md$/, '');
-    const localeSuffixMatch = alias.match(/\.(zh|en)$/);
+    const alias = normalizedPath.replace(/\.md$/, '');
+    const baseAlias = alias.split('/').pop() ?? alias;
+    const localeSuffixMatch = alias.match(/\.(zh|fr|en)$/);
     const suffixLocale = localeSuffixMatch?.[1];
-    const normalizedAlias = alias.replace(/\.(zh|en)$/, '');
-    const key = aliasMap[alias] || aliasMap[normalizedAlias] || normalizedAlias;
+    const normalizedAlias = alias.replace(/\.(zh|fr|en)$/, '');
+    const normalizedBaseAlias = baseAlias.replace(/\.(zh|fr|en)$/, '');
+    const fallbackKey = normalizedAlias.startsWith('notes/') ? `notes-${normalizedBaseAlias}` : normalizedBaseAlias;
+    const key = aliasMap[alias]
+      || aliasMap[baseAlias]
+      || aliasMap[normalizedAlias]
+      || aliasMap[normalizedBaseAlias]
+      || fallbackKey;
     const params = new URLSearchParams(queryPart ? queryPart.slice(1) : '');
 
-    if (!params.has('lang') && (suffixLocale === 'zh' || suffixLocale === 'en')) {
+    if (!params.has('lang') && (suffixLocale === 'zh' || suffixLocale === 'fr' || suffixLocale === 'en')) {
       params.set('lang', suffixLocale);
+    }
+
+    const targetLocale = params.get('lang') ?? currentLocale;
+    const onlyLangParam = Array.from(params.keys()).every((name) => name === 'lang');
+    if (currentKey && key === currentKey && (!targetLocale || targetLocale === currentLocale) && onlyLangParam) {
+      return hashPart || null;
     }
 
     const query = params.toString();
