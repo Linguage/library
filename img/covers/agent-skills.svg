@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900" role="img" aria-labelledby="title desc">
+<title id="title">agent-skills</title><desc id="desc">Linguista Library 原创矢量封面</desc>
+<style>text{font-family:Arial,'PingFang SC',sans-serif}.serif{font-family:Georgia,'Songti SC','STSong',serif}.mono{font-family:monospace}</style>
+<rect width="600" height="900" fill="#dba98b"/>
+<g fill="#472e27"><text x="45" y="58" font-size="14" fill="#472e27" letter-spacing="2">DEEPLEARNING.AI × ANTHROPIC</text>
+<text x="41" y="157" font-size="77" class="serif">Agent</text><text x="41" y="238" font-size="77" class="serif">Skills</text>
+<text x="45" y="319" font-size="22" >可复用技能与智能体协作</text>
+</g><g stroke="#703f30" stroke-width="2" fill="none">
+<rect x="87" y="407" width="168" height="168" rx="4"/><rect x="345" y="407" width="168" height="168" rx="4"/><rect x="216" y="633" width="168" height="100" rx="4"/><path d="M171 575V607H429V575M300 607V633"/>
+<path d="M127 458H215M127 482H190M127 506H205M381 458l-14 18 14 18M477 458l14 18-14 18M440 446l-22 60" stroke-width="3"/>
+</g><g fill="#703f30"><text x="267" y="698" font-size="30" class="mono">MCP</text></g>
+<path d="M45 785H555" stroke="#472e27" opacity=".4"/>
+<text x="45" y="826" font-size="23" fill="#472e27">Elie Schoppik</text>
+<text x="45" y="864" font-size="14" fill="#472e27" letter-spacing="2">LINGUISTA / COURSE 02</text>
+</svg>

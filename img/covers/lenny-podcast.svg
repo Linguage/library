@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+<title id="title">lenny-podcast</title><desc id="desc">Linguista Library 原创矢量封面</desc>
+<style>text{font-family:Arial,'PingFang SC',sans-serif}.serif{font-family:Georgia,'Songti SC','STSong',serif}.mono{font-family:monospace}</style>
+<rect width="600" height="600" fill="#c76442"/>
+<text x="35" y="49" font-size="14" fill="#f9e4c8" letter-spacing="2">CONVERSATIONS / PRODUCT &amp; GROWTH</text>
+<text x="31" y="140" font-size="88" class="serif" fill="#fff0d7">Lenny’s</text><text x="35" y="205" font-size="60" class="serif" fill="#fff0d7">Podcast</text>
+<g stroke="#f9e4c8" fill="none" stroke-width="4"><rect x="251" y="282" width="98" height="158" rx="49"/><path d="M218 358v29a82 82 0 0 0 164 0v-29M300 469v62M256 531h88"/><path d="M275 317h50M275 338h50M275 359h50" stroke-width="3"/></g>
+<text x="35" y="571" font-size="14" fill="#f9e4c8" letter-spacing="2">LINGUISTA / CHANNEL 01</text>
+</svg>

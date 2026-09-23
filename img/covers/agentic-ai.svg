@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900" role="img" aria-labelledby="title desc">
+<title id="title">agentic-ai</title><desc id="desc">Linguista Library 原创矢量封面</desc>
+<style>text{font-family:Arial,'PingFang SC',sans-serif}.serif{font-family:Georgia,'Songti SC','STSong',serif}.mono{font-family:monospace}</style>
+<rect width="600" height="900" fill="#202e4b"/>
+<g fill="#f3e7c7"><text x="45" y="58" font-size="14" fill="#f3e7c7" letter-spacing="2">DEEPLEARNING.AI</text>
+<text x="41" y="157" font-size="77" class="serif">Agentic</text><text x="41" y="238" font-size="77" class="serif">AI</text>
+<text x="45" y="319" font-size="22" >构建自主式 AI 工作流</text>
+</g><g stroke="#d7b86d" stroke-width="2.5" fill="none"><path d="M145 515H300V421M300 515H455V630H300V712M145 515V650H300V515"/><circle cx="300" cy="515" r="84"/><circle cx="300" cy="515" r="56"/></g>
+<g fill="#f3e7c7"><circle cx="145" cy="515" r="12"/><circle cx="300" cy="421" r="12"/><circle cx="455" cy="515" r="12"/><circle cx="455" cy="630" r="12"/><circle cx="300" cy="712" r="12"/><circle cx="145" cy="650" r="12"/></g><circle cx="300" cy="515" r="12" fill="#d7b86d"/>
+<path d="M45 785H555" stroke="#f3e7c7" opacity=".4"/>
+<text x="45" y="826" font-size="23" fill="#f3e7c7">Andrew Ng</text>
+<text x="45" y="864" font-size="14" fill="#f3e7c7" letter-spacing="2">LINGUISTA / COURSE 01</text>
+</svg>

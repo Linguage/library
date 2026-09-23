@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900" role="img" aria-labelledby="title desc">
+<title id="title">spec-driven-dev</title><desc id="desc">Linguista Library 原创矢量封面</desc>
+<style>text{font-family:Arial,'PingFang SC',sans-serif}.serif{font-family:Georgia,'Songti SC','STSong',serif}.mono{font-family:monospace}</style>
+<rect width="600" height="900" fill="#d7e0e8"/>
+<g fill="#2f4564"><text x="45" y="58" font-size="14" fill="#2f4564" letter-spacing="2">DEEPLEARNING.AI</text>
+<text x="41" y="157" font-size="77" class="serif">Spec-Driven</text><text x="41" y="238" font-size="77" class="serif">Development</text>
+<text x="45" y="319" font-size="22" >规格驱动开发</text>
+</g><g stroke="#355477" stroke-width="1" opacity=".3"><path d="M65 420H535M70 415V715"/><path d="M65 444H535M107 415V715"/><path d="M65 468H535M144 415V715"/><path d="M65 492H535M181 415V715"/><path d="M65 516H535M218 415V715"/><path d="M65 540H535M255 415V715"/><path d="M65 564H535M292 415V715"/><path d="M65 588H535M329 415V715"/><path d="M65 612H535M366 415V715"/><path d="M65 636H535M403 415V715"/><path d="M65 660H535M440 415V715"/><path d="M65 684H535M477 415V715"/><path d="M65 708H535M514 415V715"/></g>
+<g fill="#e1e6e5" stroke="#355477" stroke-width="2.5"><rect x="118" y="460" width="230" height="174"/><rect x="200" y="522" width="282" height="174"/></g><g stroke="#355477" stroke-width="4" fill="none"><path d="M236 566h102M236 589h173M236 612h140M370 658l18 17 44-47"/></g>
+<path d="M45 785H555" stroke="#2f4564" opacity=".4"/>
+<text x="45" y="826" font-size="23" fill="#2f4564">Paul Everitt</text>
+<text x="45" y="864" font-size="14" fill="#2f4564" letter-spacing="2">LINGUISTA / COURSE 04</text>
+</svg>

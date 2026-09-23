@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900" role="img" aria-labelledby="title desc">
+<title id="title">gemini-cli</title><desc id="desc">Linguista Library 原创矢量封面</desc>
+<style>text{font-family:Arial,'PingFang SC',sans-serif}.serif{font-family:Georgia,'Songti SC','STSong',serif}.mono{font-family:monospace}</style>
+<rect width="600" height="900" fill="#bfd5c7"/>
+<g fill="#214645"><text x="45" y="58" font-size="14" fill="#214645" letter-spacing="2">DEEPLEARNING.AI</text>
+<text x="41" y="157" font-size="77" class="serif">Gemini</text><text x="41" y="238" font-size="77" class="serif">CLI</text>
+<text x="45" y="319" font-size="22" >开源代理式编码助手</text>
+</g><rect x="66" y="415" width="468" height="290" rx="8" fill="#183d3e"/><path d="M66 461H534" stroke="#74a29a"/><g fill="#c4dacc"><circle cx="91" cy="437" r="5"/><circle cx="111" cy="437" r="5"/><circle cx="131" cy="437" r="5"/></g>
+<path d="M103 510l28 20-28 20M152 551h63" stroke="#cae2c4" stroke-width="5" fill="none"/>
+<path d="M397 493Q397 590 313 590Q397 590 397 673Q397 590 481 590Q397 590 397 493" fill="#c4dacc"/>
+<path d="M45 785H555" stroke="#214645" opacity=".4"/>
+<text x="45" y="826" font-size="23" fill="#214645">Jack Wotherspoon</text>
+<text x="45" y="864" font-size="14" fill="#214645" letter-spacing="2">LINGUISTA / COURSE 03</text>
+</svg>

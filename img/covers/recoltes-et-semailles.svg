@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900" role="img" aria-labelledby="title desc">
+<title id="title">recoltes-et-semailles</title><desc id="desc">Original SVG reading cover inspired by the orange typography, white ground and geometric composition of the Gallimard Tel edition. Artwork redrawn; no publisher logo. Reference: https://www.gallimard.fr/catalogue/recoltes-et-semailles-1/9782073004772</desc>
+<style>text{font-family:Arial,'PingFang SC',sans-serif}.serif{font-family:Georgia,'Songti SC','STSong',serif}.mono{font-family:monospace}</style>
+<rect width="600" height="900" fill="#fcfaf4"/>
+<text x="48" y="58" font-size="14" fill="#c2623e" letter-spacing="2">ALEXANDRE GROTHENDIECK</text>
+<text x="46" y="148" font-size="68" class="serif" fill="#282e29">Récoltes</text>
+<text x="46" y="216" font-size="68" class="serif" fill="#282e29">et Semailles</text>
+<text x="49" y="284" font-size="36" class="serif" fill="#282e29">收获与播种</text>
+<rect x="48" y="352" width="504" height="402" fill="#c2623e"/>
+<rect x="70" y="374" width="460" height="358" fill="#f0e9d6"/>
+<g fill="none" stroke-linecap="round">
+<path d="M150 700C185 610 270 650 280 535S330 433 448 413M170 430C180 540 342 568 425 714M105 590C215 545 395 580 475 510" stroke="#b7a23f" stroke-width="3"/>
+<path d="M170 715C217 635 198 595 288 578S325 470 380 411M115 492C240 470 259 660 476 636" stroke="#527962" stroke-width="3"/>
+<path d="M186 510L226 487L268 543L293 515L335 580L380 558L408 605M174 527L214 504L256 560L281 532L323 597L368 575L396 622" stroke="#b45338" stroke-width="3"/>
+<path d="M186 510l-12 17M180 505l12 10" stroke="#b45338" stroke-width="2"/><path d="M226 487l-12 17M220 482l12 10" stroke="#b45338" stroke-width="2"/><path d="M268 543l-12 17M262 538l12 10" stroke="#b45338" stroke-width="2"/><path d="M293 515l-12 17M287 510l12 10" stroke="#b45338" stroke-width="2"/><path d="M335 580l-12 17M329 575l12 10" stroke="#b45338" stroke-width="2"/><path d="M380 558l-12 17M374 553l12 10" stroke="#b45338" stroke-width="2"/><path d="M408 605l-12 17M402 600l12 10" stroke="#b45338" stroke-width="2"/>
+</g>
+<text x="49" y="813" font-size="32" class="serif" fill="#c2623e">I</text><text x="81" y="812" font-size="14" fill="#575b4e" letter-spacing="2">RÉFLEXIONS</text>
+<text x="49" y="853" font-size="14" fill="#575b4e" letter-spacing="2">LINGUISTA / 中法对照阅读</text>
+</svg>

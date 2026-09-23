@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900" role="img" aria-labelledby="title desc">
+<title id="title">build-with-andrew</title><desc id="desc">Linguista Library 原创矢量封面</desc>
+<style>text{font-family:Arial,'PingFang SC',sans-serif}.serif{font-family:Georgia,'Songti SC','STSong',serif}.mono{font-family:monospace}</style>
+<rect width="600" height="900" fill="#555f47"/>
+<g fill="#f6ecd0"><text x="45" y="58" font-size="14" fill="#f6ecd0" letter-spacing="2">DEEPLEARNING.AI</text>
+<text x="41" y="157" font-size="77" class="serif">Build with</text><text x="41" y="238" font-size="77" class="serif">Andrew</text>
+<text x="45" y="319" font-size="22" >从想法到应用</text>
+</g><g stroke="#e0b64a" stroke-width="2"><path d="M85 568l118-65 118 65-118 65Z" fill="#ddb047"/><path d="M85 568v129l118 66V633Z" fill="#b68b35"/><path d="M203 633l118-65v129l-118 66Z" fill="#edcf86"/>
+<path d="M277 448l118-65 118 65-118 65Z" fill="#edcf86"/><path d="M277 448v129l118 66V513Z" fill="#b68b35"/><path d="M395 513l118-65v129l-118 66Z" fill="#d2a944"/></g>
+<path d="M45 785H555" stroke="#f6ecd0" opacity=".4"/>
+<text x="45" y="826" font-size="23" fill="#f6ecd0">Andrew Ng</text>
+<text x="45" y="864" font-size="14" fill="#f6ecd0" letter-spacing="2">LINGUISTA / COURSE 05</text>
+</svg>
