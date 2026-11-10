@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+<title id="title">The Builders with Walter Isaacson</title><desc id="desc">Original geometric Library cover: architectural blocks and a rising sun.</desc>
+<rect width="600" height="600" fill="#eee8d9"/>
+<circle cx="452" cy="310" r="74" fill="#d46d42"/>
+<path d="M68 470V338h118V240h118v126h118v-50h110v154Z" fill="#244c4b"/>
+<path d="M68 470h464M186 338v132M304 366v104M422 366v104" fill="none" stroke="#eee8d9" stroke-width="3"/>
+<g fill="#244c4b" font-family="Georgia,serif"><text x="48" y="103" font-size="64">The Builders</text><text x="50" y="151" font-size="25">with Walter Isaacson</text></g>
+<text x="50" y="537" fill="#244c4b" font-family="Arial,sans-serif" font-size="15" letter-spacing="3">TECHNOLOGY · HUMANITY · FUTURE</text>
+<text x="50" y="570" fill="#687c72" font-family="Arial,sans-serif" font-size="12" letter-spacing="2">LINGUISTA LIBRARY / PODCAST</text>
+</svg>
