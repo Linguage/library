@@ -1,0 +1,465 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/library/img/library-campus.svg" type="image/svg+xml" sizes="any"><link rel="shortcut icon" href="/library/img/library-campus.svg" type="image/svg+xml"><title>Martin Hellman：核风险、AI 与合作，如何改变冲突中的思维</title><meta name="description" content="钰子一与 Martin Hellman 从密码学谈到核风险、AI 安全和国际合作，探讨关系中的责任与新思维。"><link rel="alternate" type="application/rss+xml" title="Linguista Library · 更新" href="https://linguista.cn/library/rss.xml"><link rel="canonical" href="https://linguista.cn/library/channels/yuziyi/martin-hellman"><meta property="og:type" content="website"><meta property="og:site_name" content="Linguista Library"><meta property="og:title" content="Martin Hellman：核风险、AI 与合作，如何改变冲突中的思维"><meta property="og:description" content="钰子一与 Martin Hellman 从密码学谈到核风险、AI 安全和国际合作，探讨关系中的责任与新思维。"><meta property="og:url" content="https://linguista.cn/library/channels/yuziyi/martin-hellman"><meta property="og:image" content="https://linguista.cn/library/img/library-campus.svg"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://linguista.cn/library/img/library-campus.svg"><meta name="twitter:title" content="Martin Hellman：核风险、AI 与合作，如何改变冲突中的思维"><meta name="twitter:description" content="钰子一与 Martin Hellman 从密码学谈到核风险、AI 安全和国际合作，探讨关系中的责任与新思维。"><script async src="https://www.googletagmanager.com/gtag/js?id=G-99PGBGJH4S"></script><script>(function(){const gaMeasurementId = "G-99PGBGJH4S";
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', gaMeasurementId);
+        })();</script><script>
+      const getTheme = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return 'default';
+      };
+      
+      const theme = getTheme();
+      if (theme && theme !== 'default') {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+    </script><!-- Inject Typography Settings --><script>
+      (function() {
+        try {
+          var fontFam = localStorage.getItem('reader-font-family');
+          var fontSz = localStorage.getItem('reader-font-size');
+          if (fontFam) document.documentElement.setAttribute('data-reader-font-family', fontFam);
+          if (fontSz) document.documentElement.setAttribute('data-reader-font-size', fontSz);
+        } catch(e) {}
+      })();
+    </script><link rel="stylesheet" href="/library/_astro/_slug_.DRaQT0fo.css">
+<style>.chapter-nav[data-astro-cid-vjjnhoij]{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}.chapter-nav-link[data-astro-cid-vjjnhoij]{display:flex;flex-direction:column;gap:10px;min-height:120px;padding:20px;border-radius:0;border-width:1px 0;border:1px solid var(--line-soft);background:transparent;text-decoration:none;transition:transform .2s var(--ease-out-expo),box-shadow .2s var(--ease-out-expo),border-color .2s var(--ease-out-expo)}.chapter-nav-link[data-astro-cid-vjjnhoij]:hover{transform:none;box-shadow:none;border-color:var(--text-strong)}.chapter-nav-next[data-astro-cid-vjjnhoij]{text-align:right;align-items:end}.nav-direction[data-astro-cid-vjjnhoij]{font-family:Space Mono,monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-subtle)}.nav-title[data-astro-cid-vjjnhoij]{display:flex;flex-direction:column;gap:8px;color:var(--text-strong);font-size:16px;font-weight:600}.nav-label[data-astro-cid-vjjnhoij]{font-family:Space Mono,monospace;font-size:11px;color:var(--text-subtle);letter-spacing:1px}@media(max-width:720px){.chapter-nav[data-astro-cid-vjjnhoij]{grid-template-columns:1fr}.chapter-nav-next[data-astro-cid-vjjnhoij]{text-align:left;align-items:start}}.variant-toggle[data-astro-cid-5sgtdjuh]{display:inline-flex;gap:0;margin-top:22px;border:1px solid var(--interactive-border-strong);flex-wrap:wrap}.variant-button[data-astro-cid-5sgtdjuh]{border:none;border-right:1px solid var(--interactive-border-strong);background:transparent;color:var(--text-body);padding:7px 16px;border-radius:0;cursor:pointer;font-family:DM Sans,sans-serif;font-size:13px;font-weight:500;transition:background .15s ease,color .15s ease}.variant-button[data-astro-cid-5sgtdjuh]:last-child{border-right:none}.variant-button--active[data-astro-cid-5sgtdjuh]{background:var(--text-strong);color:var(--surface-base)}.variant-button[data-astro-cid-5sgtdjuh]:not(.variant-button--active):hover{background:var(--interactive-hover);color:var(--text-strong)}
+.sidebar-nav[data-astro-cid-mx5xs5wp]{display:flex;flex-direction:column;font-family:DM Sans,sans-serif;height:100%}.sidebar-fixed-header[data-astro-cid-mx5xs5wp]{flex-shrink:0;padding-top:16px;background:var(--surface-soft);border-bottom:1px solid var(--line-soft);margin-bottom:12px}.sidebar-scrolling-content[data-astro-cid-mx5xs5wp]{flex:1;overflow-y:auto;padding-bottom:24px}.sidebar-fixed-bottom[data-astro-cid-mx5xs5wp]{flex-shrink:0;margin-top:auto}.sidebar-home[data-astro-cid-mx5xs5wp]{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--text-strong);text-decoration:none;padding:4px 16px;margin-bottom:8px}.sidebar-home[data-astro-cid-mx5xs5wp]:hover{color:var(--sky)}.sidebar-divider[data-astro-cid-mx5xs5wp]{border:none;border-top:1px solid var(--line-soft);margin:12px 0}.sidebar-group[data-astro-cid-mx5xs5wp]{margin:4px 0}.sidebar-group-label[data-astro-cid-mx5xs5wp]{display:block;font-family:Space Mono,monospace;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-subtle);padding:4px 16px;margin-bottom:4px}.sidebar-search-wrap[data-astro-cid-mx5xs5wp]{padding:0 16px 8px}.sidebar-search[data-astro-cid-mx5xs5wp]{width:100%;padding:6px 8px;border:1px solid var(--line-strong);background:var(--surface-base);font-family:DM Sans,sans-serif;font-size:12px;color:var(--text-body);border-radius:0;outline:none}.sidebar-search[data-astro-cid-mx5xs5wp]:focus{border-color:var(--sky)}.sidebar-group--secondary[data-astro-cid-mx5xs5wp] .sidebar-group-label[data-astro-cid-mx5xs5wp]{font-size:9px;opacity:.6}.sidebar-group--secondary[data-astro-cid-mx5xs5wp] .sidebar-link[data-astro-cid-mx5xs5wp]{font-size:13px;color:var(--text-subtle);padding:7px 16px}.sidebar-link[data-astro-cid-mx5xs5wp]{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted);text-decoration:none;padding:8px 16px;border-radius:0;transition:background .15s ease,color .15s ease}.sidebar-link[data-astro-cid-mx5xs5wp]:hover{background:var(--surface-soft);color:var(--text-strong)}.sidebar-link--active[data-astro-cid-mx5xs5wp]{background:var(--surface-soft);color:var(--text-strong);border-left:2px solid var(--sky);padding-left:14px}.draft-badge[data-astro-cid-mx5xs5wp]{font-family:Space Mono,monospace;font-size:9px;padding:1px 5px;background:transparent;border:1px solid var(--line-strong);color:var(--text-subtle);border-radius:0;letter-spacing:.5px;margin-left:auto;flex-shrink:0}
+</style>
+<link rel="stylesheet" href="/library/_astro/_slug_.CiKTqRpK.css">
+<style>.reader-article[data-astro-cid-2yvbimk5]{max-width:min(1120px,100%)}.reader-header[data-astro-cid-2yvbimk5]{margin-bottom:24px}.reader-header[data-astro-cid-2yvbimk5] h1[data-astro-cid-2yvbimk5]{margin:0;font-family:"Instrument Serif",Georgia,serif;font-size:clamp(1.8rem,3.2vw,2.8rem);font-weight:700;line-height:1.1;letter-spacing:-.01em;color:var(--text-strong)}.reader-meta[data-astro-cid-2yvbimk5]{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;font-size:.95rem;color:var(--text-subtle)}.reader-content[data-astro-cid-2yvbimk5]{margin-top:28px}.reader-content[data-astro-cid-2yvbimk5][hidden],.reader-content[data-astro-cid-2yvbimk5]:not(.reader-content--active){display:none}.reader-content--active[data-astro-cid-2yvbimk5]{display:block}.reader-prose--zh[data-astro-cid-2yvbimk5]{font-family:Noto Sans SC,PingFang SC,Microsoft YaHei,sans-serif}.reader-prose--en[data-astro-cid-2yvbimk5],.reader-prose--fr[data-astro-cid-2yvbimk5]{font-family:DM Sans,sans-serif}.reader-content[data-astro-cid-2yvbimk5] h1{display:none}.reader-prose--en[data-astro-cid-2yvbimk5] h1:first-child+p{display:none}.sidebar-reader-details[data-astro-cid-2yvbimk5]{padding:0;margin-top:0;border-top:none}.sidebar-details-grid-wrapper[data-astro-cid-2yvbimk5]{background:transparent}.sidebar-details-grid[data-astro-cid-2yvbimk5],.details-group[data-astro-cid-2yvbimk5]{display:flex;flex-direction:column;gap:16px}.details-item[data-astro-cid-2yvbimk5]{display:flex;flex-direction:column;gap:6px;font-size:.85rem;line-height:1.6}.details-label[data-astro-cid-2yvbimk5]{color:var(--text-body);font-size:.75rem;font-family:Space Mono,monospace;text-transform:uppercase;letter-spacing:1px;font-weight:600}.details-value[data-astro-cid-2yvbimk5]{color:var(--text-strong);font-weight:500;word-break:break-word}.source-direct-link[data-astro-cid-2yvbimk5]{display:inline-flex;margin-top:12px;color:var(--text-strong);text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:4px;font-size:.85rem;font-weight:500;transition:color .15s,text-decoration-color .15s}.source-direct-link[data-astro-cid-2yvbimk5]:hover{color:var(--sky);text-decoration-color:var(--sky)}
+</style></head> <body>  <script type="module">document.querySelectorAll(".video-embed--youtube").forEach(e=>{const r=e.querySelector(".video-embed__preview"),a=e.querySelector(".video-embed__frame"),c=e.querySelector(".video-embed__reset"),i=e.querySelector(".video-embed__thumbnail"),l=e.dataset.videoId;if(!r||!a||!c||!l)return;const n=e.dataset.videoTitle==="YouTube video"?e.closest("article")?.querySelector("h1")?.textContent?.trim()||"YouTube 视频":e.dataset.videoTitle||"YouTube 视频";r.setAttribute("aria-label",`播放视频：${n}`);const s=()=>{i&&(i.hidden=!0)};i?.addEventListener("error",s),i?.complete&&!i.naturalWidth&&s(),r.addEventListener("click",o=>{if(o.button!==0||o.metaKey||o.ctrlKey||o.shiftKey||o.altKey||(o.preventDefault(),a.querySelector("iframe")))return;const t=document.createElement("iframe"),d=new URL(`https://www.youtube-nocookie.com/embed/${l}`);d.searchParams.set("playsinline","1"),d.searchParams.set("autoplay","1"),d.searchParams.set("origin",window.location.origin),t.src=d.href,t.title=n,t.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",t.allowFullscreen=!0,t.referrerPolicy="strict-origin-when-cross-origin",r.hidden=!0,c.hidden=!1,a.append(t),t.focus()}),c.addEventListener("click",()=>{a.querySelector("iframe")?.remove(),r.hidden=!1,c.hidden=!0,r.focus()})});</script> <header class="site-header" data-astro-cid-ivsbtrvw> <div class="header-inner" data-astro-cid-ivsbtrvw> <div class="header-left" data-astro-cid-ivsbtrvw> <button id="mobile-sidebar-toggle" class="mobile-menu-toggle" aria-label="Toggle navigation sidebar" type="button" data-astro-cid-ivsbtrvw> <svg width="1em" height="1em" class="header-icon" aria-hidden="true" data-astro-cid-ivsbtrvw="true" data-icon="lucide:menu">   <symbol id="ai:lucide:menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16M4 12h16M4 19h16"/></symbol><use href="#ai:lucide:menu"></use>  </svg> </button> <a href="/library/" class="logo" data-astro-cid-ivsbtrvw> <span class="logo-mark" style="mask-image: url(&#34;/library/img/library-campus.svg&#34;)" aria-hidden="true" data-astro-cid-ivsbtrvw></span> <span class="logo-text" data-astro-cid-ivsbtrvw><span class="logo-full" data-astro-cid-ivsbtrvw>Linguista Library</span><span class="logo-short" data-astro-cid-ivsbtrvw>Linguista</span></span> </a> </div> <nav class="header-nav" data-astro-cid-ivsbtrvw> <a href="/library/#persons" class="header-link" data-astro-cid-ivsbtrvw><span class="nav-full" data-astro-cid-ivsbtrvw>人物文集</span><span class="nav-short" data-astro-cid-ivsbtrvw>人物</span></a> <a href="/library/#courses" class="header-link" data-astro-cid-ivsbtrvw><span class="nav-full" data-astro-cid-ivsbtrvw>图书与课程</span><span class="nav-short" data-astro-cid-ivsbtrvw>书架</span></a> <a href="/library/#channels" class="header-link" data-astro-cid-ivsbtrvw><span class="nav-full" data-astro-cid-ivsbtrvw>频道精选</span><span class="nav-short" data-astro-cid-ivsbtrvw>频道</span></a> <button id="theme-toggle" class="header-link theme-toggle" aria-label="Toggle Theme" title="切换主题" data-astro-cid-ivsbtrvw> <svg width="1em" height="1em" class="header-icon theme-icon-default" data-astro-cid-ivsbtrvw="true" data-icon="lucide:monitor">   <symbol id="ai:lucide:monitor" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8m-4-4v4"/></g></symbol><use href="#ai:lucide:monitor"></use>  </svg> <svg width="1em" height="1em" class="header-icon theme-icon-light" style="display: none;" data-astro-cid-ivsbtrvw="true" data-icon="lucide:sun">   <symbol id="ai:lucide:sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></g></symbol><use href="#ai:lucide:sun"></use>  </svg> <svg width="1em" height="1em" class="header-icon theme-icon-dark" style="display: none;" data-astro-cid-ivsbtrvw="true" data-icon="lucide:moon">   <symbol id="ai:lucide:moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></symbol><use href="#ai:lucide:moon"></use>  </svg> </button> <a class="parent-link" href="https://linguista.cn/home/?subscribe=1" aria-label="RSS 订阅" data-tooltip="RSS 订阅" data-astro-cid-ivsbtrvw><img src="https://linguista.cn/home/assets/brand/home-logo.svg?v=5" width="36" height="36" alt="" data-astro-cid-ivsbtrvw></a> </nav> </div> </header>  <script type="module">const t=document.getElementById("theme-toggle");if(t){const r=e=>{t.querySelector(".theme-icon-default").setAttribute("style","display: none;"),t.querySelector(".theme-icon-light").setAttribute("style","display: none;"),t.querySelector(".theme-icon-dark").setAttribute("style","display: none;"),e==="light"?t.querySelector(".theme-icon-light").removeAttribute("style"):e==="dark"?t.querySelector(".theme-icon-dark").removeAttribute("style"):t.querySelector(".theme-icon-default").removeAttribute("style")},n=()=>typeof localStorage<"u"&&localStorage.getItem("theme")&&localStorage.getItem("theme")||"default",m=e=>{e==="default"?(document.documentElement.removeAttribute("data-theme"),localStorage.removeItem("theme")):(document.documentElement.setAttribute("data-theme",e),localStorage.setItem("theme",e)),r(e)};let l=n();r(l),t.addEventListener("click",()=>{const e=["default","light","dark"];let o=e.indexOf(l)+1;o>=e.length&&(o=0),l=e[o],m(l)})}</script> <div class="docs-progress" aria-hidden="true" data-astro-cid-mw7aashj> <div class="docs-progress-bar" data-reading-progress-bar data-astro-cid-mw7aashj></div> </div> <div class="docs-layout" data-astro-cid-mw7aashj> <div id="sidebar-overlay" class="mobile-overlay" data-astro-cid-mw7aashj></div> <div id="toc-overlay" class="mobile-overlay" data-astro-cid-mw7aashj></div> <aside class="docs-sidebar" id="docs-sidebar" data-astro-cid-mw7aashj> <nav class="sidebar-nav" aria-label="Collection navigation" data-astro-cid-mx5xs5wp> <div class="sidebar-fixed-header" data-astro-cid-mx5xs5wp> <a href="/library/channels/yuziyi" class="sidebar-home" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>频道 钰子一</span> </a> <hr class="sidebar-divider" data-astro-cid-mx5xs5wp> <div class="sidebar-search-wrap" data-astro-cid-mx5xs5wp> <input type="search" class="sidebar-search" placeholder="搜索…" data-search-input aria-label="搜索文档" data-astro-cid-mx5xs5wp> </div> </div> <div class="sidebar-scrolling-content" data-astro-cid-mx5xs5wp>  <div class="sidebar-group" data-astro-cid-mx5xs5wp> <span class="sidebar-group-label" data-astro-cid-mx5xs5wp>钰子一</span> <div data-search-list data-astro-cid-mx5xs5wp> <a href="/library/channels/yuziyi/carl-wieman?tab=summary" class="sidebar-link" data-search-title="Carl Wieman：AI 时代，我们应该怎样学习？" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>Carl Wieman：AI 时代，我们应该怎样学习？</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026</span> </a><a href="/library/channels/yuziyi/jacob-tsimerman?tab=summary" class="sidebar-link" data-search-title="Jacob Tsimerman：算术几何、AI 与数学的未来" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>Jacob Tsimerman：算术几何、AI 与数学的未来</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026</span> </a><a href="/library/channels/yuziyi/martin-hellman?tab=summary" class="sidebar-link sidebar-link--active" aria-current="page" data-search-title="Martin Hellman：核风险、AI 与合作，如何改变冲突中的思维" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>Martin Hellman：核风险、AI 与合作，如何改变冲突中的思维</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026</span> </a><a href="/library/channels/yuziyi/richard-borcherds?tab=summary" class="sidebar-link" data-search-title="Richard Borcherds：学了五十年数学，突然几乎派不上用场" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>Richard Borcherds：学了五十年数学，突然几乎派不上用场</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026</span> </a><a href="/library/channels/yuziyi/roger-penrose?tab=summary" class="sidebar-link" data-search-title="Roger Penrose：AI 能真正思考吗，大爆炸真的是宇宙的起点吗？" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>Roger Penrose：AI 能真正思考吗，大爆炸真的是宇宙的起点吗？</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026</span> </a><a href="/library/channels/yuziyi/scott-aaronson?tab=summary" class="sidebar-link" data-search-title="Scott Aaronson：AI 距离解决 P 与 NP 问题还有多远？" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>Scott Aaronson：AI 距离解决 P 与 NP 问题还有多远？</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026</span> </a> </div> </div> <hr class="sidebar-divider" data-astro-cid-mx5xs5wp>  </div> <div class="sidebar-fixed-bottom" data-astro-cid-mx5xs5wp>  </div> </nav> <script type="module">document.querySelectorAll("[data-search-input]").forEach(n=>{const e=n,t=e.closest(".sidebar-nav");t&&e.addEventListener("input",()=>{const s=e.value.trim().toLowerCase();t.querySelectorAll("[data-search-list] [data-search-title]").forEach(a=>{const r=!s||(a.dataset.searchTitle??"").toLowerCase().includes(s);a.style.display=r?"":"none"})})});const o=document.querySelector(".sidebar-scrolling-content");if(o){const e=`linguista-sidebar-scroll-${window.location.pathname.split("/").slice(0,3).join("/")}`,t=sessionStorage.getItem(e);if(t)o.scrollTop=parseInt(t,10);else{const s=document.querySelector(".sidebar-link--active");s&&s.scrollIntoView({block:"center"})}window.addEventListener("beforeunload",()=>{sessionStorage.setItem(e,o.scrollTop.toString())})}</script>  </aside> <main class="docs-content" data-astro-cid-mw7aashj>   <article class="chapter-article reader-article" data-astro-cid-2yvbimk5> <header class="reader-header" data-astro-cid-2yvbimk5> <h1 data-astro-cid-2yvbimk5>Martin Hellman：核风险、AI 与合作，如何改变冲突中的思维</h1> <div class="reader-meta" data-astro-cid-2yvbimk5> <span data-astro-cid-2yvbimk5>钰子一</span> <span data-astro-cid-2yvbimk5>2026-11-16</span> </div>  <div class="variant-toggle module-toggle" data-variant-switcher data-param-name="tab" aria-label="切换内容模块" data-astro-cid-5sgtdjuh> <button type="button" class="variant-button module-button variant-button--active module-button--active" data-variant-button data-param-name="tab" data-variant-target="summary" data-target-module="summary" aria-pressed="true" data-astro-cid-5sgtdjuh> 内容摘要 </button><button type="button" class="variant-button module-button" data-variant-button data-param-name="tab" data-variant-target="zh" data-target-module="zh" aria-pressed="false" data-astro-cid-5sgtdjuh> 中文译文 </button> </div> <script type="module">const d="__linguistaVariantSwitcherReady";if(!(d in window)){window[d]=!0;const c=["lang","tab"],i=()=>Array.from(document.querySelectorAll("[data-variant-switcher][data-param-name]")),v=()=>Array.from(document.querySelectorAll("[data-variant-panel]")),f=()=>{const n={};return i().forEach(a=>{const t=a.dataset.paramName;if(!t)return;const e=a.querySelector("[data-variant-button].variant-button--active"),r=a.querySelector("[data-variant-button]"),s=e?.dataset.variantTarget??r?.dataset.variantTarget;s&&(n[t]=s)}),n},g=(n,a)=>{const t=n.dataset.variantLang,e=n.dataset.variantTab;return!(t&&a.lang!==t||e&&a.tab!==e)},h=n=>{document.querySelectorAll("a.chapter-nav-link[href], a.sidebar-link[href]").forEach(t=>{const e=t.getAttribute("href");if(!e)return;const r=new URL(e,window.location.origin);c.forEach(s=>{const o=n[s];o?r.searchParams.set(s,o):r.searchParams.delete(s)}),t.setAttribute("href",`${r.pathname}${r.search}${r.hash}`)})},m=n=>{const a=new URL(window.location.href);c.forEach(t=>{const e=n[t];document.querySelector(`[data-variant-switcher][data-param-name="${t}"]`)&&(e?a.searchParams.set(t,e):a.searchParams.delete(t))}),window.history.replaceState({},"",a.toString())},w=()=>{const n=new URL(window.location.href);i().forEach(a=>{const t=a.dataset.paramName;if(!t)return;const e=n.searchParams.get(t);if(!e)return;const r=a.querySelector(`[data-variant-button][data-variant-target="${CSS.escape(e)}"]`);r&&a.querySelectorAll("[data-variant-button]").forEach(s=>{const o=s===r;s.classList.toggle("variant-button--active",o),s.classList.toggle("language-button--active",t==="lang"&&o),s.classList.toggle("module-button--active",t==="tab"&&o),s.setAttribute("aria-pressed",o?"true":"false")})})},l=(n={})=>{const{updateBrowserUrl:a=!0}=n,t=f();let e;v().forEach(r=>{const s=g(r,t);r.classList.toggle("reader-content--active",s),s?(r.removeAttribute("hidden"),e=r.dataset.variantKey??e):r.setAttribute("hidden","")}),a&&m(t),h(t),window.dispatchEvent(new CustomEvent("variantchange",{detail:{activeParams:t,activePanelKey:e}}))},b=n=>{const a=n.closest("[data-variant-switcher]"),t=n.dataset.paramName;!a||!t||(a.querySelectorAll("[data-variant-button]").forEach(e=>{const r=e===n;e.classList.toggle("variant-button--active",r),e.classList.toggle("language-button--active",t==="lang"&&r),e.classList.toggle("module-button--active",t==="tab"&&r),e.setAttribute("aria-pressed",r?"true":"false")}),l())};document.addEventListener("click",n=>{const a=n.target;if(!(a instanceof Element))return;const t=a.closest("[data-variant-button][data-variant-target]");t&&b(t)});const u=()=>{w(),l({updateBrowserUrl:!1})};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",u,{once:!0}):u()}</script>  </header> <section class="reader-content chapter-prose reader-prose--zh reader-content--active" data-variant-panel data-variant-key="summary" data-variant-tab="summary" data-module-panel="summary" lang="zh-CN" data-astro-cid-2yvbimk5> <div class="chapter-prose">  <p><a href="https://www.youtube.com/watch?v=gvAN3yaefL0">观看原视频</a></p>
+<p>公钥密码学让陌生人能够在不安全的网络上建立安全通信；但这场访谈真正追问的，是另一种更难建立的安全：当人类拥有核武器与 AI 的巨大力量，却仍习惯以敌我对立处理冲突时，怎样避免技术最终毁掉自己？Martin Hellman 将自己的科研、婚姻和国际合作经历放在同一条线上。他给出的核心判断是，核风险、AI 风险与气候变化不只是彼此独立的技术问题，也暴露了人类力量与情感成熟度之间的落差。</p>
+<h2 id="革命性的发现也有一条缓慢显现的路径">革命性的发现，也有一条缓慢显现的路径</h2>
+<p>回顾公钥密码学，Hellman 并不把它描述成孤立的灵光一闪。原有系统中的矛盾、陷门的设想，以及许多指向同一方向的线索，逐渐使新的概念变得可见。Whitfield Diffie 提出基本思想，Hellman 构造算法，Ralph Merkle 则独立发展了保密通信这一半的构想。</p>
+<p>他特别强调 Merkle 得到的认可不足。那个后来显得意义重大的学生项目，最初被老师认为描述混乱、不如另一个项目合理。这样的经历，与其他科学突破在取得成果前被视为“疯狂”的故事相呼应。Hellman 并不否认判断可能出错，而是提醒人们，重大新想法往往无法立即获得既有共同体的认可。</p>
+<p>他们在《密码学的新方向》中已经预见到一场革命，却仍低估了成果走向广泛应用所需要的时间：原以为五到十年，真正随互联网起飞，差不多等了二十年。</p>
+<h2 id="朋友比敌人好不只是一个口号">朋友比敌人好，不只是一个口号</h2>
+<p>最初，NSA 将公开密码学研究视作国家安全风险。Hellman 与这一机构激烈冲突，直到时任局长 Bobby Inman 顶着内部反对意见，决定亲自与他会面。双方关于“头上有没有长角”的玩笑，打破了此前把对方妖魔化的想象。谨慎的接触最终变成了长期友谊。</p>
+<p>与 RSA 的专利争议，也经历了类似的转变。Hellman 曾觉得对方拿走了本该属于自己的收益；后来，他改用另一种方式理解这段历史：商业推广加速了公钥密码学普及，也间接创造了自己后来参与的机会。这个重新解释的过程，并没有改写专利争端的结果，却让持续的愤怒不再支配他的生活。</p>
+<p>“朋友比敌人好”因而不是要求人们假装分歧不存在，而是追问：坚持敌对，究竟还能解决什么？在他看来，重新建立关系本身可以创造此前不存在的行动空间。</p>
+<h2 id="先看见自己也参与了冲突的制造">先看见自己，也参与了冲突的制造</h2>
+<p>Hellman 坦承，自己与 NSA 的对抗虽然有明确的技术依据，但也夹杂着追求名声的动机。一个人可以真诚地相信自己在维护公共利益，同时又被功劳与认可吸引。否认后一部分，不会让它消失，只会让它在看不见的地方发挥作用。</p>
+<p>他用一次家庭放映会说明荣格所谓的“阴影”。他原以为自己讨厌一部核战争影片，是因为影片过于宣传化；同事们却深受触动。反思之后，他发现自己排斥的，是主讲人身上让他联想到自己、却不愿承认的傲慢。</p>
+<p>这把讨论从国家冲突带回个人关系。与妻子 Dorothie 的婚姻曾濒临破裂，后来才逐步建立起另一种处理分歧的方式。他强调，这个过程持续了许多年，并非读懂一个道理就能立即完成。婚姻誓言也不是已经抵达的状态，而是需要不断接近的目标。</p>
+<h2 id="核战争风险不能因为尚未发生就忽略">核战争风险不能因为尚未发生就忽略</h2>
+<p>Hellman 在访谈中讨论了自己提出的核战争年度风险数量级估计。他的论证不是给出精确预测，而是比较不同数量级的含义：风险若高达每年百分之十，与几十年未发生核战争的经历难以相容；若低到每年千分之一，又意味着当前核威慑体系可以经受漫长时期内多次类似古巴导弹危机的考验。</p>
+<p>他认为，古巴导弹危机中的潜艇核鱼雷、当时未被美国掌握的古巴战术核武器部署，都说明危机可能包含决策者并不知道的危险。因此，长期反复承担小概率风险，并不等于安全。这些数字是他在访谈中提出的风险判断，而不是确定的发生概率。</p>
+<p>他把核时代比作一个刚拿到驾照的少年，突然得到了一辆大马力跑车。问题不只是车的性能，而是驾驶者能否足够快地成熟。</p>
+<h2 id="ai向善需要与实际用途相一致">AI“向善”需要与实际用途相一致</h2>
+<p>谈到 AI，Hellman 对“只用于善的目的”与军事应用之间的矛盾提出质问。即便核决策链条中保留人类，决策者仍可能被 AI 提供的大量信息包围，其中包括错误信息。单纯让一个人留在最后环节，并不自动解决问题。</p>
+<p>他也不把 AI 简单归为有益或有害。密码学和汽车都曾同时带来好处与风险，关键是如何扩大正面用途、约束负面用途。对网络安全，他认为 AI 短期内可能放大攻击能力，长期也可能帮助在攻击者之前发现漏洞。研究成果是否公开，因此需要谨慎判断，而不能只以“开放”或“保密”一概而论。</p>
+<p>但在更深层次上，他仍将问题指向国际关系：如果各国始终以压倒对方为目标，就很难共同约束危险技术的发展方向。</p>
+<h2 id="乐观是在不确定中选择行动">乐观，是在不确定中选择行动</h2>
+<p>Hellman 的乐观并不建立在“人类一定会成功”的保证上。他引用导师 Harry Rathbun 的两种假设：一种认为，人类有能力作出技术时代所要求的根本改变；另一种认为，人类注定失败。相信后一种，即使原本有改变的能力，也可能因为不去尝试而失败。相信前一种，至少还能努力，并保留成功的机会。</p>
+<p>这种行动不必从宏大的外交计划开始。改善家庭关系、真实地接触彼此、让更理性的声音获得空间，都可以成为第一步。他认为，钰子一来到美国进行这次访谈，本身就在帮助陌生社会中的人看见一个真实的中国人，而不只是抽象的对手。</p>
+<p>访谈结束时，八十一岁的 Hellman 仍在推进可能数年后才见成果的工作。他希望最终回顾一生，能够对自己的选择感到满意。对于他而言，技术赋予人的力量越大，学会处理关系、承认自身局限、继续尝试改变，就越不是科研之外的附属议题。</p>
+<h2 id="基本信息">基本信息</h2>
+<ul>
+<li><strong>受访者</strong>：Martin Hellman，斯坦福大学教授、公钥密码学先驱、2015 年图灵奖得主。</li>
+<li>采访者：钰子一</li>
+<li>发布频道：钰子一</li>
+<li><strong>原视频标题</strong>：Turing Award Winner Martin Hellman on Nuclear War, AI Risks, and US-China Cooperation。</li>
+<li><strong>发布日期</strong>：2026 年 10 月 29 日。</li>
+<li><strong>时长</strong>：约 1 小时 17 分钟。</li>
+<li><strong>来源</strong>：<a href="https://www.youtube.com/watch?v=gvAN3yaefL0">钰子一 YouTube 频道原视频</a>。</li>
+</ul>
+<figure class="video-embed video-embed--youtube" data-video-id="gvAN3yaefL0" data-video-title="Martin Hellman 与钰子一的访谈"><div class="video-embed__frame"><a href="https://www.youtube.com/watch?v=gvAN3yaefL0" target="_blank" rel="noopener" class="video-embed__preview" aria-label="播放视频：Martin Hellman 与钰子一的访谈"><img src="https://i.ytimg.com/vi/gvAN3yaefL0/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async" class="video-embed__thumbnail"><span class="video-embed__play" aria-hidden="true">▶</span><span class="video-embed__preview-label">Martin Hellman 与钰子一的访谈</span></a></div><figcaption class="video-embed__caption">Martin Hellman 与钰子一的访谈 · <a href="https://www.youtube.com/watch?v=gvAN3yaefL0" target="_blank" rel="noopener" class="video-embed__external">在 YouTube 打开</a><button type="button" hidden class="video-embed__reset">返回视频封面</button></figcaption></figure>  </div> <script type="module">document.querySelectorAll(".chapter-prose > table").forEach(e=>{const r=document.createElement("div");r.className="table-wrapper",e.parentNode.insertBefore(r,e),r.appendChild(e)});</script> </section><section class="reader-content chapter-prose reader-prose--zh" data-variant-panel data-variant-key="zh" data-variant-tab="zh" data-module-panel="zh" lang="zh-CN" hidden data-astro-cid-2yvbimk5> <div class="chapter-prose">  <p><a href="https://www.youtube.com/watch?v=gvAN3yaefL0">观看原视频</a></p>
+<h2 id="开场片段">开场片段</h2>
+<p><strong>Martin Hellman：</strong> 有位参议员给我打电话，具体细节我就不说了。我们聊国家安全，谈了大约十分钟，他突然说：“等一下，你就是 Diffie–Hellman 密钥交换里的那个 Hellman 吗？”我说是，他的原话是：“天哪！”</p>
+<p>根本问题在于，我们说希望 AI 只被用于善的目的。我参加过许多以此为主题的会议，包括在中国举行的会议。可我会问：“既然我们正在把 AI 装进武器系统，又怎么能说我们希望它只被用于善的目的？”</p>
+<p>我说，人类就像一个刚拿到驾照的十六岁孩子，不知怎么弄到了一辆大马力跑车。我们要么很快长大，要么就会把自己害死。</p>
+<p>你还问，能做些什么改善中美关系。你来到这里，就已经在做了。这能帮助美国人看到，中国人并不是我们原先以为的那种可怕的人。</p>
+<h2 id="公钥密码学革命性想法如何逐步形成">公钥密码学：革命性想法如何逐步形成</h2>
+<p><strong>钰子一：</strong> 好，我们开始吧。大家好，今天我们很高兴邀请到斯坦福大学的 Martin Hellman 教授。Hellman 教授是公钥密码学的先驱之一。五十年前，他与 Whitfield Diffie 发表了开创性的研究，为现代安全通信奠定了基础。两人因此获得了 2015 年图灵奖。</p>
+<p>但 Hellman 教授的工作远远不止密码学。在过去几十年里，他还把大量时间投入核风险、伦理以及国际合作。欢迎您，Martin Hellman 教授，很荣幸今天能与您交谈。能否先简单介绍一下自己，以及您目前正在做的事情？</p>
+<p><strong>Martin Hellman：</strong> 我是 Martin Hellman，正如你所说，我是斯坦福大学的教授。人们最熟悉的是我五十年前在公钥密码学方面所做的工作，我们待会儿大概会谈到。但过去四十五年里，我最关心的一直是国际安全，这也是我们会讨论的话题。</p>
+<p>我刚才告诉过你，再过五天我就要去中国了。我正在做的一件事，就是努力改善两国关系。当然，个人做这种事很困难，但我们只能尽力而为，而且必须这么做。</p>
+<p><strong>钰子一：</strong> 很了不起。我们先从公钥密码学谈起吧。您说，今年正好是那次突破的五十周年。我想知道，使它成为可能的关键洞见是什么？那更像是解决了一道困难的数学题，还是提出了一个全新的想法？</p>
+<p><strong>Martin Hellman：</strong> 我有一个演讲，题目是“公钥密码学的演进”。如果我把这个拿起来，你能看到上面的那只猴子。</p>
+<p><strong>钰子一：</strong> 看到了。</p>
+<p><strong>Martin Hellman：</strong> 它在思考，思考的是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><msup><mi>α</mi><mi>x</mi></msup></mrow><annotation encoding="application/x-tex">y=\alpha^x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6644em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span></span></span></span></span></span></span></span>。每次做那个演讲，我都会说，我很喜欢大家把它称为革命性的概念，请继续这么叫。不过，等演讲结束时，你可能会想：我们怎么花了这么久，才认识到这一点？当时有那么多线索，都在把我们指向同一个方向。</p>
+<p>这里我只举一个例子。我和 Whit 一起研究，Ralph 则在独立研究，待会儿也许会谈到他。我们意识到这样一个问题：一位将军希望自己的部队使用非常安全的密码系统，但如果系统被敌方缴获，他又希望它对敌方没有用，希望自己仍然能够读懂他们的消息。</p>
+<p>这引出了我们所说的“陷门密码系统”。当时我们还没能构造出这样的系统，但已经有了这个概念：一个看起来很安全的系统，只要知道设计时使用的陷门信息，它实际上就很脆弱。将军可以放心使用它，因为只有己方知道陷门信息；如果敌方缴获了它，他就能利用这些信息破解对方的密码。从这里到公钥密码学，只需要再迈出一小步。</p>
+<p>这只是众多线索中的一条。因此，在那个演讲的结尾，我会说，你可能会奇怪，我们怎么过了这么久才得出结论。但它的确打破了当时密码学中许多根深蒂固的规则。</p>
+<p><strong>钰子一：</strong> 明白。您还记得第一次想到这个点子的具体时刻吗？还是说，它经历了很长时间才形成？</p>
+<p><strong>Martin Hellman：</strong> 最先提出基本想法的是 Whit。我们一直在一起工作，我认为两个人都应当得到认可。基本概念是他提出的，算法则是我想出来的。那是 1976 年 5 月的一个深夜，我就在这张书桌前工作。家人都睡了，没有孩子，也没有学生来打扰，我可以专心思考。</p>
+<p>所以，这确实是共同努力的成果。而 Ralph Merkle 独立提出了其中的一半，我们待会儿再谈。</p>
+<p><strong>钰子一：</strong> 您经常说，刚开始研究公钥密码学时，周围大多数人都觉得这个方向很疯狂。是什么让您坚持下来的？</p>
+<p><strong>Martin Hellman：</strong> 我能给出一个不完整的回答，但我认为最好的回答是：真正的突破，或者说绝大多数真正的突破，在取得成果之前，看起来都是疯狂的。</p>
+<p>我和不少诺贝尔奖得主聊过，他们也有这样的经历。比如 Louis Ignarro，他因为一氧化氮方面的工作获得诺贝尔生理学或医学奖，我记得是 1998 年。他有个绰号叫“NO 博士”。他告诉我，院长甚至来找他说：“Lou，我们聘用你，是因为你能做出好的研究。你为什么要做这些疯狂的东西？”而那些“疯狂的东西”，后来给他带来了诺贝尔奖。</p>
+<p>这种情况非常典型，最好的想法往往在事前显得疯狂。我们后面还会回到这一点，因为我现在所做的事情，很多人也觉得永远不可能实现。我不会因此生气，反而会说：“谢谢，这是你能给我的最高赞美。”</p>
+<p><strong>钰子一：</strong> 我很赞同，数学中也有很多类似的故事。那么，在发展公钥密码学的过程中，您遇到的最大挑战是什么？是技术上的、个人层面的，还是别的？</p>
+<p><strong>Martin Hellman：</strong> 我不觉得我们遇到了什么问题。（笑）</p>
+<p>我足够傲慢，也可以说足够勇敢，你可以任选一个词。虽然所有同事都说我疯了，我仍然认为自己在做正确的事。所以，并没有那么难。当然也有一些障碍，但总体上不难。</p>
+<p><strong>钰子一：</strong> 真了不起。我原本以为会非常艰难。那么，当您、Whitfield Diffie，以及您反复提到的 Ralph Merkle 在发展公钥密码学背后的思想时，你们意识到它会有多么重要吗？</p>
+<p><strong>Martin Hellman：</strong> 既意识到了，也没有完全意识到。我们的论文《密码学的新方向》在很大程度上是获得图灵奖的原因。它的第一段，实际上就是第一句话，写的是：“今天，我们正站在密码学革命的边缘。”</p>
+<p>所以，Whit 和我都意识到了即将发生一些重大的事情，我相信 Ralph 也一样。不过，我们原以为五到十年就会发生。实际上，直到互联网出现，它才真正起飞，差不多用了二十年。真要说的话，我们当时反而过于乐观了。</p>
+<h2 id="ralph-merkle-的贡献与署名">Ralph Merkle 的贡献与署名</h2>
+<p><strong>钰子一：</strong> 您经常提到 Ralph Merkle，但如今大家说起公钥密码学，往往只会想到您和 Whitfield Diffie。能否介绍一下 Ralph Merkle 做了什么？</p>
+<p><strong>Martin Hellman：</strong> Ralph 是个很特别的人。顺便说一句，如果你见到他，就会明白我的意思。我们这些人都挺特别的。</p>
+<p>Ralph 当时在伯克利读本科，后来又读了硕士。他独立提出了公钥密码学的一半，也就是保密通信这一半。他没有提出数字签名，但已经有了保密通信的思想。如果允许我共享一下屏幕，我可以给你看。现在能看见吗？</p>
+<p><strong>钰子一：</strong> 可以。</p>
+<p><strong>Martin Hellman：</strong> 我把它移过来。这是 1974 年秋天的材料，左上角能看到日期。当时 Ralph 在伯克利修一门计算机安全课程，提出了两个课程项目。第一个项目的题目是：“通过不安全的通信线路，在彼此分离的安全地点之间建立安全通信。”这就是公钥密码学的保密通信部分。</p>
+<p>第二个项目普通得多，具体是什么我已经忘了。教授用蓝色墨水写道：“第二个项目看起来更合理。也许是因为你对第一个项目的描述极其混乱。今天来找我谈谈这两个项目。”</p>
+<p>Ralph 没有去找教授谈，而是退掉了那门课，自己把这个想法发展了下去。</p>
+<p><strong>钰子一：</strong> 太精彩了，谢谢您分享这个故事。那么，您认为 Ralph Merkle 得到了应有的认可吗？</p>
+<p><strong>Martin Hellman：</strong> 没有。我经常说，如果一定要给 Diffie–Hellman 密钥交换冠上人名，那它就应该叫“Diffie–Hellman–Merkle 密钥交换”。我们自己当然没有把它叫作 Diffie–Hellman 密钥交换，我们叫它 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>α</mi><mrow><msub><mi>x</mi><mn>1</mn></msub><msub><mi>x</mi><mn>2</mn></msub></mrow></msup></mrow><annotation encoding="application/x-tex">\alpha^{x_1x_2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6644em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>，因为它做的就是这个。</p>
+<p>如果你读 Simon Singh 的那本密码史著作，会发现他采纳了我的建议。不过，我现在多少有点放弃了。Ralph 没有得到他应得的认可，他的工作确实是非常独立的。</p>
+<p><strong>钰子一：</strong> 希望通过这段视频，更多人能知道 Ralph Merkle 做了什么，这也是我想问这个问题的原因之一。</p>
+<h2 id="与-nsa-的冲突以及敌人如何成为朋友">与 NSA 的冲突，以及敌人如何成为朋友</h2>
+<p><strong>钰子一：</strong> 您多年前在海德堡的演讲中提到，早期研究密码学时，您与美国国家安全局 NSA 发生过冲突。当时发生了什么？</p>
+<p><strong>Martin Hellman：</strong> 当然可以说。当时，同事们几乎异口同声地提出一个反对理由：如果你做出什么好东西，NSA 就会把它列为机密。NSA 是美国国家安全局的缩写。我们开玩笑说，它代表“No Such Agency”，根本没有这个机构；或者“Never Say Anything”，什么也别说。待会儿你就会明白这个笑话的意思。</p>
+<p>我们还是继续研究密码学。随着我们做出一些不错的成果，NSA 开始非常担忧。他们的立场是，我应该去坐牢。我不是在开玩笑。</p>
+<p>美国有一套《国际武器贸易条例》，也就是 ITAR。你想出口一架喷气式战斗机，需要出口许可证，对吧？如果要出口制造战斗机的技术图纸，也需要许可证；如果要出口军用物项的技术资料，同样需要许可证。而按照这套条例的定义，一切密码技术都属于军用物项。</p>
+<p>我们在国际期刊发表论文，就等于出口了这些条例所定义的军用物项技术资料，尽管我们从来没有想过自己是在做这种“出口”。</p>
+<p><strong>钰子一：</strong> 原来如此。</p>
+<p><strong>Martin Hellman：</strong> 所以，最初我们和 NSA 大吵了一架。大约两年后，NSA 局长办公室打来电话。当时的局长是 Inman 海军上将。如今他已经是我的好朋友，不再是敌人了。这是“朋友比敌人好”的一个很好的例子，而在这个故事中，促成转变的人是他。</p>
+<p>在我努力改善美国国家安全的过程中，他给了我很多帮助。顺便说，这也会改善中国的国家安全。在核时代、AI 时代，我们不能只追求单方面的国家优势。我们一直在这么尝试，但行不通。伊朗战争已经让人看到这一点；如果发生核战争，就会看得更清楚，而沿着目前的道路，我们很可能最终会走到那里。不过，那又是另一个话题了。</p>
+<p>Inman 上将的办公室打来电话，说局长即将到加利福尼亚，如果我愿意，他想和我见面。我马上抓住了这个机会。别忘了，NSA 是那个“根本不存在”“什么也不说”的机构，我们从前从未和他们有过直接接触。我们一直像是在隔空对打，打交道的是 IBM、美国国家标准局等机构里受 NSA 影响、或者曾在 NSA 工作的人。现在终于有机会直接和局长谈了。</p>
+<p>他到斯坦福我的办公室见面时，先看了看我的头顶，笑着说：“很高兴看到，你头上没有长角。”他的意思是，NSA 内部把我描绘成了魔鬼。我也看着他回答：“很高兴看到，你也没有。”（笑）</p>
+<p>随后他说：“我得告诉你，我是顶着局里其他所有高级官员的反对来见你的。不过，我觉得谈谈总没有什么坏处。”从那次谨慎的接触开始，我们逐渐建立起了深厚的友谊。直到今天，我们都把彼此看作朋友。</p>
+<p><strong>钰子一：</strong> 我很赞同您说的“朋友比敌人好”，这个例子也很好。但具体应该怎么做呢？能给一些建议吗？让敌人成为朋友，似乎真的很困难。</p>
+<p><strong>Martin Hellman：</strong> 的确很难。我喜欢讲这个故事，因为 Inman 上将才是故事中的英雄。我自己也做过几次类似的尝试。</p>
+<p>我是犹太人，你应该知道这意味着什么。但我研究过《福音书》，也就是耶稣的教诲。如果你在我五岁的时候问我，耶稣教了人们什么，我大概会回答：“教他们打犹太人。”因为邻居家的天主教孩子给我的就是这种印象。他们去教堂，知道耶稣爱他们，也听说耶稣被犹太人杀了。可他们认识的犹太人只有谁？Marty，也就是我。于是，他们就来打我。</p>
+<p>大约四十年前，我开始认真阅读这些教诲，深受触动，直到现在仍然觉得其中有很多值得学习的东西。例如，耶稣说，要爱你的敌人，为那些恶待你的人祈祷。起初我很难接受：为什么要为恶待我的人祈祷？如果上帝赐福给他们，他们岂不是能更厉害地欺负我？后来我想，不对，我所相信的上帝是有爱的。</p>
+<p>既然听众里有数学家，我可以这样说：仅从质量这个维度来看，保守地说，宇宙的质量是一个人的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>10</mn><mn>50</mn></msup></mrow><annotation encoding="application/x-tex">10^{50}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">50</span></span></span></span></span></span></span></span></span></span></span></span> 倍，而人的质量是电子的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>10</mn><mn>32</mn></msup></mrow><annotation encoding="application/x-tex">10^{32}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">32</span></span></span></span></span></span></span></span></span></span></span></span> 倍。所以，我们试图理解上帝，比一个电子试图理解我们还要困难，尺度差异就是这么大。</p>
+<p>我仍然会和上帝说话。我不知道自己究竟在和什么说话，但这对我有帮助。我认为，无论是耶稣的基本教导，还是各大宗教的基本教导，其中都包含了如何把敌人变成朋友的答案。例如，《孙子兵法》中有一种思想：最好的战斗，就是从未打起来的战斗。大致是这个意思。</p>
+<p><strong>钰子一：</strong> 我很赞同，我们应该有更多朋友。</p>
+<p><strong>Martin Hellman：</strong> 不只是“应该”，而是“必须”。</p>
+<p><strong>钰子一：</strong> 我们必须有更多朋友。</p>
+<p><strong>Martin Hellman：</strong> 如果我们继续照现在的方式行事，那么在核战争中毁掉自己，就只是时间问题。我给你讲一个我四十一年前就提出的论证，实际上可能更早。</p>
+<p>古巴导弹危机之后，肯尼迪总统估计，当时爆发战争的概率在三分之一到二分之一之间。如果他的估计正确，那么那场危机就相当于拿着一把只有两个或三个弹巢的左轮手枪，朝着整个世界玩俄罗斯轮盘赌。你知道我的意思吧？这根本不是游戏。</p>
+<p>而且，弹巢有两个还是两百个，并不重要。只要不停扣动扳机，枪会不会响就不再是问题，问题只是它什么时候响。因此，沿着目前的道路，我们最终会走向灾难。某一场战争终究会升级为核战争。在乌克兰，差一点就可能发生；越南战争中也差一点。你也许没有听说过尼克松的“疯子理论”。</p>
+<p><strong>钰子一：</strong> 尼克松？我不了解这个理论。</p>
+<p><strong>Martin Hellman：</strong> 我简单讲一下。尼克松的得力助手 Bob Haldeman 在书中记述，尼克松找他说：“Bob，我有个主意。共产党人觉得我疯了”，在当时的美国叙事里，他们是坏人，现在特朗普时期大概仍然如此。“他们认为我可能会轻易扣动核扳机，因此不需要费太大劲，就能让他们相信我真的准备这么做。”</p>
+<p>他的想法是，让轰炸机朝苏联飞去，但要确保不真正惹出麻烦。尽管他们想避免，实际上仍然引发了问题。尼克松以为，这样一来，苏联人就会赶紧让北越领导人胡志明到巴黎参加和平谈判。</p>
+<p>这里存在几个问题。首先，他冒着越南战争升级失控的巨大风险。其次，我们曾以为中国和越南是亲密的朋友，真是如此吗？美国撤出越南几年后，两国就打了一场战争。我们经常把敌人之间的关系想得过于简单，而事情其实很复杂。</p>
+<p><strong>钰子一：</strong> 是的，很复杂。我们后面还会回来谈。但我同意，我们需要更多朋友，尤其在有核风险的未来。先回到科学家本身吧。我特别想了解，您曾说过，自己和 NSA 的冲突，部分也受到名声或认可的驱动。这是什么意思？</p>
+<h2 id="看见自己的阴影勇气傲慢与求名之心">看见自己的“阴影”：勇气、傲慢与求名之心</h2>
+<p><strong>Martin Hellman：</strong> 我与 NSA 的争论，基础主要还是技术问题。但除此之外，确实还有别的东西。我和妻子合写的书里讲到过，你可以免费下载英文 PDF，也有中文译本。</p>
+<p><strong>钰子一：</strong> 我会把链接放上去。</p>
+<p><strong>Martin Hellman：</strong> 书中有一个故事。你刚才的问题是什么来着？</p>
+<p><strong>钰子一：</strong> 您为什么说，自己也受到了名声或认可的驱动？</p>
+<p><strong>Martin Hellman：</strong> 对。有个大约四十年前的故事。Bill Kays 当时是斯坦福工程学院院长，如今已经去世了。他允许我讲这件事，所以待会儿我会直接引用他的话。他参加过第二次世界大战，经历了北非、西西里、诺曼底登陆，以及法国和德国的战斗。这样一个人的爱国之心，是很难被质疑的。</p>
+<p>我们那时参与一个名叫“超越战争”的团体，我也是从那里开始关注这些问题的。团体里的大多数人会放映一部半小时长的影片，叫《最后的流行病》。它讲的是旧金山遭受核打击后，医生将完全无法应对的情形。</p>
+<p>我很讨厌那部影片。我以为自己讨厌它，是因为它像一部宣传片。它也许能打动别人，但打动不了我，因此我觉得它也不会打动像 Bill Kays 这样的同事。我们邀请他们到家里来看影片，我用的却是另一部一个半小时长、曾经强烈触动过我的片子。</p>
+<p>妻子一直说：“为什么不放那个半小时的版本？一个半小时太长了，聚会总共才两个小时，根本没时间讨论，而讨论恰恰是我们需要的。”最后，她拿出了自己的杀手锏：“为什么不把它当成一个实验，只试一次？”</p>
+<p>科学家、数学家、工程师的配偶，都应该学学这一招，确实很有效。我说：“好吧，只试一次。”于是，我们把 Bill Kays 和其他一些同事请来，放了那部影片。</p>
+<p>看电影时，我简直如坐针毡。我讨厌它，它比我记忆中还糟糕。我心想，天哪，我怎么会让这个疯狂的女人说服我，放这样一部愚蠢的影片？放完后，我关上电视，屋里沉默了大约一分钟，真的很久。</p>
+<p>我差点打破沉默，因为我确信，同事们之所以不说话，只是在想怎样委婉地告诉我：“Marty，你为什么让我们看这堆垃圾？”我几乎就要说：“我知道这部片子有问题，但它也有一些优点。”谢天谢地，我没有开口。</p>
+<p>第一个说话的是工程学院院长 Bill Kays。他说：“这太危险了，我们必须做些什么，哪怕是单方面行动。”我心想：什么？他居然喜欢这部影片？实际上，每个人都受到了触动。</p>
+<p>那天晚上回想这件事时，我意识到，与其说我讨厌影片，不如说我讨厌影片里的主要发言人 Jack Geiger。他给我的印象，是一个来自纽约、傲慢的犹太教授。我不是说他真是这样，而是说，这是他给我的感觉。</p>
+<p>他是我的“阴影”，也就是自己身上那些令我的意识如此厌恶，以至于我不愿承认它们存在的部分。当我在别人身上看见这些特征时，就会憎恶对方。如果你下载我们那本书的中英文版本，搜索 Carl Jung，也就是荣格，就能找到这段讨论以及更多内容。</p>
+<p>我们需要做的，就是面对自己的阴影。于是，我开始接纳自己身上那个“来自纽约的傲慢犹太教授”。我意识到，大多数人可能觉得我敢于与 NSA 对抗很勇敢，但 NSA 看我，可能只觉得我很傲慢。傲慢与勇敢，是同一枚硬币的两面，中间还有一个连续的光谱。这就是对你问题的回答。</p>
+<p><strong>钰子一：</strong> 很有意思。那么，您认为科学家经常低估名声、功劳、认可这些因素对自己的驱动吗？</p>
+<p><strong>Martin Hellman：</strong> 我自己肯定低估过。（笑）书里还有另一个故事。1976 年 1 月，也就是 Inman 上将来访之前，他大概是在 1978 年来的，两位 NSA 的人飞来见我们，试图让我们不要再谈某件事。但我们知道自己在那件事上是对的。</p>
+<p>他们告诉我们，如果继续走这条路，就会严重损害美国的国家安全。记住，那是 1976 年 1 月，水门事件才过去一两年，因此这种说法不像今天可能有的那么大分量。</p>
+<p>我努力判断怎样做才是正确的。一边是 NSA，说我会严重损害国家安全；另一边是我自己的理性，告诉我，如果我不公开说出来，反而会严重损害国家安全。</p>
+<p>就在我认真思考正确选择的时候，一个念头不请自来：“放手去干吧！你抓住了一只老虎的尾巴。这辈子再没有比这更好的机会，让你名扬天下，或者臭名远扬了。抓住它！”</p>
+<p>我把它比作电影里坐在肩膀上的魔鬼，在我耳边低语，另一边则是天使。当时我以为自己已经把魔鬼从肩头拂去了。后来才明白，我只是把它压进了无意识，让它可以在我看不见的地方作祟。</p>
+<p>所以，是的，我自己确实没有意识到自己的动机，我想其他人也往往如此。书里还有关于第一颗原子弹研制过程的故事，也谈到了这一点，我就不在这里展开了。应该就在《最后的流行病》那部分附近。</p>
+<p><strong>钰子一：</strong> 那么，渴望功劳、名声或者认可，本身是坏事吗？</p>
+<p><strong>Martin Hellman：</strong> 不是。但我们必须诚实地面对自己的阴影，面对那些自己一直不敢正视的部分。如果我们在个人层面和国家层面都能做到，就能解决这些问题。</p>
+<p>书里引用了荣格的话。我记得荣格是在 1964 年去世的。他是在冷战最紧张的时候写下这些内容的。他说，西方人在铁幕另一侧看到的、对着自己狞笑的东西，其实是他自己的阴影。他最后的意思是，只要我们假装只有对方有错，就会继续制造麻烦；而如果能够诚实地审视自己，包括自己的阴影，我们就能抵御心理上或其他形式的侵染。</p>
+<h2 id="婚姻为何成为国际关系的实验室">婚姻为何成为国际关系的实验室</h2>
+<p><strong>钰子一：</strong> 您在书和公开演讲中经常谈到婚姻，也说婚姻改变了您看待国家冲突的方式。从婚姻中学到的哪些东西，也适用于国际关系？</p>
+<p><strong>Martin Hellman：</strong> 我妻子非常了不起，所以我鼓励大家读那本书。你能再说一遍问题吗？</p>
+<p><strong>钰子一：</strong> 您从婚姻中学到了什么，也能用来理解国际关系？</p>
+<p><strong>Martin Hellman：</strong> 我没法指着某一件核武器，说是我消除的；也没法指着某一场战争，说是我阻止的。但因为我不再和妻子吵架，我的生活每一天都变得更好。</p>
+<p>我们大约二十年没吵架了。不过，最近也许发生过一些事情，因为我们两个都越来越老。我们有个规矩：不能两个人同时疲倦。这当然是开玩笑，因为人当然可能同时疲倦，而如今这种情况越来越多。于是她会说，也许最近算是吵过一次。但即便她是对的，虽然我不这样认为，两次争吵之间隔了二十年，也已经很惊人了。</p>
+<p>这就是我知道国家之间也可以和睦相处的原因。战争会壮大一个国家最强硬的力量。我最近看到几篇文章都指出这一点。比如在伊朗，革命卫队向霍尔木兹海峡的船只开火，连总统和革命卫队的领导人都感到意外。做这些事的是最强硬的力量，而美国攻击伊朗，特朗普攻击伊朗，反而增强了他们的影响力。</p>
+<p><strong>钰子一：</strong> 关于伊朗的这件事，我了解得不多。</p>
+<p><strong>Martin Hellman：</strong> 其实大多数人都不知道。那条消息埋在报纸很深的位置，但我做了笔记，因为我每天读报，还会读好几份。我既读西方媒体，也读亚洲媒体和俄国媒体，当然是英文版，因为我的俄语很糟糕。我刚才说的那句俄语，意思就是“我的俄语说得很不好”。所以我必须读英文版。</p>
+<p><strong>钰子一：</strong> 我想问一个私人问题。我觉得您和妻子的婚姻很成功，而我自己几个月前刚结婚。</p>
+<p><strong>Martin Hellman：</strong> 恭喜！</p>
+<p><strong>钰子一：</strong> 谢谢。你们已经有将近五十年的成功婚姻……</p>
+<p><strong>Martin Hellman：</strong> 六十年。明年三月，我们结婚就满六十年了。我们是 1967 年 3 月结婚的。</p>
+<p><strong>钰子一：</strong> 哇，恭喜你们！</p>
+<p><strong>Martin Hellman：</strong> 我已经是个老人了，今年八十一岁。</p>
+<p><strong>钰子一：</strong> 大多数人都希望拥有成功的婚姻。有什么建议，可以让婚姻幸福、成功而且牢固吗？</p>
+<p><strong>Martin Hellman：</strong> 有，读我们的书，把 PDF 下载下来。和妻子一起大声读第一个故事，由一个人读给另一个人听，只需要一两分钟。我现在就把那个故事讲给你。</p>
+<p>有一次，我们去旧金山参加活动，提前出发，先到山顶看看风景。等到该走的时候，大概是三十五到四十年前，那时还没有 GPS，用的是纸质地图。我让妻子从手套箱里把地图拿出来，没问她，就直接从她手里把地图拿走了。</p>
+<p>这就是书里的第一个故事。她气得下车，重重地走开，好像再也不会回来。过了几分钟，她觉得自己平静了一些，可以回到车里。这时，我还不知道自己究竟做错了什么，所以一直埋头看地图，尽量不再踩到另一颗地雷。</p>
+<p>这却让她更加生气，因为在她看来，我在意那张愚蠢的地图，胜过在意她。于是，从她的角度看，她是把地图从我手中“拿了回来”；从我的角度看，她是把地图“抢走”，然后撕得粉碎，扔得车里到处都是。</p>
+<p>到这里，听起来我们好像什么都没学会。但故事的结尾是，我突然意识到自己的行为有多可笑，忍不住笑了起来。幸运的是，她也已经取得了足够的进步，没有以为我在嘲笑她。她同样看到了我们行为的荒唐，于是两个人都放声大笑。</p>
+<p>那笑声里，有很大一部分是终于打破旧剧本的轻松感。因为一旦陷进这种模式，几乎找不到出口。然后，我们不得不像拼拼图一样，把曾经的地图重新拼好，才能去下一个地方。</p>
+<p>和妻子一起读这个故事吧。如果有共鸣，就再读一些。即使你不喜欢书里的人际关系部分，也可以看其他部分。美国前国防部长 Bill Perry，顺便说，他也是数学博士，评价这本书时说，它既适合希望在家中获得和平的夫妻，也适合希望在世界上获得和平的外交官。</p>
+<p>我的好朋友 Karl Eikenberry 曾任奥巴马政府驻阿富汗大使，也是一位三星中将，大约二十五年前还领导过阿富汗的联军。他的评价我读给你听：“这是我读过的关于个人和国际外交的书中，最深思熟虑、最独特、最引人入胜的一本。”后面还有。</p>
+<p>所以，即使你不喜欢人际关系的部分，也可以读那七个国际关系案例，每个只需要五分钟。最初每个案例需要十分钟，但妻子说我太像一个教授，知道得太多了，要压缩。于是我把它们压缩到了要点。</p>
+<p>其中每一处引文都有书后的尾注支持，很多引用来自曾经列为机密的文件，所以不是凭空说的。每一节也都请相关领域的专家审阅过。例如阿富汗那一节，就是刚才说的 Karl Eikenberry 审阅的。</p>
+<p>他读到某处时说：“你引用这个人说的这句话，根本说不通，你应该指出来。”我告诉他：“Karl，如果由我说，就只是我个人的看法；如果由你说，就有可信度。”因此，现在那里有一段引语，尾注写的是“与 Karl Eikenberry 的私人通信”。</p>
+<p><strong>钰子一：</strong> 我会仔细读的，也再次祝贺你们六十年的婚姻。</p>
+<p><strong>Martin Hellman：</strong> 还有一点，不要社会告诉你什么，你就全部照做。社会的一些观念会把婚姻搞糟。我想，中美两国的离婚率都在百分之五十左右。这说明，现有的办法如果不起作用，我们就需要一张新的关系地图，无论是人际关系，还是国际关系。</p>
+<p>顺便说，你刚才没有提到，我们的婚姻在四十五到五十年前，也就是结婚大约十年后，曾经走到离婚边缘。后来我们不但挽救了婚姻，而且二十多年没吵架了，或者说，两次吵架之间隔了二十年，这取决于你相信我还是相信我妻子。我们有不同的视角。</p>
+<p>但即便妻子说得对，最近确实算吵过一次，也不是说我们会一直吵下去。我们每天都会告诉对方，自己有多爱对方。这真的很奇妙。我告诉她：“如果没有你，我大概还在做信息安全，而不是现在这些事情。还有什么比拯救世界更重要呢？”</p>
+<p><strong>钰子一：</strong> 我学到了一点：每天都要告诉妻子我爱她，也要说出她的优点。</p>
+<p><strong>Martin Hellman：</strong> 妻子在书里也谈到这一点，她称之为甜言蜜语之类的东西。每天都要告诉妻子你在乎她，也要让她告诉你，她有多在乎你、多欣赏你。而当她不欣赏你的某些行为时，也应当谈出来，因为只有这样才能跨过去。</p>
+<p>不过，你得用新的方式来看待它。除非你出生在一个非常特别的家庭，否则你的父母大概也没有真正解决冲突。</p>
+<p><strong>钰子一：</strong> 他们确实有很多冲突。</p>
+<p><strong>Martin Hellman：</strong> 我的父母也一样，所以我们需要一种新方法。</p>
+<p><strong>钰子一：</strong> 我会试试，这些建议很有用。</p>
+<p><strong>Martin Hellman：</strong> 我再提一句，书里有一节叫“要有很高的要求”，我鼓励大家读读，因为它恰恰与社会告诉你的相反。社会说，婚姻中必须妥协；我妻子却说，要有很高的要求。她为什么这么说、怎样说的、后来发生了什么，都在书里，留给大家自己读吧。它与社会灌输的很多东西相反。</p>
+<p><strong>钰子一：</strong> 我会读那一章。您也找人把它译成中文了。</p>
+<p><strong>Martin Hellman：</strong> 是的。</p>
+<h2 id="核风险ai-与气候变化背后的共同问题">核风险、AI 与气候变化背后的共同问题</h2>
+<p><strong>钰子一：</strong> 接下来谈可能最重要的部分：核风险。您已经思考这个问题几十年，可能超过四十年了。今天最令您担忧的是什么？</p>
+<p><strong>Martin Hellman：</strong> 没有什么让我担忧。妻子说我是世界上最乐观的人。我把核威胁看成核时代的机遇，把 AI 威胁看成 AI 的机遇。</p>
+<p>在当今这样的世界里，我们解决不了这些问题，包括气候变化，因为敌对关系太多了。要解决其中任何一个问题，都需要建设一个更和平、更合作的世界。如果能做到，就可以把它们都解决。</p>
+<p>而我们很可能不会成功。几个月前，我的表亲来这里，基本上就是对我说：“祝你好运，Marty。”我回答：“你说得对，我们很可能都得死。”他当然没有说过后面这句话，但那是他那句话隐含的意思。如果不能解决国际冲突，某一场战争终究会在我们面前失控爆发。</p>
+<p>这不是一个可选项。所以，当你说“我们应该让敌人变成朋友”时，我才纠正说，是“必须”。如果不增加朋友，反而不断制造敌人，无论中国还是美国，最终都会害死自己，就是这么简单。</p>
+<p>如果把彼此分离、以战争思考的心态看成一块不可撼动的巨石，那么生存本能或许就是无法阻挡的力量。两者正在冲突，但大多数人还没有意识到。我们需要让人们清楚地看见这件事。我相信，到那时，他们会选择生存，而不是隔阂和战争。</p>
+<p><strong>钰子一：</strong> 我很赞同。您提到气候变化、AI 风险和核风险有相似之处，如果能解决其中一个，也能解决其他问题。您认为它们本质上是同一种风险吗？</p>
+<p><strong>Martin Hellman：</strong> 是的。我会说，真正的问题不是核武器，不是气候变化，也不是 AI。它们只是更深层问题的症状。</p>
+<p>科技给了人类过去被认为属于神的物理力量。但我们的情感成熟度在哪里？它当然永远不会像神那样，却至少可以达到成年人的水平。可现在，有时还停留在两岁孩子闹脾气的阶段。</p>
+<p>在犹太教与基督教的《圣经》中，只有上帝才能降下雷霆，毁灭索多玛和蛾摩拉那样的城市。今天，我们把这种东西叫作核武器。只有上帝才能引发洪水，迫使诺亚建造方舟；如今，气候变化带来的洪水威胁也有类似之处。原本只有上帝才能创造新的生命形式，现在我们每天都在做。</p>
+<p>所以，我说人类就像一个十六岁的孩子，刚拿到驾照，就不知怎么得到一辆大马力跑车。我们要么很快长大，要么就会把自己害死。我的工作就是帮助我们快点成熟。</p>
+<p>大多数人却在朝另一个方向努力，我以前也一样，所以我不是说他们是坏人。他们不知道，自己其实正在推动人类毁灭。</p>
+<p><strong>钰子一：</strong> 这个比喻很精彩。您总能给出既有趣又有力量的例子。我想起您提过一个数字：您估计，大规模核战争的风险可能在每年百分之一左右。您还记得吗？</p>
+<p><strong>Martin Hellman：</strong> 记得。顺便说，美国前国防部长 Bill Perry 告诉我，他同意这个估计，也允许我引用他的话。我大约五年前发表过相关内容，在我的出版物目录里能找到，你可以把链接放上去。</p>
+<p>这既是坏事，也可能是好事。如果我们不改变，就是坏事；如果它迫使我们改变，也可能成为好事。这个估计只是数量级层面的，我想听众能理解“数量级”的意思。</p>
+<p>先看高一个数量级的情况：如果风险是每年百分之十，显然太高了。核威慑实行了六七十年，那么我们本应预期发生六七次核战争。用泊松到达模型这类合理模型来估算，一次也没有发生的概率大约只有五百分之一。当然，也可能只是我们极其幸运，但大体上可以排除每年百分之十。</p>
+<p>然后暂时跳过百分之一，直接看每年千分之一。如果风险是每年千分之一，那就相当于预期目前这种核威慑方式能够维持大约一千年。</p>
+<p>古巴导弹危机发生在大约六十年前。乌克兰危机也许可以和它相比，有人这么认为，也有人不这样认为。但即便只承认曾发生过一次古巴导弹危机，我们也得预期大约每六十年出现一次类似危机。一千年里就是十到二十次；如果把乌克兰也算作同等量级，则是二十到四十次。</p>
+<p>只取最低的十次。研究过古巴导弹危机之后，我很惊讶我们居然能活过一次，更不用说十次了。大多数人不知道，当时在封锁线附近遭美国驱逐舰攻击的三艘苏联潜艇，携带着核鱼雷。至少有一次，艇长下令给核鱼雷做好发射准备，不是已经下令发射，而是准备。后来，一个被称作“拯救世界的人”的人劝阻了他。那个人是阿尔希波夫，下令的艇长是萨维茨基。</p>
+<p>古巴导弹危机还有另一件事：肯尼迪总统和他的顾问们，没有想到苏联可能已经把战场战术核武器部署在古巴。但二十五年后，我们才知道，苏联确实这么做了。</p>
+<p>所以，如果美国海军陆战队入侵古巴，而那原本是很多人的首选，肯尼迪起初也倾向这个方案，他们可能会被核武器摧毁。接下来又会发生什么？</p>
+<p><strong>钰子一：</strong> 我算了一下，如果每年风险是百分之一，那么六十年里发生核战争的概率大约是百分之四十五。</p>
+<p><strong>Martin Hellman：</strong> 我常说，仅仅考虑核战争，不算气候变化、不算 AI，也不算其他问题，今天出生的孩子能够自然终老的机会，很可能还不到一半。现在再把其他风险加进来，机会就更小了。我们需要醒过来。</p>
+<p>我正在为此努力。过几天去中国时，我不会告诉中国应该怎么做，因为如果我去指教中国，只会让人更加坚持原来的立场，反而更难改变。</p>
+<p>你记得，我说过，虽然我是犹太人，却很重视《福音书》的教诲。耶稣说，为什么你只盯着邻人眼里的一根刺，却看不见自己眼里的梁木？所以，作为美国人，我努力改变美国的政策。</p>
+<p>但我不会告诉你具体在做什么，因为来自中国的帮助反而可能伤害这项工作。大多数美国人把中国当作敌人，中国说什么，他们就会本能地反对。</p>
+<p><strong>钰子一：</strong> 我知道，有些美国人确实有这种想法。这也引出了另一个问题：我是中国人，您是美国人，而我在两个国家都生活过多年，所以对中美关系特别感兴趣。两国既有合作，也有竞争，如今竞争越来越强。您认为，两国之间仍然存在有意义的合作空间吗？</p>
+<p><strong>Martin Hellman：</strong> 我想，我的表亲可能是对的：我们很可能失败，然后所有人都死掉。还是那句话，他没有这样说，但那是他的意思。不过，我仍然会继续努力。</p>
+<p>我想引用这个领域里我的导师、我的老师 Harry Rathbun 的话。他出生于十九世纪九十年代，如今已经去世，曾任斯坦福大学商法教授。里根任命的美国最高法院首位女性大法官 Sandra Day O’Connor，也认为他是对自己人生影响最大的人之一。她也是斯坦福的学生，我记得是 1950 届左右。</p>
+<p>Harry 说，关于人类在这个科技时代改变自己的能力，存在两种基本假设。他把其中一种称为“高贵的假设”：人类有能力作出时代所要求的根本性改变。另一种不那么高贵的假设是：我们注定要灭亡。</p>
+<p>如果接受后一种假设，即使我们本来有能力改变，也还是注定会灭亡，因为我们不会去尝试，不会相信自己有这个能力。如果接受高贵的假设，最坏的结果也只是奋战到最后；最好的结果则是，我们在大多数人认为成功机会渺茫的地方取得成功。那么，为什么不选择高贵的假设呢？</p>
+<h2 id="从身边关系开始把不可能逐步变成可能">从身边关系开始，把不可能逐步变成可能</h2>
+<p><strong>钰子一：</strong> 这是很有启发的视角。无论如何，我们首先应该尝试做点什么。</p>
+<p><strong>Martin Hellman：</strong> 对。我们不能停在原地，因为现在的方向通向死亡。但我们也没法一下子跳到理想的世界。如果美国或者中国单方面直接跳过去，另一个国家可能就会利用它。</p>
+<p>然而，我们可以一步一步，把目前不可能的事情，把我们必须抵达的那个世界，变成可能。所以，需要从非常小的事情开始，我现在就在这么做。具体方法我不说，但我正在美国推动一项我认为有可能通过的法律。</p>
+<p>这项法律很好，同时又很糟糕。人们肯定能挑出很多问题，但它是朝那个方向迈出的第一步。它可以让美国人意识到目前还没有意识到的事情，进而要求改变。至少，我希望会如此。中国相对应的办法是什么，我不知道，需要你们自己去寻找。</p>
+<p><strong>钰子一：</strong> 我很喜欢您经常说的一句话，每个人都能发挥作用。我也赞同，但具体到普通人，比如我，能做什么来帮助改善中美关系？</p>
+<p><strong>Martin Hellman：</strong> 第一件事，就是改善与妻子的关系，不再争吵。这会让你直接受益。正如我说过的，我无法指出自己消除过哪一件核武器，或者阻止过哪一场战争，但因为不再和妻子争吵，我每天都过得更好。</p>
+<p>所以，我建议你读我们的书，然后开始实践。顺便说，这需要一个过程，你不可能马上就不再和妻子吵架。Dorothie 和我在 1981 年决定，要做对我们的关系真正有益的事情。距今大约四十五年了。而我们二十多年没吵过架，这意味着，我们作出承诺之后，又继续吵了大约二十年。</p>
+<p>所以，我们一直在违背自己的婚姻誓言，只是当时没有意识到。你结婚时，大概也说过，无论顺境还是逆境，都要爱你的妻子。可现在，逆境来了，你却没有爱她，至少我当时没有。因此，我需要重新确认自己的婚姻誓言。</p>
+<p>这些誓言应当是目标，而不是已经抵达的终点。我们常把它们当成终点，但其实应该把它们看作渐近线，是只能不断接近、却无法彻底达到的目标。</p>
+<p><strong>钰子一：</strong> 冷战期间，您曾推动美国和苏联科学家之间的对话。我觉得这非常了不起。能否介绍一下当时具体做了什么？</p>
+<p><strong>Martin Hellman：</strong> 这本书也能在网上找到，如果找不到，可以告诉我。它叫《突破：新思维的兴起》，1987 年同时在苏联以俄文出版，并在纽约出版。要是在 1985 年，它还不可能在苏联出版，因为当时有审查制度。</p>
+<p>你看书脊，编者是 Gromyko 和 Hellman。另一位编者是 Anatoly Andreyevich Gromyko，他的父亲是 Andrei Gromyko，我们当时开玩笑称后者为苏联“终身外交部长”。他的儿子，我想叫 Alexey Gromyko，如今仍然在研究这些问题。</p>
+<p>我们需要找到办法，壮大各国最理性的力量，无论在俄罗斯、中国还是美国，而不是像现在这样，不断增强最强硬的力量。</p>
+<p>你刚才还问，自己能做什么改善中美关系。你来到这里，就已经在做了。这帮助美国人看到，中国人并不是我们原先以为的那种可怕的人。</p>
+<p>我出生于 1945 年 10 月，也就是第二次世界大战刚刚结束的时候。父亲当时还在海外，直到我六个月大才回来。我记得二十世纪六十年代，中华人民共和国在美国被称作“红色中国”。那时候的说法是，你们是坏人，是可怕的人。所以，还有很多事情可以做，我们必须尝试，必须不断尝试。每个人都得尽自己所能。</p>
+<p><strong>钰子一：</strong> 对我来说，采访您就是我能够做的事情。</p>
+<p><strong>Martin Hellman：</strong> 谢谢你。</p>
+<p><strong>钰子一：</strong> 中国有句话，不知道您听过没有，叫“求同存异”。我觉得这与您的理念很接近。</p>
+<p><strong>Martin Hellman：</strong> 有一个叫 Common Ground 的非政府组织，你听说过吗？</p>
+<p><strong>钰子一：</strong> 没有。</p>
+<p><strong>Martin Hellman：</strong> 我支持他们，他们非常好。他们努力寻求共同点，也做了很多事情，比如帮助改善伊朗与美国的关系。可惜后来很多成果又失去了。</p>
+<p>在克林顿政府时期，他们曾组织一支美国摔跤队去德黑兰。这是非官方的活动，但又带有官方色彩，因为摔跤队回国后，克林顿邀请他们到白宫。这就使它变成了一次半官方交流。那也是伊朗人质危机之后，美国国旗第一次在德黑兰升起。</p>
+<p>所以，是的，我们需要求同，我赞同你。</p>
+<h2 id="ai-进入武器系统之后向善意味着什么">AI 进入武器系统之后，“向善”意味着什么</h2>
+<p><strong>钰子一：</strong> 接下来问一些与 AI 有关的问题。您说过，AI 最终可能成为核指挥与控制系统的一部分。对此，您最担心什么？我觉得这是个严重的问题。</p>
+<p><strong>Martin Hellman：</strong> 即使保留人在决策链条中，AI 也会被用来向那个人提供信息。他或她会被 AI 给出的海量信息淹没，其中还可能有错误的信息。</p>
+<p>根本问题在于，我们说希望 AI 只被用于善的目的。我参加过很多以此为主题的会议，包括中国的会议。但我会问：“既然我们正在把 AI 纳入武器系统，怎么能说希望它只被用于善的目的？”甚至还不用谈核指挥与控制，这本身就已经是问题。</p>
+<p>在乌克兰，自主无人机正在杀人，俄罗斯人和乌克兰人都在被杀。我们必须找到不同的做法。现在的道路通向灾难，我们没有在做正确的事情。我们像玩火的孩子，又像拿着大马力跑车的孩子，需要很快成熟起来。</p>
+<p>我用福岛第一核电站来说明这个问题。你知道那件事，大概十五年前，日本地震引发了核电站熔毁。电站的负责人接到东京公司总部的指示，不要向反应堆灌入海水。</p>
+<p>但他还是这么做了。他违抗了命令，这很不像人们印象中的日本式服从，因为他知道设备已经完了。总部却想保住价值数十亿美元的投资，只盯着一个季度到下一个季度的表现。我认为，那是一种不负责任的青少年心态，甚至像两岁孩子闹脾气。</p>
+<p>谢天谢地，那位现场负责人还是灌入了海水，避免了本来可能发生的更严重的熔毁。</p>
+<p><strong>钰子一：</strong> 那么，有什么预防措施，可以降低 AI 风险？</p>
+<p><strong>Martin Hellman：</strong> 实际上，按现在的方式，我们做不到。我们需要转变，从美国把中国视为竞争者、中国把美国视为竞争者，转向思考怎样让对方最理性的力量获得支持。</p>
+<p>我举一个俄罗斯的例子。Andrey Kortunov 是《突破：新思维的兴起》的撰稿人之一，也是克里姆林宫的顾问。他曾在重要的英文刊物《外交事务》发表文章，认为俄罗斯需要作出妥协，为乌克兰带来和平。这样一位克里姆林宫顾问如何能做到这一点，我现在也还不清楚。</p>
+<p>但我们需要找到办法，支持 Andrey 这样的人，削弱那些把美国视为竞争者的力量。当然，考虑到当下的混乱，他们会这么看也有其原因。</p>
+<p>因此，在目前的格局下，我们无法避免 AI 走向坏的方向。但如果能够转变关注点，意识到事关生存，就有可能做到。</p>
+<p><strong>钰子一：</strong> 我再问一个学术问题。我不知道计算机或工程领域的情况，但在数学界，大家围绕 AI 争论得很厉害，甚至可以说吵起来了。有些人认为 AI 对学术很好，有些人却认为它极其有害。您认为，AI 对学术究竟是好还是坏？</p>
+<p><strong>Martin Hellman：</strong> AI 既有带来好处的潜力，也有作恶的潜力。就像核武器既可以被看成威胁，也可以成为促使我们改变的机遇，关键在于我们决定怎样使用它。</p>
+<p><strong>钰子一：</strong> 我很赞同。</p>
+<p><strong>Martin Hellman：</strong> 密码学也一样。想象一下，汽车最早是在机密研究中发明的，然后突然有一天，Whit Diffie、Ralph Merkle 和我，在公开研究中造出了汽车。</p>
+<p>有些人会说：“等一下，我们原来能抓住罪犯，能击败任何其他国家。你们现在公开这些东西，就会改变这个局面。”可他们没有看到救护车，没有看到汽车许多积极的用途。</p>
+<p>所以，密码学、汽车，都同时有正面和负面的可能。我们需要思考，怎样让正面的可能发挥作用，同时约束负面的可能。</p>
+<p><strong>钰子一：</strong> 这正好引出下一个问题。假如一位年轻研究者取得了重要发现，可能带来很大的好处，也可能给社会造成风险。比如密码学的突破，既有正面用途，也有负面用途。那么，AI 研究者应该怎样决定，是否公开自己的成果？</p>
+<p><strong>Martin Hellman：</strong> 这是一个非常棘手的问题。AI 行业已经给出了一些例子。AI 很擅长发现计算机代码中可能引发网络攻击的漏洞，因此一些 AI 公司会暂缓发布自己最新、最强的模型，等我们先把现有问题修补好。</p>
+<p>我认为，短期内 AI 对计算机安全可能有负面影响，但长期会有正面影响，因为我们可以先把新代码交给 AI 检查，在罪犯发现问题之前，把漏洞找出来。</p>
+<p>所以，答案是，我们必须非常谨慎地前进。</p>
+<p><strong>钰子一：</strong> 您提到了密码学，也提到 AI 对密码学的影响。您觉得，未来密码学最大的挑战是什么？AI、量子计算，还是别的？</p>
+<p><strong>Martin Hellman：</strong> 我们会慢慢知道。我和一些量子计算领域的人聊过，他们认为，现有的公钥密码技术在两三年内就可能被破解；也有一些人认为，这完全是科幻。我对这两派都很尊重，所以我不知道真实情况究竟是什么。希望答案是在两者之间。</p>
+<p><strong>钰子一：</strong> 您说，人类技术力量的发展，远远快于伦理成熟度。这个差距开始缩小了吗，还是正在继续扩大？</p>
+<p><strong>Martin Hellman：</strong> （叹气）过去它确实在缩小，这是好事。遗憾的是，现在又在大幅扩大。伊朗战争、中美关系，我们正处在一个非常混乱的局面里。</p>
+<p>但我希望，这些问题能让我们醒悟，意识到必须采取不同的行为方式。我们开始看见一些迹象。例如，伊朗战争使美国的汽油价格暴涨。我不知道中国怎样，但你在佛罗里达应该已经感受到了。希望这能让人们意识到一些事情，而且把思考推进得足够远。</p>
+<p><strong>钰子一：</strong> 我也希望如此。</p>
+<h2 id="科研中的怀疑以及与-rsa-的和解">科研中的怀疑，以及与 RSA 的和解</h2>
+<p><strong>钰子一：</strong> 您取得博士学位已经五十多年了。我不了解当年的生活是什么样。对年轻科学家来说，学术环境最大的差别是什么？</p>
+<p><strong>Martin Hellman：</strong> 我不知道。我“退休”的时间已经比在职的时间还长了。当然，我并没有真正停止工作，只是名义上退休。我在斯坦福当了二十五年在职教授，在 MIT 两年，而退休已经三十年了。</p>
+<p>所以，我确实不了解今天的情况。但必须承认，近六十年来，很多东西都变了。我在 1968 年完成博士研究，严格说学位是在 1969 年拿到的，不过 1968 年就已经离开了，距今将近六十年。</p>
+<p><strong>钰子一：</strong> 那您觉得，生活最大的变化是什么？</p>
+<p><strong>Martin Hellman：</strong> 我想谈一件没有变的事。我曾经想：“我凭什么觉得自己能够对知识作出原创贡献？”而这正是博士论文的要求。结果，大约半小时后，我就解决了自己的论文问题。</p>
+<p>我想，每个人都会经历这样的自我怀疑：我究竟是谁，凭什么能够对知识作出原创贡献？可半小时后，我真的做到了。</p>
+<p>这也是理论论文相对于实验论文的一个优势。实验工作可能光准备设备就要花上几年，而我只是在试图证明一个定理。起初，我甚至没有意识到自己是在证明它，但最后证明出的那个定理，成为了论文的基础。</p>
+<p><strong>钰子一：</strong> 您提醒了我另一个刚才忘记的问题。您经常提到 RSA 团队，你们之间曾经有一些争议，也许还不小。能否说说当时发生了什么？</p>
+<p><strong>Martin Hellman：</strong> 当然。RSA 指的是 Ron Rivest、Adi Shamir 和 Len Adleman。他们发表论文已经快五十年了，有些细节得想一想。</p>
+<p>最初我们是好朋友。他们在《ACM 通讯》的论文中，也承认 Whit 和我发明了公钥密码学。但到了需要支付专利许可费的时候，他们却说：“那是另一回事，我们不会给你们付许可费。”</p>
+<p>后来，他们以二点五亿美元卖掉了公司，在当时那是一大笔钱。而我们从密码学专利上几乎没有赚到什么。所以，原先是朋友，后来我对 RSA 非常生气，双方成了敌人。</p>
+<p>但朋友比敌人好。我并不确定 Ron Rivest 是否曾提名我获得图灵奖，他有可能提过。我想，他几乎肯定是为此提供推荐的人之一，不过我并不知道确切情况，只是这样猜想。</p>
+<p>我不是为了拿图灵奖才重新和他成为朋友的，我从来没想过自己会拿图灵奖。我主要参与 IEEE，而不是 ACM 的活动。ACM 给我图灵奖时，我甚至还不是它的会员。这里面还有很多故事，就不展开了。</p>
+<p>总之，我们先是朋友，后来是敌人。大约在 1999 年或 2000 年，我意识到专利之争已经结束，我们输了，RSA 大体上赢了。于是，我去找当时 RSA Data Security 的总裁 Jim Bidzos，告诉他：“Jim，我们言归于好吧。”因为我意识到，憎恨一个人、对一个人怀着怒气，与我想要的生活方式不一致。</p>
+<p>花了一些时间，最终我们成了朋友，现在还是很好的朋友。Jim 和我、RSA 和我，都是朋友了，这样好得多。</p>
+<p>我做的一件事，是重新理解发生过的事情。最初，我觉得 Jim Bidzos 和 RSA 从我口袋里偷走了钱，他们把公司卖了二点五亿美元，而我们几乎一无所获。后来我换了一个框架去看：Jim 不仅是出色的技术专家，也是出色的市场推广者。他让公钥密码学比原本可能的时间更早普及起来。</p>
+<p>所以，从另一个意义上说，虽然我没有从专利上赚到钱，但后来我参与了 PayPal。我有一张照片，是带 Elon Musk 坐我的动力滑翔机飞行。那是二十五六年前，我们都在 PayPal 的时候。</p>
+<p>这样重新看，Jim Bidzos 就不是从我的口袋里拿走钱，而是把钱放回了我的口袋。正是这种转变，让我重新与他们成为朋友。很多事情都取决于如何重新理解，我们可以用不同的方式看待它们。</p>
+<p><strong>钰子一：</strong> 我又被触动了。这是“朋友比敌人好”的另一个很好的例子。</p>
+<p><strong>Martin Hellman：</strong> 海德堡获奖者论坛会邀请数学和计算机科学领域最高奖项的得主，比如菲尔兹奖、图灵奖等，也邀请年轻研究者参加。我以前每年都去，今年由于种种原因没有去。</p>
+<p>有一次，在最后的告别晚宴上，有人问一位年轻研究者，她在海德堡学到了什么。她回答：“我学到了，朋友比敌人好。”那是她从我这里学到的。</p>
+<p><strong>钰子一：</strong> 您真的做到了。我觉得每个人都应该学会这句话。</p>
+<h2 id="图灵奖带来的圈内名气">图灵奖带来的“圈内名气”</h2>
+<p><strong>钰子一：</strong> 顺便问一下，获得图灵奖时，您兴奋吗？我很好奇。</p>
+<p><strong>Martin Hellman：</strong> 这里有个有意思的故事。我接到评选委员会的电话，像诺贝尔奖的通知一样：“Hellman 博士，我们很高兴通知您，您与 Diffie 博士将成为本届图灵奖得主。”</p>
+<p>我去告诉妻子。别忘了，我甚至不是 ACM 会员，所以从没想过会得图灵奖。我也从不想着要拿什么奖，每一次获奖都是意外，图灵奖尤其如此。</p>
+<p>我们开起玩笑：“又多一块奖牌，拿它怎么办？万一是个难看的雕塑呢？”我以前有一个奖的奖品是雕塑，我们就把它戏称为“那个难看的雕塑”。</p>
+<p>第二天，也就是二十四小时后，斯坦福一位正在为这件事准备新闻稿的工作人员问我：“Marty，这个问题有点俗，但别人肯定会问你。你打算怎么花那笔钱？”</p>
+<p>我说：“什么钱？”因为那时候我得到的奖项都是荣誉性的，没有奖金。现在 IEEE 荣誉奖章有两百万美元奖金，但当年没有。</p>
+<p>他告诉我：“一百万美元，你拿一半，Whit 拿一半。”我马上去告诉妻子，但她正在打电话，我没法直接说，于是就跳了一小段舞。她一看就知道，有好事发生了。</p>
+<p>这是与图灵奖有关的一个故事。它确实是很了不起的事情，给我增加了很多可信度。我原本也有一些信誉，但它真的帮了很大的忙。</p>
+<p><strong>钰子一：</strong> 图灵奖改变了您的生活吗？比如，更多邀请、更多采访，或者其他方面？</p>
+<p><strong>Martin Hellman：</strong> 邀请肯定更多了。比如中国有兴趣邀请我，很大程度上也是因为我是图灵奖得主。如果没有图灵奖，我就只是 Hellman 博士、Hellman 教授。所以，在某些方面，它确实改变了我的人生。</p>
+<p>我说过，我会利用自己在小圈子里拥有的那一点名气。我平时就像 Clark Kent，如果你知道超人的比喻，大多数人并不知道我是谁，这很好，因为你不会想整天穿着那身滑稽的紧身制服。</p>
+<p>但偶尔会遇到一个知道我是谁的人，他会说：“等一下，你就是 Martin Hellman 吗？”我说：“是的。”然后对方说：“天哪，太不可思议了。”</p>
+<p>我说过，我会毫不忸怩地利用这种圈内名气，来帮助人类免于自我毁灭。有位参议员给我打过电话，细节我就不说了。我们聊国家安全，谈了大约十分钟，他突然问：“等一下，你就是 Diffie–Hellman 密钥交换里的那个 Hellman？”我说是。他的原话是：“我靠！”</p>
+<p>当然，在国际安全领域，我仍然需要赢得他的信任。但你也能看出，这并不是特别困难，因为我们现行的国家安全方式根本不奏效，它制造的是国家不安全。</p>
+<p><strong>钰子一：</strong> 真有意思，今天听到了很多有趣的故事。还有一件事我很想问：RSA 团队从技术中赚了很多钱，而您、Whitfield Diffie 和 Ralph Merkle 几乎没有从公钥密码学中赚到钱。您后悔过吗？</p>
+<p><strong>Martin Hellman：</strong> 现在不会，但以前会。我当然曾经后悔，也曾经对 RSA 非常愤怒。后来我改变了自己的看法。</p>
+<p>顺便说，英语里有个说法：愤怒就像你自己喝下毒药，却以为能毒死别人。</p>
+<p><strong>钰子一：</strong> 我很赞同。这句话很好，我要记下来，讲给别人听。</p>
+<h2 id="乐观不是否认危险而是仍然选择尝试">乐观不是否认危险，而是仍然选择尝试</h2>
+<p><strong>钰子一：</strong> 回顾您的职业生涯，您做过密码学、核风险和国际合作。如今八十多岁了，与年轻时相比，您对人类未来更加乐观，还是更加悲观？</p>
+<p><strong>Martin Hellman：</strong> 其实我乐观多了。年轻时，我做的事情是在计算机上模拟向苏联投送核武器。幸好只是在计算机上。那是我的一个暑期工作，因为属于机密项目，入职前我并不知道自己会做什么，到了之后才发现是这个。</p>
+<p>当时，我看不到更好的办法来改善美国国家安全。现在，我看到了，所以我很乐观。当然，偶尔也会悲观。想到 AI、气候变化、核风险，想到我们有那么多种毁灭自己的方式，难免如此。</p>
+<p>但归根到底，它们都是更深层问题的症状：我们需要成熟起来。只要成熟起来，就能解决这些问题，它们也都会变成机遇。</p>
+<p><strong>钰子一：</strong> 您真的很乐观。</p>
+<p><strong>Martin Hellman：</strong> 妻子说我是世界上最乐观的人。但记住 Harry Rathbun 的话：为什么不选择高贵的假设？如果接受不那么高贵的假设，那么即使我们有能力改变，也会因为不去尝试而注定失败。我们需要尝试，必须尝试。</p>
+<p><strong>钰子一：</strong> 我很赞同。这个道理大家似乎都知道，但真的迈出第一步很难。您是个很好的榜样，告诉我们，即使事情看起来不可能，也应当先去做。能再讲一个这样的故事吗？我很喜欢听您的故事。</p>
+<p><strong>Martin Hellman：</strong> 我只想说一件事。六十年前，在二十世纪六十年代，一个中国人能来美国、再返回中国，是人们难以想象的。你没有经历过，但我记得。那是“红色中国”的时代，也是越南战争的时代。</p>
+<p><strong>钰子一：</strong> 那些经历我确实不了解。</p>
+<p><strong>Martin Hellman：</strong> 我是说，当时人们无法想象，有人能离开所谓的“共产主义中国”，来到美国，然后再回到中国，而你现在就能做到。所以，存在很多可能性。只不过，一旦它们成为可能，我们就会反过来奇怪：过去为什么会是那个样子？</p>
+<p>2019 年，我很荣幸受邀向诺贝尔奖得主发表演讲。我的出版物页面上能找到，有视频，也有文字版，找不到的话可以告诉我。题目是“技术对伦理进化的迫切要求”。意思是，科技正在迫使我们发展自己的伦理。</p>
+<p>我当时举了一个例子：我们不需要从零开始伦理进化，因为它早就已经开始了。比如 Alan Turing，也就是我获得的那个奖项所纪念的人。图灵因为同性恋身份受到迫害，最终走向死亡。当时执行的，是二十世纪五十年代的伦理标准，不仅英国如此，美国也一样。</p>
+<p>今天我们会奇怪，祖辈怎么会那么不文明？可我们今天也在做类似的事，只是自己看不到。一旦作出改变，一切就显得理所当然；而在改变发生之前，又显得不可能。</p>
+<p><strong>钰子一：</strong> 我又一次受到触动。图灵的例子很好，说明伦理进化确实已经开始了。</p>
+<p><strong>Martin Hellman：</strong> 是的。再看核武器，在最疯狂的高峰时期，全球有七万多件。今天“只有”一万两千件。我说“只有”，当然仍然远远太多，但已经降到了峰值的大约六分之一。如果再缩减六倍，会怎样？就会降到两千件。</p>
+<p>我在 2011 年左右发表过一篇文章，登在《原子科学家公报》上，题为《核乐观主义有多大风险？》。我在里面多少有些任意地把一千件核武器设为一个关键点，因为 Daniel Ellsberg……你也许不知道他是谁，他公开了“五角大楼文件”，那是一套有关越南战争历史的材料。</p>
+<p>他最初支持越南战争，后来意识到真相之后转而反对，不惜冒着余生都在监狱度过的风险。实际上，他还在水门事件以及很多其他事情中发挥了意想不到的作用。</p>
+<p>我刚才想说到哪里来着？八十一岁就会有这个问题。我脑子里有一个想法，讲着讲着岔开了，然后忘了原来要去哪里。请原谅。</p>
+<p><strong>钰子一：</strong> 没关系，您也得原谅我英语不好。</p>
+<p><strong>Martin Hellman：</strong> 好，我们彼此原谅。你也原谅我中文不好。谢谢。（笑）</p>
+<p><strong>钰子一：</strong> 说得很好。最后一个问题，也是我经常会问的：未来有没有什么您特别希望完成的目标？</p>
+<p><strong>Martin Hellman：</strong> 我希望在生命结束、回顾自己的一生时，能够对自己的生活和所做的事情感到满意。我八十一岁了，必须思考这个问题。</p>
+<p>我目前正在美国做一件事，具体细节不谈，但最快也要到 2028 年，可能是 2029 年，才会有结果。所以，我必须考虑人寿保险之类的安排，以及我还能做些什么。过几年我很可能还在，但也可能不在了。希望到最后回望时，我能对自己这一生感到欣慰。</p>
+<p><strong>钰子一：</strong> 我觉得您的人生已经非常精彩。今天的谈话让我学到了很多：您的乐观、朋友比敌人好，以及您给出的那么多例子。最重要的是，您不是只说一些政治正确却空洞的话，而是用很多有趣的真实故事来说明。您还有其他想分享的故事吗？</p>
+<p><strong>Martin Hellman：</strong> 我想，今天一次已经聊得够多了。尤其是你也知道，大约一周前，一辆汽车撞了我的自行车，造成背部一节椎骨骨折。所以我很快就得站起来，活动伸展一下。我们需要尽快结束访谈。</p>
+<p><strong>钰子一：</strong> 好的，抱歉，那我们就到这里。再次感谢您抽出时间。</p>
+<p><strong>Martin Hellman：</strong> 也谢谢你做这次访谈。感谢所有能够帮助改变中国视角的人。我不会试图去改变中国的视角，原因刚才已经解释过。我在努力改变美国的视角，也会继续这么做。</p>
+<p><strong>钰子一：</strong> 谢谢。希望大家都能从这次谈话中有所收获。</p>
+<h2 id="相关书籍论文与资料">相关书籍、论文与资料</h2>
+<h3 id="书籍">书籍</h3>
+<ul>
+<li><strong>《关系的新地图》（A New Map for Relationships）</strong>：Martin Hellman 与妻子 Dorothie Hellman 合著，讨论婚姻、人际关系与世界和平。<a href="https://ee.stanford.edu/~hellman/publications/book3mandarin.pdf">中文 PDF</a>；<a href="https://ee.stanford.edu/~hellman/publications/book3.pdf">英文 PDF</a>。</li>
+<li><strong>《突破：新思维的兴起》（Breakthrough: Emerging New Thinking）</strong>：Martin Hellman 与 Anatoly Gromyko 共同主编，探讨冷战、核安全与国际合作。<a href="https://ee.stanford.edu/~hellman/Breakthrough/book/pdfs/breakthrough.pdf">英文完整版 PDF</a>。</li>
+</ul>
+<h3 id="论文与文章">论文与文章</h3>
+<ul>
+<li><strong>New Directions in Cryptography（1976）</strong>：Whitfield Diffie 与 Martin Hellman 发表的开创性论文，奠定现代公钥密码学的重要基础。<a href="https://ee.stanford.edu/~hellman/publications/24.pdf">论文 PDF</a>。</li>
+<li><strong>How Risky Is Nuclear Optimism?（2011）</strong>：关于核威慑与核战争风险的文章。<a href="https://thebulletin.org/2011/03/how-risky-is-nuclear-optimism/">原文</a>。</li>
+<li><strong>An Existential Discussion: What Is the Probability of Nuclear War?（2021）</strong>：Martin Hellman 与互联网先驱 Vinton Cerf 讨论核战争风险。<a href="https://thebulletin.org/2021/03/an-existential-discussion-what-is-the-probability-of-nuclear-war/">原文</a>。</li>
+</ul>
+<h3 id="公开演讲">公开演讲</h3>
+<ul>
+<li><strong>The Evolution of Public Key Cryptography</strong>：在海德堡获奖者论坛回顾公钥密码学的发展。<a href="https://www.heidelberg-laureate-forum.org/video/lecture-the-evolution-of-public-key-cryptography/">演讲视频</a>。</li>
+<li><strong>The Technological Imperative for Ethical Evolution（2019）</strong>：探讨科技进步为什么必须伴随伦理与行为方式的转变。<a href="https://www.mediatheque.lindau-nobel.org/videos/38240/2019-meeting-heidelberg-lecture-hellman">演讲视频</a>；<a href="https://ee.stanford.edu/~hellman/publications/79.pdf">文章 PDF</a>。</li>
+</ul>
+<p>更多资料见 <a href="https://ee.stanford.edu/~hellman/publications.html">Martin Hellman 的斯坦福大学论文与著作目录</a>。</p>
+<h2 id="基本信息">基本信息</h2>
+<ul>
+<li><strong>受访者</strong>：Martin Hellman，斯坦福大学教授、公钥密码学先驱、2015 年图灵奖得主。</li>
+<li>采访者：钰子一</li>
+<li>发布频道：钰子一</li>
+<li><strong>原视频标题</strong>：Turing Award Winner Martin Hellman on Nuclear War, AI Risks, and US-China Cooperation。</li>
+<li><strong>发布日期</strong>：2026 年 10 月 29 日。</li>
+<li><strong>时长</strong>：约 1 小时 17 分钟。</li>
+<li><strong>来源</strong>：<a href="https://www.youtube.com/watch?v=gvAN3yaefL0">钰子一 YouTube 频道原视频</a>。</li>
+</ul>
+<figure class="video-embed video-embed--youtube" data-video-id="gvAN3yaefL0" data-video-title="Martin Hellman 与钰子一的访谈"><div class="video-embed__frame"><a href="https://www.youtube.com/watch?v=gvAN3yaefL0" target="_blank" rel="noopener" class="video-embed__preview" aria-label="播放视频：Martin Hellman 与钰子一的访谈"><img src="https://i.ytimg.com/vi/gvAN3yaefL0/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async" class="video-embed__thumbnail"><span class="video-embed__play" aria-hidden="true">▶</span><span class="video-embed__preview-label">Martin Hellman 与钰子一的访谈</span></a></div><figcaption class="video-embed__caption">Martin Hellman 与钰子一的访谈 · <a href="https://www.youtube.com/watch?v=gvAN3yaefL0" target="_blank" rel="noopener" class="video-embed__external">在 YouTube 打开</a><button type="button" hidden class="video-embed__reset">返回视频封面</button></figcaption></figure>  </div>  </section> <nav class="chapter-nav" aria-label="Document navigation" data-astro-cid-vjjnhoij> <a href="/library/channels/yuziyi/jacob-tsimerman?tab=summary" class="chapter-nav-link chapter-nav-prev" data-astro-cid-vjjnhoij> <span class="nav-direction" data-astro-cid-vjjnhoij>← Previous</span> <span class="nav-title" data-astro-cid-vjjnhoij> <span class="nav-label" data-astro-cid-vjjnhoij>钰子一</span> Jacob Tsimerman：算术几何、AI 与数学的未来 </span> </a> <a href="/library/channels/yuziyi/richard-borcherds?tab=summary" class="chapter-nav-link chapter-nav-next" data-astro-cid-vjjnhoij> <span class="nav-direction" data-astro-cid-vjjnhoij>Next →</span> <span class="nav-title" data-astro-cid-vjjnhoij> <span class="nav-label" data-astro-cid-vjjnhoij>钰子一</span> Richard Borcherds：学了五十年数学，突然几乎派不上用场 </span> </a> </nav>  </article> <script>(function(){const basePath = "/library/channels/yuziyi";
+const aliasMap = {"carl-wieman":"carl-wieman","carl-wieman.summary":"carl-wieman","carl-wieman.zh":"carl-wieman","jacob-tsimerman":"jacob-tsimerman","jacob-tsimerman.zh":"jacob-tsimerman","jacob-tsimerman.summary":"jacob-tsimerman","martin-hellman":"martin-hellman","martin-hellman.summary":"martin-hellman","martin-hellman.zh":"martin-hellman","richard-borcherds":"richard-borcherds","richard-borcherds.summary":"richard-borcherds","richard-borcherds.zh":"richard-borcherds","roger-penrose":"roger-penrose","roger-penrose.summary":"roger-penrose","roger-penrose.zh":"roger-penrose","scott-aaronson":"scott-aaronson","scott-aaronson.summary":"scott-aaronson","scott-aaronson.zh":"scott-aaronson"};
+const currentKey = "martin-hellman";
+const currentLocale = "zh";
+const currentDirectory = "";
+const selector = ".reader-content, .chapter-prose";
+
+  const normalizeRelativePath = (pathPart, directory = '') => {
+    const raw = decodeURIComponent(pathPart).replace(/\\/g, '/');
+    const segments = directory.split('/').filter(Boolean);
+
+    for (const part of raw.split('/')) {
+      if (!part || part === '.') continue;
+      if (part === '..') {
+        segments.pop();
+        continue;
+      }
+      segments.push(part);
+    }
+
+    return segments.join('/');
+  };
+
+  const rewriteMarkdownHref = (rawHref) => {
+    if (!rawHref) return null;
+    if (/^[a-z][a-z\d+.-]*:/i.test(rawHref)) return null;
+    if (rawHref.startsWith('#') || rawHref.startsWith('/')) return null;
+
+    const matched = rawHref.match(/^([^?#]+)(\?[^#]*)?(#.*)?$/);
+    if (!matched) return null;
+
+    const [, pathPart, queryPart = '', hashPart = ''] = matched;
+    if (/\.[a-z\d]+$/i.test(pathPart) && !pathPart.endsWith('.md')) return null;
+
+    const normalizedPath = normalizeRelativePath(pathPart, currentDirectory);
+    if (!normalizedPath) return null;
+
+    const alias = normalizedPath.replace(/\.md$/, '');
+    const baseAlias = alias.split('/').pop() ?? alias;
+    const localeSuffixMatch = alias.match(/\.(zh|fr|en)$/);
+    const suffixLocale = localeSuffixMatch?.[1];
+    const normalizedAlias = alias.replace(/\.(zh|fr|en)$/, '');
+    const normalizedBaseAlias = baseAlias.replace(/\.(zh|fr|en)$/, '');
+    const fallbackKey = normalizedAlias.startsWith('notes/') ? `notes-${normalizedBaseAlias}` : normalizedBaseAlias;
+    const key = aliasMap[alias]
+      || aliasMap[baseAlias]
+      || aliasMap[normalizedAlias]
+      || aliasMap[normalizedBaseAlias]
+      || fallbackKey;
+    const params = new URLSearchParams(queryPart ? queryPart.slice(1) : '');
+
+    if (!params.has('lang') && (suffixLocale === 'zh' || suffixLocale === 'fr' || suffixLocale === 'en')) {
+      params.set('lang', suffixLocale);
+    }
+
+    const targetLocale = params.get('lang') ?? currentLocale;
+    const onlyLangParam = Array.from(params.keys()).every((name) => name === 'lang');
+    if (currentKey && key === currentKey && (!targetLocale || targetLocale === currentLocale) && onlyLangParam) {
+      return hashPart || null;
+    }
+
+    const query = params.toString();
+    return `${basePath}/${key}${query ? `?${query}` : ''}${hashPart}`;
+  };
+
+  document.querySelectorAll(selector.split(',').map((s) => `${s.trim()} a[href]`).join(', ')).forEach((anchor) => {
+    const rewrittenHref = rewriteMarkdownHref(anchor.getAttribute('href'));
+    if (rewrittenHref) {
+      anchor.setAttribute('href', rewrittenHref);
+    }
+  });
+})();</script>  </main> <div class="mobile-bottom-bar" data-astro-cid-mw7aashj> <button id="mobile-toc-btn" class="mobile-bottom-btn" aria-label="Show Table of Contents" style data-astro-cid-mw7aashj> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-mw7aashj> <line x1="8" y1="6" x2="21" y2="6" data-astro-cid-mw7aashj></line><line x1="8" y1="12" x2="21" y2="12" data-astro-cid-mw7aashj></line><line x1="8" y1="18" x2="21" y2="18" data-astro-cid-mw7aashj></line><line x1="3" y1="6" x2="3.01" y2="6" data-astro-cid-mw7aashj></line><line x1="3" y1="12" x2="3.01" y2="12" data-astro-cid-mw7aashj></line><line x1="3" y1="18" x2="3.01" y2="18" data-astro-cid-mw7aashj></line> </svg> <span data-astro-cid-mw7aashj>目录</span> </button> <div class="mobile-bottom-divider" data-astro-cid-mw7aashj></div> <button id="mobile-info-btn" class="mobile-bottom-btn" aria-label="Show Basic Info" data-astro-cid-mw7aashj> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-mw7aashj> <circle cx="12" cy="12" r="10" data-astro-cid-mw7aashj></circle><line x1="12" y1="16" x2="12" y2="12" data-astro-cid-mw7aashj></line><line x1="12" y1="8" x2="12.01" y2="8" data-astro-cid-mw7aashj></line> </svg> <span data-astro-cid-mw7aashj>信息</span> </button> <div class="mobile-bottom-divider" data-astro-cid-mw7aashj></div> <button id="mobile-settings-btn" class="mobile-bottom-btn" aria-label="Typography Settings" data-astro-cid-mw7aashj> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-mw7aashj> <rect x="3" y="11" width="18" height="11" rx="2" ry="2" data-astro-cid-mw7aashj></rect><path d="M7 11V7a5 5 0 0 1 10 0v4" data-astro-cid-mw7aashj></path> </svg> <span data-astro-cid-mw7aashj>排版</span> </button> </div> <aside class="docs-toc" id="docs-toc" data-astro-cid-mw7aashj> <div class="docs-panel docs-toc-flex" data-panel="toc" data-astro-cid-mw7aashj> <nav class="toc" aria-label="Table of contents" data-astro-cid-cott7la3> <div class="toc-header" data-astro-cid-cott7la3> <div data-astro-cid-cott7la3> <p class="toc-label" data-astro-cid-cott7la3>On This Page</p> <p class="toc-readtime" data-astro-cid-cott7la3>1 min read</p> </div> <span class="toc-progress" data-reading-progress-label data-astro-cid-cott7la3>0%</span> </div> <div class="toc-locale-labels" data-astro-cid-cott7la3> <span class="toc-locale-pill toc-locale-pill--active" data-toc-pill="summary" data-astro-cid-cott7la3> 内容摘要 </span><span class="toc-locale-pill" data-toc-pill="zh" data-astro-cid-cott7la3> 中文译文 </span> </div> <ul class="toc-list toc-list--active" data-toc-panel="summary" data-astro-cid-cott7la3> <li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#革命性的发现也有一条缓慢显现的路径" class="toc-link" data-heading="革命性的发现也有一条缓慢显现的路径" data-locale="summary" data-astro-cid-cott7la3> 革命性的发现，也有一条缓慢显现的路径 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#朋友比敌人好不只是一个口号" class="toc-link" data-heading="朋友比敌人好不只是一个口号" data-locale="summary" data-astro-cid-cott7la3> 朋友比敌人好，不只是一个口号 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#先看见自己也参与了冲突的制造" class="toc-link" data-heading="先看见自己也参与了冲突的制造" data-locale="summary" data-astro-cid-cott7la3> 先看见自己，也参与了冲突的制造 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#核战争风险不能因为尚未发生就忽略" class="toc-link" data-heading="核战争风险不能因为尚未发生就忽略" data-locale="summary" data-astro-cid-cott7la3> 核战争风险不能因为尚未发生就忽略 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#ai向善需要与实际用途相一致" class="toc-link" data-heading="ai向善需要与实际用途相一致" data-locale="summary" data-astro-cid-cott7la3> AI“向善”需要与实际用途相一致 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#乐观是在不确定中选择行动" class="toc-link" data-heading="乐观是在不确定中选择行动" data-locale="summary" data-astro-cid-cott7la3> 乐观，是在不确定中选择行动 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#基本信息" class="toc-link" data-heading="基本信息" data-locale="summary" data-astro-cid-cott7la3> 基本信息 </a> </li> </ul><ul class="toc-list" data-toc-panel="zh" hidden data-astro-cid-cott7la3> <li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#开场片段" class="toc-link" data-heading="开场片段" data-locale="zh" data-astro-cid-cott7la3> 开场片段 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#公钥密码学革命性想法如何逐步形成" class="toc-link" data-heading="公钥密码学革命性想法如何逐步形成" data-locale="zh" data-astro-cid-cott7la3> 公钥密码学：革命性想法如何逐步形成 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#ralph-merkle-的贡献与署名" class="toc-link" data-heading="ralph-merkle-的贡献与署名" data-locale="zh" data-astro-cid-cott7la3> Ralph Merkle 的贡献与署名 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#与-nsa-的冲突以及敌人如何成为朋友" class="toc-link" data-heading="与-nsa-的冲突以及敌人如何成为朋友" data-locale="zh" data-astro-cid-cott7la3> 与 NSA 的冲突，以及敌人如何成为朋友 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#看见自己的阴影勇气傲慢与求名之心" class="toc-link" data-heading="看见自己的阴影勇气傲慢与求名之心" data-locale="zh" data-astro-cid-cott7la3> 看见自己的“阴影”：勇气、傲慢与求名之心 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#婚姻为何成为国际关系的实验室" class="toc-link" data-heading="婚姻为何成为国际关系的实验室" data-locale="zh" data-astro-cid-cott7la3> 婚姻为何成为国际关系的实验室 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#核风险ai-与气候变化背后的共同问题" class="toc-link" data-heading="核风险ai-与气候变化背后的共同问题" data-locale="zh" data-astro-cid-cott7la3> 核风险、AI 与气候变化背后的共同问题 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#从身边关系开始把不可能逐步变成可能" class="toc-link" data-heading="从身边关系开始把不可能逐步变成可能" data-locale="zh" data-astro-cid-cott7la3> 从身边关系开始，把不可能逐步变成可能 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#ai-进入武器系统之后向善意味着什么" class="toc-link" data-heading="ai-进入武器系统之后向善意味着什么" data-locale="zh" data-astro-cid-cott7la3> AI 进入武器系统之后，“向善”意味着什么 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#科研中的怀疑以及与-rsa-的和解" class="toc-link" data-heading="科研中的怀疑以及与-rsa-的和解" data-locale="zh" data-astro-cid-cott7la3> 科研中的怀疑，以及与 RSA 的和解 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#图灵奖带来的圈内名气" class="toc-link" data-heading="图灵奖带来的圈内名气" data-locale="zh" data-astro-cid-cott7la3> 图灵奖带来的“圈内名气” </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#乐观不是否认危险而是仍然选择尝试" class="toc-link" data-heading="乐观不是否认危险而是仍然选择尝试" data-locale="zh" data-astro-cid-cott7la3> 乐观不是否认危险，而是仍然选择尝试 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#相关书籍论文与资料" class="toc-link" data-heading="相关书籍论文与资料" data-locale="zh" data-astro-cid-cott7la3> 相关书籍、论文与资料 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#书籍" class="toc-link" data-heading="书籍" data-locale="zh" data-astro-cid-cott7la3> 书籍 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#论文与文章" class="toc-link" data-heading="论文与文章" data-locale="zh" data-astro-cid-cott7la3> 论文与文章 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#公开演讲" class="toc-link" data-heading="公开演讲" data-locale="zh" data-astro-cid-cott7la3> 公开演讲 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#基本信息" class="toc-link" data-heading="基本信息" data-locale="zh" data-astro-cid-cott7la3> 基本信息 </a> </li> </ul> </nav> <script type="module">const g=document.querySelector("[data-reading-progress-label]"),v=document.querySelectorAll("[data-toc-panel]"),p=document.querySelectorAll("[data-toc-pill]"),l=()=>{const t=document.querySelector("[data-variant-panel].reader-content--active:not([hidden])"),e=document.querySelector(".language-button--active[data-target-locale]");return t?.getAttribute("data-variant-key")??e?.getAttribute("data-target-locale")??document.querySelector("[data-toc-panel].toc-list--active")?.getAttribute("data-toc-panel")??document.querySelector("[data-toc-panel]")?.getAttribute("data-toc-panel")??"zh"};let n;const i=t=>{v.forEach(e=>{const a=e.getAttribute("data-toc-panel")===t;e.classList.toggle("toc-list--active",a),a?e.removeAttribute("hidden"):e.setAttribute("hidden","")}),p.forEach(e=>{e.classList.toggle("toc-locale-pill--active",e.getAttribute("data-toc-pill")===t)})},s=()=>{n?.disconnect();const t=l(),e=document.querySelector(`[data-variant-panel][data-variant-key="${CSS.escape(t)}"]`)??document.querySelector(`[data-locale-panel="${CSS.escape(t)}"]`),a=e?e.querySelectorAll("h2[id], h3[id]"):document.querySelectorAll(".chapter-article h2[id], .chapter-article h3[id]"),c=document.querySelectorAll(`.toc-link[data-locale="${t}"]`);if(!a.length||!c.length)return;n=new IntersectionObserver(o=>{o.forEach(u=>{u.isIntersecting&&(c.forEach(h=>h.classList.remove("toc-link--active")),document.querySelector(`.toc-link[data-heading="${u.target.id}"]`)?.classList.add("toc-link--active"))})},{rootMargin:"0px 0px -80% 0px",threshold:0});const r=n;r&&a.forEach(o=>r.observe(o))},d=()=>{const t=document.querySelector(".chapter-article");if(!t||!g)return;const e=t.getBoundingClientRect(),a=window.innerHeight,c=Math.max(t.scrollHeight-a,1),r=Math.min(Math.max(-e.top,0),c),o=Math.round(r/c*100);g.textContent=`${o}%`};i(l());s();d();window.addEventListener("scroll",d,{passive:!0});window.addEventListener("resize",d);document.querySelectorAll("[data-language-switcher] [data-target-locale]").forEach(t=>{t.addEventListener("click",()=>{const e=t.getAttribute("data-target-locale");e&&(i(e),s())})});window.addEventListener("variantchange",()=>{const t=l();i(t),s()});</script>  </div> <details class="docs-panel docs-details" data-panel="info" data-mobile-hidden data-astro-cid-mw7aashj> <summary class="panel-summary" data-astro-cid-mw7aashj> <span class="summary-title" data-astro-cid-mw7aashj>信息 INFO</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="summary-chevron" data-astro-cid-mw7aashj><polyline points="6 9 12 15 18 9" data-astro-cid-mw7aashj></polyline></svg> </summary> <div class="panel-content docs-toc-bottom" data-astro-cid-mw7aashj> <div class="sidebar-reader-details" data-astro-cid-2yvbimk5> <div class="sidebar-details-grid-wrapper" data-astro-cid-2yvbimk5> <div class="sidebar-details-grid" data-astro-cid-2yvbimk5> <div class="details-group" data-astro-cid-2yvbimk5> <div class="details-item" data-astro-cid-2yvbimk5> <span class="details-label" data-astro-cid-2yvbimk5>原文标题：</span> <span class="details-value" data-astro-cid-2yvbimk5>Turing Award Winner Martin Hellman on Nuclear War, AI Risks, and US-China Cooperation</span> </div> <div class="details-item" data-astro-cid-2yvbimk5> <span class="details-label" data-astro-cid-2yvbimk5>原作者：</span> <span class="details-value" data-astro-cid-2yvbimk5>钰子一</span> </div> <div class="details-item" data-astro-cid-2yvbimk5> <span class="details-label" data-astro-cid-2yvbimk5>发布日期：</span> <span class="details-value" data-astro-cid-2yvbimk5>2026-11-16</span> </div>  </div> <div class="details-group details-sources" data-astro-cid-2yvbimk5> <div class="details-source-links" data-astro-cid-2yvbimk5> <a class="source-direct-link" href="https://www.youtube.com/watch?v=gvAN3yaefL0" target="_blank" rel="noopener" data-astro-cid-2yvbimk5> 钰子一 · YouTube </a> </div> </div> </div> </div> </div> </div> </details> <details class="docs-panel docs-details" data-panel="settings" data-mobile-hidden data-astro-cid-mw7aashj> <summary class="panel-summary" data-astro-cid-mw7aashj> <span class="summary-title" data-astro-cid-mw7aashj>排版 TYPE</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="summary-chevron" data-astro-cid-mw7aashj><polyline points="6 9 12 15 18 9" data-astro-cid-mw7aashj></polyline></svg> </summary> <div class="panel-content" data-astro-cid-mw7aashj> <div class="typography-settings" data-astro-cid-e26rjylm> <div class="setting-group" data-astro-cid-e26rjylm> <label class="setting-label" data-astro-cid-e26rjylm>字体 Font</label> <div class="setting-buttons" data-setting-group="font-family" data-astro-cid-e26rjylm> <button class="setting-btn" data-value="sans" data-astro-cid-e26rjylm>无衬线</button> <button class="setting-btn" data-value="serif" data-astro-cid-e26rjylm>衬线</button> </div> </div> <div class="setting-group" data-astro-cid-e26rjylm> <label class="setting-label" data-astro-cid-e26rjylm>字号 Size</label> <div class="setting-buttons" data-setting-group="font-size" data-astro-cid-e26rjylm> <button class="setting-btn" data-value="sm" data-astro-cid-e26rjylm>小</button> <button class="setting-btn" data-value="md" data-astro-cid-e26rjylm>中</button> <button class="setting-btn" data-value="lg" data-astro-cid-e26rjylm>大</button> </div> </div> </div>  <script type="module">const r=()=>{let t=localStorage.getItem("reader-font-family")||"sans",e=localStorage.getItem("reader-font-size")||"md";["sans","serif"].includes(t)||(t="sans",localStorage.setItem("reader-font-family",t)),["sm","md","lg"].includes(e)||(e="md",localStorage.setItem("reader-font-size",e)),document.documentElement.setAttribute("data-reader-font-family",t),document.documentElement.setAttribute("data-reader-font-size",e),document.querySelectorAll(".setting-buttons").forEach(a=>{const s=a.getAttribute("data-setting-group")==="font-family"?t:e;a.querySelectorAll(".setting-btn").forEach(o=>{o.getAttribute("data-value")===s?o.classList.add("active"):o.classList.remove("active")})})};document.querySelectorAll(".setting-buttons").forEach(t=>{const e=t.getAttribute("data-setting-group");t.querySelectorAll(".setting-btn").forEach(a=>{a.addEventListener("click",()=>{const l=a.getAttribute("data-value");l&&(e==="font-family"?localStorage.setItem("reader-font-family",l):localStorage.setItem("reader-font-size",l),r())})})});r();</script> </div> </details> </aside> </div> <footer class="docs-footer" data-astro-cid-wizvoa5a> <div class="footer-left" data-astro-cid-wizvoa5a> <span class="footer-copy" data-astro-cid-wizvoa5a>© 2026 Linguista Library</span> </div> <div class="footer-right" data-astro-cid-wizvoa5a> <a href="https://github.com/h4harsimran/vibe-coders-handbook" target="_blank" rel="noopener" data-astro-cid-wizvoa5a>Handbook Source</a> </div> </footer>  <script type="module">const b=document.querySelector("[data-reading-progress-bar]"),c=document.querySelector(".chapter-article"),u=document.getElementById("mobile-sidebar-toggle"),v=document.getElementById("mobile-toc-btn"),w=document.getElementById("mobile-info-btn"),d=document.getElementById("sidebar-overlay"),l=document.getElementById("toc-overlay"),i=document.getElementById("docs-sidebar"),e=document.getElementById("docs-toc"),r=()=>{i?.classList.contains("show")?(i?.classList.remove("show"),d?.classList.remove("show"),document.body.style.overflow=""):(i?.classList.add("show"),d?.classList.add("show"),document.body.style.overflow="hidden")},o=s=>{if(!e)return;const a=e.classList.contains("show"),n=e.getAttribute("data-active-panel")===s;a&&n?(e.classList.remove("show"),l?.classList.remove("show"),document.body.style.overflow=""):(e.setAttribute("data-active-panel",s),e.querySelectorAll(".docs-panel").forEach(t=>{t.getAttribute("data-panel")===s?(t.removeAttribute("data-mobile-hidden"),t.tagName==="DETAILS"&&t.setAttribute("open",""),t.tagName==="DETAILS"&&t.setAttribute("open","")):t.setAttribute("data-mobile-hidden","")}),e.classList.add("show"),l?.classList.add("show"),document.body.style.overflow="hidden")};u?.addEventListener("click",r);d?.addEventListener("click",r);v?.addEventListener("click",()=>o("toc"));const h=document.getElementById("mobile-settings-btn");h?.addEventListener("click",()=>o("settings"));w?.addEventListener("click",()=>o("info"));l?.addEventListener("click",()=>o(e?.getAttribute("data-active-panel")||"toc"));window.addEventListener("resize",()=>{window.innerWidth>=900&&i?.classList.contains("show")&&r(),window.innerWidth>=900&&e?.classList.contains("show")&&o(e.getAttribute("data-active-panel")||"toc")});const m=()=>{if(!b||!c)return;const s=c.getBoundingClientRect(),a=window.innerHeight,n=Math.max(c.scrollHeight-a,1),g=Math.min(Math.max(-s.top,0),n),t=Math.max(0,Math.min(1,g/n));b.style.transform=`scaleX(${t})`};m();window.addEventListener("scroll",m,{passive:!0});window.addEventListener("resize",m);</script>  <script type="module">const a=new IntersectionObserver(t=>{t.forEach(r=>{if(r.isIntersecting){const e=r.target,s=Number(e instanceof HTMLElement?e.dataset.revealDelay:void 0)||0;s>0?setTimeout(()=>{requestAnimationFrame(()=>e.classList.add("in-view"))},s):requestAnimationFrame(()=>e.classList.add("in-view")),a.unobserve(e)}})},{threshold:.12,rootMargin:"0px 0px -40px 0px"});document.querySelectorAll(".reveal").forEach(t=>a.observe(t));</script> </body> </html>  
