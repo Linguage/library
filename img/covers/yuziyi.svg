@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000"><rect width="800" height="1000" fill="#163d38"/><circle cx="660" cy="160" r="240" fill="#23544c"/><g fill="none" stroke="#d3e0b9" stroke-width="5"><path d="M145 310h410a55 55 0 0 1 55 55v220a55 55 0 0 1-55 55H320l-95 85v-85h-80a55 55 0 0 1-55-55V365a55 55 0 0 1 55-55z"/><path d="M170 530c100 0 80-130 170-130s80 130 170 130"/><path d="M170 465h340M340 365v220" opacity=".45"/></g><circle cx="340" cy="400" r="12" fill="#dab781"/><text x="85" y="825" font-family="serif" font-size="74" fill="#f1ecd9">钰子一</text><text x="88" y="885" font-family="sans-serif" font-size="25" letter-spacing="7" fill="#d3e0b9">数学 · 访谈 · AI</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+  <title id="title">钰子一</title>
+  <desc id="desc">墨绿色频道封面，两枚相向的对话方框中有交错的声波线。</desc>
+  <style>.serif{font-family:'Songti SC','STSong','Noto Serif CJK SC',serif}.label{font-family:Arial,sans-serif;letter-spacing:2px}</style>
+  <rect width="600" height="600" fill="#23443b"/>
+  <text x="35" y="51" font-size="14" class="label" fill="#cad7b7">CONVERSATIONS / MATHEMATICS &amp; AI</text>
+  <text x="31" y="156" class="serif" font-size="100" fill="#f3ecd7">钰子一</text>
+  <text x="37" y="202" font-size="16" class="label" fill="#cad7b7">YUZIYI</text>
+  <g fill="none" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M108 283H328a26 26 0 0 1 26 26v80a26 26 0 0 1-26 26H190l-52 38v-38h-30a26 26 0 0 1-26-26v-80a26 26 0 0 1 26-26Z" stroke="#cad7b7"/>
+    <path d="M297 369h195a26 26 0 0 1 26 26v72a26 26 0 0 1-26 26h-22v32l-47-32H297a26 26 0 0 1-26-26v-72a26 26 0 0 1 26-26Z" fill="#23443b" stroke="#b9b88c"/>
+    <path d="M119 351h28l16-25 28 49 23-39 15 15h45M309 433h34l17-21 22 43 24-47 17 25h53" stroke="#e7c58b"/>
+  </g>
+  <text x="35" y="570" font-size="14" class="label" fill="#cad7b7">LINGUISTA / LIBRARY</text>
+</svg>

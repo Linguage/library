@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+  <title id="title">数学的未来？</title>
+  <desc id="desc">深蓝绿色频道封面，数道弧线在一点金色周围交错。</desc>
+  <style>.serif{font-family:Georgia,'Times New Roman',serif}.label{font-family:Arial,sans-serif;letter-spacing:2px}</style>
+  <rect width="600" height="600" fill="#172f3b"/>
+  <text x="35" y="51" font-size="14" class="label" fill="#bfcfcd">PROOF / UNDERSTANDING / EDUCATION</text>
+  <g class="serif" fill="#f1e9d6">
+    <text x="30" y="144" font-size="77">The Future of</text>
+    <text x="31" y="221" font-size="79">Mathematics?</text>
+  </g>
+  <g fill="none" stroke="#86adb0" stroke-width="1.5">
+    <path d="M75 498C191 498 160 295 290 295s90 202 231 202"/>
+    <path d="M75 467C181 467 174 318 290 318s101 149 231 149"/>
+    <path d="M75 436C173 436 189 341 290 341s111 95 231 95"/>
+    <path d="M75 405C163 405 202 364 290 364s121 41 231 41"/>
+  </g>
+  <g fill="none" stroke="#c19762" stroke-width="1.5">
+    <path d="M180 476C253 476 251 374 341 374c76 0 84 102 153 102"/>
+    <path d="M215 496C265 496 280 397 341 397c57 0 64 99 117 99"/>
+  </g>
+  <circle cx="341" cy="374" r="6" fill="#e4bd7c"/>
+  <path d="M35 530H167" stroke="#86adb0"/>
+  <text x="35" y="570" font-size="14" class="label" fill="#bfcfcd">LINGUISTA / LIBRARY</text>
+</svg>
