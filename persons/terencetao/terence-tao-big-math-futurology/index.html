@@ -1,0 +1,577 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/library/img/library-campus.svg" type="image/svg+xml" sizes="any"><link rel="shortcut icon" href="/library/img/library-campus.svg" type="image/svg+xml"><title>大数学与理论研究的未来</title><meta name="description" content="陶哲轩从素数、失败与协作谈起，解释人工智能如何改变数学研究，以及“大数学”需要怎样的验证、教育与制度支持。"><link rel="alternate" type="application/rss+xml" title="Linguista Library · 更新" href="https://linguista.cn/library/rss.xml"><link rel="canonical" href="https://linguista.cn/library/persons/terencetao/terence-tao-big-math-futurology"><meta property="og:type" content="website"><meta property="og:site_name" content="Linguista Library"><meta property="og:title" content="大数学与理论研究的未来"><meta property="og:description" content="陶哲轩从素数、失败与协作谈起，解释人工智能如何改变数学研究，以及“大数学”需要怎样的验证、教育与制度支持。"><meta property="og:url" content="https://linguista.cn/library/persons/terencetao/terence-tao-big-math-futurology"><meta property="og:image" content="https://linguista.cn/library/img/library-campus.svg"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://linguista.cn/library/img/library-campus.svg"><meta name="twitter:title" content="大数学与理论研究的未来"><meta name="twitter:description" content="陶哲轩从素数、失败与协作谈起，解释人工智能如何改变数学研究，以及“大数学”需要怎样的验证、教育与制度支持。"><script async src="https://www.googletagmanager.com/gtag/js?id=G-99PGBGJH4S"></script><script>(function(){const gaMeasurementId = "G-99PGBGJH4S";
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', gaMeasurementId);
+        })();</script><script>
+      const getTheme = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return 'default';
+      };
+      
+      const theme = getTheme();
+      if (theme && theme !== 'default') {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+    </script><!-- Inject Typography Settings --><script>
+      (function() {
+        try {
+          var fontFam = localStorage.getItem('reader-font-family');
+          var fontSz = localStorage.getItem('reader-font-size');
+          if (fontFam) document.documentElement.setAttribute('data-reader-font-family', fontFam);
+          if (fontSz) document.documentElement.setAttribute('data-reader-font-size', fontSz);
+        } catch(e) {}
+      })();
+    </script><link rel="stylesheet" href="/library/_astro/_slug_.BTTWv_G6.css">
+<style>.chapter-nav[data-astro-cid-vjjnhoij]{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}.chapter-nav-link[data-astro-cid-vjjnhoij]{display:flex;flex-direction:column;gap:10px;min-height:120px;padding:20px;border-radius:0;border-width:1px 0;border:1px solid var(--line-soft);background:transparent;text-decoration:none;transition:transform .2s var(--ease-out-expo),box-shadow .2s var(--ease-out-expo),border-color .2s var(--ease-out-expo)}.chapter-nav-link[data-astro-cid-vjjnhoij]:hover{transform:none;box-shadow:none;border-color:var(--text-strong)}.chapter-nav-next[data-astro-cid-vjjnhoij]{text-align:right;align-items:end}.nav-direction[data-astro-cid-vjjnhoij]{font-family:Space Mono,monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-subtle)}.nav-title[data-astro-cid-vjjnhoij]{display:flex;flex-direction:column;gap:8px;color:var(--text-strong);font-size:16px;font-weight:600}.nav-label[data-astro-cid-vjjnhoij]{font-family:Space Mono,monospace;font-size:11px;color:var(--text-subtle);letter-spacing:1px}@media(max-width:720px){.chapter-nav[data-astro-cid-vjjnhoij]{grid-template-columns:1fr}.chapter-nav-next[data-astro-cid-vjjnhoij]{text-align:left;align-items:start}}.variant-toggle[data-astro-cid-5sgtdjuh]{display:inline-flex;gap:0;margin-top:22px;border:1px solid var(--interactive-border-strong);flex-wrap:wrap}.variant-button[data-astro-cid-5sgtdjuh]{border:none;border-right:1px solid var(--interactive-border-strong);background:transparent;color:var(--text-body);padding:7px 16px;border-radius:0;cursor:pointer;font-family:DM Sans,sans-serif;font-size:13px;font-weight:500;transition:background .15s ease,color .15s ease}.variant-button[data-astro-cid-5sgtdjuh]:last-child{border-right:none}.variant-button--active[data-astro-cid-5sgtdjuh]{background:var(--text-strong);color:var(--surface-base)}.variant-button[data-astro-cid-5sgtdjuh]:not(.variant-button--active):hover{background:var(--interactive-hover);color:var(--text-strong)}
+.sidebar-nav[data-astro-cid-mx5xs5wp]{display:flex;flex-direction:column;font-family:DM Sans,sans-serif;height:100%}.sidebar-fixed-header[data-astro-cid-mx5xs5wp]{flex-shrink:0;padding-top:16px;background:var(--surface-soft);border-bottom:1px solid var(--line-soft);margin-bottom:12px}.sidebar-scrolling-content[data-astro-cid-mx5xs5wp]{flex:1;overflow-y:auto;padding-bottom:24px}.sidebar-fixed-bottom[data-astro-cid-mx5xs5wp]{flex-shrink:0;margin-top:auto}.sidebar-home[data-astro-cid-mx5xs5wp]{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--text-strong);text-decoration:none;padding:4px 16px;margin-bottom:8px}.sidebar-home[data-astro-cid-mx5xs5wp]:hover{color:var(--sky)}.sidebar-divider[data-astro-cid-mx5xs5wp]{border:none;border-top:1px solid var(--line-soft);margin:12px 0}.sidebar-group[data-astro-cid-mx5xs5wp]{margin:4px 0}.sidebar-group-label[data-astro-cid-mx5xs5wp]{display:block;font-family:Space Mono,monospace;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-subtle);padding:4px 16px;margin-bottom:4px}.sidebar-search-wrap[data-astro-cid-mx5xs5wp]{padding:0 16px 8px}.sidebar-search[data-astro-cid-mx5xs5wp]{width:100%;padding:6px 8px;border:1px solid var(--line-strong);background:var(--surface-base);font-family:DM Sans,sans-serif;font-size:12px;color:var(--text-body);border-radius:0;outline:none}.sidebar-search[data-astro-cid-mx5xs5wp]:focus{border-color:var(--sky)}.sidebar-group--secondary[data-astro-cid-mx5xs5wp] .sidebar-group-label[data-astro-cid-mx5xs5wp]{font-size:9px;opacity:.6}.sidebar-group--secondary[data-astro-cid-mx5xs5wp] .sidebar-link[data-astro-cid-mx5xs5wp]{font-size:13px;color:var(--text-subtle);padding:7px 16px}.sidebar-link[data-astro-cid-mx5xs5wp]{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted);text-decoration:none;padding:8px 16px;border-radius:0;transition:background .15s ease,color .15s ease}.sidebar-link[data-astro-cid-mx5xs5wp]:hover{background:var(--surface-soft);color:var(--text-strong)}.sidebar-link--active[data-astro-cid-mx5xs5wp]{background:var(--surface-soft);color:var(--text-strong);border-left:2px solid var(--sky);padding-left:14px}.draft-badge[data-astro-cid-mx5xs5wp]{font-family:Space Mono,monospace;font-size:9px;padding:1px 5px;background:transparent;border:1px solid var(--line-strong);color:var(--text-subtle);border-radius:0;letter-spacing:.5px;margin-left:auto;flex-shrink:0}
+</style>
+<link rel="stylesheet" href="/library/_astro/_slug_.CiKTqRpK.css">
+<link rel="stylesheet" href="/library/_astro/_slug_.DVIEfE_U.css"></head> <body>  <script type="module">document.querySelectorAll(".video-embed--youtube").forEach(e=>{const r=e.querySelector(".video-embed__preview"),a=e.querySelector(".video-embed__frame"),c=e.querySelector(".video-embed__reset"),i=e.querySelector(".video-embed__thumbnail"),l=e.dataset.videoId;if(!r||!a||!c||!l)return;const n=e.dataset.videoTitle==="YouTube video"?e.closest("article")?.querySelector("h1")?.textContent?.trim()||"YouTube 视频":e.dataset.videoTitle||"YouTube 视频";r.setAttribute("aria-label",`播放视频：${n}`);const s=()=>{i&&(i.hidden=!0)};i?.addEventListener("error",s),i?.complete&&!i.naturalWidth&&s(),r.addEventListener("click",o=>{if(o.button!==0||o.metaKey||o.ctrlKey||o.shiftKey||o.altKey||(o.preventDefault(),a.querySelector("iframe")))return;const t=document.createElement("iframe"),d=new URL(`https://www.youtube-nocookie.com/embed/${l}`);d.searchParams.set("playsinline","1"),d.searchParams.set("autoplay","1"),d.searchParams.set("origin",window.location.origin),t.src=d.href,t.title=n,t.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",t.allowFullscreen=!0,t.referrerPolicy="strict-origin-when-cross-origin",r.hidden=!0,c.hidden=!1,a.append(t),t.focus()}),c.addEventListener("click",()=>{a.querySelector("iframe")?.remove(),r.hidden=!1,c.hidden=!0,r.focus()})});</script> <header class="site-header" data-astro-cid-ivsbtrvw> <div class="header-inner" data-astro-cid-ivsbtrvw> <div class="header-left" data-astro-cid-ivsbtrvw> <button id="mobile-sidebar-toggle" class="mobile-menu-toggle" aria-label="Toggle navigation sidebar" type="button" data-astro-cid-ivsbtrvw> <svg width="1em" height="1em" class="header-icon" aria-hidden="true" data-astro-cid-ivsbtrvw="true" data-icon="lucide:menu">   <symbol id="ai:lucide:menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16M4 12h16M4 19h16"/></symbol><use href="#ai:lucide:menu"></use>  </svg> </button> <a href="/library/" class="logo" aria-label="Linguista Library" data-astro-cid-ivsbtrvw> <span class="logo-mark" style="mask-image: url(&#34;/library/img/library-campus.svg&#34;)" aria-hidden="true" data-astro-cid-ivsbtrvw></span> <span class="logo-text" aria-hidden="true" data-astro-cid-ivsbtrvw> <span class="logo-wordmark" style="mask-image: url(&#34;/library/img/linguista-wordmark.svg&#34;)" data-astro-cid-ivsbtrvw></span> <span data-astro-cid-ivsbtrvw>Library</span> </span> </a> </div> <nav class="header-nav" data-astro-cid-ivsbtrvw> <a href="/library/#persons" class="header-link" data-astro-cid-ivsbtrvw><span class="nav-full" data-astro-cid-ivsbtrvw>人物文集</span><span class="nav-short" data-astro-cid-ivsbtrvw>人物</span></a> <a href="/library/#courses" class="header-link" data-astro-cid-ivsbtrvw><span class="nav-full" data-astro-cid-ivsbtrvw>图书与课程</span><span class="nav-short" data-astro-cid-ivsbtrvw>书架</span></a> <a href="/library/#channels" class="header-link" data-astro-cid-ivsbtrvw><span class="nav-full" data-astro-cid-ivsbtrvw>频道精选</span><span class="nav-short" data-astro-cid-ivsbtrvw>频道</span></a> <button id="theme-toggle" class="header-link theme-toggle" aria-label="Toggle Theme" title="切换主题" data-astro-cid-ivsbtrvw> <svg width="1em" height="1em" class="header-icon theme-icon-default" data-astro-cid-ivsbtrvw="true" data-icon="lucide:monitor">   <symbol id="ai:lucide:monitor" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8m-4-4v4"/></g></symbol><use href="#ai:lucide:monitor"></use>  </svg> <svg width="1em" height="1em" class="header-icon theme-icon-light" style="display: none;" data-astro-cid-ivsbtrvw="true" data-icon="lucide:sun">   <symbol id="ai:lucide:sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></g></symbol><use href="#ai:lucide:sun"></use>  </svg> <svg width="1em" height="1em" class="header-icon theme-icon-dark" style="display: none;" data-astro-cid-ivsbtrvw="true" data-icon="lucide:moon">   <symbol id="ai:lucide:moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></symbol><use href="#ai:lucide:moon"></use>  </svg> </button> <a class="parent-link" href="https://linguista.cn/home/?subscribe=1" aria-label="RSS 订阅" data-tooltip="RSS 订阅" data-astro-cid-ivsbtrvw><img src="https://linguista.cn/home/assets/brand/home-logo.svg?v=5" width="36" height="36" alt="" data-astro-cid-ivsbtrvw></a> </nav> </div> </header>  <script type="module">const t=document.getElementById("theme-toggle");if(t){const r=e=>{t.querySelector(".theme-icon-default").setAttribute("style","display: none;"),t.querySelector(".theme-icon-light").setAttribute("style","display: none;"),t.querySelector(".theme-icon-dark").setAttribute("style","display: none;"),e==="light"?t.querySelector(".theme-icon-light").removeAttribute("style"):e==="dark"?t.querySelector(".theme-icon-dark").removeAttribute("style"):t.querySelector(".theme-icon-default").removeAttribute("style")},n=()=>typeof localStorage<"u"&&localStorage.getItem("theme")&&localStorage.getItem("theme")||"default",m=e=>{e==="default"?(document.documentElement.removeAttribute("data-theme"),localStorage.removeItem("theme")):(document.documentElement.setAttribute("data-theme",e),localStorage.setItem("theme",e)),r(e)};let l=n();r(l),t.addEventListener("click",()=>{const e=["default","light","dark"];let o=e.indexOf(l)+1;o>=e.length&&(o=0),l=e[o],m(l)})}</script> <div class="docs-progress" aria-hidden="true" data-astro-cid-mw7aashj> <div class="docs-progress-bar" data-reading-progress-bar data-astro-cid-mw7aashj></div> </div> <div class="docs-layout" data-astro-cid-mw7aashj> <div id="sidebar-overlay" class="mobile-overlay" data-astro-cid-mw7aashj></div> <div id="toc-overlay" class="mobile-overlay" data-astro-cid-mw7aashj></div> <aside class="docs-sidebar" id="docs-sidebar" data-astro-cid-mw7aashj> <nav class="sidebar-nav" aria-label="Collection navigation" data-astro-cid-mx5xs5wp> <div class="sidebar-fixed-header" data-astro-cid-mx5xs5wp> <a href="/library/persons/terencetao" class="sidebar-home" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>关于 Terence Tao</span> </a> <hr class="sidebar-divider" data-astro-cid-mx5xs5wp> <div class="sidebar-search-wrap" data-astro-cid-mx5xs5wp> <input type="search" class="sidebar-search" placeholder="搜索…" data-search-input aria-label="搜索文档" data-astro-cid-mx5xs5wp> </div> </div> <div class="sidebar-scrolling-content" data-astro-cid-mx5xs5wp>  <div class="sidebar-group" data-astro-cid-mx5xs5wp> <span class="sidebar-group-label" data-astro-cid-mx5xs5wp>INTRO</span> <div data-astro-cid-mx5xs5wp> <a href="/library/persons/terencetao/career-advice-overview" class="sidebar-link" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>陶哲轩的职业建议</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>概述</span> </a><a href="/library/persons/terencetao/writing-guide-overview" class="sidebar-link" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>论写作</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>概述</span> </a><a href="/library/persons/terencetao/tao-talks-overview" class="sidebar-link" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>访谈与演讲</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>概述</span> </a> </div> </div> <hr class="sidebar-divider" data-astro-cid-mx5xs5wp>  <div class="sidebar-group" data-astro-cid-mx5xs5wp> <span class="sidebar-group-label" data-astro-cid-mx5xs5wp>访谈与演讲</span> <div data-search-list data-astro-cid-mx5xs5wp> <a href="/library/persons/terencetao/terence-tao-six-math-essentials-harvard" class="sidebar-link" data-search-title="《数学六讲》哈佛读书会" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>《数学六讲》哈佛读书会</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026-11-23</span> </a><a href="/library/persons/terencetao/terence-tao-peter-open-math-os-live" class="sidebar-link" data-search-title="Open Math OS 现场演示" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>Open Math OS 现场演示</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026-11-14</span> </a><a href="/library/persons/terencetao/terence-tao-proof-beauty-future-mathematics" class="sidebar-link" data-search-title="与 Tyler Cowen 谈证明、美与数学的未来" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>与 Tyler Cowen 谈证明、美与数学的未来</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026-11-11</span> </a><a href="/library/persons/terencetao/terence-tao-six-math-essentials" class="sidebar-link" data-search-title="《数学六讲》Numberphile 对谈" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>《数学六讲》Numberphile 对谈</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026-11-09</span> </a><a href="/library/persons/terencetao/terence-tao-math-2-0-proof-and-understanding" class="sidebar-link" data-search-title="数学 2.0：从证明丰裕走向理解丰裕" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>数学 2.0：从证明丰裕走向理解丰裕</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026-11-02</span> </a><a href="/library/persons/terencetao/terence-tao-ai-mathematics-understanding-and-responsibility" class="sidebar-link" data-search-title="当 AI 解出难题之后" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>当 AI 解出难题之后</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026-10-28</span> </a><a href="/library/persons/terencetao/terence-tao-yu-deng-why-build-open-math-model" class="sidebar-link" data-search-title="为什么要构建开放数学模型？" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>为什么要构建开放数学模型？</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026-10-19</span> </a><a href="/library/persons/terencetao/terence-tao-big-math-futurology" class="sidebar-link sidebar-link--active" aria-current="page" data-search-title="大数学与理论研究的未来" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>大数学与理论研究的未来</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026-10-18</span> </a><a href="/library/persons/terencetao/terence-tao-no-more-heroes-ai-mathematics" class="sidebar-link" data-search-title="告别英雄时代" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>告别英雄时代</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026-10-15</span> </a><a href="/library/persons/terencetao/terence-tao-yves-meyer-wavelets-abel-2017" class="sidebar-link" data-search-title="陶哲轩谈伊夫·梅耶的小波" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>陶哲轩谈伊夫·梅耶的小波</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026-10-01</span> </a><a href="/library/persons/terencetao/terence-tao-sair-open-math-model" class="sidebar-link" data-search-title="开放数学模型与 AI 时代的数学价值" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>开放数学模型与 AI 时代的数学价值</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026-09-18</span> </a><a href="/library/persons/terencetao/terence-tao-the-paradox-at-the-heart-of-ai-and-science" class="sidebar-link" data-search-title="AI 与科学的核心悖论" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>AI 与科学的核心悖论</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026-09-03</span> </a><a href="/library/persons/terencetao/terence-tao-kepler-newton-and-the-true-nature-of-mathematical-discovery" class="sidebar-link" data-search-title="开普勒、牛顿与数学发现" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>开普勒、牛顿与数学发现</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026-03-20</span> </a><a href="/library/persons/terencetao/terence-tao-mark-chen-fireside-chat-ipam-ucla" class="sidebar-link" data-search-title="陶哲轩与 Mark Chen 对谈" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>陶哲轩与 Mark Chen 对谈</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2026-03-09</span> </a> </div> </div> <hr class="sidebar-divider" data-astro-cid-mx5xs5wp>  <div class="sidebar-group" data-astro-cid-mx5xs5wp> <span class="sidebar-group-label" data-astro-cid-mx5xs5wp>Terence Tao</span> <div data-search-list data-astro-cid-mx5xs5wp> <a href="/library/persons/terencetao/career-advice-on-the-importance-of-partial-progress" class="sidebar-link" data-search-title="论部分进展的重要性" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>论部分进展的重要性</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2019</span> </a><a href="/library/persons/terencetao/writing-guide-on-local-and-global-errors-in-mathematical-papers-and-how-to-detect-them" class="sidebar-link" data-search-title="关于数学论文中的&#34;局部&#34;与&#34;全局&#34;错误及其检测方法" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>关于数学论文中的&quot;局部&quot;与&quot;全局&quot;错误及其检测方法</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2019</span> </a><a href="/library/persons/terencetao/writing-guide-on-compilation-errors-in-mathematical-reading-and-how-to-resolve-them" class="sidebar-link" data-search-title="数学阅读中的&#34;编译错误&#34;及其解决方法" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>数学阅读中的&quot;编译错误&quot;及其解决方法</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2019</span> </a><a href="/library/persons/terencetao/career-advice-what-are-some-useful-but-little-known-features-of-the-tools-used-in-professional-mathematics" class="sidebar-link" data-search-title="专业数学工具中一些有用但不为人知的功能有哪些？" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>专业数学工具中一些有用但不为人知的功能有哪些？</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2017</span> </a><a href="/library/persons/terencetao/writing-guide-maximising-the-results-to-effort-ratio" class="sidebar-link" data-search-title="最大化成果与努力之比" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>最大化成果与努力之比</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2014</span> </a><a href="/library/persons/terencetao/writing-guide-on-the-strength-of-theorems" class="sidebar-link" data-search-title="论定理的强度" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>论定理的强度</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2014</span> </a><a href="/library/persons/terencetao/writing-guide-implicit-notational-conventions" class="sidebar-link" data-search-title="隐含的符号约定" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>隐含的符号约定</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2014</span> </a><a href="/library/persons/terencetao/writing-guide-write-in-your-own-voice" class="sidebar-link" data-search-title="用自己的声音写作" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>用自己的声音写作</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2010</span> </a><a href="/library/persons/terencetao/career-advice-on-time-management" class="sidebar-link" data-search-title="关于时间管理" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>关于时间管理</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2008</span> </a><a href="/library/persons/terencetao/career-advice-continually-aim-just-beyond-your-current-range" class="sidebar-link" data-search-title="持续瞄准略超出你当前能力范围的目标" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>持续瞄准略超出你当前能力范围的目标</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-batch-low-intensity-tasks-together" class="sidebar-link" data-search-title="将低强度任务批量处理" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>将低强度任务批量处理</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/writing-guide-take-advantage-of-the-english-language" class="sidebar-link" data-search-title="善用英语语言" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>善用英语语言</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/writing-guide-dont-overoptimise" class="sidebar-link" data-search-title="不要过度优化" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>不要过度优化</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-does-one-have-to-be-a-genius-to-do-maths" class="sidebar-link" data-search-title="做数学必须得是天才吗？" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>做数学必须得是天才吗？</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/writing-guide-write-a-rapid-prototype-first" class="sidebar-link" data-search-title="先写一个快速原型" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>先写一个快速原型</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-advice-on-gifted-education" class="sidebar-link" data-search-title="关于天才教育的建议" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>关于天才教育的建议</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/writing-guide-create-lemmas" class="sidebar-link" data-search-title="创建引理" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>创建引理</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-which-universities-should-one-apply-to" class="sidebar-link" data-search-title="应该申请哪些大学？" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>应该申请哪些大学？</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-solving-mathematical-problems" class="sidebar-link" data-search-title="解决数学问题" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>解决数学问题</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-dont-base-career-decisions-on-glamour-or-fame" class="sidebar-link" data-search-title="不要基于光鲜或名声做出职业决定" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>不要基于光鲜或名声做出职业决定</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-dont-be-afraid-to-learn-things-outside-your-field" class="sidebar-link" data-search-title="不要害怕学习领域之外的知识" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>不要害怕学习领域之外的知识</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-dont-prematurely-obsess-on-a-single-big-problem-or-big-theory" class="sidebar-link" data-search-title="不要过早地执着于单一的&#34;大问题&#34;或&#34;大理论&#34;" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>不要过早地执着于单一的&quot;大问题&quot;或&quot;大理论&quot;</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-talk-to-your-advisor" class="sidebar-link" data-search-title="与导师交流" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>与导师交流</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/writing-guide-write-professionally" class="sidebar-link" data-search-title="专业写作" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>专业写作</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-be-considerate-of-your-audience" class="sidebar-link" data-search-title="为你的读者着想" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>为你的读者着想</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-take-the-initiative" class="sidebar-link" data-search-title="主动出击" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>主动出击</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-learn-the-limitations-of-your-tools" class="sidebar-link" data-search-title="了解你工具的局限性" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>了解你工具的局限性</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-enjoy-your-work" class="sidebar-link" data-search-title="享受你的工作" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>享受你的工作</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/writing-guide-use-good-notation" class="sidebar-link" data-search-title="使用良好的记法" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>使用良好的记法</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-be-flexible" class="sidebar-link" data-search-title="保持灵活性" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>保持灵活性</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-be-patient" class="sidebar-link" data-search-title="保持耐心" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>保持耐心</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-advice-on-mathematics-competitions" class="sidebar-link" data-search-title="关于数学竞赛的建议" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>关于数学竞赛的建议</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/writing-guide-describe-the-results-accurately" class="sidebar-link" data-search-title="准确描述结果" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>准确描述结果</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-work-hard" class="sidebar-link" data-search-title="努力工作" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>努力工作</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-attend-talks-and-conferences-even-those-not-directly-related-to-your-work" class="sidebar-link" data-search-title="参加讲座和会议，即使与你的工作没有直接关系" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>参加讲座和会议，即使与你的工作没有直接关系</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-use-the-wastebasket" class="sidebar-link" data-search-title="善用废纸篓" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>善用废纸篓</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-study-at-different-places" class="sidebar-link" data-search-title="在不同地方学习" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>在不同地方学习</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-be-professional-in-your-work" class="sidebar-link" data-search-title="在工作中保持专业" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>在工作中保持专业</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-learn-the-power-of-other-mathematicians-tools" class="sidebar-link" data-search-title="学习其他数学家工具的力量" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>学习其他数学家工具的力量</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-learn-and-relearn-your-field" class="sidebar-link" data-search-title="学习和重新学习你的领域" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>学习和重新学习你的领域</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-be-sceptical-of-your-own-work" class="sidebar-link" data-search-title="对自己的工作保持怀疑态度" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>对自己的工作保持怀疑态度</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/writing-guide-submit-a-final-draft-not-a-first-draft" class="sidebar-link" data-search-title="提交最终稿，而非初稿" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>提交最终稿，而非初稿</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/writing-guide-proofread-and-double-check-your-paper-before-submission" class="sidebar-link" data-search-title="提交前请仔细校对和检查您的论文" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>提交前请仔细校对和检查您的论文</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/writing-guide-give-appropriate-amounts-of-detail" class="sidebar-link" data-search-title="提供适当程度的细节" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>提供适当程度的细节</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-think-ahead" class="sidebar-link" data-search-title="提前思考" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>提前思考</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-theres-more-to-mathematics-than-rigour-and-proofs" class="sidebar-link" data-search-title="数学不止于严谨与证明" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>数学不止于严谨与证明</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-theres-more-to-mathematics-than-grades-and-exams-and-methods" class="sidebar-link" data-search-title="数学远不止成绩、考试和方法" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>数学远不止成绩、考试和方法</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-talks-are-not-the-same-as-papers" class="sidebar-link" data-search-title="演讲不同于论文" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>演讲不同于论文</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/writing-guide-use-the-introduction-to-sell-the-key-points-of-your-paper" class="sidebar-link" data-search-title="用引言&#34;推销&#34;论文的关键要点" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>用引言&quot;推销&quot;论文的关键要点</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/writing-guide-organise-the-paper" class="sidebar-link" data-search-title="组织论文" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>组织论文</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-make-your-work-available" class="sidebar-link" data-search-title="让你的工作为人所知" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>让你的工作为人所知</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-write-down-what-youve-done" class="sidebar-link" data-search-title="记录你的工作" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>记录你的工作</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-on-writing" class="sidebar-link" data-search-title="论写作" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>论写作</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/writing-guide-motivate-the-paper" class="sidebar-link" data-search-title="论文的动机" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>论文的动机</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/writing-guide-submit-to-an-appropriate-journal" class="sidebar-link" data-search-title="选择合适的期刊投稿" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>选择合适的期刊投稿</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a><a href="/library/persons/terencetao/career-advice-ask-yourself-dumb-questions-and-answer-them" class="sidebar-link" data-search-title="问自己一些愚蠢的问题——然后回答它们！" data-astro-cid-mx5xs5wp> <span data-astro-cid-mx5xs5wp>问自己一些愚蠢的问题——然后回答它们！</span> <span class="draft-badge" data-astro-cid-mx5xs5wp>2007</span> </a> </div> </div> <hr class="sidebar-divider" data-astro-cid-mx5xs5wp>  </div> <div class="sidebar-fixed-bottom" data-astro-cid-mx5xs5wp>  </div> </nav> <script type="module">document.querySelectorAll("[data-search-input]").forEach(n=>{const e=n,t=e.closest(".sidebar-nav");t&&e.addEventListener("input",()=>{const s=e.value.trim().toLowerCase();t.querySelectorAll("[data-search-list] [data-search-title]").forEach(a=>{const r=!s||(a.dataset.searchTitle??"").toLowerCase().includes(s);a.style.display=r?"":"none"})})});const o=document.querySelector(".sidebar-scrolling-content");if(o){const e=`linguista-sidebar-scroll-${window.location.pathname.split("/").slice(0,3).join("/")}`,t=sessionStorage.getItem(e);if(t)o.scrollTop=parseInt(t,10);else{const s=document.querySelector(".sidebar-link--active");s&&s.scrollIntoView({block:"center"})}window.addEventListener("beforeunload",()=>{sessionStorage.setItem(e,o.scrollTop.toString())})}</script>  </aside> <main class="docs-content" data-astro-cid-mw7aashj>   <article class="chapter-article reader-article" data-astro-cid-drk2hjfo> <header class="reader-header" data-astro-cid-drk2hjfo> <h1 data-astro-cid-drk2hjfo>大数学与理论研究的未来</h1> <div class="reader-meta" data-astro-cid-drk2hjfo> <span data-astro-cid-drk2hjfo>Terence Tao</span> <span data-astro-cid-drk2hjfo>2026-10-18</span> </div>    </header> <section class="reader-content chapter-prose reader-prose--zh reader-content--active" data-variant-panel data-variant-key="default" lang="zh-CN" data-astro-cid-drk2hjfo> <div class="chapter-prose"> <p><a id="abstract"></a></p>
+<h2 id="摘要">摘要</h2>
+<p>陶哲轩在与 Dawn Nakagawa 的对谈中，回顾自己的成长与数学研究经历，并提出从小型合作走向开放、大规模协作的“大数学”愿景。他以格林—陶定理、众包代数实验和人工智能辅助研究为例，说明数学突破不仅来自个人灵感，也依赖知识共享、容许失败的文化与可靠的验证机制。对话同时讨论人工智能带来的认知依赖、大学教学与科研经费的不确定性，以及机器智能如何改变人类对自身的理解。</p>
+<p><a id="overview"></a></p>
+<h2 id="概述">概述</h2>
+<ul>
+<li>从跳级五年的求学经历出发，陶哲轩解释自己为何偏爱抽象、精确的问题，也回顾数学研究从孤独天才叙事走向开放协作的变化。</li>
+<li>围绕素数、孪生素数猜想和格林—陶定理，他介绍“结构与随机性的二分”、存在性证明，以及纯数学与密码学等实际应用之间的联系。</li>
+<li>他把数学探索描绘为允许低成本失败、反复分支和共同试错的过程，并主张公开不完整成果与失败尝试，减少文献检索等环节的重复劳动。</li>
+<li>在两千两百万道代数问题的协作实验及日常人工智能使用中，他看到“大数学”的可能性，同时强调专家拆分任务、检查输出、重组工作流程的重要性。</li>
+<li>对话最后转向心智锻炼、学生评估、科研资助与产业合作，并讨论人工智能对智能概念及人类身份认同的冲击。</li>
+</ul>
+<p><a id="contents"></a></p>
+<h2 id="目录">目录</h2>
+<ul>
+<li><a href="#section-1">开场：数学如何把人工智能与真实连接起来</a></li>
+<li><a href="#section-2">在澳大利亚成长与加速求学</a></li>
+<li><a href="#section-3">纯数学、波动方程与磁共振成像</a></li>
+<li><a href="#section-4">跳级之后，怎样获得同龄人的生活</a></li>
+<li><a href="#section-5">为什么数学从小就吸引他</a></li>
+<li><a href="#section-6">从抽象问题到数学职业</a></li>
+<li><a href="#section-7">数学家如何选择问题，学科又如何共同发展</a></li>
+<li><a href="#section-8">从孤独天才的叙事，走向开放协作</a></li>
+<li><a href="#section-9">素数、格林—陶定理与隐藏的规律</a></li>
+<li><a href="#section-10">数学中的发现、创造与日常工作</a></li>
+<li><a href="#section-11">低成本的失败，与论文背后看不见的过程</a></li>
+<li><a href="#section-12">橡皮鸭调试法，以及共同思考产生的能力</a></li>
+<li><a href="#section-13">减少重复劳动，让数学研究走向现代化</a></li>
+<li><a href="#section-14">数学软件的门槛，人工智能能否降低</a></li>
+<li><a href="#section-15">计算规模的变化，与实验数学的兴起</a></li>
+<li><a href="#section-16">“大数学”意味着什么，人机协作怎样奏效</a></li>
+<li><a href="#section-17">人工智能的另一面：认知饮食与心智锻炼</a></li>
+<li><a href="#section-18">怎样在教学中使用人工智能，怎样重新评价学习</a></li>
+<li><a href="#section-19">经费削减之外，更严重的是失去确定性</a></li>
+<li><a href="#section-20">数学人才进入科技公司：机会、边界与新的合作</a></li>
+<li><a href="#section-21">与社交媒体公司的合作，能带来什么研究</a></li>
+<li><a href="#section-22">我们今天误解了什么：人工智能重新定义智能</a></li>
+<li><a href="#section-23">节目介绍与相关资料</a></li>
+<li><a href="#section-24">节目制作</a></li>
+<li><a href="#information">基本信息</a></li>
+</ul>
+<figure class="video-embed video-embed--youtube" data-video-id="YNH6lwcXw7M" data-video-title="YouTube video"><div class="video-embed__frame"><a href="https://www.youtube.com/watch?v=YNH6lwcXw7M" target="_blank" rel="noopener" class="video-embed__preview" aria-label="播放视频：YouTube video"><img src="https://i.ytimg.com/vi/YNH6lwcXw7M/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async" class="video-embed__thumbnail"><span class="video-embed__play" aria-hidden="true">▶</span><span class="video-embed__preview-label">YouTube 视频 · 点击播放</span></a></div><figcaption class="video-embed__caption"><a href="https://www.youtube.com/watch?v=YNH6lwcXw7M" target="_blank" rel="noopener" class="video-embed__external">在 YouTube 打开</a><button type="button" hidden class="video-embed__reset">返回视频封面</button></figcaption></figure>
+<p><a id="section-1"></a></p>
+<h2 id="开场数学如何把人工智能与真实连接起来">开场：数学如何把人工智能与真实连接起来</h2>
+<p><strong>主持人（Dawn Nakagawa）：</strong> 大家好，我是《Futurology》的主持人 Dawn Nakagawa。这一期，我采访了陶哲轩。陶哲轩是世界知名的数学家，曾获得被誉为“数学界诺贝尔奖”的菲尔兹奖。理论数学的前沿，正是他最能施展才华的地方。</p>
+<p>不过，陶哲轩很有意思的一点是，他非常重视合作的过程，而且一直在努力推动协作式数学研究。这并不是一件理所当然的事。近年来，我们看到越来越多数学系的人才进入科技公司，理论转化为市场上实际产品的速度也越来越快。</p>
+<p>我们还谈到了人工智能：它究竟能怎样帮助我们？它会不会跃过人类能力的边界？陶哲轩认为，这不会很快发生。人工智能确实可能非常擅长某些事情，尤其是在推进一套理论之前，帮助研究者弄清楚其他理论研究者已经做了什么，大幅减少其中繁琐的工作。</p>
+<p>人工智能可以在这些方面提供帮助，但真正发现某个命题是否成立，或者证明一个定理，仍然需要人类介入。在陶哲轩看来，这种局面还会持续一段时间。接下来，请收听我在《Futurology》与陶哲轩的对话。</p>
+<p><a id="section-2"></a></p>
+<h2 id="在澳大利亚成长与加速求学">在澳大利亚成长与加速求学</h2>
+<p><strong>主持人：</strong> 陶哲轩，欢迎来到《Futurology》。</p>
+<p><strong>陶哲轩：</strong> 很高兴来到这里。</p>
+<p><strong>主持人：</strong> 很高兴今天能和你聊一聊。我想先从你的背景说起，也把你放到我们接下来要讨论的时代背景中：我们正处在一个很特别的技术与社会共同演化的时刻，或者说，一个革命性的时刻。先给我们介绍一下你自己吧。</p>
+<p><strong>陶哲轩：</strong> 好的。我出生于20世纪70年代的澳大利亚。我的父母来自中国，但我是在澳大利亚长大的，成长环境相当西化。我小时候看了很多美国电视节目，所以我的口音尤其奇怪，是澳大利亚口音和美国口音的混合。</p>
+<p>我一直喜欢数学，喜欢数字。很小的时候，我就参加数学竞赛，也接受过资优测试，实际上跳了五级，所以我的教育进度非常快。我的父母为此不得不与学校校长、当地大学的系主任反复沟通、协调。</p>
+<p>我从当地大学毕业时大概是16岁，随后去了普林斯顿读研究生。拿到普林斯顿的博士学位后，我来到加州大学洛杉矶分校，最初做博士后，后来晋升为副教授，再成为正教授。我在这里已经待了大约30年，很喜欢这里。</p>
+<p>就研究背景而言，我做的大部分都是非常纯粹的数学。我研究数字中的规律。</p>
+<p><a id="section-3"></a></p>
+<h2 id="纯数学波动方程与磁共振成像">纯数学、波动方程与磁共振成像</h2>
+<p><strong>陶哲轩：</strong> 我也求解各种与物理有关的波动方程，但并不亲自直接从事它们的物理应用。不过，我做的一些工作偶尔也会产生实际用途。</p>
+<p>我曾在加州大学洛杉矶分校的数学研究所参与一个项目。对我而言，那只是一个涉及矩阵运算、求解线性方程的数学难题，后来却对加快磁共振成像，也就是 MRI 扫描，很有帮助。新一代磁共振设备在完成高质量扫描时，速度可以达到过去的十倍，因为它们采用了我们参与开发的算法。</p>
+<p>最近，我开始对新的数学研究方式感兴趣：怎样把各种新兴技术纳入数学研究，包括人工智能、形式化证明验证，以及那些已经成功用于开发开源软件的协作平台。我认为，它们也可以用于发展协作式数学研究。</p>
+<p>我确实相信，数学可以成为一项比过去更广泛、更能与现实产生联系的活动。过去，许多数学研究基本上只有数学博士能够参与，因为即使只是理解我们研究的问题，往往也需要大量技术背景。但借助新的工具和技术，我们可以扩大能够真正为数学项目作出贡献的人群。</p>
+<p>我已经发起了几个众包数学项目，到目前为止，它们既有趣，也相当成功。</p>
+<p><strong>主持人：</strong> 我很想深入聊聊这种协作式数学。不过，在此之前，我想回到你很小就跳了五级这件事。你在社交方面是怎样适应的？我有一位表亲，也是大约13岁就上了大学，我们发现，这对他来说非常困难。</p>
+<p><a id="section-4"></a></p>
+<h2 id="跳级之后怎样获得同龄人的生活">跳级之后，怎样获得同龄人的生活</h2>
+<p><strong>陶哲轩：</strong> 是的。对我有效的方式，是我们与当地小学、中学和大学做了一套非常复杂的安排：有些课，我仍然跟着自己原本的年级上。比如体育课，我可不会在体育方面跳级。人文学科，包括英语、法语等，也是在正常年级学习；物理和数学则加速。</p>
+<p>这意味着，我上小学时，母亲要开车送我去当地中学上某些课，然后再回来。排课非常复杂，成绩该怎样评定也很复杂。上了中学以后，我又会去当地大学修一些课。</p>
+<p>也许有一点对我有利：那是在20世纪80年代、90年代，还没有那么多成体系的资优教育项目，大家都是边做边想办法。好处之一是，这套非常复杂的课程安排居然获得了批准。当时没有那么多规章，这种临时协调的方式对我很有效。当然，我不认为它很容易大规模推广。</p>
+<p>因此，我仍然经常与同龄人交往。而且那还是一个这样的年代：如果你想找人玩，打个电话，或者直接去敲门就好了，不需要在社交媒体上提前安排。所以，我是有社交生活的。</p>
+<p>不过，由于我比其他孩子早四五年完成中学学业，确实错过了一些青少年时期的经历。比如，没能参加中学的联谊舞会，让我很遗憾。但后来去普林斯顿读研究生时，我经常和本科生来往，参加电影社、桥牌社等活动。所以，我觉得自己大致也经历了大多数人会经历的那些社交生活，只是顺序有些打乱了。</p>
+<p><strong>主持人：</strong> 只是顺序不一样。</p>
+<p><strong>陶哲轩：</strong> 对。</p>
+<p><strong>主持人：</strong> 那么，你是不是很小就知道，自己想做的就是数学，想成为数学家？</p>
+<p><a id="section-5"></a></p>
+<h2 id="为什么数学从小就吸引他">为什么数学从小就吸引他</h2>
+<p><strong>陶哲轩：</strong> 是的。从我记事起，我就喜欢与数学有关的东西，比如逻辑谜题、纸牌游戏，其实各种游戏都喜欢，包括电子游戏。我喜欢答案明确、能够清楚判断对错的谜题和问题：这是对的，那是错的。我也喜欢解决问题的过程。</p>
+<p>小时候，人文学科让我很吃力，因为问题往往非常开放，我不太明白到底在问什么。我记得有一年英语课让我们写暑假做了什么，或者写一写自己的家。我不知道该怎样理解这种要求，最后好像只是列出了家里所有房间，以及每个房间里有什么。我完全按字面意思理解了。</p>
+<p>如果现在再写一遍，我想自己应该能写得好一些。但当时，只要事情不够精确，我就会有些困难，所以数学特别能引起我的共鸣。我记得六七岁时，如果我坐不住，父母就会给我一本数学练习册，我便会坐下来做算术题，而且是真的喜欢做。</p>
+<p>我还记得，小学数学课上会有五到十分钟的口算，要尽快回答“12加25等于多少”之类的问题。我确实喜欢这些，也喜欢数学竞赛。</p>
+<p><strong>主持人：</strong> 不过，这种兴趣有时会发展为物理、工程，或者某种应用领域，当然，做的仍然有很多数学。有没有某个时刻，比如解出一道题、完成一个证明时的那种喜悦，让你确定：这就是我想做一辈子的事情？</p>
+<p><a id="section-6"></a></p>
+<h2 id="从抽象问题到数学职业">从抽象问题到数学职业</h2>
+<p><strong>陶哲轩：</strong> 我喜欢抽象。我喜欢拿到一个问题，把不相关的部分都剥离掉，只留下：这是 X、Y、Z，它们有这样的关系。然后去摆弄那些极度简化的东西，也就是我们所说的“玩具模型”。它们未必接近现实，却很有启发性。</p>
+<p>我喜欢做这一端的工作。事实上，很长一段时间，数学能够影响现实世界这件事并没有让我特别感兴趣。现在我当然关心，但当时我喜欢的是抽象的解谜过程，就像有人喜欢填字游戏，或者擅长玩魔方一样。我享受的就是其中的智力挑战。</p>
+<p>我的父母确实担心过。他们觉得，也许做一些更接近物理或工程的事情，会更容易找到工作。还有一个问题是，周围的人都不太知道数学家到底做什么，甚至不知道数学能不能成为一种职业。</p>
+<p>我记得，小时候有人问我长大想做什么，我说：“也许当个店主吧，因为我可以算账，也能做库存清点。”我隐约知道大学里有数学教授，但脑中曾有一种想象：也许有一个由资深数学家组成的秘密委员会，专门给大家分派题目，就像布置作业一样，只不过难度高得多。</p>
+<p>后来，在某个时刻我才知道，研究数学的人其实是自己选择问题，追随自己的求知欲。</p>
+<p><a id="section-7"></a></p>
+<h2 id="数学家如何选择问题学科又如何共同发展">数学家如何选择问题，学科又如何共同发展</h2>
+<p><strong>陶哲轩：</strong> 当然，别人会不会对你做的事情感兴趣，是另一个问题。但数学研究并没有一个中央机构来安排，你可以去追寻自己认为有趣的东西，而且还能以此为职业，这对我来说是一个很大的发现。</p>
+<p><strong>主持人：</strong> 就像是一场可以自己决定方向的探索之旅。</p>
+<p><strong>陶哲轩：</strong> 对，不过，你也是一个共同体的一部分。如果你只做自己喜欢、却没有任何其他人关心的事情，那么就不会有人引用你的工作，不会有人邀请你作报告。到某个阶段，你找工作、晋升之类的事情也会遇到困难。</p>
+<p>所以，它既是分散自主的，也存在一个共同体。你会参加会议，了解其他数学家在做什么，觉得什么有趣。偶尔，你会发现很合适的连接：某位数学家正在为一个问题苦恼，而你恰好知道一种工具，正是他需要的，或者非常接近。于是大家开始交流，希望能形成合作。</p>
+<p>反过来也一样：我遇到了困难，但因为听过某个人讲一个相关问题，就知道可以找他求助。</p>
+<p>数学界已经逐渐建立起一种小规模合作的文化。几个世纪以前，数学非常个人化。人们会严密守护自己独有的数学技巧，不希望被别人抢先。后来有了学术期刊，我们逐步形成一种文化，先是认为合作没有问题，后来进一步鼓励合作，也鼓励尽早分享工作。</p>
+<p>实际上，即使成果尚不完整，早点分享也常常比一直等到最后、只拿出一项决定性的完整成果，能产生更大的影响。在我一生中，我确实看到数学越来越开放。至少现在，我们会以两三个人的小组开展合作。</p>
+<p>不过，我们仍然落后于其他科学领域。其他学科已经开始做五十人、一百人的大型合作。我记得，关于希格斯玻色子的那篇论文，作者总数大概有五千人。其他领域已经有“大科学”项目，而我们才刚刚开始尝试“大数学”，让几百个可能互不相识的人一起工作。</p>
+<p><strong>主持人：</strong> 所以，你亲眼看到这门学科经历了这种变化，从更孤立的个人研究走向更多合作。你欢迎这种变化吗？会为它感到兴奋吗？</p>
+<p><a id="section-8"></a></p>
+<h2 id="从孤独天才的叙事走向开放协作">从孤独天才的叙事，走向开放协作</h2>
+<p><strong>陶哲轩：</strong> 非常欢迎。</p>
+<p>这是我过去没有充分认识到的东西。我小时候读数学故事，看到的常常是某种数学英雄史：高斯、欧拉等传奇人物。他们总是以独立个体的形象出现，而且通常是男性。典型形象是一个饱受折磨的天才，没人知道他在做什么，然后他突然拿出惊人的发现，震撼整个世界。</p>
+<p>我很深地受到这种数学史叙事的影响。你可以把它叫作数学的浪漫主义时代：个人英雄探索一个个新世界。</p>
+<p>但现在，数学已经是一门成熟得多的学科。我们往往在非常成熟、已有大量文献的领域里工作。重要的并不是某个人凭空产生天才般的想法，而是理解别人已经做了什么，用新的方式把它们组合起来，寻找数学与其他科学，甚至与人文学科、产业，以及公众关心的问题之间的联系。</p>
+<p><strong>主持人：</strong> 所以，你的合作对象并不总是数学家，也可能来自其他学科？</p>
+<p><strong>陶哲轩：</strong> 是的。我刚才提到的磁共振成像研究，就是与一位统计学家、一位电气工程师一起完成的。当然，他们仍然主要是科学家。</p>
+<p>现在我主持的众包项目，通常有二十到五十人参加。其中大多数人，我其实从没见过。有些是职业数学家，有些是学生，有些来自计算机科学等相邻领域。还有一些人以前学过数学，也喜欢数学，但后来去了产业界，比如在科技公司工作。他们仍然想把数学作为爱好继续参与，而且也具备相关基础。</p>
+<p>我们收到过各种各样的贡献。有些项目包含可视化部分：我们不只是产生数学数据，还希望用漂亮的方式把它们呈现出来。于是，有用户界面或者平面设计背景的人也会主动帮忙。</p>
+<p>当你开放一个项目，让它成为众包项目，并且让它包含多个方面的工作，就会有新类型的人参与进来。他们可能并不懂项目中技术性很强的数学部分，却可以帮助完成其他许多方面。</p>
+<p><strong>主持人：</strong> 我不确定数学应该被称为一种发现过程，还是创造过程。不过，你曾在素数研究方面取得一个特别重要的突破。能不能用普通人也能理解的语言，说说那是什么？</p>
+<p><a id="section-9"></a></p>
+<h2 id="素数格林陶定理与隐藏的规律">素数、格林—陶定理与隐藏的规律</h2>
+<p><strong>陶哲轩：</strong> 好的。那大概是我最广为人知的成果，叫作格林—陶定理，是我和本·格林在2004年一起证明的。</p>
+<p>我一直对数论和素数着迷。素数是大于1、除了1之外不能被任何更小的正整数整除的整数，比如2、3、5、7。它们是人类研究时间最久的数学对象之一，古希腊人就研究过它们，但我们对素数仍然有太多不了解的地方。</p>
+<p>因为真正把素数写出来时，它们似乎不遵循任何能够辨认出的规律。有时彼此很近，有时相距很远。有一个已经存在大约三百年、至今没有解决的问题，叫作“孪生素数猜想”。两个相差2的素数，比如11和13，称为孪生素数。我们相信，孪生素数有无穷多对，永远不会用尽。</p>
+<p>我们已经找到了数百万对，可它们会不会终有一天不再出现？我们认为不会，但无法证明。数论已经发展了几个世纪，这个问题仍然解不出来，实在让人有些懊恼。我非常想解决它，这是我最喜欢的问题之一。</p>
+<p>我和本能做到的是：虽然我们还不能证明这种孪生素数会不断出现，却能证明素数中存在另一类模式，也就是等差数列。它指的是间隔相同的一组数，比如3、5、7，间隔都是2。你可以找到由三个、四个等距素数组成的数列。</p>
+<p>我记得，在我们证明定理以前，人们实际找到的这类数列，世界纪录大约是21项或者22项。而我们证明了，这种数列的长度没有上限：无论你要求多少项，都存在相应长度的素数等差数列。</p>
+<p>我们的做法是这样的：当时我们并不知道，素数究竟是随机分布的，还是具有很强的结构，遵循某些我们尚未意识到的秘密规律。但我们找到了一种证明技巧，现在称为“结构与随机性的二分”。要么素数具有大量结构，要么它们非常随机；无论是哪种情况，我们都能证明这些等差数列必然存在。</p>
+<p>因此，不管素数表现成什么样，它们都不得不包含这样的数列。这就是我们解决问题的方式。此后，这项技巧也被应用于其他问题。现在，我们对素数也有了进一步认识：它们更接近随机分布，而不是由某种强结构支配。这项工作可以说开启了后续二十年的研究。</p>
+<p><strong>主持人：</strong> 在非常大的尺度上，你也能找到这些等差数列吗？我知道，最近人们用计算机找到了一些极大的素数，好像有五千六百万位之类。即使在这么大的尺度上，这些数列仍然存在？</p>
+<p><strong>陶哲轩：</strong> 理论上是的。不过，我们并没有给出一个公式，让你准确定位它们。</p>
+<p>粗略来说，我们的做法是把所有素数放进一个大盒子里，然后用某种方式“称量”其中有多少等差数列。假设你有个大盒子，不知道里面装了什么，但称一称，发现它很重，你就知道里面肯定有东西；可这并不能告诉你，那究竟是什么，或者在盒子的哪个位置。</p>
+<p>我们就是以类似的间接方式，探测隐藏在素数中的等差数列有多少，但我不能准确告诉你它们在哪里。</p>
+<p><strong>主持人：</strong> 明白。</p>
+<p><strong>陶哲轩：</strong> 这也是一个更大故事的一部分。我们现在会实际使用素数，但数论过去曾被视为数学中最抽象的领域之一。</p>
+<p>20世纪初，有一位数学家叫 G. H. 哈代。他是和平主义者，非常厌恶第一次世界大战，甚至曾为自己从事数论而自豪，因为他觉得，这个领域不可能有任何现实应用，也就不可能被用于坏的目的。</p>
+<p>但事实上，素数的性质如今对我们的密码算法至关重要。不是全部密码算法，但至少其中很大一部分如此。如果你要通过互联网加密数据，比如信用卡号码，要进行一笔安全交易，那么你的数据就会利用素数的性质进行打乱和处理。</p>
+<p>这背后是一种经过数十年研究不断强化的认识：素数具有很好的随机化性质。有些围绕素数的运算可以把东西混合得很好，从而把数据隐藏起来。我所做的研究，也是在为这种认识增加支持。</p>
+<p>当然，也许有一天会出现一个出人意料的结果：素数遵循某种我们从未预料到的秘密模式。如果真是如此，半个密码学领域就会突然受到质疑：一些我们认为安全的算法，也许实际上存在可以利用的后门。</p>
+<p>不过，一个世纪以来的研究所指向的恰恰是相反的方向：素数似乎没有这种隐藏模式。所以，到目前为止，我认为现有密码算法看起来还是相当安全的。至少在量子计算机真正到来之前如此，而那又是另一个话题了。</p>
+<p><strong>主持人：</strong> 对，那是另一个话题。我想聊聊做数学的过程。数学、寻找证明，究竟是一种发现过程，还是创造过程？</p>
+<p><a id="section-10"></a></p>
+<h2 id="数学中的发现创造与日常工作">数学中的发现、创造与日常工作</h2>
+<p><strong>陶哲轩：</strong> 两者都有。确实有一些规律在那里，等待人们发现。但找到它们的过程，又是非常人类化的。</p>
+<p>你常常得钻进已有文献，看看其他人围绕这个问题做过什么。你会不断尝试，给事物起名字，试着系统地组织思路，为问题建立一种叙述。我们经常会把数学对象拟人化。</p>
+<p>比如，你想求解某个方程，像 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mi>y</mi><mo>=</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">x + y = z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.044em;">z</span></span></span></span>。对没有受过训练的人来说，它们只是符号。但你可能会说：“这一项是好的，我们希望它占主导；那一项是误差项，我们要设法消除它，或者把它变得很小。”某种程度上，我们会赋予这些项各自的“性格”。</p>
+<p>众所周知，数学并不是一个以情感体验见长的学科，但每个人确实都有自己理解事物的内部语言。我记得有一句话，好像出自 W. E. B. 杜波依斯：当你理解了数学，看到的就不再是数字和符号，而是意义。</p>
+<p>所以，数学其实是一种语言，只不过外观很奇特，而且是为精确表达而设计的。它试图捕捉我们能够对现实世界作出的陈述。比如说 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mi>y</mi><mo>=</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">x + y = z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.044em;">z</span></span></span></span>，无论 z 代表什么，我们都是在说：它以某种方式由 x 和 y 组成。数学就是一种把想法表达得非常精确，并将它们传达给别人的方式。</p>
+<p><strong>主持人：</strong> 那么，数学家的一个工作日是什么样的？</p>
+<p><strong>陶哲轩：</strong> 我们要上课，要做行政工作，要指导学生，还要参加学术会议，这些都属于日常的一部分。然后，我们会研究问题。</p>
+<p>有时，你就是拿着纸笔坐下来，对自己说：“我试试用这个方法来解。”试着试着就卡住了。但你接着问：“为什么卡住？”可能是因为没有考虑到某个现象，也可能是出现了一个例子，说明这个方法从一开始就不可能成功。那么，我就得想办法绕过那个例子。</p>
+<p>对我来说，这种解题过程有点像小时候玩电子游戏。我成长的那个年代，互联网几乎还不存在，没办法轻易上网查攻略。如果在某个游戏里卡住，也许一个恰好玩过同样游戏的朋友能帮你。但通常，你只能困在那里，反复尝试同一道谜题，换一种做法，又卡住。可能过了几个月，才终于破解。</p>
+<p>当你最终找到正确组合时，那种满足感很强。你就是不停试验：试一个方法，不行；再换一个，还是不行。</p>
+<p>数学有一个很好的特点，与许多其他学科不同：失败的代价非常低。</p>
+<p><a id="section-11"></a></p>
+<h2 id="低成本的失败与论文背后看不见的过程">低成本的失败，与论文背后看不见的过程</h2>
+<p><strong>陶哲轩：</strong> 如果你是一名工程师，被要求建一座桥，结果桥塌了，那就麻烦了。如果你是一名外科医生，要做心脏手术，却切错了地方，也会有严重后果。</p>
+<p>但如果你是一名数学家，被要求求解一个方程，而你的解法行不通，那就重新开始。没有同样的代价。</p>
+<p>这也是我们必须教给学生的东西，因为他们在别的课堂上经常学到的是：不能失败，这很重要，一旦搞砸了，就会有人受害。数学却是少数几个你可以尝试看上去很笨的办法、可以失败、可以从中学习，然后再试一次的地方。</p>
+<p><strong>主持人：</strong> 从这个角度说，它像是一个可以安全探索和玩耍的空间。在理论数学这样的领域，经历多次失败似乎是必不可少的。这也是数学家之间的文化常态吗？也就是说，你本来就应该在不断出错的过程中推进问题，直到找到出路。</p>
+<p><strong>陶哲轩：</strong> 关起门来研究的时候，确实是这样。但当我们发表论文、作报告时，通常只展示最后真正奏效的那一套东西。</p>
+<p>那是经过高度剪辑的过程。就像你有时看到一些精彩的高难度投篮视频，再去看幕后花絮，才发现此前有一百次都没成功。但正因为这些尝试，最后才做对了，而视频采用的是成功的那一次。</p>
+<p>数学也有点像这样。正因如此，研究生有时会出现“冒名顶替综合征”。他们读着那些大名鼎鼎的数学家写的论文，看到惊人的定理，再看看自己研究的定理，却是一次次失败，于是觉得：“我永远也不可能像这些作者那么厉害。”</p>
+<p>他们往往不知道，那些作者也走过很多死胡同，只是没有把它们发表出来。</p>
+<p>我开展的这些开放协作项目，有一个小小的附带好处：由于我们在互联网上公开工作，整个过程都会留下记录，包括每一个只走了一半的步骤、来来回回的讨论，以及“这个不行，但这一部分有用，先保留下来；如果找到另一个能和它配合的东西，也许就能解决整个问题”。</p>
+<p>传统出版物常常把这些过程隐藏起来，而在开放项目中，它们都是公开可见的。后来确实有学生给我反馈。他们并没有参与，只是旁观整个过程逐步展开，却很感激终于看到了幕布后面发生的事情。</p>
+<p><strong>主持人：</strong> 这一定很有帮助。你刚才描述的过程，跟我原先想象的有些不同。我总以为，解决问题是一种累积过程：此前做的都正确，你只是继续寻找下一步。但实际并不是这样，对吧？你可能需要往回走，也可以把问题拆成许多小块。</p>
+<p><strong>陶哲轩：</strong> 它更像一棵树，并不是一条直线。</p>
+<p><strong>主持人：</strong> 不是线性的。</p>
+<p><strong>陶哲轩：</strong> 对。它确实有累积性，你会用到此前做过的一部分工作，但其中一些是死路，另一些只有部分价值。你要保留有用的部分，去掉没用的部分。</p>
+<p>这很像头脑风暴，尤其在多人参与时特别有趣。大家不断抛出想法，通常它们都不能直接解决问题，但有时你会感觉到：问题似乎被稍微推动了一点。</p>
+<p>就像你想打开一扇卡住的门，转门把手没用，用力推也没用。然后你试了某个办法，门动了一下，虽然仍然卡着，但毕竟有了动静。好，这就说明有一点进展。接下来，怎样把它和别的办法结合起来？</p>
+<p>我不知道你有没有玩过密室逃脱。它们最近很流行，也是一种解决问题的活动，真的让我想起团队一起攻克数学问题的过程。你会从那些不完全成功的尝试中得到微妙的线索：虽然没有解决，但某件事情发生了，而那是一个好迹象。</p>
+<p><strong>主持人：</strong> 这样共同研究问题时，一起迎来突破一定很有趣。我儿子在麦吉尔大学学数学，他也说起过这种体验。他们有一个学习空间，学生会聚在一起。有人在做一个问题，其他人就过来帮忙，形成一种团队合作。他特别喜欢，说那是他最喜欢的学习地点。</p>
+<p><strong>陶哲轩：</strong> 是的。和别人交谈时，大脑中某些与社交有关的部分会被激活，而且会以某种奇特的方式提高数学能力。甚至有一种现象叫作“橡皮鸭调试法”。</p>
+<p><strong>主持人：</strong> 橡皮鸭调试法？</p>
+<p><a id="section-12"></a></p>
+<h2 id="橡皮鸭调试法以及共同思考产生的能力">橡皮鸭调试法，以及共同思考产生的能力</h2>
+<p><strong>陶哲轩：</strong> 这是软件工程中的一个说法。有时，程序员遇到代码漏洞，却怎么也看不出该如何解决。一个出奇有效的办法是：拿一只橡皮鸭，对着它解释问题。</p>
+<p>不一定非得是橡皮鸭，只不过传统上用的是橡皮鸭。仅仅因为你开始把问题说出来，仿佛在与另一个人或者另一个东西进行社交，你思考问题的方式就会发生变化。于是，解释到一半时，你常常突然意识到：“哦，我知道自己哪里做错了。”</p>
+<p>还有一种感受：当你和一个思路同频的人交谈，你说的话，对方立刻就能理解；反过来也一样。此时，仿佛会形成某种超越单个人的智能，让你们得出任何一方独自思考都无法达到的结论。</p>
+<p>我有一些非常亲近的朋友，我们有时甚至能够替对方把句子说完。在数学中，研究同一个问题时也能达到类似的状态。因为数学很精确，你们可以真正地同步思考。拥有这种连接，是一种非常美好的感受。</p>
+<p><strong>主持人：</strong> 回到你的工作，听起来，你同时有很多不同类型的项目和问题。你现在有没有特别想解决的某个问题？或者有没有什么问题，像一本暂时抽不出时间写、但一直放在心里的书一样，始终在你的脑海后台运行？</p>
+<p><strong>陶哲轩：</strong> 有。我记得有位物理学家给过这样一个建议：脑子里应该始终放着大约十个想要解决的问题。每当学到一个新的想法或者技巧，就在心里把它和这些最喜欢的问题逐一对照，期待某一天能够匹配上。</p>
+<p>然后，你把它做出来，公布结果，大家就会惊讶地问：“你到底怎么想到的？”这算是他的一个秘诀。他其实很有表演家的气质，喜欢让人觉得，那些想法仿佛突然凭空冒出来。这是他的一种方法。</p>
+<p>我确实很认同这种做法。不过，现在我年纪渐长，也很乐意让年轻一代去完成那些耀眼的解题工作。我也许会给他们一两个建议，但自己更感兴趣的是一些关于数学研究本身的问题：怎样加快整个数学研究过程？作为一个共同体，我们怎样拥有更好的工作流程？</p>
+<p><a id="section-13"></a></p>
+<h2 id="减少重复劳动让数学研究走向现代化">减少重复劳动，让数学研究走向现代化</h2>
+<p><strong>陶哲轩：</strong> 现在做数学的方式，有很多重复和低效之处。在许多方面，我们与19世纪相比并没有改变多少。我们的研究方式甚至有点像工业革命之前。</p>
+<p>比如，过去要制作一个玩偶，可能就是一个工匠带着学徒，手工切割、雕刻，逐个制作部件。工业革命、自动化和大规模生产出现以后，才有了能够同时生产成百上千件玩具的工厂。</p>
+<p>数学在很大程度上仍然停留在手工业行会的时代：一个人带着学徒，或者两三个人组成小组，开展某个项目。这意味着存在大量重复劳动。</p>
+<p>拿最基本的文献检索来说，研究一个数学问题时，你最先要做的事情之一，就是查清楚前人已经做了什么。有时能找到相关研究，很好；有时没有。但如果你最后没有成功写出一篇论文，通常也就不会记录下自己做过的文献调查。</p>
+<p>于是，你尝试过但失败了，下一个研究同样问题的人，却不知道你已经做过什么。他可能再做一次完全相同的检索，徒劳地寻找那些并不存在的文献。如果他知道此前已经有人尝试过，而且公开说明没有找到相关内容，那对他就会有帮助。</p>
+<p>但是，由于我们有一种不披露失败、不报告负面结果的文化，就造成了大量重复而浪费的劳动。这其实不只是数学的问题，其他科学领域也有。</p>
+<p>当然，重复检验有时是好的，但我们做得太多了。我认为，通过改变工作流程，让它们更现代化，我们作为一个整体可以高效得多，也能够让数学对其他科学更有用。</p>
+<p><a id="section-14"></a></p>
+<h2 id="数学软件的门槛人工智能能否降低">数学软件的门槛，人工智能能否降低</h2>
+<p><strong>主持人：</strong> 现在已经有这么多工具，不只是人工智能，还有在它之前就存在的各种软件。数学研究过程必然会受到它们的影响吧？至少在某些方面，应该已经更高效了。</p>
+<p><strong>陶哲轩：</strong> 是的，有些方面确实改善了。我读研究生的时候，把手写论文交给秘书打字，仍然是很常见的事。你得非常仔细地写好，再交过去；打字稿拿回来后，发现有些错字，就再修改。这是一个很折腾的过程。现在，我们有了很好的排版软件，而且就是专门为数学设计的。</p>
+<p>但问题在于，你往往必须花时间学习某种编程语言，或者掌握某个技术性软件。数学家群体很小，也没有很多钱，对大型软件公司而言，并不是一个庞大的市场。</p>
+<p>所以，我们手上的工具，常常不像你在 iPhone 上使用的那些产品一样精致、易用。使用它们是有门槛的。很多数学家之所以仍然用纸笔，就是因为使用工具的摩擦成本太高。</p>
+<p>我们希望，人工智能在正确使用的前提下，能够让这些工具更容易使用。当然，“正确使用”是一个非常重要的限定。</p>
+<p><strong>主持人：</strong> 很多人基本上把计算看作数学，也认为数学是今天所有计算活动的基础。你会怎样解释两者的关系？毕竟，它们的历史都可以追溯到几千年前。</p>
+<p><a id="section-15"></a></p>
+<h2 id="计算规模的变化与实验数学的兴起">计算规模的变化，与实验数学的兴起</h2>
+<p><strong>陶哲轩：</strong> 数学家其实一直在使用计算工具。比如，算盘就是一种早期计算装置，已经有两千年历史。</p>
+<p>“计算员”过去甚至是一种人类职业。在今天这样的电子计算机出现之前，有机械计算机，它们在两次世界大战中就被使用过；也有靠转动齿轮来操作的小型加法机。再往前，就是人工计算员，那些特别擅长计算的人。</p>
+<p>所以，我们一直在借助计算。过去五十年真正发生变化的是规模：计算变得如此迅速、如此便宜，以至于我们可以开展大规模运算。这就打开了新的可能性，比如实验数学。</p>
+<p>所有科学都有理论和实验两个方面。在多数领域，两者的比重大致各占一半。但直到最近几十年，数学大概还是99%的理论、1%的实验，因为计算太繁琐、太昂贵了，用纸笔反而容易得多。我们也因此变得非常擅长纸笔推演。</p>
+<p>但在今天这个大数据、超高速计算机，以及人工智能辅助计算的时代，我们能做的已经不只是蛮力运算，不只是列一张包含一千个数的表。我们还可以列出一千个问题，调查哪些方法能够解决哪些问题。</p>
+<p>过去，这需要人类辛苦地逐个核查：“这个我能解；这个我知道解不了。”现在，我们可以让人工智能把它们逐一试过去，于是就能进行一些新的数学实验，而此前，在所需的规模上，这些实验根本不可行。</p>
+<p>我最近主持过一个项目，基本上提出了两千两百万道代数问题，然后用各种人工智能去求解。用的并不是最先进、最花哨的人工智能，而更多是我们所谓的“老式人工智能”。它们解决了几乎所有问题，最后剩下一批大约一百道的顽固难题，由人类收尾。</p>
+<p>那是一次很好的合作。所以，我们一直在使用计算，只是现在规模已经截然不同，使一些过去不可行的数学研究方式成为可能。</p>
+<p><a id="section-16"></a></p>
+<h2 id="大数学意味着什么人机协作怎样奏效">“大数学”意味着什么，人机协作怎样奏效</h2>
+<p><strong>主持人：</strong> 那么，这种规模化的数学会带来什么？你刚才举的实验很有意思。它的目的只是看看这件事能不能做到，还是有其他目标？</p>
+<p><strong>陶哲轩：</strong> 这是一个试点项目。它确实有一定的数学研究价值，但设计时，我们特意尽可能降低协作的门槛。</p>
+<p>这是一类相对初等的数学问题，但又没有简单到直接输入计算机就能解决，仍然需要人类协助。作为试点，它非常有启发性，我也希望以后能够复制这种尝试。</p>
+<p>这意味着，我们将开始拥有大规模的“大数学”项目，就像其他学科已经有“大科学”项目一样。当然，其他学科的这类大项目，主要还是实验性的。</p>
+<p>我自己会写一点代码，但并不是职业程序员。现在，我已经能借助人工智能，画一个简单函数的图像，或者解一个简单方程，只要用自然语言提出要求就行。它在这些事情上已经相当可靠了。</p>
+<p>当然，我仍然需要与它来回沟通，检查它做得对不对。但现在，一些过去因为太耗时、我根本懒得做的事情，我已经能够去做了。</p>
+<p>它有点像一个能力还算过得去的私人助理，可以替你完成很多琐碎任务，只是偶尔仍然会出错。因此，你还不能把所有认知劳动都交给这个助手。不过，我们正在学习，怎样把强大却不可靠的工具融入工作流程。</p>
+<p><strong>主持人：</strong> 据我理解，它还没有达到能够真正胜任高级数学的程度。编程当然是它非常擅长的领域，但特别高深的数学，它似乎还没有那么有效。</p>
+<p><strong>陶哲轩：</strong> 至少不能自主完成。</p>
+<p><strong>主持人：</strong> 对。</p>
+<p><strong>陶哲轩：</strong> 如果有一个复杂数学任务，由专家把它拆成许多小块，然后每次让人工智能完成其中一块，再设法检查输出，之后继续下一块，那么它已经开始有用。</p>
+<p>你仍然要保持注意，但完成任务的净耗时可以减少。比如，一个复杂任务，原来手工做需要三个小时，借助计算机后，虽然你还得来回沟通，不能按一下按钮就解决，但也许一个小时就够了。</p>
+<p>所以，它确实带来了加速，却还不是那种根本性转变：按个按钮，去喝杯咖啡，回来问题就解好了。我认为，我们需要稍微重组工作流程。</p>
+<p>传统的数学证明，是从假设走向结论的一条长逻辑链，也许有一百步。只要任何一步有错，整条推理就会崩塌。这一直是我们书写证明的标准方式。如果由人类来做，而且你能把整个证明保存在脑中，它大体上行得通。</p>
+<p>但如果让人工智能完成其中的一些步骤，即使它有99%的可靠性，只在1%的情况下出错，整个证明仍然可能因此失败。所以，也许我们需要用另一种方式组织项目，让一定的失败率可以被接受。</p>
+<p>例如，不要只盯着一个问题，非要把它解出来；可以准备一组一百个希望解决的问题，让人工智能分别尽力尝试。即便它只解决20%，那也是二十道已经解决的问题。它们可以清除能够处理的部分，剩下一批顽固的核心问题，再交给人类。</p>
+<p><strong>主持人：</strong> 你能想象有一天，人工智能会像合作者一样提供帮助吗？</p>
+<p><strong>陶哲轩：</strong> 这已经在发生了。有些数学家研究未解决的问题时，会与人工智能交谈，让它提供想法。</p>
+<p>目前，它给出的一半以上想法都很糟糕：要么是数学家已经想到的，要么明知道不行，要么根本不相关。但也有少数时候，比如20%的情况下，它会提出一个新的观察，专家此前没想到，或者其实知道，只是一时没有想起来。</p>
+<p>研究者看到这个想法，就会说：“好，我们沿这个方向继续试试。”然后通过对话来回推进：“你的这部分论证我不接受，但我们可以试着把另一部分说得更精确。”</p>
+<p>你必须和它一起工作，因为它仍然产生太多无用内容。如果你本来就不是这个领域的专家，它更可能把你带偏，而不是让你接近目标。但现在确实已经出现一些个别案例：专家借助它更快地筛过坏想法，找到能够真正推动问题的好想法组合。</p>
+<p>所以，这已经开始发生了。仅仅挖掘其他数学家已经做过的工作，就能取得很大进展。外面有十万篇论文，即使是人类专家，也已经无法跟上这么庞大的文献。</p>
+<p>这种能力在很长时间里都会很有用。也许某一天，它会拿出文献中不存在的东西，真正作出创造性的贡献，让我们大吃一惊。但目前的人工智能模型并不是按这种方式设计的。它们从数据中训练而来，因此按照其设计，通常会产生与既有数据相似的东西，或者把已有数据中的片段重新组合起来。</p>
+<p>这也解释了，为什么网络搜索曾是一种改变世界的工具：它突然让互联网变得极其有用。把所有数据堆在那里还不够，你还需要高效地提取其中最有用的东西。</p>
+<p>即使没有创造任何新信息，只是把已经存在的信息组织好，也是在研究过程中极其重要的一步。</p>
+<p><a id="section-17"></a></p>
+<h2 id="人工智能的另一面认知饮食与心智锻炼">人工智能的另一面：认知饮食与心智锻炼</h2>
+<p><strong>主持人：</strong> 那另一端呢？现在有很多担忧，认为人工智能，或者我们使用它的方式，会削弱人类认知，带来负面影响。</p>
+<p>有些研究观察、分析了人们使用人工智能的过程和结果，发现即使只用了不长时间，认知负荷也会明显下降，而这可能对大脑很不利。你担心这一点吗？尤其是在数学领域。</p>
+<p><strong>陶哲轩：</strong> 是的，确实存在真实的危害。我们必须非常仔细地区分负责任的人工智能使用方式，与数量可能更多的不负责任的用法。</p>
+<p>可以用营养来作类比。20世纪发生了绿色革命，粮食产量大幅提高，食物变得便宜而充足，尤其是在西方，饥荒不再是日常威胁。但随之而来的是，许多人开始出现饮食失调、肥胖，以及相关的各种问题。</p>
+<p>于是，人们第一次需要主动留意自己的饮食，刻意进行锻炼。在更早的几个世纪里，这些事情是不需要刻意做的。如果你是在田里劳作的农民，不必再去健身房，因为日常生活自然就提供了足够的体力活动。</p>
+<p>正因为食物变得太充足，新的问题才出现。这并不意味着绿色革命是一件坏事，我们当然不想回到食物匮乏的年代。但它说明，解决一个问题的同时，也会产生新的责任。</p>
+<p>同样，人工智能可能解决“认知资源稀缺”的问题。一些对非专业人士很困难的认知任务，可能变得极其便宜，你只要请人工智能代劳就好。</p>
+<p>但就像营养问题一样，代价是可能出现新的认知问题。你得留意自己的“心智饮食”，也必须保持心智锻炼。</p>
+<p>过去，你不必特意这样做，因为在日常生活中解决各种问题，本来就在锻炼你。其实，在人工智能出现以前，也已经有一些人，因为成长环境过于优渥，无法靠自己应对某些现实处境。人工智能会加剧这个趋势。</p>
+<p>我想，会有一些人只有在人工智能指导下才能解决问题。一旦停电，或者发生类似的事，他们就可能真的陷入麻烦。</p>
+<p>但总体而言，这仍然是一件好事。比如，统计学家现在进行的许多数学习题求解和计算工作，未来由于可以自动化，我们可能不会再那么频繁地亲自做。不过，仍然会有一些群体继续练习这些技能。</p>
+<p>我们现在不必总是搬重物，但仍有很多人举重，有些把它当作竞技运动，有些把它当作爱好。同样，也有人为了好玩去解魔方，尽可能提高速度，尽管机器人现在已经能够更快地完成。</p>
+<p><strong>主持人：</strong> 比1.3秒还快？我看过这样的东西。</p>
+<p><strong>陶哲轩：</strong> 有些机器人真的很厉害。它们需要特殊处理，魔方必须润滑得非常好，等等。用慢镜头去看，确实令人惊叹。</p>
+<p>所以，我不认为我们会失去这些能力。对个体而言，如果任其自然发展，我们也许会丧失某些技能；但作为一个物种，我认为我们会保留这些技能，只是它们会更像运动和爱好。</p>
+<p>你将来做数学，也许不需要特别擅长微积分，但仍然可以把微积分当作爱好。也许还会有竞技性的微积分比赛。不过，不擅长微积分，将不再成为你研究某个涉及高级数学的科学问题的障碍。</p>
+<p><strong>主持人：</strong> 听起来，我们可能会生活在这样一个世界：某种认知能力是你的爱好，而其他人都懒得练习，于是你很容易就在这个领域显得特别出众。</p>
+<p><strong>陶哲轩：</strong> 这已经在发生了。你上网就能看到，有人把某种非常小众的技能练到极致，比如杂耍，或者别的什么。我觉得这很好。智力技能可以成为爱好，而不再是谋生劳动中必需的一部分，我认为这是积极的变化。</p>
+<p><strong>主持人：</strong> 那你会不会担心现在的学生？他们使用这些工具，会不会让自己成为能力较弱的数学家，甚至损害未来从事数学的前景？</p>
+<p><a id="section-18"></a></p>
+<h2 id="怎样在教学中使用人工智能怎样重新评价学习">怎样在教学中使用人工智能，怎样重新评价学习</h2>
+<p><strong>陶哲轩：</strong> 现在，与学生认真谈这件事变得很重要：这些工具可以使用，但有好的用法，也有坏的用法。</p>
+<p>有些教师会说：“可以使用，但必须说明你用了，并把提示词给我看，不能只交答案。”因为提示词本身也很有信息量。我们想看到的是你的思考过程，以及你究竟卡在了哪里。</p>
+<p>还有些教师会给出一道题，同时附上 ChatGPT 的答案，然后说：“这个答案是错的，请批判它，指出问题在哪里。”当然，有人也可能再找另一个人工智能工具来批判它。</p>
+<p>但无论如何，我们需要承认这些工具已经存在。短期内，也可以采取一些措施。比如，现场考试正在回归。新冠疫情期间，很多考试转到了远程；现在因为人工智能，我们又不得不恢复一些多少有点过时的考试方式，例如在教室里进行期中考试。</p>
+<p>这只是短期措施。在此之后，我们需要找到更好的评估学生的方法，承认人工智能是一种强大的工具，也是一项现实。</p>
+<p>下一代会在使用这些工具的环境中成长，但我们必须区分正确和错误的使用方式。就像食物充足以后，管理饮食有好的做法，也有坏的做法。你不能直接禁止食物，那是错误的办法。你应该鼓励良好习惯，抑制不良习惯。</p>
+<p><strong>主持人：</strong> 为了适应人工智能，我们需要相应的社会机制和制度。但至少从治理角度看，它们的发展似乎不够快，明显落后于技术给生活带来的海啸般的冲击。大学处在这场变化的前线。你觉得，大学在探索这些问题时，做得对吗？</p>
+<p><strong>陶哲轩：</strong> 它们确实在努力。如果经费和整体环境能更稳定一些，会有很大帮助。</p>
+<p>现在正是大学需要挺身而出，为21世纪重新发明教育的时候。人们正在尝试，有些努力和实验甚至称得上英勇。遗憾的是，我们眼下还要应付各种其他紧急问题。</p>
+<p><strong>主持人：</strong> 确实，当前的变化和适应压力接踵而来。现届政府似乎对高等教育相当不友好。这对你，以及加州大学洛杉矶分校，造成了什么影响？</p>
+<p><a id="section-19"></a></p>
+<h2 id="经费削减之外更严重的是失去确定性">经费削减之外，更严重的是失去确定性</h2>
+<p><strong>陶哲轩：</strong> 实际的经费削减已经很糟糕，但我认为，最糟糕的是确定性突然大幅下降，而且发生在一个本来就充满变化、越来越不确定的时期。</p>
+<p>它还会产生连锁效应。过去，我们也经历过经费削减，预算也有涨有跌，但变化是通过一个稳定的程序发生的。比如，国会通过预算，下一财政年度，某个部门的预算增加5%或者减少5%，大家至少有时间准备，不会突然发生。</p>
+<p>现在不同之处在于，似乎没有人认真考虑怎样减轻损害。大学被迫作出选择，而政策又要求明天就执行，资金说砍就砍。我们只好突然忙着挽救那些需要持续支持的项目，设法给研究生发工资，四处救火、紧急筹款。</p>
+<p>于是，我们没有那么多精力做实验性科学，也没有那么多精力尝试怎样把人工智能引入研究和教学，因为必须先处理这些紧急情况。而且，我们现在也没法正常编制预算。</p>
+<p>通常，如果你获得一笔三年期资助，就可以聘一个人工作三年，用这笔资助支付工资，因为你能够合理预期：除非出现极其异常的情况，资金会按期拨付。</p>
+<p>但现在，我们做不到这一点了，只能为下一个财政年度作打算。</p>
+<p>这给学生带来很大压力。过去，我们可以保证：“我有这笔资金，因此能支持你接下来两年。”现在只能说：“我可能有资金，我会尽最大努力，但明年也可能没办法给你发工资。”</p>
+<p>我认为，这种不确定性造成的损害最严重，而且是在实际经费削减之外的额外损害。即使资金恢复了，信心和士气也没有随之恢复。这非常令人遗憾。要重新获得过去那种可预期性和信任，需要相当大幅度的纠正。</p>
+<p><strong>主持人：</strong> 在你看来，这一切真正威胁到的是什么？是眼下正在进行、可能受到影响的工作，还是如果一些人不再留在这个领域，会给整个学科带来的长期后果？</p>
+<p><strong>陶哲轩：</strong> 长期后果最严重。短期内，我们可以采取应急措施，调动一些资金，让现有项目维持下去。我们现在基本上就是在做这些事。</p>
+<p>但代价是无法启动新的工作，尤其是那些具有风险的实验性项目。由于外部强加给我们的风险已经太多，我们就不愿再主动承担其他风险。除非几乎是出于绝望，比如另一个选择就是关闭项目，那时我们才可能冒一些大风险。</p>
+<p><strong>主持人：</strong> 我们也看到，大量数学家正在进入科技公司，支持那里的研究。</p>
+<p><strong>陶哲轩：</strong> 是的。</p>
+<p><strong>主持人：</strong> 那些公司的重点，当然会是越来越强的计算能力，不一定是为了理论数学本身，把数学做得越来越好。你担心这一点吗？科技行业吸引了这么多人才，你认为会有什么影响？</p>
+<p><a id="section-20"></a></p>
+<h2 id="数学人才进入科技公司机会边界与新的合作">数学人才进入科技公司：机会、边界与新的合作</h2>
+<p><strong>陶哲轩：</strong> 积极的一面是，数学终于迎来了能够对许多迫切现实问题直接发挥作用的时刻。</p>
+<p>尤其是人工智能，存在不可靠的问题。它能给出表面上很有说服力的答案，但答案往往不正确。而数学这门学科，几百年来一直在打磨一件事：怎样判断一个说法究竟是否真正、完全正确。</p>
+<p>数学尤其擅长验证各种陈述。因此，两者其实是很好的组合。我认为，这也是许多人工智能公司非常希望聘用数学家的原因之一。</p>
+<p>而且，既然学术界的资助结构正在受到冲击，让年轻同事和学生拥有多样的职业选择，本身也是好事。我想，未来这些界线会逐渐模糊。我已经在和一些科技公司合作，里面的研究人员与传统学术研究者能够进行非常有效的合作。</p>
+<p>在这些协作项目中，各种人都可以作出贡献，包括大型科技公司的员工。我们需要重新思考过去的象牙塔模式：学者只和学者合作。这种模式必须改变。</p>
+<p>象牙塔里过去还有一种老派观念：成功的学生留在学术界，不成功的才出去当教师、去华尔街，或者做其他工作。这种态度已经非常过时。</p>
+<p>我认为，拥有多样的职业路径是好事。有不同生活经历的人，可以用不同方式为项目作出贡献。所以，我很期待看到更多健康的合作。</p>
+<p>当然，正如你所说，文化差异是存在的。公司更强调短期应用。有时，学者希望公开研究产生的所有数据，公司却希望把一部分保留为专有信息，这会引发冲突。因此，怎样把合作做好，仍有一些磨合问题。但积极合作的空间肯定非常大。</p>
+<p><strong>主持人：</strong> 是的，尤其是在经费如此不确定的时候，有产业界的合作伙伴，至少能找到一些共同的兴趣和方向，确实是好事。</p>
+<p><a id="section-21"></a></p>
+<h2 id="与社交媒体公司的合作能带来什么研究">与社交媒体公司的合作，能带来什么研究</h2>
+<p><strong>主持人：</strong> 那些拥有庞大用户群体的公司，尤其是社交媒体公司，虽然通常很重视保密，但你觉得，有没有希望与其中某家公司开展某种面向公共利益的合作？</p>
+<p><strong>陶哲轩：</strong> 它们是有研究部门的。我记得，一位计算机科学家曾作过一场很精彩的报告，介绍他与一家公司的合作，我记得应该是 Facebook。</p>
+<p>Facebook 让他访问用户之间的好友关系图。通过这张图，他们能够预测某个人的伴侣是谁：只要知道这个人在 Facebook 上认识谁，他的朋友是谁，以及朋友的朋友是谁，就能够进行推断。</p>
+<p>原因在于，伴侣通常有一个与此人相当不同的朋友圈，却又与这个人保持很强的连接。仅凭网络结构，他们预测伴侣的成功率大约就能达到50%到60%。</p>
+<p>但最有意思的是，有几次，他们根据网络预测错了伴侣。六个月后再去检查，发现某个人的感情状态变了。</p>
+<p><strong>主持人：</strong> 太惊人了。也有点让人发毛，真不可思议。</p>
+<p><strong>陶哲轩：</strong> 是的。所以，确实有这样的研究在进行。</p>
+<p><a id="section-22"></a></p>
+<h2 id="我们今天误解了什么人工智能重新定义智能">我们今天误解了什么：人工智能重新定义智能</h2>
+<p><strong>主持人：</strong> 那么，最后一个问题：我们今天在哪些事情上想错了？你觉得，我们应该重新审视哪一种根本性的信念？</p>
+<p><strong>陶哲轩：</strong> 我认为，人工智能整个领域正在教给我们的一件事，就是我们对“智能是什么”的理解并不十分准确。</p>
+<p>人工智能的发展史常常是这样：先有一个被认为只有人类才能完成的任务，比如阅读自然语言、下棋获胜，或者解决数学问题。然后，一个又一个任务被某种人工智能算法完成了。现在，我们可以识别人脸，也可以理解语音。</p>
+<p>但当你去看它究竟是怎么做到的，又觉得：“这好像并不算智能，只是某种技巧。你不过是把一些神经网络拼起来，再跑了一个算法。”</p>
+<p>我们一直在寻找某种难以捉摸、真正具有智能的思维方式，却没有在那些实际上已经完成目标的工具中看到它。但也许，原因恰恰在于，智能并不是我们以为的那种东西。</p>
+<p>比如，大语言模型已经非常成功，而它们做的很大一部分工作，不过是预测下一个词元，预测一句话中的下一个词。这听起来不像什么有智能的事情。</p>
+<p>假如你让一个人毫无准备地即兴演讲，每一刻只是说出脑中刚刚浮现的下一个词，那种意识流式的表达似乎很笨。你不会觉得这种方法真能奏效。但对大语言模型而言，它确实奏效了。而且，也许人类做的很多事情，同样如此。</p>
+<p>比如，我现在给你的回答没有事先排练，也没有提前进行特别深入的思考。但只要处在当下、不断作出反应，就已经可以走得很远。</p>
+<p>当然，有些事情确实需要仔细而深入地思考。不过，许多看起来很有智能的任务，我们几乎可以凭直觉，或者靠自动驾驶般的状态完成。我想，这是人工智能研究正在教给我们的事情之一：有时，我们也许并没有自己想象的那么聪明。</p>
+<p><strong>主持人：</strong> 所以，你认为，是我们过去以为是智能、或者误当成智能的东西，其实不是？还是说，机器正在做的事情确实就是智能，只是我们惊讶地发现，原来自己的智能也可能如此程式化、如此简单？</p>
+<p><strong>陶哲轩：</strong> 是的。我想，也许我们应该接受这一点。</p>
+<p>有时，我们觉得自己很聪明，以为想出了一个天才般的点子，但实际上，只是突然记起了几年前某次奇怪谈话里听到的一点东西。这仍然是智能。</p>
+<p>我们很难退后一步，像旁观者一样审视智能究竟是什么，因为在情感上，它与我们的身份认同联系得太紧密了。</p>
+<p>但现在，我们有了另一种智能模型，可以更客观地研究它。在这个过程中，我认为我们也正在进一步认识自己。</p>
+<p><strong>主持人：</strong> 所以，我们可能会对智能形成一种完全不同的理解。</p>
+<p><strong>陶哲轩：</strong> 是的。短时间内，这也许会让人有些迷失方向，但我认为，最终会是更好的事情。</p>
+<p><strong>主持人：</strong> 改变的不只是我们对智能的概念，也包括我们对“自己是谁”的定义。</p>
+<p><strong>陶哲轩：</strong> 是的，但那不一定是坏事。</p>
+<p><strong>主持人：</strong> 好的。非常感谢你，陶哲轩。这次对话太精彩了。</p>
+<p><a id="section-23"></a></p>
+<h2 id="节目介绍与相关资料">节目介绍与相关资料</h2>
+<p>数学家陶哲轩认为，下一轮数学突破不会只来自某个孤独的天才，而会来自人与人、人与人工智能之间的合作。</p>
+<p>当人工智能让世界充满“听起来正确”的答案时，数学要求这些答案必须真正正确。新的机器学习工具和协作平台，正在推动理论数学走向更大规模、更加开放的项目：尽早共享进展，避免反复钻进死胡同，让更多人能够参与。</p>
+<p>在本期节目中，加州大学洛杉矶分校数学家、菲尔兹奖得主陶哲轩阐释了他对“大数学”的设想，也说明人工智能擅长什么、仍会在哪里失败。关键不仅是机器能否给出答案，还在于我们能否建立起人的协作机制与技术系统，让这些答案始终接受真实性的检验。</p>
+<h3 id="本期提及的研究">本期提及的研究</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Green%E2%80%93Tao_theorem">格林—陶定理</a></li>
+<li><a href="https://arxiv.org/abs/math/0404188">本·格林、陶哲轩：《素数中存在任意长的等差数列》（2004）</a></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0370269312008581">CMS 合作组：《利用大型强子对撞机 CMS 实验观测到质量为125 GeV的新玻色子》（2012）</a></li>
+</ul>
+<h3 id="收听节目与关注嘉宾">收听节目与关注嘉宾</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=YNH6lwcXw7M">本期完整视频</a></li>
+<li><a href="https://berggruen.org/projects/futurology">Futurology 节目主页</a> · <a href="https://linkin.bio/futurology/">订阅与平台入口</a></li>
+<li><a href="https://www.youtube.com/@Berggrueninst">博古睿研究院 YouTube 频道</a> · <a href="https://www.youtube.com/playlist?list=PLyYCSKWs8iYgjg-mhu-EuhTrG0-adrb0c">Futurology 完整节目播放列表</a></li>
+<li><a href="https://podcasts.apple.com/us/podcast/futurology/id1821718921">Apple Podcasts</a> · <a href="https://open.spotify.com/show/2I38HvHP6KlXrD5ysfygxk">Spotify</a></li>
+<li>陶哲轩：<a href="https://www.math.ucla.edu/~tao/">个人主页</a> · <a href="https://terrytao.wordpress.com">博客</a> · <a href="https://mathstodon.xyz/@tao">Mastodon</a> · <a href="https://bsky.app/profile/teorth.bsky.social">Bluesky</a></li>
+<li>节目建议与反馈：<a href="mailto:futurology@berggruen.org">futurology@berggruen.org</a></li>
+<li>博古睿研究院：<a href="https://www.berggruen.org">官网</a> · <a href="https://www.instagram.com/berggrueninst">Instagram</a> · <a href="https://www.x.com/berggrueninst">X</a> · <a href="https://www.facebook.com/berggrueninst">Facebook</a> · <a href="https://www.linkedin.com/company/berggrueninst">LinkedIn</a></li>
+<li><a href="https://bsky.app/profile/futurologypod.bsky.social">Futurology 的 Bluesky 账号</a></li>
+</ul>
+<p><a id="section-24"></a></p>
+<h2 id="节目制作">节目制作</h2>
+<ul>
+<li>执行制片人：Nicolas Berggruen、Nathan Gardels、Nils Gilman、Dawn Nakagawa、Jason Hoch</li>
+<li>制片人：Grant Slater、Alex Gardels、Nathalia Ramos</li>
+<li>助理制片人：Elissa Mardiney</li>
+<li>主题音乐：Marcus Bagala</li>
+<li>音频工程师：Aaron Bastinelli、Kyle Scott Wilson</li>
+</ul>
+<p>《Futurology》由 Studio B 与 Wavland 为位于美国加利福尼亚州洛杉矶的博古睿研究院制作。</p>
+<p><a id="information"></a></p>
+<h2 id="基本信息">基本信息</h2>
+<ul>
+<li>原题：Can AI Prove It? Terence Tao on “Big Math” and Our Theoretical Future | The Futurology Podcast</li>
+<li>嘉宾：陶哲轩（Terence Tao），加州大学洛杉矶分校数学家、菲尔兹奖得主</li>
+<li>主持人：Dawn Nakagawa</li>
+<li>节目：Futurology</li>
+<li>发布频道：Futurology；与 Berggruen Institute 联合发布</li>
+<li>视频发布日期：2026 年 10 月 18 日</li>
+<li>视频时长：约 64 分钟</li>
+<li>制作：Studio B、Wavland；博古睿研究院（Berggruen Institute）</li>
+<li>原视频：<a href="https://www.youtube.com/watch?v=YNH6lwcXw7M">观看原视频</a></li>
+</ul> </div> <script type="module">document.querySelectorAll(".chapter-prose > table").forEach(e=>{const r=document.createElement("div");r.className="table-wrapper",e.parentNode.insertBefore(r,e),r.appendChild(e)});</script> </section> <nav class="chapter-nav" aria-label="Document navigation" data-astro-cid-vjjnhoij> <a href="/library/persons/terencetao/terence-tao-yu-deng-why-build-open-math-model" class="chapter-nav-link chapter-nav-prev" data-astro-cid-vjjnhoij> <span class="nav-direction" data-astro-cid-vjjnhoij>← Previous</span> <span class="nav-title" data-astro-cid-vjjnhoij> <span class="nav-label" data-astro-cid-vjjnhoij>Terence Tao</span> 为什么要构建开放数学模型？ </span> </a> <a href="/library/persons/terencetao/terence-tao-no-more-heroes-ai-mathematics" class="chapter-nav-link chapter-nav-next" data-astro-cid-vjjnhoij> <span class="nav-direction" data-astro-cid-vjjnhoij>Next →</span> <span class="nav-title" data-astro-cid-vjjnhoij> <span class="nav-label" data-astro-cid-vjjnhoij>Terence Tao</span> 告别英雄时代 </span> </a> </nav>  </article> <script>(function(){const basePath = "/library/persons/terencetao";
+const aliasMap = {"terence-tao-six-math-essentials-harvard":"terence-tao-six-math-essentials-harvard","terence-tao-six-math-essentials-harvard.zh":"terence-tao-six-math-essentials-harvard","terence-tao-peter-open-math-os-live":"terence-tao-peter-open-math-os-live","terence-tao-peter-open-math-os-live.zh":"terence-tao-peter-open-math-os-live","terence-tao-proof-beauty-future-mathematics":"terence-tao-proof-beauty-future-mathematics","terence-tao-proof-beauty-future-mathematics.zh":"terence-tao-proof-beauty-future-mathematics","terence-tao-six-math-essentials":"terence-tao-six-math-essentials","terence-tao-six-math-essentials.zh":"terence-tao-six-math-essentials","terence-tao-math-2-0-proof-and-understanding":"terence-tao-math-2-0-proof-and-understanding","terence-tao-math-2-0-proof-and-understanding.zh":"terence-tao-math-2-0-proof-and-understanding","terence-tao-ai-mathematics-understanding-and-responsibility":"terence-tao-ai-mathematics-understanding-and-responsibility","terence-tao-ai-mathematics-understanding-and-responsibility.zh":"terence-tao-ai-mathematics-understanding-and-responsibility","terence-tao-yu-deng-why-build-open-math-model":"terence-tao-yu-deng-why-build-open-math-model","terence-tao-yu-deng-why-build-open-math-model.zh":"terence-tao-yu-deng-why-build-open-math-model","terence-tao-big-math-futurology":"terence-tao-big-math-futurology","terence-tao-big-math-futurology.zh":"terence-tao-big-math-futurology","terence-tao-no-more-heroes-ai-mathematics":"terence-tao-no-more-heroes-ai-mathematics","terence-tao-no-more-heroes-ai-mathematics.zh":"terence-tao-no-more-heroes-ai-mathematics","terence-tao-yves-meyer-wavelets-abel-2017":"terence-tao-yves-meyer-wavelets-abel-2017","terence-tao-yves-meyer-wavelets-abel-2017.zh":"terence-tao-yves-meyer-wavelets-abel-2017","terence-tao-sair-open-math-model":"terence-tao-sair-open-math-model","terence-tao-sair-open-math-model.zh":"terence-tao-sair-open-math-model","terence-tao-the-paradox-at-the-heart-of-ai-and-science":"terence-tao-the-paradox-at-the-heart-of-ai-and-science","terence-tao-the-paradox-at-the-heart-of-ai-and-science.zh":"terence-tao-the-paradox-at-the-heart-of-ai-and-science","terence-tao-kepler-newton-and-the-true-nature-of-mathematical-discovery":"terence-tao-kepler-newton-and-the-true-nature-of-mathematical-discovery","terence-tao-kepler-newton-and-the-true-nature-of-mathematical-discovery.zh":"terence-tao-kepler-newton-and-the-true-nature-of-mathematical-discovery","terence-tao-mark-chen-fireside-chat-ipam-ucla":"terence-tao-mark-chen-fireside-chat-ipam-ucla","terence-tao-mark-chen-fireside-chat-ipam-ucla.zh":"terence-tao-mark-chen-fireside-chat-ipam-ucla","career-advice-overview":"career-advice-overview","career-advice-overview.en":"career-advice-overview","career-advice-overview.zh":"career-advice-overview","career-advice-on-the-importance-of-partial-progress":"career-advice-on-the-importance-of-partial-progress","career-advice-on-the-importance-of-partial-progress.en":"career-advice-on-the-importance-of-partial-progress","career-advice-on-the-importance-of-partial-progress.zh":"career-advice-on-the-importance-of-partial-progress","writing-guide-on-local-and-global-errors-in-mathematical-papers-and-how-to-detect-them":"writing-guide-on-local-and-global-errors-in-mathematical-papers-and-how-to-detect-them","writing-guide-on-local-and-global-errors-in-mathematical-papers-and-how-to-detect-them.en":"writing-guide-on-local-and-global-errors-in-mathematical-papers-and-how-to-detect-them","writing-guide-on-local-and-global-errors-in-mathematical-papers-and-how-to-detect-them.zh":"writing-guide-on-local-and-global-errors-in-mathematical-papers-and-how-to-detect-them","writing-guide-on-compilation-errors-in-mathematical-reading-and-how-to-resolve-them":"writing-guide-on-compilation-errors-in-mathematical-reading-and-how-to-resolve-them","writing-guide-on-compilation-errors-in-mathematical-reading-and-how-to-resolve-them.en":"writing-guide-on-compilation-errors-in-mathematical-reading-and-how-to-resolve-them","writing-guide-on-compilation-errors-in-mathematical-reading-and-how-to-resolve-them.zh":"writing-guide-on-compilation-errors-in-mathematical-reading-and-how-to-resolve-them","career-advice-what-are-some-useful-but-little-known-features-of-the-tools-used-in-professional-mathematics":"career-advice-what-are-some-useful-but-little-known-features-of-the-tools-used-in-professional-mathematics","career-advice-what-are-some-useful-but-little-known-features-of-the-tools-used-in-professional-mathematics.en":"career-advice-what-are-some-useful-but-little-known-features-of-the-tools-used-in-professional-mathematics","career-advice-what-are-some-useful-but-little-known-features-of-the-tools-used-in-professional-mathematics.zh":"career-advice-what-are-some-useful-but-little-known-features-of-the-tools-used-in-professional-mathematics","writing-guide-maximising-the-results-to-effort-ratio":"writing-guide-maximising-the-results-to-effort-ratio","writing-guide-maximising-the-results-to-effort-ratio.en":"writing-guide-maximising-the-results-to-effort-ratio","writing-guide-maximising-the-results-to-effort-ratio.zh":"writing-guide-maximising-the-results-to-effort-ratio","writing-guide-on-the-strength-of-theorems":"writing-guide-on-the-strength-of-theorems","writing-guide-on-the-strength-of-theorems.en":"writing-guide-on-the-strength-of-theorems","writing-guide-on-the-strength-of-theorems.zh":"writing-guide-on-the-strength-of-theorems","writing-guide-implicit-notational-conventions":"writing-guide-implicit-notational-conventions","writing-guide-implicit-notational-conventions.en":"writing-guide-implicit-notational-conventions","writing-guide-implicit-notational-conventions.zh":"writing-guide-implicit-notational-conventions","writing-guide-write-in-your-own-voice":"writing-guide-write-in-your-own-voice","writing-guide-write-in-your-own-voice.en":"writing-guide-write-in-your-own-voice","writing-guide-write-in-your-own-voice.zh":"writing-guide-write-in-your-own-voice","career-advice-on-time-management":"career-advice-on-time-management","career-advice-on-time-management.en":"career-advice-on-time-management","career-advice-on-time-management.zh":"career-advice-on-time-management","career-advice-continually-aim-just-beyond-your-current-range":"career-advice-continually-aim-just-beyond-your-current-range","career-advice-continually-aim-just-beyond-your-current-range.en":"career-advice-continually-aim-just-beyond-your-current-range","career-advice-continually-aim-just-beyond-your-current-range.zh":"career-advice-continually-aim-just-beyond-your-current-range","career-advice-batch-low-intensity-tasks-together":"career-advice-batch-low-intensity-tasks-together","career-advice-batch-low-intensity-tasks-together.en":"career-advice-batch-low-intensity-tasks-together","career-advice-batch-low-intensity-tasks-together.zh":"career-advice-batch-low-intensity-tasks-together","writing-guide-take-advantage-of-the-english-language":"writing-guide-take-advantage-of-the-english-language","writing-guide-take-advantage-of-the-english-language.en":"writing-guide-take-advantage-of-the-english-language","writing-guide-take-advantage-of-the-english-language.zh":"writing-guide-take-advantage-of-the-english-language","writing-guide-dont-overoptimise":"writing-guide-dont-overoptimise","writing-guide-dont-overoptimise.en":"writing-guide-dont-overoptimise","writing-guide-dont-overoptimise.zh":"writing-guide-dont-overoptimise","career-advice-does-one-have-to-be-a-genius-to-do-maths":"career-advice-does-one-have-to-be-a-genius-to-do-maths","career-advice-does-one-have-to-be-a-genius-to-do-maths.en":"career-advice-does-one-have-to-be-a-genius-to-do-maths","career-advice-does-one-have-to-be-a-genius-to-do-maths.zh":"career-advice-does-one-have-to-be-a-genius-to-do-maths","writing-guide-write-a-rapid-prototype-first":"writing-guide-write-a-rapid-prototype-first","writing-guide-write-a-rapid-prototype-first.en":"writing-guide-write-a-rapid-prototype-first","writing-guide-write-a-rapid-prototype-first.zh":"writing-guide-write-a-rapid-prototype-first","career-advice-advice-on-gifted-education":"career-advice-advice-on-gifted-education","career-advice-advice-on-gifted-education.en":"career-advice-advice-on-gifted-education","career-advice-advice-on-gifted-education.zh":"career-advice-advice-on-gifted-education","writing-guide-create-lemmas":"writing-guide-create-lemmas","writing-guide-create-lemmas.en":"writing-guide-create-lemmas","writing-guide-create-lemmas.zh":"writing-guide-create-lemmas","career-advice-which-universities-should-one-apply-to":"career-advice-which-universities-should-one-apply-to","career-advice-which-universities-should-one-apply-to.en":"career-advice-which-universities-should-one-apply-to","career-advice-which-universities-should-one-apply-to.zh":"career-advice-which-universities-should-one-apply-to","career-advice-solving-mathematical-problems":"career-advice-solving-mathematical-problems","career-advice-solving-mathematical-problems.en":"career-advice-solving-mathematical-problems","career-advice-solving-mathematical-problems.zh":"career-advice-solving-mathematical-problems","career-advice-dont-base-career-decisions-on-glamour-or-fame":"career-advice-dont-base-career-decisions-on-glamour-or-fame","career-advice-dont-base-career-decisions-on-glamour-or-fame.en":"career-advice-dont-base-career-decisions-on-glamour-or-fame","career-advice-dont-base-career-decisions-on-glamour-or-fame.zh":"career-advice-dont-base-career-decisions-on-glamour-or-fame","career-advice-dont-be-afraid-to-learn-things-outside-your-field":"career-advice-dont-be-afraid-to-learn-things-outside-your-field","career-advice-dont-be-afraid-to-learn-things-outside-your-field.en":"career-advice-dont-be-afraid-to-learn-things-outside-your-field","career-advice-dont-be-afraid-to-learn-things-outside-your-field.zh":"career-advice-dont-be-afraid-to-learn-things-outside-your-field","career-advice-dont-prematurely-obsess-on-a-single-big-problem-or-big-theory":"career-advice-dont-prematurely-obsess-on-a-single-big-problem-or-big-theory","career-advice-dont-prematurely-obsess-on-a-single-big-problem-or-big-theory.en":"career-advice-dont-prematurely-obsess-on-a-single-big-problem-or-big-theory","career-advice-dont-prematurely-obsess-on-a-single-big-problem-or-big-theory.zh":"career-advice-dont-prematurely-obsess-on-a-single-big-problem-or-big-theory","career-advice-talk-to-your-advisor":"career-advice-talk-to-your-advisor","career-advice-talk-to-your-advisor.en":"career-advice-talk-to-your-advisor","career-advice-talk-to-your-advisor.zh":"career-advice-talk-to-your-advisor","writing-guide-write-professionally":"writing-guide-write-professionally","writing-guide-write-professionally.en":"writing-guide-write-professionally","writing-guide-write-professionally.zh":"writing-guide-write-professionally","career-advice-be-considerate-of-your-audience":"career-advice-be-considerate-of-your-audience","career-advice-be-considerate-of-your-audience.en":"career-advice-be-considerate-of-your-audience","career-advice-be-considerate-of-your-audience.zh":"career-advice-be-considerate-of-your-audience","career-advice-take-the-initiative":"career-advice-take-the-initiative","career-advice-take-the-initiative.en":"career-advice-take-the-initiative","career-advice-take-the-initiative.zh":"career-advice-take-the-initiative","career-advice-learn-the-limitations-of-your-tools":"career-advice-learn-the-limitations-of-your-tools","career-advice-learn-the-limitations-of-your-tools.en":"career-advice-learn-the-limitations-of-your-tools","career-advice-learn-the-limitations-of-your-tools.zh":"career-advice-learn-the-limitations-of-your-tools","career-advice-enjoy-your-work":"career-advice-enjoy-your-work","career-advice-enjoy-your-work.en":"career-advice-enjoy-your-work","career-advice-enjoy-your-work.zh":"career-advice-enjoy-your-work","writing-guide-use-good-notation":"writing-guide-use-good-notation","writing-guide-use-good-notation.en":"writing-guide-use-good-notation","writing-guide-use-good-notation.zh":"writing-guide-use-good-notation","career-advice-be-flexible":"career-advice-be-flexible","career-advice-be-flexible.en":"career-advice-be-flexible","career-advice-be-flexible.zh":"career-advice-be-flexible","career-advice-be-patient":"career-advice-be-patient","career-advice-be-patient.en":"career-advice-be-patient","career-advice-be-patient.zh":"career-advice-be-patient","career-advice-advice-on-mathematics-competitions":"career-advice-advice-on-mathematics-competitions","career-advice-advice-on-mathematics-competitions.en":"career-advice-advice-on-mathematics-competitions","career-advice-advice-on-mathematics-competitions.zh":"career-advice-advice-on-mathematics-competitions","writing-guide-describe-the-results-accurately":"writing-guide-describe-the-results-accurately","writing-guide-describe-the-results-accurately.en":"writing-guide-describe-the-results-accurately","writing-guide-describe-the-results-accurately.zh":"writing-guide-describe-the-results-accurately","career-advice-work-hard":"career-advice-work-hard","career-advice-work-hard.en":"career-advice-work-hard","career-advice-work-hard.zh":"career-advice-work-hard","career-advice-attend-talks-and-conferences-even-those-not-directly-related-to-your-work":"career-advice-attend-talks-and-conferences-even-those-not-directly-related-to-your-work","career-advice-attend-talks-and-conferences-even-those-not-directly-related-to-your-work.en":"career-advice-attend-talks-and-conferences-even-those-not-directly-related-to-your-work","career-advice-attend-talks-and-conferences-even-those-not-directly-related-to-your-work.zh":"career-advice-attend-talks-and-conferences-even-those-not-directly-related-to-your-work","career-advice-use-the-wastebasket":"career-advice-use-the-wastebasket","career-advice-use-the-wastebasket.en":"career-advice-use-the-wastebasket","career-advice-use-the-wastebasket.zh":"career-advice-use-the-wastebasket","career-advice-study-at-different-places":"career-advice-study-at-different-places","career-advice-study-at-different-places.en":"career-advice-study-at-different-places","career-advice-study-at-different-places.zh":"career-advice-study-at-different-places","career-advice-be-professional-in-your-work":"career-advice-be-professional-in-your-work","career-advice-be-professional-in-your-work.en":"career-advice-be-professional-in-your-work","career-advice-be-professional-in-your-work.zh":"career-advice-be-professional-in-your-work","career-advice-learn-the-power-of-other-mathematicians-tools":"career-advice-learn-the-power-of-other-mathematicians-tools","career-advice-learn-the-power-of-other-mathematicians-tools.en":"career-advice-learn-the-power-of-other-mathematicians-tools","career-advice-learn-the-power-of-other-mathematicians-tools.zh":"career-advice-learn-the-power-of-other-mathematicians-tools","career-advice-learn-and-relearn-your-field":"career-advice-learn-and-relearn-your-field","career-advice-learn-and-relearn-your-field.en":"career-advice-learn-and-relearn-your-field","career-advice-learn-and-relearn-your-field.zh":"career-advice-learn-and-relearn-your-field","career-advice-be-sceptical-of-your-own-work":"career-advice-be-sceptical-of-your-own-work","career-advice-be-sceptical-of-your-own-work.en":"career-advice-be-sceptical-of-your-own-work","career-advice-be-sceptical-of-your-own-work.zh":"career-advice-be-sceptical-of-your-own-work","writing-guide-submit-a-final-draft-not-a-first-draft":"writing-guide-submit-a-final-draft-not-a-first-draft","writing-guide-submit-a-final-draft-not-a-first-draft.en":"writing-guide-submit-a-final-draft-not-a-first-draft","writing-guide-submit-a-final-draft-not-a-first-draft.zh":"writing-guide-submit-a-final-draft-not-a-first-draft","writing-guide-proofread-and-double-check-your-paper-before-submission":"writing-guide-proofread-and-double-check-your-paper-before-submission","writing-guide-proofread-and-double-check-your-paper-before-submission.en":"writing-guide-proofread-and-double-check-your-paper-before-submission","writing-guide-proofread-and-double-check-your-paper-before-submission.zh":"writing-guide-proofread-and-double-check-your-paper-before-submission","writing-guide-give-appropriate-amounts-of-detail":"writing-guide-give-appropriate-amounts-of-detail","writing-guide-give-appropriate-amounts-of-detail.en":"writing-guide-give-appropriate-amounts-of-detail","writing-guide-give-appropriate-amounts-of-detail.zh":"writing-guide-give-appropriate-amounts-of-detail","career-advice-think-ahead":"career-advice-think-ahead","career-advice-think-ahead.en":"career-advice-think-ahead","career-advice-think-ahead.zh":"career-advice-think-ahead","career-advice-theres-more-to-mathematics-than-rigour-and-proofs":"career-advice-theres-more-to-mathematics-than-rigour-and-proofs","career-advice-theres-more-to-mathematics-than-rigour-and-proofs.en":"career-advice-theres-more-to-mathematics-than-rigour-and-proofs","career-advice-theres-more-to-mathematics-than-rigour-and-proofs.zh":"career-advice-theres-more-to-mathematics-than-rigour-and-proofs","career-advice-theres-more-to-mathematics-than-grades-and-exams-and-methods":"career-advice-theres-more-to-mathematics-than-grades-and-exams-and-methods","career-advice-theres-more-to-mathematics-than-grades-and-exams-and-methods.en":"career-advice-theres-more-to-mathematics-than-grades-and-exams-and-methods","career-advice-theres-more-to-mathematics-than-grades-and-exams-and-methods.zh":"career-advice-theres-more-to-mathematics-than-grades-and-exams-and-methods","career-advice-talks-are-not-the-same-as-papers":"career-advice-talks-are-not-the-same-as-papers","career-advice-talks-are-not-the-same-as-papers.en":"career-advice-talks-are-not-the-same-as-papers","career-advice-talks-are-not-the-same-as-papers.zh":"career-advice-talks-are-not-the-same-as-papers","writing-guide-use-the-introduction-to-sell-the-key-points-of-your-paper":"writing-guide-use-the-introduction-to-sell-the-key-points-of-your-paper","writing-guide-use-the-introduction-to-sell-the-key-points-of-your-paper.en":"writing-guide-use-the-introduction-to-sell-the-key-points-of-your-paper","writing-guide-use-the-introduction-to-sell-the-key-points-of-your-paper.zh":"writing-guide-use-the-introduction-to-sell-the-key-points-of-your-paper","writing-guide-organise-the-paper":"writing-guide-organise-the-paper","writing-guide-organise-the-paper.en":"writing-guide-organise-the-paper","writing-guide-organise-the-paper.zh":"writing-guide-organise-the-paper","career-advice-make-your-work-available":"career-advice-make-your-work-available","career-advice-make-your-work-available.en":"career-advice-make-your-work-available","career-advice-make-your-work-available.zh":"career-advice-make-your-work-available","career-advice-write-down-what-youve-done":"career-advice-write-down-what-youve-done","career-advice-write-down-what-youve-done.en":"career-advice-write-down-what-youve-done","career-advice-write-down-what-youve-done.zh":"career-advice-write-down-what-youve-done","career-advice-on-writing":"career-advice-on-writing","career-advice-on-writing.en":"career-advice-on-writing","career-advice-on-writing.zh":"career-advice-on-writing","writing-guide-overview":"writing-guide-overview","writing-guide-overview.en":"writing-guide-overview","writing-guide-overview.zh":"writing-guide-overview","writing-guide-motivate-the-paper":"writing-guide-motivate-the-paper","writing-guide-motivate-the-paper.en":"writing-guide-motivate-the-paper","writing-guide-motivate-the-paper.zh":"writing-guide-motivate-the-paper","writing-guide-submit-to-an-appropriate-journal":"writing-guide-submit-to-an-appropriate-journal","writing-guide-submit-to-an-appropriate-journal.en":"writing-guide-submit-to-an-appropriate-journal","writing-guide-submit-to-an-appropriate-journal.zh":"writing-guide-submit-to-an-appropriate-journal","career-advice-ask-yourself-dumb-questions-and-answer-them":"career-advice-ask-yourself-dumb-questions-and-answer-them","career-advice-ask-yourself-dumb-questions-and-answer-them.en":"career-advice-ask-yourself-dumb-questions-and-answer-them","career-advice-ask-yourself-dumb-questions-and-answer-them.zh":"career-advice-ask-yourself-dumb-questions-and-answer-them","tao-talks-overview":"tao-talks-overview","tao-talks-overview.zh":"tao-talks-overview"};
+const currentKey = "terence-tao-big-math-futurology";
+const currentLocale = "zh";
+const currentDirectory = "";
+const selector = ".reader-content, .chapter-prose";
+
+  const normalizeRelativePath = (pathPart, directory = '') => {
+    const raw = decodeURIComponent(pathPart).replace(/\\/g, '/');
+    const segments = directory.split('/').filter(Boolean);
+
+    for (const part of raw.split('/')) {
+      if (!part || part === '.') continue;
+      if (part === '..') {
+        segments.pop();
+        continue;
+      }
+      segments.push(part);
+    }
+
+    return segments.join('/');
+  };
+
+  const rewriteMarkdownHref = (rawHref) => {
+    if (!rawHref) return null;
+    if (/^[a-z][a-z\d+.-]*:/i.test(rawHref)) return null;
+    if (rawHref.startsWith('#') || rawHref.startsWith('/')) return null;
+
+    const matched = rawHref.match(/^([^?#]+)(\?[^#]*)?(#.*)?$/);
+    if (!matched) return null;
+
+    const [, pathPart, queryPart = '', hashPart = ''] = matched;
+    if (/\.[a-z\d]+$/i.test(pathPart) && !pathPart.endsWith('.md')) return null;
+
+    const normalizedPath = normalizeRelativePath(pathPart, currentDirectory);
+    if (!normalizedPath) return null;
+
+    const alias = normalizedPath.replace(/\.md$/, '');
+    const baseAlias = alias.split('/').pop() ?? alias;
+    const localeSuffixMatch = alias.match(/\.(zh|fr|en)$/);
+    const suffixLocale = localeSuffixMatch?.[1];
+    const normalizedAlias = alias.replace(/\.(zh|fr|en)$/, '');
+    const normalizedBaseAlias = baseAlias.replace(/\.(zh|fr|en)$/, '');
+    const fallbackKey = normalizedAlias.startsWith('notes/') ? `notes-${normalizedBaseAlias}` : normalizedBaseAlias;
+    const key = aliasMap[alias]
+      || aliasMap[baseAlias]
+      || aliasMap[normalizedAlias]
+      || aliasMap[normalizedBaseAlias]
+      || fallbackKey;
+    const params = new URLSearchParams(queryPart ? queryPart.slice(1) : '');
+
+    if (!params.has('lang') && (suffixLocale === 'zh' || suffixLocale === 'fr' || suffixLocale === 'en')) {
+      params.set('lang', suffixLocale);
+    }
+
+    const targetLocale = params.get('lang') ?? currentLocale;
+    const onlyLangParam = Array.from(params.keys()).every((name) => name === 'lang');
+    if (currentKey && key === currentKey && (!targetLocale || targetLocale === currentLocale) && onlyLangParam) {
+      return hashPart || null;
+    }
+
+    const query = params.toString();
+    return `${basePath}/${key}${query ? `?${query}` : ''}${hashPart}`;
+  };
+
+  document.querySelectorAll(selector.split(',').map((s) => `${s.trim()} a[href]`).join(', ')).forEach((anchor) => {
+    const rewrittenHref = rewriteMarkdownHref(anchor.getAttribute('href'));
+    if (rewrittenHref) {
+      anchor.setAttribute('href', rewrittenHref);
+    }
+  });
+})();</script> <script>
+    (() => {
+      const getActivePanel = () => {
+        return document.querySelector('[data-variant-panel].reader-content--active')
+          ?? document.querySelector('[data-variant-panel]:not([hidden])');
+      };
+
+      const getTargetFromHash = (hash) => {
+        const id = decodeURIComponent(hash.replace(/^#/, ''));
+        if (!id) {
+          return null;
+        }
+
+        const activePanel = getActivePanel();
+        if (!activePanel) {
+          return document.getElementById(id);
+        }
+
+        return activePanel.querySelector(`#${CSS.escape(id)}`) ?? document.getElementById(id);
+      };
+
+      const syncFragmentToActivePanel = (hash, updateUrl = false) => {
+        if (!hash) {
+          return false;
+        }
+
+        const target = getTargetFromHash(hash);
+        if (!(target instanceof HTMLElement)) {
+          return false;
+        }
+
+        if (updateUrl) {
+          const url = new URL(window.location.href);
+          url.hash = hash;
+          window.history.replaceState(window.history.state, '', url.toString());
+        }
+
+        target.scrollIntoView({ block: 'start' });
+        return true;
+      };
+
+      const maybeHandleSamePageLink = (href) => {
+        if (!href) {
+          return false;
+        }
+
+        if (href.startsWith('#')) {
+          return syncFragmentToActivePanel(href, true);
+        }
+
+        let url;
+        try {
+          url = new URL(href, window.location.href);
+        } catch {
+          return false;
+        }
+
+        if (
+          url.origin !== window.location.origin
+          || url.pathname !== window.location.pathname
+          || url.search !== window.location.search
+          || !url.hash
+        ) {
+          return false;
+        }
+
+        return syncFragmentToActivePanel(url.hash, true);
+      };
+
+      const syncCurrentHash = () => {
+        if (!window.location.hash) {
+          return;
+        }
+
+        window.requestAnimationFrame(() => {
+          syncFragmentToActivePanel(window.location.hash);
+        });
+      };
+
+      document.addEventListener('click', (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) {
+          return;
+        }
+
+        const anchor = target.closest('a[href]');
+        if (!(anchor instanceof HTMLAnchorElement)) {
+          return;
+        }
+
+        if (maybeHandleSamePageLink(anchor.getAttribute('href'))) {
+          event.preventDefault();
+        }
+      });
+
+      window.addEventListener('hashchange', syncCurrentHash);
+      window.addEventListener('variantchange', syncCurrentHash);
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', syncCurrentHash, { once: true });
+      } else {
+        syncCurrentHash();
+      }
+    })();
+  </script>  </main> <div class="mobile-bottom-bar" data-astro-cid-mw7aashj> <button id="mobile-toc-btn" class="mobile-bottom-btn" aria-label="Show Table of Contents" style data-astro-cid-mw7aashj> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-mw7aashj> <line x1="8" y1="6" x2="21" y2="6" data-astro-cid-mw7aashj></line><line x1="8" y1="12" x2="21" y2="12" data-astro-cid-mw7aashj></line><line x1="8" y1="18" x2="21" y2="18" data-astro-cid-mw7aashj></line><line x1="3" y1="6" x2="3.01" y2="6" data-astro-cid-mw7aashj></line><line x1="3" y1="12" x2="3.01" y2="12" data-astro-cid-mw7aashj></line><line x1="3" y1="18" x2="3.01" y2="18" data-astro-cid-mw7aashj></line> </svg> <span data-astro-cid-mw7aashj>目录</span> </button> <div class="mobile-bottom-divider" data-astro-cid-mw7aashj></div> <button id="mobile-info-btn" class="mobile-bottom-btn" aria-label="Show Basic Info" data-astro-cid-mw7aashj> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-mw7aashj> <circle cx="12" cy="12" r="10" data-astro-cid-mw7aashj></circle><line x1="12" y1="16" x2="12" y2="12" data-astro-cid-mw7aashj></line><line x1="12" y1="8" x2="12.01" y2="8" data-astro-cid-mw7aashj></line> </svg> <span data-astro-cid-mw7aashj>信息</span> </button> <div class="mobile-bottom-divider" data-astro-cid-mw7aashj></div> <button id="mobile-settings-btn" class="mobile-bottom-btn" aria-label="Typography Settings" data-astro-cid-mw7aashj> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-mw7aashj> <rect x="3" y="11" width="18" height="11" rx="2" ry="2" data-astro-cid-mw7aashj></rect><path d="M7 11V7a5 5 0 0 1 10 0v4" data-astro-cid-mw7aashj></path> </svg> <span data-astro-cid-mw7aashj>排版</span> </button> </div> <aside class="docs-toc" id="docs-toc" data-astro-cid-mw7aashj> <div class="docs-panel docs-toc-flex" data-panel="toc" data-astro-cid-mw7aashj> <nav class="toc" aria-label="Table of contents" data-astro-cid-cott7la3> <div class="toc-header" data-astro-cid-cott7la3> <div data-astro-cid-cott7la3> <p class="toc-label" data-astro-cid-cott7la3>On This Page</p> <p class="toc-readtime" data-astro-cid-cott7la3>3 min read</p> </div> <span class="toc-progress" data-reading-progress-label data-astro-cid-cott7la3>0%</span> </div> <div class="toc-locale-labels" data-astro-cid-cott7la3> <span class="toc-locale-pill toc-locale-pill--active" data-toc-pill="default" data-astro-cid-cott7la3> 中文 </span> </div> <ul class="toc-list toc-list--active" data-toc-panel="default" data-astro-cid-cott7la3> <li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#摘要" class="toc-link" data-heading="摘要" data-locale="default" data-astro-cid-cott7la3> 摘要 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#概述" class="toc-link" data-heading="概述" data-locale="default" data-astro-cid-cott7la3> 概述 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#目录" class="toc-link" data-heading="目录" data-locale="default" data-astro-cid-cott7la3> 目录 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#开场数学如何把人工智能与真实连接起来" class="toc-link" data-heading="开场数学如何把人工智能与真实连接起来" data-locale="default" data-astro-cid-cott7la3> 开场：数学如何把人工智能与真实连接起来 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#在澳大利亚成长与加速求学" class="toc-link" data-heading="在澳大利亚成长与加速求学" data-locale="default" data-astro-cid-cott7la3> 在澳大利亚成长与加速求学 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#纯数学波动方程与磁共振成像" class="toc-link" data-heading="纯数学波动方程与磁共振成像" data-locale="default" data-astro-cid-cott7la3> 纯数学、波动方程与磁共振成像 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#跳级之后怎样获得同龄人的生活" class="toc-link" data-heading="跳级之后怎样获得同龄人的生活" data-locale="default" data-astro-cid-cott7la3> 跳级之后，怎样获得同龄人的生活 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#为什么数学从小就吸引他" class="toc-link" data-heading="为什么数学从小就吸引他" data-locale="default" data-astro-cid-cott7la3> 为什么数学从小就吸引他 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#从抽象问题到数学职业" class="toc-link" data-heading="从抽象问题到数学职业" data-locale="default" data-astro-cid-cott7la3> 从抽象问题到数学职业 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#数学家如何选择问题学科又如何共同发展" class="toc-link" data-heading="数学家如何选择问题学科又如何共同发展" data-locale="default" data-astro-cid-cott7la3> 数学家如何选择问题，学科又如何共同发展 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#从孤独天才的叙事走向开放协作" class="toc-link" data-heading="从孤独天才的叙事走向开放协作" data-locale="default" data-astro-cid-cott7la3> 从孤独天才的叙事，走向开放协作 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#素数格林陶定理与隐藏的规律" class="toc-link" data-heading="素数格林陶定理与隐藏的规律" data-locale="default" data-astro-cid-cott7la3> 素数、格林—陶定理与隐藏的规律 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#数学中的发现创造与日常工作" class="toc-link" data-heading="数学中的发现创造与日常工作" data-locale="default" data-astro-cid-cott7la3> 数学中的发现、创造与日常工作 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#低成本的失败与论文背后看不见的过程" class="toc-link" data-heading="低成本的失败与论文背后看不见的过程" data-locale="default" data-astro-cid-cott7la3> 低成本的失败，与论文背后看不见的过程 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#橡皮鸭调试法以及共同思考产生的能力" class="toc-link" data-heading="橡皮鸭调试法以及共同思考产生的能力" data-locale="default" data-astro-cid-cott7la3> 橡皮鸭调试法，以及共同思考产生的能力 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#减少重复劳动让数学研究走向现代化" class="toc-link" data-heading="减少重复劳动让数学研究走向现代化" data-locale="default" data-astro-cid-cott7la3> 减少重复劳动，让数学研究走向现代化 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#数学软件的门槛人工智能能否降低" class="toc-link" data-heading="数学软件的门槛人工智能能否降低" data-locale="default" data-astro-cid-cott7la3> 数学软件的门槛，人工智能能否降低 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#计算规模的变化与实验数学的兴起" class="toc-link" data-heading="计算规模的变化与实验数学的兴起" data-locale="default" data-astro-cid-cott7la3> 计算规模的变化，与实验数学的兴起 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#大数学意味着什么人机协作怎样奏效" class="toc-link" data-heading="大数学意味着什么人机协作怎样奏效" data-locale="default" data-astro-cid-cott7la3> “大数学”意味着什么，人机协作怎样奏效 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#人工智能的另一面认知饮食与心智锻炼" class="toc-link" data-heading="人工智能的另一面认知饮食与心智锻炼" data-locale="default" data-astro-cid-cott7la3> 人工智能的另一面：认知饮食与心智锻炼 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#怎样在教学中使用人工智能怎样重新评价学习" class="toc-link" data-heading="怎样在教学中使用人工智能怎样重新评价学习" data-locale="default" data-astro-cid-cott7la3> 怎样在教学中使用人工智能，怎样重新评价学习 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#经费削减之外更严重的是失去确定性" class="toc-link" data-heading="经费削减之外更严重的是失去确定性" data-locale="default" data-astro-cid-cott7la3> 经费削减之外，更严重的是失去确定性 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#数学人才进入科技公司机会边界与新的合作" class="toc-link" data-heading="数学人才进入科技公司机会边界与新的合作" data-locale="default" data-astro-cid-cott7la3> 数学人才进入科技公司：机会、边界与新的合作 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#与社交媒体公司的合作能带来什么研究" class="toc-link" data-heading="与社交媒体公司的合作能带来什么研究" data-locale="default" data-astro-cid-cott7la3> 与社交媒体公司的合作，能带来什么研究 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#我们今天误解了什么人工智能重新定义智能" class="toc-link" data-heading="我们今天误解了什么人工智能重新定义智能" data-locale="default" data-astro-cid-cott7la3> 我们今天误解了什么：人工智能重新定义智能 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#节目介绍与相关资料" class="toc-link" data-heading="节目介绍与相关资料" data-locale="default" data-astro-cid-cott7la3> 节目介绍与相关资料 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#本期提及的研究" class="toc-link" data-heading="本期提及的研究" data-locale="default" data-astro-cid-cott7la3> 本期提及的研究 </a> </li><li class="toc-item toc-depth-3" data-astro-cid-cott7la3> <a href="#收听节目与关注嘉宾" class="toc-link" data-heading="收听节目与关注嘉宾" data-locale="default" data-astro-cid-cott7la3> 收听节目与关注嘉宾 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#节目制作" class="toc-link" data-heading="节目制作" data-locale="default" data-astro-cid-cott7la3> 节目制作 </a> </li><li class="toc-item toc-depth-2" data-astro-cid-cott7la3> <a href="#基本信息" class="toc-link" data-heading="基本信息" data-locale="default" data-astro-cid-cott7la3> 基本信息 </a> </li> </ul> </nav> <script type="module">const g=document.querySelector("[data-reading-progress-label]"),v=document.querySelectorAll("[data-toc-panel]"),p=document.querySelectorAll("[data-toc-pill]"),l=()=>{const t=document.querySelector("[data-variant-panel].reader-content--active:not([hidden])"),e=document.querySelector(".language-button--active[data-target-locale]");return t?.getAttribute("data-variant-key")??e?.getAttribute("data-target-locale")??document.querySelector("[data-toc-panel].toc-list--active")?.getAttribute("data-toc-panel")??document.querySelector("[data-toc-panel]")?.getAttribute("data-toc-panel")??"zh"};let n;const i=t=>{v.forEach(e=>{const a=e.getAttribute("data-toc-panel")===t;e.classList.toggle("toc-list--active",a),a?e.removeAttribute("hidden"):e.setAttribute("hidden","")}),p.forEach(e=>{e.classList.toggle("toc-locale-pill--active",e.getAttribute("data-toc-pill")===t)})},s=()=>{n?.disconnect();const t=l(),e=document.querySelector(`[data-variant-panel][data-variant-key="${CSS.escape(t)}"]`)??document.querySelector(`[data-locale-panel="${CSS.escape(t)}"]`),a=e?e.querySelectorAll("h2[id], h3[id]"):document.querySelectorAll(".chapter-article h2[id], .chapter-article h3[id]"),c=document.querySelectorAll(`.toc-link[data-locale="${t}"]`);if(!a.length||!c.length)return;n=new IntersectionObserver(o=>{o.forEach(u=>{u.isIntersecting&&(c.forEach(h=>h.classList.remove("toc-link--active")),document.querySelector(`.toc-link[data-heading="${u.target.id}"]`)?.classList.add("toc-link--active"))})},{rootMargin:"0px 0px -80% 0px",threshold:0});const r=n;r&&a.forEach(o=>r.observe(o))},d=()=>{const t=document.querySelector(".chapter-article");if(!t||!g)return;const e=t.getBoundingClientRect(),a=window.innerHeight,c=Math.max(t.scrollHeight-a,1),r=Math.min(Math.max(-e.top,0),c),o=Math.round(r/c*100);g.textContent=`${o}%`};i(l());s();d();window.addEventListener("scroll",d,{passive:!0});window.addEventListener("resize",d);document.querySelectorAll("[data-language-switcher] [data-target-locale]").forEach(t=>{t.addEventListener("click",()=>{const e=t.getAttribute("data-target-locale");e&&(i(e),s())})});window.addEventListener("variantchange",()=>{const t=l();i(t),s()});</script>  </div> <details class="docs-panel docs-details" data-panel="info" data-mobile-hidden data-astro-cid-mw7aashj> <summary class="panel-summary" data-astro-cid-mw7aashj> <span class="summary-title" data-astro-cid-mw7aashj>信息 INFO</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="summary-chevron" data-astro-cid-mw7aashj><polyline points="6 9 12 15 18 9" data-astro-cid-mw7aashj></polyline></svg> </summary> <div class="panel-content docs-toc-bottom" data-astro-cid-mw7aashj> <div class="sidebar-reader-details" data-astro-cid-drk2hjfo> <div class="sidebar-details-grid-wrapper" data-astro-cid-drk2hjfo> <div class="sidebar-details-grid" data-astro-cid-drk2hjfo> <div class="details-group" data-astro-cid-drk2hjfo> <div class="details-item" data-astro-cid-drk2hjfo> <span class="details-label" data-astro-cid-drk2hjfo>原文标题：</span> <span class="details-value" data-astro-cid-drk2hjfo>Can AI Prove It? Terence Tao on “Big Math” and Our Theoretical Future | The Futurology Podcast</span> </div> <div class="details-item" data-astro-cid-drk2hjfo> <span class="details-label" data-astro-cid-drk2hjfo>原作者：</span> <span class="details-value" data-astro-cid-drk2hjfo>Terence Tao</span> </div> <div class="details-item" data-astro-cid-drk2hjfo> <span class="details-label" data-astro-cid-drk2hjfo>发布日期：</span> <span class="details-value" data-astro-cid-drk2hjfo>2026-10-18</span> </div>  </div> <div class="details-group details-sources" data-astro-cid-drk2hjfo> <div class="details-source-links" data-astro-cid-drk2hjfo> <a class="source-direct-link" href="https://www.youtube.com/watch?v=YNH6lwcXw7M" target="_blank" rel="noopener" data-astro-cid-drk2hjfo> Futurology </a> </div> </div> </div> </div> </div> </div> </details> <details class="docs-panel docs-details" data-panel="settings" data-mobile-hidden data-astro-cid-mw7aashj> <summary class="panel-summary" data-astro-cid-mw7aashj> <span class="summary-title" data-astro-cid-mw7aashj>排版 TYPE</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="summary-chevron" data-astro-cid-mw7aashj><polyline points="6 9 12 15 18 9" data-astro-cid-mw7aashj></polyline></svg> </summary> <div class="panel-content" data-astro-cid-mw7aashj> <div class="typography-settings" data-astro-cid-e26rjylm> <div class="setting-group" data-astro-cid-e26rjylm> <label class="setting-label" data-astro-cid-e26rjylm>字体 Font</label> <div class="setting-buttons" data-setting-group="font-family" data-astro-cid-e26rjylm> <button class="setting-btn" data-value="sans" data-astro-cid-e26rjylm>无衬线</button> <button class="setting-btn" data-value="serif" data-astro-cid-e26rjylm>衬线</button> </div> </div> <div class="setting-group" data-astro-cid-e26rjylm> <label class="setting-label" data-astro-cid-e26rjylm>字号 Size</label> <div class="setting-buttons" data-setting-group="font-size" data-astro-cid-e26rjylm> <button class="setting-btn" data-value="sm" data-astro-cid-e26rjylm>小</button> <button class="setting-btn" data-value="md" data-astro-cid-e26rjylm>中</button> <button class="setting-btn" data-value="lg" data-astro-cid-e26rjylm>大</button> </div> </div> </div>  <script type="module">const r=()=>{let t=localStorage.getItem("reader-font-family")||"sans",e=localStorage.getItem("reader-font-size")||"md";["sans","serif"].includes(t)||(t="sans",localStorage.setItem("reader-font-family",t)),["sm","md","lg"].includes(e)||(e="md",localStorage.setItem("reader-font-size",e)),document.documentElement.setAttribute("data-reader-font-family",t),document.documentElement.setAttribute("data-reader-font-size",e),document.querySelectorAll(".setting-buttons").forEach(a=>{const s=a.getAttribute("data-setting-group")==="font-family"?t:e;a.querySelectorAll(".setting-btn").forEach(o=>{o.getAttribute("data-value")===s?o.classList.add("active"):o.classList.remove("active")})})};document.querySelectorAll(".setting-buttons").forEach(t=>{const e=t.getAttribute("data-setting-group");t.querySelectorAll(".setting-btn").forEach(a=>{a.addEventListener("click",()=>{const l=a.getAttribute("data-value");l&&(e==="font-family"?localStorage.setItem("reader-font-family",l):localStorage.setItem("reader-font-size",l),r())})})});r();</script> </div> </details> </aside> </div> <footer class="docs-footer" data-astro-cid-wizvoa5a> <div class="footer-left" data-astro-cid-wizvoa5a> <span class="footer-copy" data-astro-cid-wizvoa5a>© 2026 Linguista Library</span> </div> <div class="footer-right" data-astro-cid-wizvoa5a> <a href="https://github.com/h4harsimran/vibe-coders-handbook" target="_blank" rel="noopener" data-astro-cid-wizvoa5a>Handbook Source</a> </div> </footer>  <script type="module">const b=document.querySelector("[data-reading-progress-bar]"),c=document.querySelector(".chapter-article"),u=document.getElementById("mobile-sidebar-toggle"),v=document.getElementById("mobile-toc-btn"),w=document.getElementById("mobile-info-btn"),d=document.getElementById("sidebar-overlay"),l=document.getElementById("toc-overlay"),i=document.getElementById("docs-sidebar"),e=document.getElementById("docs-toc"),r=()=>{i?.classList.contains("show")?(i?.classList.remove("show"),d?.classList.remove("show"),document.body.style.overflow=""):(i?.classList.add("show"),d?.classList.add("show"),document.body.style.overflow="hidden")},o=s=>{if(!e)return;const a=e.classList.contains("show"),n=e.getAttribute("data-active-panel")===s;a&&n?(e.classList.remove("show"),l?.classList.remove("show"),document.body.style.overflow=""):(e.setAttribute("data-active-panel",s),e.querySelectorAll(".docs-panel").forEach(t=>{t.getAttribute("data-panel")===s?(t.removeAttribute("data-mobile-hidden"),t.tagName==="DETAILS"&&t.setAttribute("open",""),t.tagName==="DETAILS"&&t.setAttribute("open","")):t.setAttribute("data-mobile-hidden","")}),e.classList.add("show"),l?.classList.add("show"),document.body.style.overflow="hidden")};u?.addEventListener("click",r);d?.addEventListener("click",r);v?.addEventListener("click",()=>o("toc"));const h=document.getElementById("mobile-settings-btn");h?.addEventListener("click",()=>o("settings"));w?.addEventListener("click",()=>o("info"));l?.addEventListener("click",()=>o(e?.getAttribute("data-active-panel")||"toc"));window.addEventListener("resize",()=>{window.innerWidth>=900&&i?.classList.contains("show")&&r(),window.innerWidth>=900&&e?.classList.contains("show")&&o(e.getAttribute("data-active-panel")||"toc")});const m=()=>{if(!b||!c)return;const s=c.getBoundingClientRect(),a=window.innerHeight,n=Math.max(c.scrollHeight-a,1),g=Math.min(Math.max(-s.top,0),n),t=Math.max(0,Math.min(1,g/n));b.style.transform=`scaleX(${t})`};m();window.addEventListener("scroll",m,{passive:!0});window.addEventListener("resize",m);</script>  <script type="module">const a=new IntersectionObserver(t=>{t.forEach(r=>{if(r.isIntersecting){const e=r.target,s=Number(e instanceof HTMLElement?e.dataset.revealDelay:void 0)||0;s>0?setTimeout(()=>{requestAnimationFrame(()=>e.classList.add("in-view"))},s):requestAnimationFrame(()=>e.classList.add("in-view")),a.unobserve(e)}})},{threshold:.12,rootMargin:"0px 0px -40px 0px"});document.querySelectorAll(".reveal").forEach(t=>a.observe(t));</script> </body> </html>  
